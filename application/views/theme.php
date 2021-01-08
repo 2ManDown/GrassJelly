@@ -187,7 +187,7 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="layout-color.html" class="auto">
+                          <a href="<?php echo site_url('product/product_warehouse') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายการคลังสินค้า</span>
