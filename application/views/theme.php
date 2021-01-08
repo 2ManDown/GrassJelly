@@ -255,7 +255,7 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="<?php echo site_url('product/product_list') ?>" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_insert') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>นำเข้าวัตถุดิบ</span>
