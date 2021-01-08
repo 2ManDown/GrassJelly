@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/font.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/app.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/calendar/bootstrap_calendar.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/datepicker/datepicker.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/slider/slider.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/chosen/chosen.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/spinner/jquery.bootstrap-touchspin.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
 </head>
 
 
@@ -323,7 +328,7 @@
                       <ul class="nav dk">
                         <li>
                           <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
-                          <i class="i i-dot"></i>
+                            <i class="i i-dot"></i>
                             <span>จัดการสินค้าหมดอายุ</span>
                           </a>
                         </li>
@@ -338,7 +343,7 @@
             </section>
 
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
-             
+
               <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
                 <i class="i i-circleleft text"></i>
                 <i class="i i-circleright text-active"></i>
@@ -372,6 +377,10 @@
 
   <script src="<?php echo base_url() ?>asset/js/sortable/jquery.sortable.js"></script>
   <script src="<?php echo base_url() ?>asset/js/app.plugin.js"></script>
+  <script src="<?php echo base_url() ?>asset/js/chosen/chosen.jquery.min.js"></script>
+  <!-- file input -->
+  <script src="<?php echo base_url() ?>asset/js/file-input/bootstrap-filestyle.min.js"></script>
+
 </body>
 
 </html>
