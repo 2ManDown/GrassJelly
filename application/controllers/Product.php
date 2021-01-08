@@ -16,4 +16,10 @@ class Product extends CI_Controller {
 		$data['page'] = "product/product_insert";
 		$this->load->view('theme',$data);
 	}
+
+	public function product_warehouse()
+	{
+		$data['page'] = "product/product_warehouse";
+		$this->load->view('theme',$data);
+	}
 }
