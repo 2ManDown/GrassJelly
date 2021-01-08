@@ -1,12 +1,10 @@
 <section id="content">
     <section class="vbox">
         <section class="scrollable padder">
-            <div class="m-b-md">
-                <h2 class="m-b-none">เพิ่มข้อมูลสินค้า</h2>
-            </div>
+
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px">
-                    ฟอร์มกรอกข้อมูลสินค้า
+                    เพิ่มข้อมูลสินค้า
                 </header>
                 <div class="panel-body" style="display: block; margin-left: auto; margin-right: auto; width: 150%;">
                     <form class="form-horizontal" method="get">
