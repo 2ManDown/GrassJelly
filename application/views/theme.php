@@ -230,7 +230,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_reavlist') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายงานการเบิกใช้วัตถุดิบ</span>
@@ -251,18 +251,18 @@
 
                         <i class="i i-docs icon">
                         </i>
-                        <span class="font-bold">การนำเข้าวัตถุดิบ</span>
+                        <span class="font-bold">นำเข้าและเบิกวัตถุดิบ</span>
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="<?php echo site_url('product/product_list') ?>" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_insert') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>นำเข้าวัตถุดิบ</span>
                           </a>
                         </li>
                         <li>
-                          <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>เบิกใช้วัตถุดิบ</span>
