@@ -1,13 +1,14 @@
 <section id="content">
     <section class="vbox">
-        <section class="scrollable padder">
+        <section class="scrollable padder" style="margin: 0px; padding: 0px;">
             <section class="panel panel-default">
-                <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายงานการส่งออกสินค้า
+
+                <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray">
+                    รายการสินค้าหมดอายุ
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="#" class="btn btn-s-lg btn-success btn-rounded">ส่งออกสินค้า</a>
+                        <!-- <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-lg btn-success btn-rounded">เบิกใช้วัตถุดิบ</a> -->
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -22,6 +23,7 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="col-sm-3" style="margin-top: 20px">
                         <div class="input-group">
                             <input type="text" class="input-sm form-control" placeholder="Search">
@@ -31,59 +33,81 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="btnaddpd" style="margin: 0px 0px 10px 10px; ">
-                    <a href="fc_manufac.php" class="btn btn-s-md btn-success btn-rounded">เพิ่มข้อมูล</a>
-                </div> -->
-                <div class="table-responsive" style="margin-bottom: 0px;">
+
+                <div class="table-responsive">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>เลขคำสั่งส่งออก</th>
-                                <th>ลอตสินค้าที่ส่งออก</th>
-                                <th>จำนวนที่ส่งออก</th>
-                                <th>ราคาส่งออกรวม</th>
+                                <th width="10">#</th>
+                                <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
+                                <th>วันที่ผลิต</th>
+                                <th>วันหมดอายุ</th>
+                                <th>จำนวนที่หมดอายุ</th>
+
                             </tr>
                         </div>
                         <tbody>
                             <tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
                             </tr>
                             <tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
-                            </tr>
-                            <tr>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr><tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
-                            </tr>
-                            <tr>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr><tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
-                            </tr>
-                            <tr>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr><tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr><tr>
+                                <td><label class="checkbox m-l m-t-none m-b-none i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
                 <footer class="panel-footer">
                     <div class="row">
                         <div class="col-sm-7 text-right text-center-xs">
@@ -99,8 +123,9 @@
                         </div>
                     </div>
                 </footer>
+
             </section>
+            <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
     </section>
-    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>

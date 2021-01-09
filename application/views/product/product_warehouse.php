@@ -2,7 +2,7 @@
     <section class="vbox">
         <section class="scrollable padder">
             <section class="panel panel-default">
-                <header class="panel-heading font-bold" style="font-size: 23px">
+                <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     รายการคลังสินค้า
                 </header>
                 <div class="row wrapper">

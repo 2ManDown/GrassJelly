@@ -28,4 +28,10 @@ class Product extends CI_Controller {
 		$data['page'] = "product/product_reportex";
 		$this->load->view('theme',$data);
 	}
+
+	public function product_exp()
+	{
+		$data['page'] = "product/product_exp";
+		$this->load->view('theme',$data);
+	}
 }

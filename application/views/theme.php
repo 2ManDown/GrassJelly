@@ -306,7 +306,7 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="<?php echo site_url('product/product_list') ?>" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_exp') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>จัดการวัตถุดิบหมดอายุ</span>
@@ -327,7 +327,7 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
+                          <a href="<?php echo site_url('product/product_exp') ?>" class="auto">
                             <i class="i i-dot"></i>
                             <span>จัดการสินค้าหมดอายุ</span>
                           </a>

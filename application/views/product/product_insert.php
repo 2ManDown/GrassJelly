@@ -3,7 +3,7 @@
         <section class="scrollable padder">
 
             <section class="panel panel-default">
-                <header class="panel-heading font-bold" style="font-size: 23px">
+                <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     เพิ่มข้อมูลสินค้า
                 </header>
                 <div class="panel-body" style="display: block; margin-left: auto; margin-right: auto; width: 150%;">
