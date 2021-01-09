@@ -159,12 +159,13 @@
                         <span class="font-bold">ข้อมูลสินค้า</span>
                       </a>
                       <ul class="nav dk">
-                        <li></li>
+                        <li>
                           <a href="<?php echo site_url('product/product_list') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายการข้อมูลสินค้า</span>
                           </a>
+                          </li>
                         </li>
                         <li>
                           <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
