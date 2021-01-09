@@ -19,6 +19,18 @@ class Metarial extends CI_Controller {
 	{
 		$data['page'] = "metarial/metarial_reavel";
 		$this->load->view('theme',$data);
+	}
+	
+	public function metarial_list()
+	{
+		$data['page'] = "metarial/metarial_list";
+		$this->load->view('theme',$data);
+	}
+	
+	public function metarial_importlist()
+	{
+		$data['page'] = "metarial/metarial_importlist";
+		$this->load->view('theme',$data);
     }
 }
 
