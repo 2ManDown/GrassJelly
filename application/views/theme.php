@@ -194,7 +194,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="layout-color.html" class="auto">
+                          <a href="<?php echo site_url('product/product_reportex') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายงานการส่งออกสินค้า</span>
@@ -216,14 +216,14 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="#" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_list') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายการคลังวัตถุดิบ</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#" class="auto">
+                          <a href="<?php echo site_url('metarial/metarial_importlist') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายงานการนำเข้าวัตถุดิบ</span>
