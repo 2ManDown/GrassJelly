@@ -7,7 +7,7 @@
 
 
                     <section class="panel panel-default">
-                        <header class="panel-heading font-bold" style="font-size:  18px;">
+                        <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
                             ออกใบเบิกวัตถุดิบ
                         </header>
                         <div class="panel-body">
