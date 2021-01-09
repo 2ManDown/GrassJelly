@@ -7,7 +7,6 @@ class Product extends CI_Controller {
 	public function product_list()
 	{
 		$data['page'] = "product/product_list";
-		
 		$this->load->view('theme',$data);
 	}
 
@@ -34,4 +33,5 @@ class Product extends CI_Controller {
 		$data['page'] = "product/product_exp";
 		$this->load->view('theme',$data);
 	}
+	
 }

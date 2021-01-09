@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
   <!-- Card CSS -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
-
+  <link rel="preconnect" href="<?php echo base_url() ?>https://fonts.gstatic.com">
+  <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
 
 
@@ -158,7 +159,7 @@
                         <span class="font-bold">ข้อมูลสินค้า</span>
                       </a>
                       <ul class="nav dk">
-                        <li>
+                        <li></li>
                           <a href="<?php echo site_url('product/product_list') ?>" class="auto">
                             <i class="i i-dot"></i>
 
