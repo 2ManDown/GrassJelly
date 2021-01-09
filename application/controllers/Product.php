@@ -34,4 +34,9 @@ class Product extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 	
+	public function product_detail()
+	{
+		$data['page'] = "product/product_detail";
+		$this->load->view('theme',$data);
+	}
 }
