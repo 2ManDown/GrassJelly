@@ -2,10 +2,13 @@
     <section class="vbox">
         <section class="scrollable padder" style="margin: 0px; padding: 0px;">
             <section class="panel panel-default">
+
+                <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray">
+                    รายการการเบิกใช้วัตถุดิบ
                 </header>
                 <div class="row wrapper">
-                    <div class="col-sm-5 m-b-xs">
-                        <h3>รายละเอียดการเบิกวัตถุดิบ</h3>
+                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
+                        <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-lg btn-success btn-rounded">เบิกใช้วัตถุดิบ</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -20,6 +23,7 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="col-sm-3" style="margin-top: 20px">
                         <div class="input-group">
                             <input type="text" class="input-sm form-control" placeholder="Search">
@@ -29,9 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="btnremt" style="margin: 0px 0px 10px 10px; ">
-                    <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-md btn-success btn-rounded">เบิกวัตถุดิบ</a>
-                </div>
+
                 <div class="table-responsive">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>

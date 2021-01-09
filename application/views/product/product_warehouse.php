@@ -2,12 +2,12 @@
     <section class="vbox">
         <section class="scrollable padder">
             <section class="panel panel-default">
-            <header class="panel-heading font-bold" style="font-size: 23px">
+                <header class="panel-heading font-bold" style="font-size: 23px">
                     รายการคลังสินค้า
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                    <a href="fc_manufac.php" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูล</a>
+                        <a href="#" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูล</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
