@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/chosen/chosen.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/spinner/jquery.bootstrap-touchspin.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
+  <!-- Card CSS -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
+
 </head>
 
 
