@@ -19,8 +19,8 @@ p {
 .profile-card-4 img {
     transition: all 0.25s linear;
     max-height: 160px;
-    height: 100%;
-    width: auto;
+    width: fit-content;
+    height: fit-content;
 }
 
 .profile-card-4 .profile-content {
