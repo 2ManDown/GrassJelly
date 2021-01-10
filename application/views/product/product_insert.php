@@ -48,13 +48,13 @@
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปสินค้า</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-5">
                                 <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <div class="col-sm-5 col-sm-offset-5">
+                            <div class="col-sm-5 col-sm-offset-4">
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-default">Cancel</button>
@@ -66,6 +66,24 @@
 
         </section>
 
+    </section>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+</section>
+
+
+<!-- Image -->
+
+<section id="content">
+    <section class="vbox">
+        <section class="scrollable padder">
+
+            <section class="panel panel-default">
+                <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
+                    เพิ่มข้อมูลสินค้า
+                </header>
+                <h2>พื้นที่แสดงรูปภาพ</h2>
+            </section>
+        </section>
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
