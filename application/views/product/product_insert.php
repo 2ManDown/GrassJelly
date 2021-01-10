@@ -37,6 +37,14 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">รายบละเอียดสินค้าโดยย่อ</label>
+                            <div class="col-sm-7">
+                                <!-- <input type="text" class="form-control"> -->
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label">ประเภทสินค้า</label>
                             <div class="col-sm-7">
                                 <select name="account" class="form-control m-b">
