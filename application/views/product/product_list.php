@@ -103,9 +103,11 @@
 
 
       <div class="col-md-3" style="margin-top: 20px;">
-        <div class="profile-content">
-          <div class="profile-name" style="font-size: 15px;">เพิ่มข้อมูลสินค้า </div>
-        <div class="profile-card-4 text-center"><img src="https://img.icons8.com/cotton/2x/plus.png" style="width: auto;">  </div>
+        <a href="<?php echo site_url('product/product_insert')?>">
+          <div class="profile-content">
+            <div class="profile-name" style="font-size: 15px;">เพิ่มข้อมูลสินค้า </div>
+            <div class="profile-card-4 text-center"><img src="https://img.icons8.com/cotton/2x/plus.png" style="width: auto;"> </div>
+        </a>
       </div>
 
 

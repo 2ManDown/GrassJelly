@@ -7,7 +7,7 @@
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="#" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูล</a>
+                        <a href="#" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลการผลิตสินค้า</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">

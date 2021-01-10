@@ -65,7 +65,7 @@
                             <div class="col-sm-5 col-sm-offset-4">
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                             </div>
                         </div>
                     </form>
@@ -95,3 +95,12 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
+
+
+
+<!-- JS back Previuos page -->
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
