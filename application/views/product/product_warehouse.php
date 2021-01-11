@@ -45,19 +45,14 @@
                         </div>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">1</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">2</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">3</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">4</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">5</a></td>
+
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
+
 
                         </tbody>
                     </table>

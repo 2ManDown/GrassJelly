@@ -4,7 +4,7 @@
 
       <div class="col-md-3" style="margin-top: 20px;">
         <a href="<?php echo site_url('product/product_detail') ?>">
-          <div class="profile-card-4 text-center"><img src="https://i.ibb.co/G0mD9sH/3-626x330.jpg" class="img img-responsive">
+          <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g3.jpg" class="img img-responsive">
             <div class="profile-content">
               <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
               </div>
@@ -30,7 +30,7 @@
 
 
       <div class="col-md-3" style="margin-top: 20px;">
-        <div class="profile-card-4 text-center"><img src="https://i.ytimg.com/vi/oBviyiIqLFc/maxresdefault.jpg" class="img img-responsive">
+        <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g4.jpg" class="img img-responsive">
           <div class="profile-content">
             <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
             </div>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="col-md-3" style="margin-top: 20px;">
-        <div class="profile-card-4 text-center"><img src="https://my.kapook.com/imagescontent/fb_img/628/s_189061_9795.jpg" class="img img-responsive">
+        <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g1.jpg" class="img img-responsive">
           <div class="profile-content">
             <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
             </div>
@@ -78,7 +78,7 @@
       </div>
 
       <div class="col-md-3" style="margin-top: 20px;">
-        <div class="profile-card-4 text-center"><img src="https://i.pinimg.com/originals/97/f6/58/97f6584ad07deec70554360643a056e2.jpg" class="img img-responsive">
+        <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g2.jpg" class="img img-responsive">
           <div class="profile-content">
             <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
             </div>
@@ -106,7 +106,7 @@
         <a href="<?php echo site_url('product/product_insert')?>">
           <div class="profile-content">
             <div class="profile-name" style="font-size: 15px;">เพิ่มข้อมูลสินค้า </div>
-            <div class="profile-card-4 text-center"><img src="https://img.icons8.com/cotton/2x/plus.png" style="width: auto;"> </div>
+            <div class="profile-card-4 text-center"><img src="<?php echo base_url('asset/images/plus.png') ?>" style="width: auto;"> </div>
         </a>
       </div>
 

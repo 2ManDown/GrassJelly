@@ -6,13 +6,13 @@
           <section class="row m-b-md">
             <div class="col-sm-6">
               <h3 class="m-b-xs text-black">Grass Jelly | โรงงานเฉาก๊วย</h3>
-              <small>Welcome back, John Smith, <i class="fa fa-map-marker fa-lg text-primary"></i> New York City</small>
+              <small>Welcome back <i class="fa fa-map-marker fa-lg text-primary"></i> Khon Kaen, Thailand</small>
             </div>
 
             <!--  -->
 
           </section>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-sm-6">
               <div class="panel b-a">
                 <div class="row m-n">
@@ -97,7 +97,8 @@
                 </div>
               </section>
             </div>
-          </div>
+          </div> -->
+
           <div class="row bg-light dk m-b">
             <div class="col-md-6 dker">
               <section>
@@ -141,10 +142,40 @@
                 </div>
               </section>
             </div>
+
+            <div class="col-md-6">
+                      <section>
+                        <header class="font-bold padder-v">
+                          <div class="btn-group pull-right">
+                            <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
+                              <span class="dropdown-label">Last 24 Hours</span> 
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-select">
+                                <li><a href="#"><input type="radio" name="a">Today</a></li>
+                                <li><a href="#"><input type="radio" name="a">Yesterday</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 24 Hours</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 7 Days</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last 30 days</a></li>
+                                <li><a href="#"><input type="radio" name="a">Last Month</a></li>
+                                <li><a href="#"><input type="radio" name="a">All Time</a></li>
+                            </ul>
+                          </div>
+                          Analysis
+                        </header>
+                        <div class="panel-body flot-legend">
+                          <div id="flot-pie-donut"  style="height:240px"></div>
+                        </div>
+                      </section>
+                    </div>
+
+          </div>
+
+          <div class="row">
             <div class="col-md-6">
               <section class="panel panel-default">
                 <header class="panel-heading">
-                  Product
+                  การนำเข้า
                 </header>
 
                 <div class="table-responsive">
@@ -252,122 +283,133 @@
                 </footer>
               </section>
             </div>
+
+            <div class="col-md-6">
+
+              <section class="panel panel-default">
+                <header class="panel-heading">
+                  การส่งออก
+                </header>
+
+                <div class="table-responsive">
+                  <table class="table table-striped b-t b-light">
+                    <thead>
+                      <tr>
+                        <th class="th-sortable" data-toggle="class">รหัส
+                          <span class="th-sort">
+                            <i class="fa fa-sort-down text"></i>
+                            <i class="fa fa-sort-up text-active"></i>
+                            <i class="fa fa-sort"></i>
+                          </span>
+                        </th>
+                        <th>ชื่อ</th>
+                        <th>วันที่ส่งออก</th>
+                        <th>จำนวนส่งออก</th>
+                        <th>ราคา/หน่วย</th>
+                        <th>ราคารวม</th>
+
+                      </tr>
+                    </thead>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+
+                        <td>1</td>
+                        <td>เฉาก๊วย</td>
+                        <td>Jul 25, 2013</td>
+                        <td>500</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                      <tr>
+
+                        <td>2</td>
+                        <td>เฉาก๊วย</td>
+                        <td>Jul 30, 2013</td>
+                        <td>200</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                      <tr>
+
+                        <td>3</td>
+                        <td>เฉาก๊วย</td>
+                        <td>April 5, 2013</td>
+                        <td>100</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>เฉาก๊วย</td>
+                        <td>April 15, 2013</td>
+                        <td>300</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>เฉาก๊วย</td>
+                        <td>April 15, 2013</td>
+                        <td>300</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>เฉาก๊วย</td>
+                        <td>April 15, 2013</td>
+                        <td>300</td>
+                        <td>
+                          20
+                        </td>
+                        <td>5000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <footer class="panel-footer">
+                  <div class="row">
+                    <div class="col-sm-4.5 text-right text-center-xs">
+                      <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </footer>
+              </section>
+            </div>
+
           </div>
 
-          <div class="row">
-            <div class="col-md-4">
-              <!--  -->
-            </div>
-            <div class="col-md-4">
-              <!--  -->
-            </div>
+
+          
+            
+          
 
           </div>
         </section>
       </section>
     </section>
-    <!-- side content -->
-    <aside class="aside-md bg-black hide" id="sidebar">
-      <section class="vbox animated fadeInRight">
-        <section class="scrollable">
-          <div class="wrapper"><strong>Live feed</strong></div>
-          <ul class="list-group no-bg no-borders auto">
-            <li class="list-group-item">
-              <span class="fa-stack pull-left m-r-sm">
-                <i class="fa fa-circle fa-stack-2x text-success"></i>
-                <i class="fa fa-reply fa-stack-1x text-white"></i>
-              </span>
-              <span class="clear">
-                <a href="#">Goody@gmail.com</a> sent your email
-                <small class="icon-muted">13 minutes ago</small>
-              </span>
-            </li>
-            <li class="list-group-item">
-              <span class="fa-stack pull-left m-r-sm">
-                <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                <i class="fa fa-file-o fa-stack-1x text-white"></i>
-              </span>
-              <span class="clear">
-                <a href="#">Mide@live.com</a> invite you to join a meeting
-                <small class="icon-muted">20 minutes ago</small>
-              </span>
-            </li>
-            <li class="list-group-item">
-              <span class="fa-stack pull-left m-r-sm">
-                <i class="fa fa-circle fa-stack-2x text-info"></i>
-                <i class="fa fa-map-marker fa-stack-1x text-white"></i>
-              </span>
-              <span class="clear">
-                <a href="#">Geoge@yahoo.com</a> is online
-                <small class="icon-muted">1 hour ago</small>
-              </span>
-            </li>
-            <li class="list-group-item">
-              <span class="fa-stack pull-left m-r-sm">
-                <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-info fa-stack-1x text-white"></i>
-              </span>
-              <span class="clear">
-                <a href="#"><strong>Admin</strong></a> post a info
-                <small class="icon-muted">1 day ago</small>
-              </span>
-            </li>
-          </ul>
-          <div class="wrapper"><strong>Friends</strong></div>
-          <ul class="list-group no-bg no-borders auto">
-            <li class="list-group-item">
-              <div class="media">
-                <span class="pull-left thumb-sm avatar">
-                  <img src="<?php echo base_url() ?>asset/images/a3.png" alt="..." class="img-circle">
-                  <i class="on b-black bottom"></i>
-                </span>
-                <div class="media-body">
-                  <div><a href="#">Chris Fox</a></div>
-                  <small class="text-muted">about 2 minutes ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="media">
-                <span class="pull-left thumb-sm avatar">
-                  <img src="<?php echo base_url() ?>asset/images/a2.png" alt="...">
-                  <i class="on b-black bottom"></i>
-                </span>
-                <div class="media-body">
-                  <div><a href="#">Amanda Conlan</a></div>
-                  <small class="text-muted">about 2 hours ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="media">
-                <span class="pull-left thumb-sm avatar">
-                  <img src="<?php echo base_url() ?>asset/images/a1.png" alt="...">
-                  <i class="busy b-black bottom"></i>
-                </span>
-                <div class="media-body">
-                  <div><a href="#">Dan Doorack</a></div>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="media">
-                <span class="pull-left thumb-sm avatar">
-                  <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
-                  <i class="away b-black bottom"></i>
-                </span>
-                <div class="media-body">
-                  <div><a href="#">Lauren Taylor</a></div>
-                  <small class="text-muted">about 2 minutes ago</small>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </section>
-    </aside>
-    <!-- / side content -->
+
+
   </section>
   <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
