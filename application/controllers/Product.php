@@ -39,4 +39,16 @@ class Product extends CI_Controller {
 		$data['page'] = "product/product_detail";
 		$this->load->view('theme',$data);
 	}
+
+	public function product_exportbill()
+	{
+		$data['page'] = "product/product_exportbill";
+		$this->load->view('theme',$data);
+	}
+
+	public function product_manufac()
+	{
+		$data['page'] = "product/product_manufac";
+		$this->load->view('theme',$data);
+	}
 }

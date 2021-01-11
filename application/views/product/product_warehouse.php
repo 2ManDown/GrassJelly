@@ -7,7 +7,7 @@
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="#" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลการผลิตสินค้า</a>
+                        <a href="<?php echo site_url('product/product_manufac') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลการผลิตสินค้า</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -31,14 +31,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="btnaddpd" style="margin: 0px 0px 10px 10px; ">
-                    <a href="fc_manufac.php" class="btn btn-s-md btn-success btn-rounded">เพิ่มข้อมูล</a>
-                </div> -->
+
                 <div class="table-responsive" style="margin-bottom: 0px;">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
                                 <th>ลอตสินค้า</th>
+                                <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
                                 <th>วันที่ผลิต</th>
                                 <th>จำนวนที่ผลิต</th>
@@ -50,25 +49,16 @@
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
+                                <td>5</td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
+                                <td>5</td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
