@@ -180,6 +180,7 @@
 
                       </ul>
                     </li>
+                    
 
                     <!-- <div class="line dk hidden-nav-xs"></div> -->
                     <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
@@ -230,6 +231,21 @@
                           </a>
                         </li>
                       </ul>
+                    </li>
+
+                    <div class="line dk hidden-nav-xs"></div>
+                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplyer</div>
+                    <li>
+                      <a href="<?php echo site_url('supplyer/supplyer_list')?>" class="auto">
+                        <span class="pull-right text-muted">
+                          <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i>
+                        </span>
+                        <i class="i i-lab icon">
+                        </i>
+                        <span class="font-bold">จัดการข้อมูลร้านค้า</span>
+                      </a>
+
                     </li>
 
                     <div class="line dk hidden-nav-xs"></div>
