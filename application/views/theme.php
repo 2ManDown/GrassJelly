@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/chosen/chosen.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/spinner/jquery.bootstrap-touchspin.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
+
+  <!-- Card CSS -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
+  <link rel="preconnect" href="<?php echo base_url() ?>https://fonts.gstatic.com">
+  <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
 
 
@@ -161,6 +166,7 @@
 
                             <span>รายการข้อมูลสินค้า</span>
                           </a>
+                          </li>
                         </li>
                         <li>
                           <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
@@ -198,6 +204,13 @@
                             <i class="i i-dot"></i>
 
                             <span>รายงานการส่งออกสินค้า</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<?php echo site_url('product/product_manufac') ?>" class="auto">
+                            <i class="i i-dot"></i>
+
+                            <span>เพิ่มข้อมูลการผลิตสินค้า</span>
                           </a>
                         </li>
 
@@ -283,7 +296,7 @@
                       </a>
                       <ul class="nav dk">
                         <li>
-                          <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
+                          <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
                             <i class="i i-dot"></i>
                             <span>ส่งออกสินค้า</span>
                           </a>
@@ -356,6 +369,8 @@
       </section>
     </section>
   </section>
+
+
   <script src="<?php echo base_url() ?>asset/js/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="<?php echo base_url() ?>asset/js/bootstrap.js"></script>
@@ -380,6 +395,9 @@
   <script src="<?php echo base_url() ?>asset/js/chosen/chosen.jquery.min.js"></script>
   <!-- file input -->
   <script src="<?php echo base_url() ?>asset/js/file-input/bootstrap-filestyle.min.js"></script>
+
+  <!-- Date Picker -->
+  <script src="<?php echo base_url() ?>asset/js/datepicker/bootstrap-datepicker.js"></script>
 
 </body>
 

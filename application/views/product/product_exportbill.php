@@ -7,18 +7,35 @@
 
 
                     <section class="panel panel-default">
-                        <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
-                            เพิ่มข้อมูลการนำเข้าวัตถุดิบ
+                        <header class="panel-heading font-bold" style="font-size:  18px;">
+                            ออกใบส่งออกสินค้า
                         </header>
                         <div class="panel-body">
                             <form class="form-horizontal" method="get">
+                                
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">รหัสสินค้า</label>
+                                    <label class="col-sm-3 control-label">สินค้า</label>
                                     <div class="col-sm-7">
-                                        <input type="number" class="form-control rounded">
-
+                                        <select name="account" class="form-control m-b rounded">
+                                            <option value="" disabled selected>กรุณาเลือกสินค้า</option>
+                                            <option>สินค้า 1</option>
+                                            <option>สินค้า 2</option>
+                                        </select>
                                     </div>
                                 </div>
+
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">ผู้รับสินค้า</label>
+                                    <div class="col-sm-7">
+                                        <select name="account" class="form-control m-b">
+                                            <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
+                                            <option>ศูนย์กระจาย 1</option>
+                                            <option>ศูนย์กระจาย 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">ชื่อสินค้า</label>
@@ -29,28 +46,16 @@
                                 </div>
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">ลอตนำเข้าวัตถุดิบ</label>
+                                    <label class="col-sm-3 control-label" for="input-id-1">ลอตส่งออกสินค้า</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" id="input-id-1">
                                     </div>
                                 </div>
 
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ประเภทวัตถุดิบ</label>
-                                    <div class="col-sm-7">
-                                        <select name="account" class="form-control m-b">
-                                            <option value="" disabled selected>กรุณาเลือกประเภทวัตถุดิบ</option>
-                                            <option>วัตถุแต่งรส</option>
-                                            <option>วัตถุแต่งกลิ่น</option>
-                                            <option>วัตถุแต่งสี</option>
-                                        </select>
-                                    </div>
-                                </div>
 
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">วันที่นำเข้าวัตถุดิบ</label>
+                                    <label class="col-sm-3 control-label">วันที่ส่งออก</label>
                                     <div class="col-sm-7">
                                         <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
                                     </div>
@@ -58,7 +63,7 @@
 
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">จำนวนนำเข้าวัตถุดิบ</label>
+                                    <label class="col-sm-3 control-label" for="input-id-1">จำนวนส่งออกสินค้า</label>
                                     <div class="col-sm-7">
                                         <input type="number" class="form-control" id="input-id-1">
                                     </div>
@@ -87,10 +92,10 @@
 
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-5">
+                                    <div class="col-sm-6 col-sm-offset-5">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                         &nbsp; &nbsp;
-                                        <button type="submit" class="btn btn-default">Cancel</button>
+                                        <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                                     </div>
                                 </div>
                             </form>

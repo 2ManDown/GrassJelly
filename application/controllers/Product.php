@@ -7,7 +7,6 @@ class Product extends CI_Controller {
 	public function product_list()
 	{
 		$data['page'] = "product/product_list";
-		
 		$this->load->view('theme',$data);
 	}
 
@@ -32,6 +31,24 @@ class Product extends CI_Controller {
 	public function product_exp()
 	{
 		$data['page'] = "product/product_exp";
+		$this->load->view('theme',$data);
+	}
+	
+	public function product_detail()
+	{
+		$data['page'] = "product/product_detail";
+		$this->load->view('theme',$data);
+	}
+
+	public function product_exportbill()
+	{
+		$data['page'] = "product/product_exportbill";
+		$this->load->view('theme',$data);
+	}
+
+	public function product_manufac()
+	{
+		$data['page'] = "product/product_manufac";
 		$this->load->view('theme',$data);
 	}
 }
