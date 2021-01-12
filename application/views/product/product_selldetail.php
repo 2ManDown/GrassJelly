@@ -65,14 +65,14 @@
                                     </div>
                                 </footer>
 
-                                <div class="form-group" style="margin-top: 30px;">
-                                    <div class="col-sm-2 col-sm-offset-10 ">
-                                        <button type="submit" class="btn btn-default">Cancel</button>
-                                        &nbsp; &nbsp;
+                                <button type="submit" class="btn btn-primary" style="margin-top: 30px; ">Save changes</button>
+                                <!-- <div class="form-group" >
+                                    <div class="col-sm-3 col-sm-offset-10" style="margin-top: 30px;">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
+
                         </div>
                     </section>
                 </section>
