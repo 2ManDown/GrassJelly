@@ -40,11 +40,12 @@
                             <tr>
                                 <th>เลขคำสั่งเบิก</th>
                                 <th>ลอตวัตถุดิบที่นำเข้า</th>
+                                <th>ชื่อวัตถุดิบ</th>
+                                <th>ชื่อผู้เบิก</th>
                                 <th>วันที่เบิก</th>
                                 <th>จำนวนที่เบิก</th>
-                                <th>สถานะที่เบิก</th>
-                                <th>ชื่อวัตถุดิบ</th>
-
+                                <th>ราคา</th>
+                            
                             </tr>
                         </div>
                         <tbody>
@@ -55,6 +56,7 @@
                                 <td>4</td>
                                 <td>5</td>
                                 <td>6</td>
+                                <td>500</td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -63,6 +65,7 @@
                                 <td>4</td>
                                 <td>5</td>
                                 <td>6</td>
+                                <td>500</td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -71,6 +74,7 @@
                                 <td>4</td>
                                 <td>5</td>
                                 <td>6</td>
+                                <td>500</td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -79,39 +83,9 @@
                                 <td>4</td>
                                 <td>5</td>
                                 <td>6</td>
+                                <td>500</td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>

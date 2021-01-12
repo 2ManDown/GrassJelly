@@ -66,7 +66,7 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ประเภทสินค้า</label>
+                            <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
                                 <select name="account" class="form-control m-b">
                                     <option>ถุง</option>

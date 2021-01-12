@@ -22,9 +22,9 @@ class Product extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 
-	public function product_reportex()
+	public function product_sellreport()
 	{
-		$data['page'] = "product/product_reportex";
+		$data['page'] = "product/product_sellreport";
 		$this->load->view('theme',$data);
 	}
 
@@ -58,4 +58,9 @@ class Product extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 	
+	public function product_selldetail()
+	{
+		$data['page'] = "product/product_selldetail";
+		$this->load->view('theme',$data);
+	}
 }

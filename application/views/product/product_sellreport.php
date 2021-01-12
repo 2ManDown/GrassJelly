@@ -37,19 +37,21 @@
                         <div>
                             <tr>
                                 <th>เลขคำสั่งส่งออก</th>
-                                <th>ลอตสินค้าที่ส่งออก</th>
+                                <th>ลอตสินค้าที่ส่งออก/วันที่</th>
                                 <th>จำนวนที่ส่งออก</th>
-                                <th>ราคาส่งออกรวม</th>
                                 <th>ชื่อสินค้า</th>
+                                <th>ราคาส่งออกรวม</th>
+                                <th style="text-align: center;">ใบส่งออก</th>
                             </tr>
                         </div>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
+                                <td><a href="<?php echo site_url('product/product_selldetail')?>">1</a></td>
+                                <td><a href="#">12/01/2564</a></td>
+                                <td><a href="#">3</a></td>
+                                <td><a href="#">4</a></td>
+                                <td><a href="#">5</a></td>
+                                <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail')?>"><i class="glyphicon glyphicon-print"></i></a></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -57,28 +59,9 @@
                                 <td>3</td>
                                 <td>4</td>
                                 <td>5</td>
+                                <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail')?>"><i class="glyphicon glyphicon-print"></i></a></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>

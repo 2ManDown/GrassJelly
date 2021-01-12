@@ -124,11 +124,11 @@
                           <a href="<?php echo site_url('product/product_warehouse') ?>" class="auto">
                             <i class="i i-dot"></i>
 
-                            <span>รายการคลังสินค้า</span>
+                            <span>รายการสินค้าคงคลัง</span>
                           </a>
                         </li>
                         <li>
-                          <a href="<?php echo site_url('product/product_reportex') ?>" class="auto">
+                          <a href="<?php echo site_url('product/product_sellreport') ?>" class="auto">
                             <i class="i i-dot"></i>
 
                             <span>รายงานการส่งออกสินค้า</span>
@@ -245,7 +245,6 @@
                         </i>
                         <span class="font-bold">จัดการข้อมูลร้านค้า</span>
                       </a>
-
                     </li>
 
                     <div class="line dk hidden-nav-xs"></div>
@@ -290,6 +289,21 @@
                           </a>
                         </li>
                       </ul>
+                    </li>
+
+                    <div class="line dk hidden-nav-xs"></div>
+                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Setting</div>
+                    <li>
+                      <a href="<?php echo site_url('factory/factory_info')?>" class="auto">
+                        <span class="pull-right text-muted">
+                          <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i>
+                        </span>
+                        <i class="i i-settings">
+                        </i>
+                        <span class="font-bold">ตั้งค่าข้อมูลโรงงาน</span>
+                      </a>
+
                     </li>
 
                   </ul>
