@@ -66,7 +66,7 @@
                                 </footer>
 
                                 <div class="form-group" style="margin-top: 30px;">
-                                    <div class="col-sm-5 col-sm-offset-9">
+                                    <div class="col-sm-2 col-sm-offset-10 ">
                                         <button type="submit" class="btn btn-default">Cancel</button>
                                         &nbsp; &nbsp;
                                         <button type="submit" class="btn btn-primary">Save changes</button>

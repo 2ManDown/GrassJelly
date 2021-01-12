@@ -41,15 +41,17 @@
                                 <th>ชื่อสินค้า</th>
                                 <th>วันที่ผลิต</th>
                                 <th>จำนวนที่ผลิต</th>
+                                <th>จำนวนคงเหลือ</th>
                             </tr>
                         </div>
                         <tbody>
                             <tr>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">1</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">2</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">3</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">4</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">5</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">LOT00001</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">60102105205</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">เฉาก๊วยถุง</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">01/01/2021</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">1000</a></td>
+                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">900</a></td>
 
                             </tr>
 
