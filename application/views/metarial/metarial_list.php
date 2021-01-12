@@ -57,7 +57,7 @@
                                 <td>5</td>
                                 <td>6</td>
                                 <td>7</td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded">เบิกใช้วัตถุดิบ</a></td>
+                                <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded">เบิกใช้</a></td>
                             </tr>
 
                         </tbody>
