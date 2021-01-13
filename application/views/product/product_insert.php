@@ -1,3 +1,4 @@
+
 <section id="content" class="col-md-8">
     <section class="vbox">
         <section class="scrollable padder">
@@ -7,32 +8,33 @@
                     เพิ่มข้อมูลสินค้า
                 </header>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="get">
+                    <?php echo form_open('Product/product_insert_db','class="form-horizontal"')?>
+                   
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control rounded">
+                                <input type="text" name="product_code" placeholder="กรอกรหัสสินค้า" required   class="form-control rounded">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="product_name" class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ปริมาตร</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="product_volume" class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ราคาสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="product_price" class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -40,16 +42,17 @@
                             <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                                <textarea class="form-control" name="product_detail" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
-                                <select name="account" class="form-control m-b">
-                                    <option>ถุง</option>
-                                    <option>ขวด</option>
+                                <select name="product_unit" class="form-control m-b">
+                                <option value="">เลือก</option>
+                                <option value="1">ถุง</option>
+                                    <option value="2">ขวด</option>
                                 </select>
                             </div>
                         </div>
@@ -70,7 +73,7 @@
                                 <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                             </div>
                         </div>
-                    </form>
+                    <?php echo form_close()?>
                 </div>
             </section>
 

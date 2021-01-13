@@ -3,104 +3,83 @@
         <section>
             <section class="vbox">
                 <section class="scrollable padder">
-
-
-
-                    <section class="panel panel-default">
-                        <header class="panel-heading font-bold" style="font-size:  18px;">
-                            ออกใบส่งออกสินค้า
+                <section class="panel panel-default">
+                <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
+                            ออใบส่งออกสินค้า
                         </header>
-                        <div class="panel-body">
-                            <form class="form-horizontal" method="get">
-                                
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">สินค้า</label>
-                                    <div class="col-sm-7">
-                                        <select name="account" class="form-control m-b rounded">
-                                            <option value="" disabled selected>กรุณาเลือกสินค้า</option>
-                                            <option>สินค้า 1</option>
-                                            <option>สินค้า 2</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ผู้รับสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <select name="account" class="form-control m-b">
-                                            <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
-                                            <option>ศูนย์กระจาย 1</option>
-                                            <option>ศูนย์กระจาย 2</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ชื่อสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control">
-                                        <!--<span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>-->
-                                    </div>
-                                </div>
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">ลอตส่งออกสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control" id="input-id-1">
-                                    </div>
-                                </div>
-
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">วันที่ส่งออก</label>
-                                    <div class="col-sm-7">
-                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">จำนวนส่งออกสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <input type="number" class="form-control" id="input-id-1">
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ราคาต่อหน่วย</label>
-                                    <div class="col-sm-7">
-                                        <div class="input-group m-b">
-                                            <span class="input-group-addon">BTH</span>
-                                            <input type="number" class="form-control">
-                                            <span class="input-group-addon">.00</span>
+                        <form data-validate="parsley" action="#">
+                            <section class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="form-group pull-in clearfix">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>สินค้า</label>
+                                            <select name="account" class="form-control m-b ">
+                                                <option value="" disabled selected>กรุณาเลือกสินค้า</option>
+                                                <option>สินค้า 1</option>
+                                                <option>สินค้า 2</option>
+                                            </select>
                                         </div>
-
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>ลอตส่งออกสินค้า</label>
+                                            <input type="text" class="form-control" id="input-id-1">
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">ราคารวม</label>
-                                    <div class="col-sm-7">
-                                        <input type="number" class="form-control" id="input-id-1" readonly>
+                                    <div class="form-group pull-in clearfix">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                        <label>ผู้รับสินค้า</label>
+                                            <select name="account" class="form-control m-b ">
+                                                <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
+                                                <option>ร้าน 1</option>
+                                                <option>ร้าน 2</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>จำนวนที่ส่งออก</label>
+                                            <input type="email" class="form-control" placeholder="Enter email" data-required="true">
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-6 col-sm-offset-5">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                        &nbsp; &nbsp;
-                                        <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
+                                    <div class="form-group pull-in clearfix">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>ชื่อสินค้า</label>
+                                            <input type="text" class="form-control" id="input-id-1">
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>ราคาต่อหน่วย</label>
+                                            <div class="input-group m-b">
+                                                <span class="input-group-addon">BTH</span>
+                                                <input type="number" class="form-control">
+                                                <span class="input-group-addon">.00</span>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="form-group pull-in clearfix">
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>วันที่ส่งออก</label>
+                                            <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
+                                            <label>ราคารวม</label>
+                                            <input type="number" class="form-control" id="input-id-1" readonly>
+                                        </div>
+                                    </div>
+                                    <footer class="panel-footer text-right bg-light lter">
+                                        <button type="submit" class="btn btn-primary btn-s-xs">Submit</button>
+                                    </footer>
                                 </div>
-                            </form>
-                        </div>
+                            </section>
+                        </form>
                     </section>
+
+
+                    
                 </section>
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>

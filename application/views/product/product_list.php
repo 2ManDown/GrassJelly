@@ -1,19 +1,19 @@
 <section id="content">
   <section class="vbox">
     <section class="scrollable padder">
-
+      <?php foreach($product_list as $product_list){ ?>
       <div class="col-md-3" style="margin-top: 20px;">
         <a href="<?php echo site_url('product/product_detail') ?>">
           <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g3.jpg" class="img img-responsive">
             <div class="profile-content">
-              <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
+              <div class="profile-name" style="font-size: 30px;"><?php echo $product_list['product_name']?>
               </div>
-              <div class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</div>
+              <div class="profile-description"><?php echo $product_list['product_detail']?></div>
               <div class="row">
                 <div class="col-xs-7">
                   <div class="profile-overview">
                     <p>ปริมาตร</p>
-                    <h4>300 มล.</h4>
+                    <h4><?php echo $product_list['product_volume']?> <?php echo $product_list['product_unit']?></h4>
                   </div>
                 </div>
                 <div class="col-xs-3">
@@ -27,6 +27,7 @@
           </div>
         </a>
       </div>
+      <?php } ?>
 
 
       <div class="col-md-3" style="margin-top: 20px;">

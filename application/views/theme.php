@@ -234,7 +234,7 @@
                       <li>
                         <a href="<?php echo site_url('product/product_import') ?>" class="auto">
                         <i class="i i-dot"></i>
-                          <span>การนำเข้าสินค้า</span>
+                          <span>นำเข้าสินค้า</span>
                         </a>
                       </li>
                       <li>
