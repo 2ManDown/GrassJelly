@@ -9,13 +9,12 @@
                             เพิ่มข้อมูลการผลิตสินค้า
                         </header>
                         <form data-validate="parsley" action="#">
-                            <section class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="form-group pull-in clearfix">
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-4">
                                             <label>ลอตการผลิตสินค้า</label>
-                                            <input type="text" class="form-control" id="input-id-1">
+                                            <input type="text" class="form-control" id="input-id-1" required placeholder="ป้อนลอตผลิคสินค้า">
 
                                         </div>
                                         <div class="col-sm-1"></div>
@@ -38,7 +37,7 @@
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-4">
                                             <label>จำนวนที่ผลิต</label>
-                                            <input type="email" class="form-control" placeholder="Enter email" data-required="true">
+                                            <input type="email" class="form-control" placeholder="จำนวนผลิต" required>
                                         </div>
                                     </div>
                                     <div class="form-group pull-in clearfix">
@@ -69,13 +68,12 @@
                                             <input type="number" class="form-control" id="input-id-1" readonly>
                                         </div>
                                     </div>
-                                    <footer class="panel-footer text-right bg-light lter">
-                                        <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                                    </footer>
+                                    <div class="text-right">
+                                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                                </div>
                                 </div>
                             </section>
                         </form>
-                    </section>
 
                 </section>
             </section>
