@@ -1,4 +1,4 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="hbox stretch">
         <section>
             <section class="vbox">
@@ -64,8 +64,10 @@
                                         </div>
                                     </div>
                                 </footer>
-
-                                <button type="submit" class="btn btn-primary" style="margin-top: 30px; ">Save changes</button>
+                                <div class="col-sm-12">
+                                <div class="col-sm-11"></div>
+                                <button type="submit" class="btn btn-primary" style="margin-top: 30px; padding: 8px 30px; ">บันทึก</button>
+                                </div>
                                 <!-- <div class="form-group" >
                                     <div class="col-sm-3 col-sm-offset-10" style="margin-top: 30px;">
                                         <button type="submit" class="btn btn-primary">Save changes</button>

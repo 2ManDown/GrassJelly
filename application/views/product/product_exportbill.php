@@ -1,11 +1,11 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="hbox stretch">
         <section>
             <section class="vbox">
                 <section class="scrollable padder">
                 <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
-                            ออใบส่งออกสินค้า
+                            ออกใบส่งออกสินค้า
                         </header>
                         <form data-validate="parsley" action="#">
                             <section class="panel panel-default">
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <footer class="panel-footer text-right bg-light lter">
-                                        <button type="submit" class="btn btn-primary btn-s-xs">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                     </footer>
                                 </div>
                             </section>

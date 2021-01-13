@@ -1,4 +1,4 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder" style="margin: 0px; padding: 0px;">
             <section class="panel panel-default">
