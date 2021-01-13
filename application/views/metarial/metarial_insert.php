@@ -3,97 +3,77 @@
         <section>
             <section class="vbox">
                 <section class="scrollable padder">
-
                     <section class="panel panel-default">
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
-                            เพิ่มข้อมูลการนำเข้าวัตถุดิบ
+                            นำเข้าวัตถุดิบ
                         </header>
-                        <div class="panel-body">
-                            <form class="form-horizontal" method="get">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">รหัสสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <input type="number" class="form-control rounded">
-
+                        <form data-validate="parsley" action="#">
+                            <div class="panel-body">
+                                <div class="form-group pull-in clearfix">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>รหัสวัตถุดิบ</label>
+                                        <input type="text" class="form-control" placeholder="รหัสวัตถุดิบ" required>
                                     </div>
-                                </div>
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ชื่อสินค้า</label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control">
-                                        <!--<span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>-->
-                                    </div>
-                                </div>
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">ลอตนำเข้าวัตถุดิบ</label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control" id="input-id-1">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ปริมาตร</label>
+                                        <input type="text" class="form-control" placeholder="ปริมาตร" required>
                                     </div>
                                 </div>
 
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ประเภทวัตถุดิบ</label>
-                                    <div class="col-sm-7">
-                                        <select name="account" class="form-control m-b">
-                                            <option value="" disabled selected>กรุณาเลือกประเภทวัตถุดิบ</option>
-                                            <option>วัตถุแต่งรส</option>
-                                            <option>วัตถุแต่งกลิ่น</option>
-                                            <option>วัตถุแต่งสี</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <div class="form-group pull-in clearfix">
 
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">วันที่นำเข้าวัตถุดิบ</label>
-                                    <div class="col-sm-7">
-                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">จำนวนนำเข้าวัตถุดิบ</label>
-                                    <div class="col-sm-7">
-                                        <input type="number" class="form-control" id="input-id-1">
-                                    </div>
-                                </div>
-
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">ราคาต่อหน่วย</label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ราคาต่อหน่วย</label>
                                         <div class="input-group m-b">
                                             <span class="input-group-addon">BTH</span>
                                             <input type="number" class="form-control">
                                             <span class="input-group-addon">.00</span>
                                         </div>
-
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>หน่วยนับ</label>
+                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required>
                                     </div>
                                 </div>
 
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="input-id-1">ราคารวม</label>
-                                    <div class="col-sm-7">
-                                        <input type="number" class="form-control" id="input-id-1" readonly>
+                                <div class="form-group pull-in clearfix">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ราคารวม</label>
+                                        <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>จำนวนนำเข้า</label>
+                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required readonly>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group pull-in clearfix">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>วันที่นำเข้า</label>
+                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>วันหมดอายุ</label>
+                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
                                     </div>
                                 </div>
 
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-5">
-                                        <button type="submit" class="btn btn-primary">บันทึก</button>
-                                        &nbsp; &nbsp;
-                                        <button type="submit" class="btn btn-default">ยกเลิก</button>
-                                    </div>
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
                     </section>
+                    </form>
                 </section>
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
