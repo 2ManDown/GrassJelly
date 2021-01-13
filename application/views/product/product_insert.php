@@ -1,5 +1,5 @@
 
-<section id="content" class="col-md-8">
+<section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
 
@@ -13,28 +13,28 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" name="product_code" placeholder="กรอกรหัสสินค้า" required   class="form-control rounded">
+                                <input type="text" name="product_code" placeholder="กรอกรหัสสินค้า" required class="form-control rounded">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" name="product_name" class="form-control">
+                                <input type="text" name="product_name" placeholder="กรอกชื่อสินค้า" required class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ปริมาตร</label>
                             <div class="col-sm-7">
-                                <input type="text" name="product_volume" class="form-control">
+                                <input type="text" name="product_volume" placeholder="กรอกปริมาตร" required class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ราคาสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" name="product_price" class="form-control">
+                                <input type="text" name="product_price" placeholder="กรอกราคาสินค้า" required class="form-control">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -42,14 +42,14 @@
                             <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" name="product_detail" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                                <textarea class="form-control" name="product_detail" rows="6" data-minwords="6" data-required="true" placeholder="เพิ่มรายละเอียดโดยย่อ" required style="resize: none;"></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
-                                <select name="product_unit" class="form-control m-b">
+                                <select name="product_unit" class="form-control m-b" required>
                                 <option value="">เลือก</option>
                                 <option value="1">ถุง</option>
                                     <option value="2">ขวด</option>
@@ -66,11 +66,11 @@
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-5 col-sm-offset-4">
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary" style="padding: 5px 25px;">บันทึก</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-success">ดูตัวอย่าง</button>
+                                <button type="submit" class="btn btn-success" style="padding: 5px 20px;">ดูตัวอย่าง</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
+                                <button type="submit" class="btn btn-default" onclick="goBack()" style="padding: 5px 23px;">ยกเลิก</button>
                             </div>
                         </div>
                     <?php echo form_close()?>

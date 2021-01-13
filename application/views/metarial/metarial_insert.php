@@ -1,10 +1,8 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="hbox stretch">
         <section>
             <section class="vbox">
                 <section class="scrollable padder">
-
-
 
                     <section class="panel panel-default">
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
@@ -88,9 +86,9 @@
                                 <div class="line line-dashed b-b line-lg pull-in"></div>
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-5">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary">บันทึก</button>
                                         &nbsp; &nbsp;
-                                        <button type="submit" class="btn btn-default">Cancel</button>
+                                        <button type="submit" class="btn btn-default">ยกเลิก</button>
                                     </div>
                                 </div>
                             </form>

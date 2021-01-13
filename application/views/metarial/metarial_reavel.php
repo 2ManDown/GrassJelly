@@ -1,4 +1,4 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="hbox stretch">
         <section>
             <section class="vbox">
@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
                                     <footer class="panel-footer text-right bg-light lter">
-                                        <button type="submit" class="btn btn-primary btn-s-xs">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                     </footer>
                                 </div>
                             </section>
