@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <footer class="panel-footer text-right bg-light lter">
-                                <button type="submit" class="btn btn-primary btn-s-xs">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                             </footer>
                         </div>
                     </section>

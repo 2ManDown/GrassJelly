@@ -1,4 +1,4 @@
-<section id="content">
+<section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder" style="margin: 0px; padding: 0px;">
             <section class="panel panel-default">
@@ -57,7 +57,7 @@
                                 <td>5</td>
                                 <td>6</td>
                                 <td>7</td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded">เบิกใช้</a></td>
+                                <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
                             </tr>
 
                         </tbody>
