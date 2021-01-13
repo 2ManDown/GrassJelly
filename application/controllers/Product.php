@@ -6,8 +6,26 @@ class Product extends CI_Controller {
 
 	public function product_list()
 	{
+		//get ข้อมูลจาก table
+		$data['product_list'] = $this->Product_model->product_list();
+
+
 		$data['page'] = "product/product_list";
 		$this->load->view('theme',$data);
+	}
+	public function product_insert_db()
+	{
+		$input = array(
+			'product_code' => $this->input->post('product_code'),
+			'product_name' => $this->input->post('product_name'),
+			'product_detail' => $this->input->post('product_detail'),
+			'product_volume' => $this->input->post('product_volume'),
+			'product_price' => $this->input->post('product_price'),
+			'product_unit' => $this->input->post('product_unit'),
+		);
+		$this->Product_model->product_insert_db($input);
+		redirect('product/product_list');
+
 	}
 
 	public function product_insert()
