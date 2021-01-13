@@ -7,71 +7,70 @@
                     เพิ่มข้อมูลพนักงาน
                 </header>
                 <form data-validate="parsley" action="#">
-                    <section class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>รหัสบัตรประชานชน</label>
 
-                                    <input type="text" class="form-control ">
+                    <div class="panel-body">
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>รหัสบัตรประชานชน</label>
 
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>อายุ</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>ชื่อ - สกุล</label>
-                                    <input type="text" class="form-control" id="input-id-1">
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>เบอร์โทรศัพท์</label>
-                                    <input type="text" data-type="phone" class="form-control" placeholder="xxx-xxx-xxxx">
-                                </div>
-                            </div>
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>เพศ</label>
-                                    <select name="account" class="form-control m-b">
-                                        <option value="" disabled selected>กรุณาเลือกเพศ</option>
-                                        <option>ชาย</option>
-                                        <option>หญิง</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>อีเมล</label>
-                                    <input type="text" class="form-control" data-type="email" data-required="true" placeholder="อีเมล">
-                                </div>
-                            </div>
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>วันเดือนปีเกิด</label>
-                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
+                                <input type="text" class="form-control ">
 
-                                    <label>ที่อยู่</label>
-                                    <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;"></textarea>
-                                </div>
                             </div>
-                            <footer class="panel-footer text-right bg-light lter">
-                                <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                            </footer>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>อายุ</label>
+                                <input type="text" class="form-control ">
+                            </div>
                         </div>
-                    </section>
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>ชื่อ - สกุล</label>
+                                <input type="text" class="form-control" id="input-id-1">
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>เบอร์โทรศัพท์</label>
+                                <input type="text" data-type="phone" class="form-control" placeholder="xxx-xxx-xxxx">
+                            </div>
+                        </div>
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>เพศ</label>
+                                <select name="account" class="form-control m-b">
+                                    <option value="" disabled selected>กรุณาเลือกเพศ</option>
+                                    <option>ชาย</option>
+                                    <option>หญิง</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>อีเมล</label>
+                                <input type="text" class="form-control" data-type="email" data-required="true" placeholder="อีเมล">
+                            </div>
+                        </div>
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+                                <label>วันเดือนปีเกิด</label>
+                                <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-4">
+
+                                <label>ที่อยู่</label>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                        </div>
+                    </div>
+
                 </form>
             </section>
-
         </section>
 
     </section>

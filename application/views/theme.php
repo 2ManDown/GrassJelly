@@ -53,6 +53,27 @@
         </div>
       </form>
 
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-left">
+              <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
+            </span>
+            John.Smith <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">
+            <li>
+              <span class="arrow top"></span>
+              <a href="<?php echo site_url('user/user_profile') ?>">Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
     </header>
     <section>
       <section class="hbox stretch">
@@ -61,6 +82,34 @@
           <section class="vbox">
             <section class="w-f scrollable">
               <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+                <div class="clearfix wrapper dk nav-user hidden-xs">
+                  <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="thumb avatar pull-left m-r">
+                        <img src="<?php echo base_url() ?>asset/images/a0.png" class="dker" alt="...">
+                        <i class="on md b-black"></i>
+                      </span>
+                      <span class="hidden-nav-xs clear">
+                        <span class="block m-t-xs">
+                          <strong class="font-bold text-lt">John.Smith</strong>
+                          <b class="caret"></b>
+                        </span>
+                        <span class="text-muted text-xs block">ADMIN</span>
+                      </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                      <li>
+                        <span class="arrow top hidden-nav-xs"></span>
+                        <a href="<?php echo site_url('user/user_profile') ?>">Profile</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
 
                 <!-- nav -->
                 <nav class="nav-primary hidden-xs">
@@ -233,7 +282,7 @@
                     <ul class="nav dk">
                       <li>
                         <a href="<?php echo site_url('product/product_import') ?>" class="auto">
-                        <i class="i i-dot"></i>
+                          <i class="i i-dot"></i>
                           <span>นำเข้าสินค้า</span>
                         </a>
                       </li>
