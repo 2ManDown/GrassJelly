@@ -238,8 +238,8 @@
                     <li>
                       <a href="<?php echo site_url('supplyer/supplyer_list')?>" class="auto">
                         <span class="pull-right text-muted">
-                          <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i>
+                          <!-- <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i> -->
                         </span>
                         <i class="i i-lab icon">
                         </i>
@@ -296,8 +296,8 @@
                     <li>
                       <a href="<?php echo site_url('factory/factory_info')?>" class="auto">
                         <span class="pull-right text-muted">
-                          <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i>
+                          <!-- <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i> -->
                         </span>
                         <i class="i i-settings">
                         </i>
