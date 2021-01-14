@@ -52,6 +52,8 @@ class Product extends CI_Controller {
 	
 	public function product_detail()
 	{
+		$data['product_list'] = $this->Product_model->product_detail();
+
 		$data['page'] = "product/product_detail";
 		$this->load->view('theme',$data);
 	}
