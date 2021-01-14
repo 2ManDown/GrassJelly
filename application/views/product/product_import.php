@@ -23,37 +23,12 @@
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-4">
-                                        <label>ราคา</label>
-                                        <div class="input-group m-b">
-                                            <span class="input-group-addon">BTH</span>
-                                            <input type="number" class="form-control">
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
-                                    </div>
+
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ปริมาตร</label>
                                         <input type="text" class="form-control" placeholder="ปริมาตร" required>
                                     </div>
-                                </div>
-
-                                <div class="form-group pull-in clearfix">
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-4">
-                                        <label>ราคาต่อหน่วย</label>
-                                        <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
-                                    </div>
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-4">
-                                        <label>จำนวนนำเข้า</label>
-                                        <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>หน่วยนับ</label>
@@ -63,22 +38,35 @@
                                             <option>ถุง</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <div class="form-group pull-in clearfix">
+                                <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>จำนวนนำเข้า</label>
+                                        <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ราคาต่อหน่วย</label>
+                                        <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group pull-in clearfix">
+                                    
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>วันที่นำเข้า</label>
                                         <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
                                     </div>
-
-                                </div>
-
-                                <div class="form-group pull-in clearfix">
-                                    <div class="col-sm-6"></div>
+                                    <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ราคารวม</label>
                                         <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
                                     </div>
                                 </div>
-
+                                
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                 </div>

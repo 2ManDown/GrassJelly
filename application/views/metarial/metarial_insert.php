@@ -35,9 +35,10 @@
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>หน่วยนับ</label>
-                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+                                        <label>จำนวนนำเข้า</label>
+                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required>
                                     </div>
+
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
@@ -46,12 +47,12 @@
                                         <label>ราคารวม</label>
                                         <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
                                     </div>
+
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>จำนวนนำเข้า</label>
-                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required>
+                                        <label>หน่วยนับ</label>
+                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required>
                                     </div>
-
                                 </div>
 
 
@@ -61,11 +62,11 @@
                                         <label>วันที่นำเข้า</label>
                                         <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
                                     </div>
-                                    <div class="col-sm-1"></div>
+<!--                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>วันหมดอายุ</label>
                                         <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="text-right">
