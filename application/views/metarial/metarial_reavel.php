@@ -16,8 +16,8 @@
                                         <label>วัตถุดิบ</label>
                                         <select name="account" class="form-control m-b ">
                                             <option value="" disabled selected>กรุณาเลือกวัตถุดิบ</option>
-                                            <option>วัตถุดิบ 1</option>
-                                            <option>วัตถุดิบ 2</option>
+                                            <option value="">วัตถุดิบ 1</option>
+                                            <option value="">วัตถุดิบ 2</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-1"></div>

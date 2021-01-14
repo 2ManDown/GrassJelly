@@ -13,12 +13,16 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>รหัสสินค้า</label>
-                                        <input type="text" class="form-control" placeholder="รหัสสินค้า" required>
+                                        <select name="account" class="form-control m-b ">
+                                            <option value="" disabled selected>กรุณาเลือกสินค้า</option>
+                                            <option>สินค้า 1</option>
+                                            <option>สินค้า 2</option>
+                                        </select>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ชื่อสินค้า</label>
-                                        <input type="text" class="form-control" placeholder="ชื่อสินค้า" required>
+                                        <input type="text" class="form-control" placeholder="ชื่อสินค้า" required readonly>
                                     </div>
                                 </div>
 
@@ -27,16 +31,12 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ปริมาตร</label>
-                                        <input type="text" class="form-control" placeholder="ปริมาตร" required>
+                                        <input type="text" class="form-control" placeholder="ปริมาตร" required readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>หน่วยนับ</label>
-                                        <select name="account" class="form-control m-b ">
-                                            <option value="" disabled selected>กรุณาเลือกหน่วยนับ</option>
-                                            <option>ขวด</option>
-                                            <option>ถุง</option>
-                                        </select>
+                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required readonly>
                                     </div>
                                 </div>
 
@@ -66,7 +66,7 @@
                                         <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
                                     </div>
                                 </div>
-                                
+
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                 </div>

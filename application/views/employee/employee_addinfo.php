@@ -41,8 +41,8 @@
                                 <label>เพศ</label>
                                 <select name="account" class="form-control m-b">
                                     <option value="" disabled selected>กรุณาเลือกเพศ</option>
-                                    <option>ชาย</option>
-                                    <option>หญิง</option>
+                                    <option value="ชาย">ชาย</option>
+                                    <option value="หญิง">หญิง</option>
                                 </select>
                             </div>
                             <div class="col-sm-1"></div>

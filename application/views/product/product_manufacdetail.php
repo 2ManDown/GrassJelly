@@ -69,8 +69,8 @@
                             <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
                                 <select name="account" class="form-control m-b">
-                                    <option>ถุง</option>
-                                    <option>ขวด</option>
+                                    <option value="ถุง">ถุง</option>
+                                    <option value="ขวด">ขวด</option>
                                 </select>
                             </div>
                         </div>

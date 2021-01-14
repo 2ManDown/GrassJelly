@@ -8,8 +8,7 @@ class Product extends CI_Controller {
 	{
 		//get ข้อมูลจาก table
 		$data['product_list'] = $this->Product_model->product_list();
-
-
+		
 		$data['page'] = "product/product_list";
 		$this->load->view('theme',$data);
 	}
@@ -25,7 +24,6 @@ class Product extends CI_Controller {
 		);
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');
-
 	}
 
 	public function product_insert()

@@ -3,7 +3,7 @@
     <section class="scrollable padder">
       <?php foreach($product_list as $product_list){ ?>
       <div class="col-md-3" style="margin-top: 20px;">
-        <a href="<?php echo site_url('product/product_detail') ?>">
+        <a href="<?php $carddata= $product_list['product_id'] ?>">
           <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g3.jpg" class="img img-responsive">
             <div class="profile-content">
               <div class="profile-name" style="font-size: 30px;"><?php echo $product_list['product_name']?>
@@ -36,7 +36,7 @@
       <?php } ?>
 
 
-      <div class="col-md-3" style="margin-top: 20px;">
+<!--       <div class="col-md-3" style="margin-top: 20px;">
         <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g4.jpg" class="img img-responsive">
           <div class="profile-content">
             <div class="profile-name" style="font-size: 30px;">เฉาก๊วย
@@ -106,7 +106,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
       <div class="col-md-3" style="margin-top: 20px;">
