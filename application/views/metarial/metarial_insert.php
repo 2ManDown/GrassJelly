@@ -49,7 +49,7 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>จำนวนนำเข้า</label>
-                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required readonly>
+                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required>
                                     </div>
 
                                 </div>
