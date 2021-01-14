@@ -10,16 +10,22 @@
               </div>
               <div class="profile-description"><?php echo $product_list['product_detail']?></div>
               <div class="row">
-                <div class="col-xs-7">
+                <div class="col-xs-4">
                   <div class="profile-overview">
                     <p>ปริมาตร</p>
-                    <h4><?php echo $product_list['product_volume']?> <?php echo $product_list['product_unit']?></h4>
+                    <h4><?php echo $product_list['product_volume']?> </h4>
                   </div>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                   <div class="profile-overview">
                     <p>ราคา</p>
-                    <h4>20.</h4>
+                    <h4><?php echo $product_list['product_price']?>. </h4>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="profile-overview">
+                    <p>หน่วยนับ</p>
+                    <h4><?php echo $product_list['product_unit']?> </h4>
                   </div>
                 </div>
               </div>
