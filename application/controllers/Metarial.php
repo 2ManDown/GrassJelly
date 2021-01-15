@@ -9,7 +9,12 @@ class Metarial extends CI_Controller {
 	{
 		$data['page'] = "metarial/metarial_insert";
 		$this->load->view('theme',$data);
-    }
+	}
+	public function metarial_addinfo()
+	{
+		$data['page'] = "metarial/metarial_addinfo";
+		$this->load->view('theme',$data);
+	}
     public function metarial_reavlist()
 	{
 		$data['page'] = "metarial/metarial_reavlist";
