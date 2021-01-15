@@ -47,7 +47,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันหมดอายุ</label>
-                                    <input name="metarial_expdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                    <input name="metarial_expdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
                                 </div>
                             </div>
 

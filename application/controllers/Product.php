@@ -104,6 +104,7 @@ class Product extends CI_Controller
 		redirect('product/product_list');
 	}
 
+	
 /* 	public function product_insert_manufac(){
 		$input = array(
 
