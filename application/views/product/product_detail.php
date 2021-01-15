@@ -1,93 +1,94 @@
 <section id="content" class="col-md-12">
     <section class="vbox">
-        <section class="scrollable padder"></section>
-        <?php foreach ($product_list as $product_list) { ?>
-            <section class="panel panel-default">
-                <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    ข้อมูลสินค้า
-                </header>
-                <div class="panel-body">
+        <section class="scrollable padder">
+            <?php foreach ($product_list as $product_list) { ?>
+                <section class="panel panel-default">
+                    <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
+                        ข้อมูลสินค้า
+                    </header>
+                    <div class="panel-body">
 
-                    <form class="form-horizontal" method="get">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">รหัสสินค้า</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control rounded" value="<?php echo $product_list['product_code'] ?>">
+                        <form class="form-horizontal" method="get">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">รหัสสินค้า</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control rounded" value="<?php echo $product_list['product_code'] ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ชื่อสินค้า</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" value="<?php echo $product_list['product_name'] ?>">
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">ชื่อสินค้า</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="<?php echo $product_list['product_name'] ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ปริมาตร</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" value="<?php echo $product_list['product_volume'] ?>">
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">ปริมาตร</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="<?php echo $product_list['product_volume'] ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ราคาสินค้า</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" value="<?php echo $product_list['product_price'] ?>">
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">ราคาสินค้า</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" value="<?php echo $product_list['product_price'] ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
-                            <div class="col-sm-7">
-                                <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"><?php echo $product_list['product_detail'] ?></textarea>
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
+                                <div class="col-sm-7">
+                                    <!-- <input type="text" class="form-control"> -->
+                                    <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"><?php echo $product_list['product_detail'] ?></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">หน่วยนับ</label>
-                            <div class="col-sm-7">
-                                <select name="account" class="form-control m-b">
-                                    <option value="ถุง">ถุง</option>
-                                    <option value="ขวด">ขวด</option>
-                                </select>
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">หน่วยนับ</label>
+                                <div class="col-sm-7">
+                                    <select name="account" class="form-control m-b">
+                                        <option value="ถุง">ถุง</option>
+                                        <option value="ขวด">ขวด</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">เลือกรูปสินค้า</label>
-                            <div class="col-sm-6">
-                                <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">เลือกรูปสินค้า</label>
+                                <div class="col-sm-6">
+                                    <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                                </div>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <div class="col-sm-8 col-sm-offset-3">
-                                <button type="submit" class="btn btn-primary">แก้ไขข้อมูลสินค้า</button>
-                                &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-success">ดูตัวอย่าง</button>
-                                &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
-                                &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
+                            <div class="line line-dashed b-b line-lg pull-in"></div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-3">
+                                    <button type="submit" class="btn btn-primary">แก้ไขข้อมูลสินค้า</button>
+                                    &nbsp; &nbsp;
+                                    <button type="submit" class="btn btn-success">ดูตัวอย่าง</button>
+                                    &nbsp; &nbsp;
+                                    <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
+                                    &nbsp; &nbsp;
+                                    <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
+                                </div>
                             </div>
-                        </div>
 
-                    </form>
-                </div>
-            </section>
-        <?php } ?>
+                        </form>
+                    </div>
+
+                </section>
+            <?php } ?>
+        </section>
+
     </section>
-
-</section>
-<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
 
 
 <!-- Image -->
 
-<section id="content" class="col-md-4">
+<section id="content" class="col-md-5">
     <section class="vbox">
         <section class="scrollable padder">
 

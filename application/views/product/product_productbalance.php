@@ -1,13 +1,16 @@
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
+
+
+
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายการคลังสินค้า
+                    รายการสินค้าคงคลัง
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('product/product_manufac') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลการผลิตสินค้า</a>
+                        <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลการผลิตสินค้า</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -36,25 +39,29 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>ลอตสินค้า</th>
+                                <th>รหัสการผลิต</th>
                                 <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
-                                <th>วันที่ผลิต</th>
                                 <th>จำนวนที่ผลิต</th>
+                                <th>วันที่ผลิต</th>
+                                <th>ราคาสุทธิ</th>
                                 <th>จำนวนคงเหลือ</th>
                             </tr>
                         </div>
                         <tbody>
-                            <tr>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">LOT00001</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">60102105205</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">เฉาก๊วยถุง</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">01/01/2021</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">1000</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail')?>">900</a></td>
+                            <?php foreach ($product_productbalance as $product_productbalance) { ?>
+                            
+                                <tr>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['product_code'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_balance'] ?></a></td>
 
-                            </tr>
-
+                                </tr>
+                            <?php } ?>
 
                         </tbody>
                     </table>

@@ -1,13 +1,11 @@
+
 <section id="content" class="col-md-12">
   <section class="vbox">
     <section class="scrollable padder">
-      <?php foreach ($product_list as $product_list) { ?>
+    <?php foreach ($product_list as $product_list) { ?>
         <div class="col-md-3" style="margin-top: 20px;">
 
-         <?php $cardid= $product_list['product_id']?> 
-
-          <a href="<?php //$this->load->view('product/product_detail',$cardid) ?>">
-
+          <a href="<?php echo site_url('product/product_detail/').$product_list['product_code']?>">
             <div class="profile-card-4 text-center"><img src="<?php echo base_url() ?>asset/images/g3.jpg" class="img img-responsive">
               <div class="profile-content">
                 <div class="profile-name" style="font-size: 30px;"><?php echo $product_list['product_name'] ?>
@@ -37,8 +35,9 @@
             </div>
           </a>
         </div>
-      <?php } ?>
-
+        
+        
+        <?php } ?>
 
       <div class="col-md-3" style="margin-top: 20px;">
         <a href="<?php echo site_url('product/product_insert') ?>">
@@ -48,7 +47,7 @@
         </a>
       </div>
 
-
+     
 
     </section>
   </section>
