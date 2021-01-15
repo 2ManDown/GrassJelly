@@ -32,11 +32,11 @@ class Product extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 
-	public function product_warehouse()
+	public function product_productbalance()
 	{
-		$data['product_warehouse'] = $this->Product_model->product_warehouse();
+		$data['product_productbalance'] = $this->Product_model->product_productbalance();
 
-		$data['page'] = "product/product_warehouse";
+		$data['page'] = "product/product_productbalance";
 		$this->load->view('theme',$data);
 	}
 

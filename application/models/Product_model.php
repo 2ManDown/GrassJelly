@@ -20,7 +20,7 @@ class Product_model extends CI_Controller
         $this->db->insert('gj_product', $input);
     }
 
-    public function product_warehouse()
+    public function product_productbalance()
     {
         $query = $this->db->get('gj_manufac');
         return $query->result_array();
@@ -29,11 +29,6 @@ class Product_model extends CI_Controller
     public function product_manufacinsert()
     {
         $query = $this->db->get('gj_manufac');
-        return $query->result_array();
-    }
-
-    public function product_productbalance(){
-        $query = $this->db->get('gj_productbalance');
         return $query->result_array();
     }
 }
