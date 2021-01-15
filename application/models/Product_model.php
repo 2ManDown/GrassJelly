@@ -50,4 +50,19 @@ class Product_model extends CI_Controller
     {
         $this->db->insert('gj_product', $input);
     }
+
+
+
+
+    /* Metarial_model */
+    /* INSERT */
+    public function metarial_insert_db($input)
+    {
+        $this->db->insert('gj_metarial', $input);
+    }
+
+
+
+
+
 }
