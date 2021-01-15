@@ -13,63 +13,58 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>รหัสสินค้า</label>
-                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required>
+                                        <select name="account" class="form-control m-b ">
+                                            <option value="" disabled selected>กรุณาเลือกสินค้า</option>
+                                            <option>สินค้า 1</option>
+                                            <option>สินค้า 2</option>
+                                        </select>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ชื่อสินค้า</label>
-                                        <input type="text" class="form-control" placeholder="ชื่อสินค้า" required>
+                                        <input type="text" class="form-control" placeholder="ชื่อสินค้า" required readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
+
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ปริมาตร</label>
-                                        <input type="text" class="form-control" placeholder="ปริมาตร" required>
+                                        <input type="text" class="form-control" placeholder="ปริมาตร" required readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>ราคา</label>
-                                        <div class="input-group m-b">
-                                            <span class="input-group-addon">BTH</span>
-                                            <input type="number" class="form-control">
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
+                                        <label>หน่วยนับ</label>
+                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>ราคาต่อหน่วย</label>
+                                        <label>จำนวนนำเข้า</label>
                                         <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>หน่วยนับ</label>
-                                        <select name="account" class="form-control m-b ">
-                                            <option value="" disabled selected>กรุณาเลือกหน่วยนับ</option>
-                                            <option>ขวด</option>
-                                            <option>ถุง</option>
-                                        </select>
+                                        <label>ราคาต่อหน่วย</label>
+                                        <input type="text" class="form-control" placeholder="ราคาต่อหน่วย" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
-
-                                    <div class="col-sm-1"></div>
-                                    <div class="col-sm-4">
-                                        <label>ราคารวม</label>
-                                        <input type="text" class="form-control" placeholder="ราคารวม" required>
-                                    </div>
-
+                                    
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>วันที่นำเข้า</label>
                                         <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
                                     </div>
-
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-4">
+                                        <label>ราคารวม</label>
+                                        <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
+                                    </div>
                                 </div>
 
                                 <div class="text-right">

@@ -50,9 +50,9 @@
                             <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
                                 <select name="product_unit" class="form-control m-b" required>
-                                <option value="">เลือก</option>
-                                <option value="1">ถุง</option>
-                                    <option value="2">ขวด</option>
+                                <option value="" disabled selected>กรุณาเลือกหน่วยนับ</option>
+                                <option value="ถุง">ถุง</option>
+                                    <option value="ขวด">ขวด</option>
                                 </select>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
 
 <!-- Image -->
 
-<section id="content" class="col-md-4">
+<section id="content" class="col-md-5">
     <section class="vbox">
         <section class="scrollable padder">
 
