@@ -170,7 +170,7 @@
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('product/product_warehouse') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>รายการสินค้าคงคลัง</span>
