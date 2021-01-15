@@ -8,7 +8,7 @@
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('metarial/metarial_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลวัตถุดิบ</a> 
+                        <a href="<?php echo site_url('metarial/metarial_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลวัตถุดิบ</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -45,22 +45,21 @@
                                 <th>ประเภท</th>
                                 <th>วันหมดอายุ</th>
                                 <th>จำนวนคงเหลือ</th>
-                                <th></th>
                             </tr>
                         </div>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
-                            </tr>
-
-                        </tbody>
+                        <?php foreach ($metarial_list as $metarial_list) { ?>
+                            <tbody>
+                                <tr>
+                                    <td><?php echo $metarial_list['metarial_code'] ?></td>
+                                    <td><?php echo $metarial_list['metarial_name'] ?></td>
+                                    <td><?php echo $metarial_list['metarial_volume'] ?></td>
+                                    <td><?php echo $metarial_list['metarial_price'] ?></td>
+                                    <td><?php echo $metarial_list['metarial_unit'] ?></td>
+                                    <td><?php echo $metarial_list['metarial_expdate'] ?></td>
+                                    <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
+                                </tr>
+                            </tbody>
+                        <?php } ?>
                     </table>
                 </div>
 
