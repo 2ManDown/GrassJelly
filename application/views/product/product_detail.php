@@ -88,7 +88,7 @@
 
 <!-- Image -->
 
-<section id="content" class="col-md-4">
+<section id="content" class="col-md-5">
     <section class="vbox">
         <section class="scrollable padder">
 

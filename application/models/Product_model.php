@@ -10,19 +10,25 @@ class Product_model extends CI_Controller
         $query = $this->db->get('gj_product');
         return $query->result_array();
     }
-    public function product_detail()
+    public function product_detail($product_code)
+    {
+        $query = $this->db->get('gj_product',array('id'=>$product_code));
+        return $query->result_array();
+    }
+  /*   public function product_detail()
     {
         $query = $this->db->get('gj_product');
         return $query->result_array();
-    }
-    public function product_insert_db($input)
-    {
-        $this->db->insert('gj_product', $input);
-    }
-
+    } */
+  
     public function product_productbalance()
     {
-        $query = $this->db->get('gj_manufac');
+        $query = $this->db->get('gj_productbalance');
+        return $query->result_array();
+    }
+    public function product_productbalanceselect($product_id)
+    {
+        $query = $this->db->getwhere('gj_productbalance',array('id'=>$product_id));
         return $query->result_array();
     }
 
@@ -30,5 +36,17 @@ class Product_model extends CI_Controller
     {
         $query = $this->db->get('gj_manufac');
         return $query->result_array();
+    }
+
+
+    /* INSERT */
+    public function product_insert_db($input)
+    {
+        $this->db->insert('gj_product', $input);
+    }
+
+    public function product_insert_manufac($input)
+    {
+        $this->db->insert('gj_product', $input);
     }
 }

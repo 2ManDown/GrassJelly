@@ -2,7 +2,7 @@
     <section class="vbox">
         <section class="scrollable padder">
 
-        <?php //foreach ($product_warehouse as $manufac_list) {?>
+
 
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
@@ -49,16 +49,19 @@
                             </tr>
                         </div>
                         <tbody>
-                            <tr>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">LOT00001</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">60102105205</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">เฉาก๊วยถุง</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">01/01/2021</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">1000</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">900</a></td>
-                                <td><a href="<?php echo site_url('product/product_manufacdetail/')?>">900</a></td>
-                            </tr>
+                            <?php foreach ($product_productbalance as $product_productbalance) { ?>
+                            
+                                <tr>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['product_code'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') ?>"><?php echo $product_productbalance['productbalance_balance'] ?></a></td>
 
+                                </tr>
+                            <?php } ?>
 
                         </tbody>
                     </table>
@@ -80,7 +83,6 @@
                 </footer>
             </section>
         </section>
-        <?php //}?>
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
