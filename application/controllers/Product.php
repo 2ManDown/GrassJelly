@@ -34,6 +34,8 @@ class Product extends CI_Controller {
 
 	public function product_warehouse()
 	{
+		$data['product_warehouse'] = $this->Product_model->product_warehouse();
+
 		$data['page'] = "product/product_warehouse";
 		$this->load->view('theme',$data);
 	}
@@ -64,9 +66,11 @@ class Product extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 
-	public function product_manufac()
+	public function product_manufacinsert()
 	{
-		$data['page'] = "product/product_manufac";
+		
+
+		$data['page'] = "product/product_manufacinsert";
 		$this->load->view('theme',$data);
 	}
 
