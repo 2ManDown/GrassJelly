@@ -12,7 +12,8 @@ class Product_model extends CI_Controller
     }
     public function product_detail($product_code)
     {
-        $query = $this->db->get('gj_product',array('id'=>$product_code));
+        $query = $this->db->getwhere('gj_product',array('product_code'=>$product_code));
+        /* $query = $this->db->getwhere('gj_product',array('product_code'=>$product_code))->result_array(); */
         return $query->result_array();
     }
   /*   public function product_detail()
