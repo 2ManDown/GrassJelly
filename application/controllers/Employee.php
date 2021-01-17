@@ -22,6 +22,21 @@ class Employee extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 
+	public function employee_insert_db()
+	{
+		$input = array(
+			'employee_id' => $this->input->post('employee_id'),
+			'employee_name' => $this->input->post('employee_name'),
+			'employee_sex' => $this->input->post('employee_sex'),
+			'employee_birthdate' => $this->input->post('employee_birthdate'),
+			'employee_address' => $this->input->post('employee_address'),
+			'employee_tel' => $this->input->post('employee_tel'),
+			'employee_email' => $this->input->post('employee_email'),
+		);
+		$this->Employee_model->employee_insert_db($input);
+		redirect('employee/employee_info');
+	}
+
 
 	
 	

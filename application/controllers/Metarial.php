@@ -54,14 +54,14 @@ class Metarial extends CI_Controller {
 			'metarial_unit' => $this->input->post('metarial_unit'),
 			'metarial_expdate' => $this->input->post('metarial_expdate'),
 		);
-		$this->Product_model->metarial_insert_db($input);
+		$this->Metarial_model->metarial_insert_db($input);
 		redirect('metarial/metarial_list');
 	}
 
 	public function metarial_list()
 	{
 		//get ข้อมูลจาก table
-		$data['metarial_list'] = $this->Product_model->metarial_list();
+		$data['metarial_list'] = $this->Metarial_model->metarial_list();
 
 		$data['page'] = "metarial/metarial_list_view";
 		$this->load->view('theme', $data);
