@@ -6,6 +6,9 @@ class Employee extends CI_Controller {
 
 	public function employee_info()
 	{
+		$data['employee_list'] = $this->Employee_model->employee_list();
+
+
 		$data['page'] = "employee/employee_info";
 		$this->load->view('theme',$data);
 	}

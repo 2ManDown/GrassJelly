@@ -40,27 +40,26 @@
                                 <th>ชื่อ - สกุล</th>
                                 <th>เพศ</th>
                                 <th>วันเดือนปีเกิด</th>
-                                <th>อายุ</th>
                                 <th>ที่อยู่</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>อีเมล</th>
                             </tr>
                         </div>
-                        <tbody>
-                            <tr>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">1234567891234</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">สมชาย สมประกอบ</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">ชาย</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">11/11/1999</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">21</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">55/55 ขอนแก่น 40000</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">0235236526</a></td>
-                                <td><a href="<?php echo site_url('employee/employee_manage')?>">sdfdgfh@gmail.com</a></td>
+                        <?php foreach ($employee_list as $employee_list) { ?>
+                            <tbody>
+                                <tr>
 
-                            </tr>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_name'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_sex'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_birthdate'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_address'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_tel'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_email'] ?></a></td>
 
-
-                        </tbody>
+                                </tr>
+                            </tbody>
+                        <?php } ?>
                     </table>
                 </div>
                 <footer class="panel-footer">

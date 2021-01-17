@@ -11,5 +11,9 @@ class Employee_model extends CI_Model
         $this->db->insert('gj_employee', $input);
     }
     
-
+    public function employee_list()
+    {
+        $query = $this->db->get('gj_employee');
+        return $query->result_array();
+    }
 }

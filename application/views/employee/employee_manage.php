@@ -73,7 +73,7 @@
                             <div class="col-sm-7 col-sm-offset-4" style="align-items: center;">
                                 <button type="submit" class="btn btn-primary">แก้ไขข้อมูลสินค้า</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
+                                <button type="submit" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
 
