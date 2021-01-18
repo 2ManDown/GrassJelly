@@ -56,7 +56,7 @@
                                     <td><?php echo $metarial_list['metarial_price'] ?></td>
                                     <td><?php echo $metarial_list['metarial_unit'] ?></td>
                                     <td><?php echo $metarial_list['metarial_expdate'] ?></td>
-                                    <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
+                                    <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
                                 </tr>
                             </tbody>
                         <?php } ?>
