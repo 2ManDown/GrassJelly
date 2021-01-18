@@ -8,7 +8,7 @@
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-lg btn-success btn-rounded">เบิกใช้วัตถุดิบ</a>
+                        <!-- <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="btn btn-s-lg btn-success btn-rounded">เบิกใช้วัตถุดิบ</a> -->
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">

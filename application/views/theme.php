@@ -249,7 +249,7 @@
 
                       <i class="i i-docs icon">
                       </i>
-                      <span class="font-bold">นำเข้าและเบิกวัตถุดิบ</span>
+                      <span class="font-bold">นำเข้าวัตถุดิบ</span>
                     </a>
                     <ul class="nav dk">
                       <li>
@@ -259,13 +259,13 @@
                           <span>นำเข้าวัตถุดิบ</span>
                         </a>
                       </li>
-                      <li>
+                      <!--                       <li>
                         <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>เบิกใช้วัตถุดิบ</span>
                         </a>
-                      </li>
+                      </li> -->
                     </ul>
                   </li>
                   <li>
@@ -298,15 +298,30 @@
                   <div class="line dk hidden-nav-xs"></div>
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplyer</div>
                   <li>
-                    <a href="<?php echo site_url('supplyer/supplyer_list') ?>" class="auto">
+                    <a href="#" class="auto">
                       <span class="pull-right text-muted">
                         <!-- <i class="i i-circle-sm-o text"></i>
                           <i class="i i-circle-sm text-active"></i> -->
                       </span>
-                      <i class="i i-lab icon">
-                      </i>
+                      <i class="i i-lab icon"></i>
+
                       <span class="font-bold">จัดการข้อมูลร้านค้า</span>
                     </a>
+                    <ul class="nav dk">
+                      <li>
+                        <a href="<?php echo site_url('supplyer/supplyer_list') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>ข้อมูลร้านค้า</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="<?php echo site_url('supplyer/supplyer_insert') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>เพิ่มข้อมูลร้านค้า</span>
+                        </a>
+                      </li>
+                    </ul>
                   </li>
 
                   <div class="line dk hidden-nav-xs"></div>
