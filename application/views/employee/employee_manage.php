@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">วันเดือนปีเกิด</label>
                             <div class="col-sm-7">
-                                <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy" value="<?php echo $employee_manage['employee_birthdate'] ?>">
+                                <input class="input-sm input-s datepicker-input form-control" size="16" type="text" data-date-format="yyyy-mm-dd" value="<?php echo $employee_manage['employee_birthdate'] ?>">
                             </div>
                         </div>
                         
@@ -45,7 +45,7 @@
                             <label class="col-sm-3 control-label">ที่อยู่</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;" value="<?php echo $employee_manage['employee_address'] ?>"></textarea>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;" value=""><?php echo $employee_manage['employee_address'] ?></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
