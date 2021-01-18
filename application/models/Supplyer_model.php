@@ -8,6 +8,7 @@ class Supplyer_model extends CI_Model
         return $this->db->get('gj_supplyer')->result_array();
     }
     public function supplyer_detail($supplyer_code){
+        
         /* Get Data from Primary Key */
         $fetch = array('supplyer_code' => $supplyer_code);
         $query = $this->db->get_where('gj_supplyer', $fetch);
