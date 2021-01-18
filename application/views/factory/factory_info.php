@@ -13,7 +13,7 @@
                     </header>
                     
                     <form data-validate="parsley" action="#">
-                        <section class="panel panel-default">
+
                             <div class="panel-body">
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
@@ -76,11 +76,8 @@
                                         <input type="number" class="form-control">
                                     </div>
                                 </div>
-                                <footer class="panel-footer text-right bg-light lter">
-                                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                                </footer>
+                                <div class="text-right"><button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button></div>
                             </div>
-                        </section>
                     </form>
                 </section>
             
