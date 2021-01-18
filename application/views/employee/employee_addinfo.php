@@ -8,7 +8,6 @@
                 </header>
                 <?php echo form_open('Employee/employee_insert_db') ?>
                 <div class="panel-body">
-                    <?php echo form_open('Metarial/metarial_insert_db') ?>
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
@@ -25,7 +24,7 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>ชื่อ - สกุล</label>
-                            <input type="text" name="employee_name" class="form-control" id="input-id-1"placeholder="กรอกชื่อ - สกุล" required>
+                            <input type="text" name="employee_name" class="form-control" id="input-id-1" placeholder="กรอกชื่อ - สกุล" required>
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
@@ -46,7 +45,7 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>วันเดือนปีเกิด</label>
-                            <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="yyyy-mm-dd" >
+                            <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="yyyy-mm-dd">
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
