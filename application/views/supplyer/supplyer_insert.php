@@ -11,28 +11,28 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสร้านค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control rounded">
+                                <input type="text" class="form-control " placeholder="กรอกรหัสร้านค้า" required>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อร้านค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="กรอกชื่อร้านค้า" required>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ที่อยู่</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="กรอกที่อยู่" required>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" required>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -40,14 +40,14 @@
                             <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรอกรายละเอียดโดยย่อ" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรอกรายละเอียดโดยย่อ" required style="resize: none;"></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปร้านค้า</label>
                             <div class="col-sm-6">
-                                <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                                <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s" required>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>

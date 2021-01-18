@@ -19,48 +19,48 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ชื่อบริษัท</label>
-                                        <input type="text" class="form-control rounded">
+                                        <input type="text" class="form-control " placeholder="กรอกชื่อบริษัท" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ที่อยู่บริษัท</label>
-                                        <input type="text" class="form-control rounded">
+                                        <input type="text" class="form-control "placeholder="กรอกที่อยู่บริษัท" required>
                                     </div>
                                 </div>
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>สาขา</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="กรอกสาขา" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ตำบล/แขวง</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="กรอกตำบล" required>
                                     </div>
                                 </div>
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>เลขที่ผู้เสียภาษี</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="เลขที่ผู้เสียภาษี" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>อำเภอ</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="กรอกอำเภอ" required>
                                     </div>
                                 </div>
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>เบอร์ติดต่ด</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" placeholder="กรอกเบอร์ตืดต่อ" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>จังหวัด</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="กรอกจังหวัด" required>
                                     </div>
                                 </div>
 
@@ -68,12 +68,12 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>อีเมล</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="กรอกอีเมล" required>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>รหัสไปรษณีย์</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" placeholder="กรอกรหัสไปรษณีย์" required>
                                     </div>
                                 </div>
                                 <div class="text-right"><button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button></div>
