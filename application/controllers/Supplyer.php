@@ -28,7 +28,7 @@ class Supplyer extends CI_Controller
 
 
     /* INSERT */
-  public function supplyer_insert_db(){
+    public function supplyer_insert_db(){
         $input = array(
             'supplyer_code' => $this->input->post('supplyer_code'),
             'supplyer_name' => $this->input->post('supplyer_name'),

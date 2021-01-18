@@ -45,7 +45,7 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>วันเดือนปีเกิด</label>
-                            <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="yyyy-mm-dd">
+                            <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
