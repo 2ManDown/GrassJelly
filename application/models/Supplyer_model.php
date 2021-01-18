@@ -15,7 +15,6 @@ class Supplyer_model extends CI_Model
     }
 
 
-
     /* INSERT */
     public function supplyer_insert_db($input)
     {
