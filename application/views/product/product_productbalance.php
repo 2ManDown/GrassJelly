@@ -3,7 +3,6 @@
         <section class="scrollable padder">
 
 
-
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     รายการสินค้าคงคลัง

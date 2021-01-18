@@ -26,12 +26,6 @@ class Metarial extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 	
-	public function metarial_list_view()
-	{
-		$data['page'] = "metarial/metarial_list_view";
-		$this->load->view('theme',$data);
-	}
-	
 	public function metarial_importlist()
 	{
 		$data['page'] = "metarial/metarial_importlist";
@@ -63,7 +57,7 @@ class Metarial extends CI_Controller {
 		//get ข้อมูลจาก table
 		$data['metarial_list'] = $this->Metarial_model->metarial_list();
 
-		$data['page'] = "metarial/metarial_list_view";
+		$data['page'] = "metarial/metarial_list";
 		$this->load->view('theme', $data);
 	}
 

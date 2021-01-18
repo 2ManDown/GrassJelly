@@ -14,11 +14,7 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>วัตถุดิบ</label>
-                                        <select name="account" class="form-control m-b ">
-                                            <option value="" disabled selected>กรุณาเลือกวัตถุดิบ</option>
-                                            <option value="">วัตถุดิบ 1</option>
-                                            <option value="">วัตถุดิบ 2</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="input-id-1" placeholder="รหัสวัตถุดิบ" readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
