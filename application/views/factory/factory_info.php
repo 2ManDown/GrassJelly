@@ -69,7 +69,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>อีเมล</label>
-                                    <input type="text" value="<?php echo $fac_info['fac_email'] ?>" class="form-control" placeholder="กรอกอีเมล" required>
+                                    <input type="email" value="<?php echo $fac_info['fac_email'] ?>" class="form-control" placeholder="กรอกอีเมล" required>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">

@@ -36,7 +36,7 @@
 
                             <label class="col-sm-1 control-label" for="input-id-1">อีเมล:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="input-id-1" value="JohnSmith@gmail.com">
+                                <input type="email" class="form-control" id="input-id-1" value="JohnSmith@gmail.com">
                             </div>
                         </div>
 

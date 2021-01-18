@@ -59,7 +59,7 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label">อีเมล</label>
                           <div class="col-sm-7">
-                            <input type="text" class="form-control" data-type="email" data-required="true" value="<?php echo $employee_manage['employee_email'] ?>" placeholder="อีเมล">    
+                            <input type="email" class="form-control" data-type="email" data-required="true" value="<?php echo $employee_manage['employee_email'] ?>" placeholder="อีเมล">    
                           </div>
                         </div>
 

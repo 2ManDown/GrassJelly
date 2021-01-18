@@ -29,7 +29,7 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>อีเมล</label>
-                            <input type="text" name="employee_email" class="form-control" data-type="email" data-required="true" placeholder="กรอกอีเมล" required>
+                            <input type="email" name="employee_email" class="form-control" data-type="email" data-required="true" placeholder="กรอกอีเมล" required>
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
