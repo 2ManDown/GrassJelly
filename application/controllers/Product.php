@@ -103,4 +103,11 @@ class Product extends CI_Controller
 	}
 
 
+	/* UPDATE */
+	public function product_update_db(){
+
+		$this->Product_model->product_update_db();
+		redirect('product/product_list');
+	}
+
 }

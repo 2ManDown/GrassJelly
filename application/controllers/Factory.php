@@ -12,5 +12,9 @@ class factory extends CI_Controller
         $this->load->view('theme', $data);
     }
 
+    public function factory_update_db(){
+        $this->Fac_model->factory_update_db();
+        redirect('factory/factory_info');
+    }
    
 }

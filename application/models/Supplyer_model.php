@@ -23,6 +23,20 @@ class Supplyer_model extends CI_Model
     }
 
 
+    /* UPDATE */
+    public function supplyer_update_db(){
+        $input = array(
+			'supplyer_code' => $this->input->post('supplyer_code'),
+			'supplyer_name' => $this->input->post('supplyer_name'),
+			'supplyer_address' => $this->input->post('supplyer_address'),
+			'supplyer_tel' => $this->input->post('supplyer_tel'),
+			'supplyer_detail' => $this->input->post('supplyer_detail'),
+			'supplyer_img' => $this->input->post('supplyer_img'),
+        );
+        
+        $this->db->where('supplyer_code', $input['supplyer_code']);
+        $this->db->update('gj_supplyer', $input);
+    }
 
     
 }

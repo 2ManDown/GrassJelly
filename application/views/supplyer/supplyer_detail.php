@@ -8,7 +8,8 @@
                 </header>
                 <div class="panel-body">
                 <?php foreach ($supplyer_list as $supplyer_list) {?>
-                    <form class="form-horizontal" method="get">
+                    <!-- <form class="form-horizontal" method="get"> -->
+                    <?php echo form_open('Supplyer/supplyer_update_db','class="form-horizontal"') ?>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสร้านค้า</label>
                             <div class="col-sm-7">
@@ -48,7 +49,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปร้านค้า</label>
                             <div class="col-sm-6">
-                                <input type="file" class="filestyle" name=""  data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                                <input type="file" class="filestyle" name="supplyer_img"  data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -61,7 +62,8 @@
                                 <button type="submit" class="btn btn-danger">ลบข้อมูลร้านค้า!</button>
                             </div>
                         </div>
-                    </form>
+                    <!-- </form> -->
+                    <?php form_close() ?>
                     <?php } ?>
                 </div>
             </section>
