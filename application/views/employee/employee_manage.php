@@ -8,24 +8,25 @@
                 </header>
                 <div class="panel-body">
                     <form class="form-horizontal" method="get">
+                    <?php foreach ($employee_manage as $employee_manage) { ?>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสบัตรประชานชน</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control rounded" readonly>
+                                <input type="text" class="form-control " value="<?php echo $employee_manage['employee_id'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อ - สกุล</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" value="<?php echo $employee_manage['employee_name'] ?>">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เพศ</label>
                             <div class="col-sm-7">
-                                <select name="account" class="form-control m-b">
+                                <select name="account" class="form-control m-b" value="<?php echo $employee_manage['employee_sex'] ?>">
                                     <option>ชาย</option>
                                     <option>หญิง</option>
                                 </select>
@@ -35,36 +36,30 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">วันเดือนปีเกิด</label>
                             <div class="col-sm-7">
-                                <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy" value="<?php echo $employee_manage['employee_birthdate'] ?>">
                             </div>
                         </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">อายุ</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control rounded" readonly>
-                            </div>
-                        </div>
+                        
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ที่อยู่</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;" value="<?php echo $employee_manage['employee_address'] ?>"></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
                           <div class="col-sm-7">
-                            <input type="text" data-type="phone" class="form-control" placeholder="xxx-xxx-xxxx">
+                            <input type="text" data-type="phone" class="form-control" value="<?php echo $employee_manage['employee_tel'] ?>" placeholder="xxx-xxx-xxxx">
                           </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                           <label class="col-sm-3 control-label">อีเมล</label>
                           <div class="col-sm-7">
-                            <input type="text" class="form-control" data-type="email" data-required="true" placeholder="อีเมล">    
+                            <input type="text" class="form-control" data-type="email" data-required="true" value="<?php echo $employee_manage['employee_email'] ?>" placeholder="อีเมล">    
                           </div>
                         </div>
 
@@ -79,6 +74,7 @@
 
                             </div>
                         </div>
+                        <?php } ?>
                     </form>
                 </div>
             </section>

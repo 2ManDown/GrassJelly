@@ -19,8 +19,10 @@ class Employee extends CI_Controller {
 		$this->load->view('theme',$data);
 	}
 	
-	public function employee_manage()
+	public function employee_manage($employee_list)
 	{
+		$data['employee_manage'] = $this->Employee_model->employee_manage($employee_list);
+
 		$data['page'] = "employee/employee_manage";
 		$this->load->view('theme',$data);
 	}

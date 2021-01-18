@@ -16,4 +16,10 @@ class Employee_model extends CI_Model
         $query = $this->db->get('gj_employee');
         return $query->result_array();
     }
+
+    public function employee_manage($employee_id)
+    {
+        $query = $this->db->get_where('gj_employee',array('employee_id'=>$employee_id));
+        return $query->result_array();
+    }
 }

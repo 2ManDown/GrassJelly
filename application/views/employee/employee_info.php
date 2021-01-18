@@ -10,17 +10,7 @@
                         <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลพนักงาน</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
-                        <!-- <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-sm btn-default active">
-                                <input type="radio" name="options" id="option1"> รายวัน
-                            </label>
-                            <label class="btn btn-sm btn-default">
-                                <input type="radio" name="options" id="option2"> รายสัปดาห์
-                            </label>
-                            <label class="btn btn-sm btn-default">
-                                <input type="radio" name="options" id="option2"> รายเดือน
-                            </label>
-                        </div> -->
+                        
                     </div>
                     <div class="col-sm-3" style="margin-top: 20px">
                         <div class="input-group">
@@ -49,7 +39,7 @@
                             <tbody>
                                 <tr>
 
-                                    <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_id'] ?></a></td>
                                     <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_name'] ?></a></td>
                                     <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_sex'] ?></a></td>
                                     <td><a href="<?php echo site_url('employee/employee_manage') ?>"><?php echo $employee_list['employee_birthdate'] ?></a></td>
