@@ -7,47 +7,48 @@
                     ข้อมูลร้านค้า
                 </header>
                 <div class="panel-body">
+                <?php foreach ($supplyer_list as $supplyer_list) {?>
                     <form class="form-horizontal" method="get">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสร้านค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control rounded">
+                                <input type="text" name="supplyer_code" class="form-control rounded" value="<?php echo $supplyer_list['supplyer_code'] ?>"> 
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อร้านค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="supplyer_name"  class="form-control" value="<?php echo $supplyer_list['supplyer_name'] ?>">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ที่อยู่</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="supplyer_address"  class="form-control" value="<?php echo $supplyer_list['supplyer_address'] ?>">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" name="supplyer_tel"  class="form-control" value="<?php echo $supplyer_list['supplyer_tel'] ?>">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
+                            <label class="col-sm-3 control-label">รายละเอียดร้านค้าค้าโดยย่อ</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true"  name="supplyer_detail" placeholder="Type your message" style="resize: none;"><?php echo $supplyer_list['supplyer_detail'] ?></textarea>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปร้านค้า</label>
                             <div class="col-sm-6">
-                                <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                                <input type="file" class="filestyle" name=""  data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -61,6 +62,7 @@
                             </div>
                         </div>
                     </form>
+                    <?php } ?>
                 </div>
             </section>
 
