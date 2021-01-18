@@ -64,5 +64,20 @@ class Product_model extends CI_Model
         $this->db->insert('gj_product', $input);
     }
 
+    public function product_update_db(){
+        $input = array(
+			'product_code' => $this->input->post('product_code'),
+			'product_name' => $this->input->post('product_name'),
+			'product_detail' => $this->input->post('product_detail'),
+			'product_volume' => $this->input->post('product_volume'),
+			'product_price' => $this->input->post('product_price'),
+			'product_unit' => $this->input->post('product_unit'),
+			'product_img' => $this->input->post('product_img'),
+        );
+        
+        $this->db->where('product_code', $input['product_code']);
+        $this->db->update('gj_product', $input);
+    }
+
 
 }
