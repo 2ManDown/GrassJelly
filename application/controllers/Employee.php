@@ -43,16 +43,12 @@ class Employee extends CI_Controller
 		redirect('employee/employee_info');
 	}
 
-
 	/* UPDATE */
 	public function employee_update_db(){
 		
         $this->Employee_model->employee_update_db();
         redirect('employee/employee_info');
 	}
-
-
-
 
 	/* DELETE */
 	public function employee_delete($employee_id)

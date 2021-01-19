@@ -79,5 +79,11 @@ class Product_model extends CI_Model
         $this->db->update('gj_product', $input);
     }
 
+    /* DELETE */
+    public function product_delete($product_code)
+    {
+        $this->db->where('product_code', $product_code);
+        $this->db->delete('gj_product');
+    }
 
 }

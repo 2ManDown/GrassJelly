@@ -110,4 +110,10 @@ class Product extends CI_Controller
 		redirect('product/product_list');
 	}
 
+	/* DELETE */
+	public function product_delete($product_code)
+	{
+		$this->Product_model->product_delete($product_code);
+		redirect('product/product_list');
+	}
 }
