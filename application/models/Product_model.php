@@ -19,8 +19,14 @@ class Product_model extends CI_Model
         $query = $this->db->get_where('gj_product', $fetch);
         return $query->result_array();
     }
+/* 
+  public function product_select($product_code){
+     
+      $fetch = array('product_code' => $product_code);
+      $query = $this->db->get_where('gj_product', $fetch);
+      return $query->result_array();
+  } */
 
-  
     public function product_productbalance()
     {
 
