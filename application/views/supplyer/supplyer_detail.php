@@ -59,7 +59,7 @@
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-danger">ลบข้อมูลร้านค้า!</button>
+                                <button type="submit" class="btn btn-danger" >ลบข้อมูลร้านค้า!</button>
                             </div>
                         </div>
                     <!-- </form> -->
