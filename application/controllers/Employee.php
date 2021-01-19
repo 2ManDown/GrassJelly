@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Employee extends CI_Controller {
+class Employee extends CI_Controller
+{
 
 
 	public function employee_info()
@@ -10,21 +11,21 @@ class Employee extends CI_Controller {
 
 
 		$data['page'] = "employee/employee_info";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
 
 	public function employee_addinfo()
 	{
 		$data['page'] = "employee/employee_addinfo";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
-	
+
 	public function employee_manage($employee_list)
 	{
 		$data['employee_manage'] = $this->Employee_model->employee_manage($employee_list);
 
 		$data['page'] = "employee/employee_manage";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
 
 	public function employee_insert_db()
@@ -43,6 +44,20 @@ class Employee extends CI_Controller {
 	}
 
 
-	
-	
+	/* UPDATE */
+	public function employee_update_db(){
+		
+        $this->Employee_model->employee_update_db();
+        redirect('employee/employee_info');
+	}
+
+
+
+
+	/* DELETE */
+	public function employee_delete($employee_id)
+	{
+		$this->Employee_model->employee_delete($employee_id);
+		redirect('employee/employee_info');
+	}
 }
