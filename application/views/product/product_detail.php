@@ -62,13 +62,13 @@
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-8 col-sm-offset-3">
-                                <button type="submit" class="btn btn-primary">แก้ไขข้อมูลสินค้า</button>
+                                <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูลสินค้า</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-success">ดูตัวอย่าง</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
+                                <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('product/product_delete/').$product_list['product_code']; ?>'">ลบข้อมูลสินค้า!</button>
                             </div>
                         </div>
                         <?php form_close() ?>

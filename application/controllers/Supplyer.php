@@ -41,12 +41,17 @@ class Supplyer extends CI_Controller
         redirect('supplyer/supplyer_list');
     }
 
-
-
     /* UPDATE */
 
     public function supplyer_update_db(){
         $this->Supplyer_model->supplyer_update_db();
 		redirect('supplyer/supplyer_list');
+    }
+
+    /* DELETE */
+    public function supplyer_delete($supplyer_code)
+    {
+        $this->Supplyer_model->supplyer_delete($supplyer_code);
+        redirect('supplyer/supplyer_list');
     }
 }

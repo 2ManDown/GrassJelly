@@ -38,5 +38,12 @@ class Supplyer_model extends CI_Model
         $this->db->update('gj_supplyer', $input);
     }
 
+    /* DELETE */
+    public function supplyer_delete($supplyer_code)
+    {
+        $this->db->where('supplyer_code', $supplyer_code);
+        $this->db->delete('gj_supplyer');
+    }
+
     
 }

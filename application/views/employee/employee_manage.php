@@ -7,8 +7,8 @@
                     จัดการข้อมูลพนักงาน
                 </header>
                 <div class="panel-body">
-                    <?php  echo form_open('employee/employee_update_db','class="form-horizontal"') ?>
                     <?php foreach ($employee_manage as $employee_manage) { ?>
+                        <?php echo form_open('employee/employee_update_db', 'class="form-horizontal"') ?>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสบัตรประชานชน</label>
                             <div class="col-sm-7">
@@ -39,7 +39,7 @@
                                 <input class="input-sm input-s datepicker-input form-control" name="employee_birthdate" size="16" type="text" data-date-format="yyyy-mm-dd" value="<?php echo $employee_manage['employee_birthdate'] ?>">
                             </div>
                         </div>
-                        
+
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ที่อยู่</label>
@@ -50,17 +50,17 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
-                          <div class="col-sm-7">
-                            <input type="text" data-type="phone" class="form-control" name="employee_tel" value="<?php echo $employee_manage['employee_tel'] ?>" placeholder="xxx-xxx-xxxx">
-                          </div>
+                            <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
+                            <div class="col-sm-7">
+                                <input type="text" data-type="phone" class="form-control" name="employee_tel" value="<?php echo $employee_manage['employee_tel'] ?>" placeholder="xxx-xxx-xxxx">
+                            </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                          <label class="col-sm-3 control-label">อีเมล</label>
-                          <div class="col-sm-7">
-                            <input type="email" class="form-control" data-type="email" name="employee_email" data-required="true" value="<?php echo $employee_manage['employee_email'] ?>" placeholder="อีเมล">    
-                          </div>
+                            <label class="col-sm-3 control-label">อีเมล</label>
+                            <div class="col-sm-7">
+                                <input type="email" class="form-control" data-type="email" name="employee_email" data-required="true" value="<?php echo $employee_manage['employee_email'] ?>" placeholder="อีเมล">
+                            </div>
                         </div>
 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -70,12 +70,13 @@
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
                                 &nbsp; &nbsp;
-                                <button type="button" class="btn btn-danger" name="deletebtn"  value="delete" onclick="location.href='<?php echo site_url('employee/employee_delete/').$employee_manage['employee_id']; ?>'">ลบข้อมูลพนักงาน!</button>
+                                <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('employee/employee_delete/') . $employee_manage['employee_id']; ?>'">ลบข้อมูลพนักงาน!</button>
 
                             </div>
                         </div>
-                        <?php } ?>
-                    <?php form_close() ?>
+                        <?php form_close() ?>
+                    <?php } ?>
+
                 </div>
             </section>
 

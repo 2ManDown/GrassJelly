@@ -8,7 +8,6 @@
                 </header>
                 <div class="panel-body">
                 <?php foreach ($supplyer_list as $supplyer_list) {?>
-                    <!-- <form class="form-horizontal" method="get"> -->
                     <?php echo form_open('Supplyer/supplyer_update_db','class="form-horizontal"') ?>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสร้านค้า</label>
@@ -55,11 +54,11 @@
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-8 col-sm-offset-4">
-                                <button type="submit" class="btn btn-primary">แก้ไขข้อมูลร้านค้า</button>
+                                <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูลร้านค้า</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-danger" >ลบข้อมูลร้านค้า!</button>
+                                <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('supplyer/supplyer_delete/').$supplyer_list['supplyer_code'];?>'" >ลบข้อมูลร้านค้า!</button>
                             </div>
                         </div>
                     <!-- </form> -->
