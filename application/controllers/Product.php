@@ -47,6 +47,14 @@ class Product extends CI_Controller
 		$this->load->view('theme', $data);
 	}
 
+/* 	public function product_select($product_code)
+	{
+		$data['product_select'] = $this->Product_model->product_detail($product_code);
+
+		$data['page'] = "product/product_import";
+		$this->load->view('theme', $data);
+	} */
+
 	public function product_exportbill()
 	{
 		$data['page'] = "product/product_exportbill";
@@ -81,10 +89,11 @@ class Product extends CI_Controller
 
 	public function product_import()
 	{
+		$data['product_list'] = $this->Product_model->product_list();
+
 		$data['page'] = "product/product_import";
 		$this->load->view('theme', $data);
 	}
-
 
 
 	/* INSERT */
