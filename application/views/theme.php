@@ -59,7 +59,8 @@
             <span class="thumb-sm avatar pull-left">
               <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
             </span>
-            John.Smith <b class="caret"></b>
+            <?php foreach ($user_profile as $user_profile) { ?>
+              <?php echo $user_profile['user_name'] ?> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <li>
@@ -91,10 +92,10 @@
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-t-xs">
-                          <strong class="font-bold text-lt">John.Smith</strong>
+                          <strong class="font-bold text-lt"><?php echo $user_profile['user_name'] ?></strong>
                           <b class="caret"></b>
                         </span>
-                        <span class="text-muted text-xs block">ADMIN</span>
+                        <span class="text-muted text-xs block"><?php echo $user_profile['user_status'] ?></span>
                       </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -109,315 +110,315 @@
                     </ul>
                   </div>
                 </div>
+              <?php } ?>
 
-
-                <!-- nav -->
-                <nav class="nav-primary hidden-xs">
-                  <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
-                  <ul class="nav nav-main" data-ride="collapse">
-                    <li class="active">
-                      <a href="<?php echo site_url('') ?>" class="auto">
-                        <i class="i i-statistics icon">
-                        </i>
-                        <span class="font-bold">Overview</span>
-                      </a>
-                    </li>
-
-                    <!-- <div class="line dk hidden-nav-xs"></div> -->
-                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product</div>
-                    <li>
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i>
-                        </span>
-                        <!-- <b class="badge bg-danger pull-right">4</b> -->
-                        <i class="i i-stack icon">
-                        </i>
-                        <span class="font-bold">ข้อมูลสินค้า</span>
-                      </a>
-                      <ul class="nav dk">
-                        <li>
-                          <a href="<?php echo site_url('product/product_list') ?>" class="auto">
-                            <i class="i i-dot"></i>
-
-                            <span>รายการข้อมูลสินค้า</span>
-                          </a>
-                        </li>
-                    </li>
-                    <li>
-                      <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
-                        <i class="i i-dot"></i>
-
-                        <span>เพิ่มข้อมูลสินค้า</span>
-                      </a>
-                    </li>
-                  </ul>
+              <!-- nav -->
+              <nav class="nav-primary hidden-xs">
+                <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
+                <ul class="nav nav-main" data-ride="collapse">
+                  <li class="active">
+                    <a href="<?php echo site_url('') ?>" class="auto">
+                      <i class="i i-statistics icon">
+                      </i>
+                      <span class="font-bold">Overview</span>
+                    </a>
                   </li>
 
                   <!-- <div class="line dk hidden-nav-xs"></div> -->
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Stock</div>
+                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product</div>
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
                         <i class="i i-circle-sm-o text"></i>
                         <i class="i i-circle-sm text-active"></i>
                       </span>
-                      <!--  <b class="badge bg-danger pull-right">4</b> -->
+                      <!-- <b class="badge bg-danger pull-right">4</b> -->
                       <i class="i i-stack icon">
                       </i>
-                      <span class="font-bold">ข้อมูลคลังสินค้า</span>
+                      <span class="font-bold">ข้อมูลสินค้า</span>
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_list') ?>" class="auto">
                           <i class="i i-dot"></i>
 
-                          <span>รายการสินค้าคงคลัง</span>
+                          <span>รายการข้อมูลสินค้า</span>
                         </a>
                       </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_reportim') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการนำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_sellreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการส่งออกสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>เพิ่มข้อมูลการผลิตสินค้า</span>
-                        </a>
-                      </li>
-
-                    </ul>
                   </li>
-
                   <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-                      <i class="i i-lab icon">
-                      </i>
-                      <span class="font-bold">ข้อมูลคลังวัตถุดิบ</span>
+                    <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
+                      <i class="i i-dot"></i>
+
+                      <span>เพิ่มข้อมูลสินค้า</span>
                     </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_list') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายการคลังวัตถุดิบ</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_importlist') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการนำเข้าวัตถุดิบ</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_reavlist') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการเบิกใช้วัตถุดิบ</span>
-                        </a>
-                      </li>
-
-                    </ul>
                   </li>
+                </ul>
+                </li>
+
+                <!-- <div class="line dk hidden-nav-xs"></div> -->
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Stock</div>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
+                    <!--  <b class="badge bg-danger pull-right">4</b> -->
+                    <i class="i i-stack icon">
+                    </i>
+                    <span class="font-bold">ข้อมูลคลังสินค้า</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายการสินค้าคงคลัง</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('product/product_reportim') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายงานการนำเข้าสินค้า</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('product/product_sellreport') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายงานการส่งออกสินค้า</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>เพิ่มข้อมูลการผลิตสินค้า</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
+                    <i class="i i-lab icon">
+                    </i>
+                    <span class="font-bold">ข้อมูลคลังวัตถุดิบ</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('metarial/metarial_list') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายการคลังวัตถุดิบ</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('metarial/metarial_importlist') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายงานการนำเข้าวัตถุดิบ</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('metarial/metarial_reavlist') ?>" class="auto">
+                        <i class="i i-dot"></i>
+
+                        <span>รายงานการเบิกใช้วัตถุดิบ</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
 
 
-                  <!-- <div class="line dk hidden-nav-xs"></div> -->
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
+                <!-- <div class="line dk hidden-nav-xs"></div> -->
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
 
-                      <i class="i i-docs icon">
-                      </i>
-                      <span class="font-bold">นำเข้าวัตถุดิบ</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_insert') ?>" class="auto">
-                          <i class="i i-dot"></i>
+                    <i class="i i-docs icon">
+                    </i>
+                    <span class="font-bold">นำเข้าวัตถุดิบ</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('metarial/metarial_insert') ?>" class="auto">
+                        <i class="i i-dot"></i>
 
-                          <span>นำเข้าวัตถุดิบ</span>
-                        </a>
-                      </li>
-                      <!--                       <li>
+                        <span>นำเข้าวัตถุดิบ</span>
+                      </a>
+                    </li>
+                    <!--                       <li>
                         <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>เบิกใช้วัตถุดิบ</span>
                         </a>
                       </li> -->
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
 
-                      <i class="fa fa-plane">
-                      </i>
-                      <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('product/product_import') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>นำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>ส่งออกสินค้า</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+                    <i class="fa fa-plane">
+                    </i>
+                    <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('product/product_import') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>นำเข้าสินค้า</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>ส่งออกสินค้า</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
 
-                  <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplyer</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <!-- <i class="i i-circle-sm-o text"></i>
+                <div class="line dk hidden-nav-xs"></div>
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplyer</div>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <!-- <i class="i i-circle-sm-o text"></i>
                           <i class="i i-circle-sm text-active"></i> -->
-                      </span>
-                      <i class="i i-lab icon"></i>
+                    </span>
+                    <i class="i i-lab icon"></i>
 
-                      <span class="font-bold">จัดการข้อมูลร้านค้า</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('supplyer/supplyer_list') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>ข้อมูลร้านค้า</span>
-                        </a>
-                      </li>
+                    <span class="font-bold">จัดการข้อมูลร้านค้า</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('supplyer/supplyer_list') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>ข้อมูลร้านค้า</span>
+                      </a>
+                    </li>
 
-                      <li>
-                        <a href="<?php echo site_url('supplyer/supplyer_insert') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>เพิ่มข้อมูลร้านค้า</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+                    <li>
+                      <a href="<?php echo site_url('supplyer/supplyer_insert') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>เพิ่มข้อมูลร้านค้า</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
 
-                  <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Expired</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
+                <div class="line dk hidden-nav-xs"></div>
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Expired</div>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
 
-                      <i class="fa fa-exclamation-circle">
-                      </i>
-                      <span class="font-bold">วัตถุดิบหมดอายุ</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_exp') ?>" class="auto">
-                          <i class="i i-dot"></i>
+                    <i class="fa fa-exclamation-circle">
+                    </i>
+                    <span class="font-bold">วัตถุดิบหมดอายุ</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('metarial/metarial_exp') ?>" class="auto">
+                        <i class="i i-dot"></i>
 
-                          <span>จัดการวัตถุดิบหมดอายุ</span>
-                        </a>
-                      </li>
-
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-
-                      <i class="fa fa-exclamation-circle"></i>
-                      <span class="font-bold">สินค้าหมดอายุ</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('product/product_exp') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>จัดการสินค้าหมดอายุ</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Employee</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-
-                      <i class="fa fa-users"></i>
-                      <span class="font-bold">พนักงาน</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('employee/employee_info') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>ข้อมูลพนักงาน</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>เพิ่มข้อมูลพนักงาน</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-
-                  <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Setting</div>
-                  <li>
-                    <a href="<?php echo site_url('factory/factory_info') ?>" class="auto">
-                      <span class="pull-right text-muted">
-                        <!-- <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i> -->
-                      </span>
-                      <i class="i i-settings">
-                      </i>
-                      <span class="font-bold">ตั้งค่าข้อมูลโรงงาน</span>
-                    </a>
-
-                  </li>
+                        <span>จัดการวัตถุดิบหมดอายุ</span>
+                      </a>
+                    </li>
 
                   </ul>
+                </li>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
 
-                </nav>
-                <!-- / nav -->
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span class="font-bold">สินค้าหมดอายุ</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('product/product_exp') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>จัดการสินค้าหมดอายุ</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <div class="line dk hidden-nav-xs"></div>
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Employee</div>
+                <li>
+                  <a href="#" class="auto">
+                    <span class="pull-right text-muted">
+                      <i class="i i-circle-sm-o text"></i>
+                      <i class="i i-circle-sm text-active"></i>
+                    </span>
+
+                    <i class="fa fa-users"></i>
+                    <span class="font-bold">พนักงาน</span>
+                  </a>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('employee/employee_info') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>ข้อมูลพนักงาน</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="nav dk">
+                    <li>
+                      <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="auto">
+                        <i class="i i-dot"></i>
+                        <span>เพิ่มข้อมูลพนักงาน</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+
+                <div class="line dk hidden-nav-xs"></div>
+                <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Setting</div>
+                <li>
+                  <a href="<?php echo site_url('factory/factory_info') ?>" class="auto">
+                    <span class="pull-right text-muted">
+                      <!-- <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i> -->
+                    </span>
+                    <i class="i i-settings">
+                    </i>
+                    <span class="font-bold">ตั้งค่าข้อมูลโรงงาน</span>
+                  </a>
+
+                </li>
+
+                </ul>
+
+              </nav>
+              <!-- / nav -->
               </div>
             </section>
 
