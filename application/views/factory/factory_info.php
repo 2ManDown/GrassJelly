@@ -15,7 +15,7 @@
 
                 <div class="panel-body">
                     <?php foreach ($fac_info as $fac_info) { ?>
-                        <?php echo form_open('factory/factory_update_db', 'data-validate="parsley"') ?>
+                        <?php echo form_open('factory/factory_update_db', 'class="data-validate="parsley"') ?>
 
                         <input type="hidden" name="fac_id" value="<?php echo $fac_info['fac_id'] ?>" >
                         <div class="form-group pull-in clearfix">
