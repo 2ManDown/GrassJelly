@@ -38,80 +38,24 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>เลขคำสั่งซื้อ</th>
-                                <th>ลอตวัตถุดิบที่นำเข้า</th>
-                                <th>วันที่นำเข้า</th>
-                                <th>จำนวนที่นำเข้า</th>
-                                <th>ราคานำเข้ารวม</th>
+                                <th>#</th>
+                                <th>รหัสวัตถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
+                                <th>จำนวนที่นำเข้า</th>
+                                <th>วันที่นำเข้าที่นำเข้า</th>
 
                             </tr>
                         </div>
                         <tbody>
+                            <?php foreach($metarial_im as $metarial_im) { ?>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
+                                <td><?php echo $metarial_im['immetarial_id'] ?></td>
+                                <td><?php echo $metarial_im['metarial_code'] ?></td>
+                                <td><?php echo $metarial_im['metarial_name'] ?></td>
+                                <td><?php echo $metarial_im['immetarial_amount'] ?></td>
+                                <td><?php echo $metarial_im['immetarial_imdate'] ?></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
