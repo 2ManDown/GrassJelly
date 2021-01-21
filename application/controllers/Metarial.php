@@ -71,4 +71,17 @@ class Metarial extends CI_Controller
 		$data['page'] = "metarial/metarial_list";
 		$this->load->view('theme', $data);
 	}
+
+	public function metarial_reavinsert()
+	{
+		$input = array(
+			'reavelmetarial_id' => $this->input->post('reavelmetarial_id'),
+			'metarial_code' => $this->input->post('metarial_code'),
+			'reavelmetarial_amount' => $this->input->post('reavelmetarial_amount'),
+			'reavelmetarial_revdate' => $this->input->post('reavelmetarial_revdate'),
+			
+		);
+		$this->Metarial_model->metarial_reavinsert($input);
+		redirect('metarial/metarial_reavlist');
+	}
 }
