@@ -17,9 +17,9 @@
                                     <label>รหัสสินค้า</label>
                                     <select name="product_code" class="form-control m-b " onclick="">
                                         <option disabled selected>กรุณาเลือกสินค้า</option>
-                                        <?php foreach ($product_list as $product_list) { ?>
+                                        <?php //foreach ($product_list as $product_list) { ?>
                                             <option onclick="location.href='<?php echo site_url('product/product_select/').$product_list['product_code']; ?>'"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'] ?></option>
-                                        <?php } ?>
+                                        <?php //} ?>
                                     </select>
                                 </div>
 
