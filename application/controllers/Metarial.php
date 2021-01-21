@@ -1,35 +1,38 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Metarial extends CI_Controller {
+class Metarial extends CI_Controller
+{
 
 
 
 	public function metarial_insert()
 	{
 		$data['page'] = "metarial/metarial_insert";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
 	public function metarial_addinfo()
 	{
 		$data['page'] = "metarial/metarial_addinfo";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
-    
-    public function metarial_reavel($metarial_code)
+
+	public function metarial_reavel($metarial_code)
 	{
 		$data['metarial_code'] = $this->Metarial_model->metarial_reavellist($metarial_code);
 
 
 		$data['page'] = "metarial/metarial_reavel";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
-	
+
 	public function metarial_reavlist()
 	{
+		/* get data form database */
+		$data['metarial_reavlist'] = $this->Metarial_model->metarial_reavlist();
+
 		$data['page'] = "metarial/metarial_reavlist";
-		$this->load->view('theme',$data);
-		
+		$this->load->view('theme', $data);
 	}
 
 	public function metarial_importlist()
@@ -37,15 +40,15 @@ class Metarial extends CI_Controller {
 		$data['metarial_im'] = $this->Metarial_model->metarial_im();
 
 		$data['page'] = "metarial/metarial_importlist";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
-	
+
 	public function metarial_exp()
 	{
 		$data['page'] = "metarial/metarial_exp";
-		$this->load->view('theme',$data);
+		$this->load->view('theme', $data);
 	}
-	
+
 	public function metarial_insert_db()
 	{
 		$input = array(
@@ -68,7 +71,4 @@ class Metarial extends CI_Controller {
 		$data['page'] = "metarial/metarial_list";
 		$this->load->view('theme', $data);
 	}
-
-
 }
-

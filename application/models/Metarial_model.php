@@ -36,4 +36,17 @@ class Metarial_model extends CI_Model
 
         return $query->result_array();
     }
+
+    public function metarial_reavlist()
+    {
+        /* INNER JOIN */
+        $this->db->select('mt.metarial_id,mt.metarial_name,rm.*');
+        $this->db->from('gj_metarial as mt');
+        $this->db->join('gj_reavelmetarial as rm', 'mt.metarial_code = rm.metarial_code');
+
+        $query = $this->db->get();
+        $query->result_array();
+
+        return $query->result_array();
+    }
 }
