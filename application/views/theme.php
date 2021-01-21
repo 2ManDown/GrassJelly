@@ -178,7 +178,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="<?php echo site_url('product/product_reportim') ?>" class="auto">
+                      <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
                         <i class="i i-dot"></i>
 
                         <span>รายงานการนำเข้าสินค้า</span>
