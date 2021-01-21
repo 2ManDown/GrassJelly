@@ -60,8 +60,7 @@
             <span class="thumb-sm avatar pull-left">
               <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
             </span>
-            <?php //foreach ($user_profile as $user_profile) { ?>
-              <?php //echo $user_profile['user_name'] ?> <b class="caret"></b>
+               <b class="caret">PANUWAT</b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <li>
@@ -111,7 +110,6 @@
                     </ul>
                   </div>
                 </div>
-              <?php //} ?>
 
               <!-- nav -->
               <nav class="nav-primary hidden-xs">
