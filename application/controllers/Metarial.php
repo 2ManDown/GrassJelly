@@ -15,19 +15,20 @@ class Metarial extends CI_Controller {
 		$data['page'] = "metarial/metarial_addinfo";
 		$this->load->view('theme',$data);
 	}
-    public function metarial_reavlist()
+    
+    public function metarial_reavel($metarial_code)
 	{
-		$data['page'] = "metarial/metarial_reavlist";
-		$this->load->view('theme',$data);
-    }
-    public function metarial_reavel()
-	{
+		$data['metarial_code'] = $this->Metarial_model->metarial_reavellist($metarial_code);
+
+
 		$data['page'] = "metarial/metarial_reavel";
 		$this->load->view('theme',$data);
 	}
 	
 	public function metarial_importlist()
 	{
+		$data['metarial_im'] = $this->Metarial_model->metarial_im();
+
 		$data['page'] = "metarial/metarial_importlist";
 		$this->load->view('theme',$data);
 	}
