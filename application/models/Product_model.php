@@ -11,9 +11,14 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_import(){
+
+    
+    }
+
+    
     public function product_detail($product_code)
     {
-
         /* Get Data from Primary Key */
         $fetch = array('product_code' => $product_code);
         $query = $this->db->get_where('gj_product', $fetch);
@@ -22,7 +27,6 @@ class Product_model extends CI_Model
 
     public function product_importreport()
     {
-
         /* INNER JOIN */
         $this->db->select('pd.product_code,pd.product_name,im.*');
         $this->db->from('gj_product as pd');
