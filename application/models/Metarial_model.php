@@ -4,7 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Metarial_model extends CI_Model
 
 {
-    /* Metarial_model */
     /* INSERT */
     public function metarial_insert_db($input)
     {
@@ -35,5 +34,23 @@ class Metarial_model extends CI_Model
         $query->result_array();
 
         return $query->result_array();
+    }
+
+    public function metarial_reavlist()
+    {
+        /* INNER JOIN */
+        $this->db->select('mt.metarial_id,mt.metarial_name,rm.*');
+        $this->db->from('gj_metarial as mt');
+        $this->db->join('gj_reavelmetarial as rm', 'mt.metarial_code = rm.metarial_code');
+
+        $query = $this->db->get();
+        $query->result_array();
+
+        return $query->result_array();
+    }
+
+    public function metarial_reavinsert($input)
+    {
+        $this->db->insert('gj_reavelmetarial', $input);
     }
 }

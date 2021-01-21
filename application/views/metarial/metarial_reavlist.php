@@ -39,53 +39,23 @@
                         <div>
                             <tr>
                                 <th>เลขคำสั่งเบิก</th>
-                                <th>ลอตวัตถุดิบที่นำเข้า</th>
+                                <th>รหัสวัตถถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
-                                <th>ชื่อผู้เบิก</th>
-                                <th>วันที่เบิก</th>
                                 <th>จำนวนที่เบิก</th>
-                                <th>ราคา</th>
+                                <th>วันที่เบิก</th>
                             
                             </tr>
                         </div>
                         <tbody>
+                            <?php foreach ($metarial_reavlist as $metarial_reavlist) { ?>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>500</td>
+                                <td><?php echo $metarial_reavlist['reavelmetarial_id'] ?></td>
+                                <td><?php echo $metarial_reavlist['metarial_code'] ?></td>
+                                <td><?php echo $metarial_reavlist['metarial_name'] ?></td>
+                                <td><?php echo $metarial_reavlist['reavelmetarial_amount'] ?></td>
+                                <td><?php echo $metarial_reavlist['reavelmetarial_revdate'] ?></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>500</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>500</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>500</td>
-                            </tr>
-
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
