@@ -27,9 +27,11 @@ class Product extends CI_Controller
 	}
 
 
-	public function product_sellreport()
+	public function product_exportreport()
 	{
-		$data['page'] = "product/product_sellreport";
+		$data['product_export'] = $this->Product_model->product_exportreport();
+
+		$data['page'] = "product/product_exportreport";
 		$this->load->view('theme', $data);
 	}
 

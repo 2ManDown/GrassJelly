@@ -37,31 +37,28 @@
                         <div>
                             <tr>
                                 <th>เลขคำสั่งส่งออก</th>
-                                <th>ลอตสินค้าที่ส่งออก/วันที่</th>
-                                <th>จำนวนที่ส่งออก</th>
+                                <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
+                                <th>วันที่ส่งออก</th>
+                                <th>จำนวนที่ส่งออก</th>
+                                <th>ราคาต่อหน่วย</th>
                                 <th>ราคาส่งออกรวม</th>
                                 <th style="text-align: center;">ใบส่งออก</th>
                             </tr>
                         </div>
                         <tbody>
+                        <?php foreach($product_export as $product_export){ ?>
                             <tr>
-                                <td><a href="<?php echo site_url('product/product_selldetail')?>">1</a></td>
-                                <td><a href="#">12/01/2564</a></td>
-                                <td><a href="#">3</a></td>
-                                <td><a href="#">4</a></td>
-                                <td><a href="#">5</a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_id'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_code'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_name'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_exdate'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_amount'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_price'] ?></a></td>
+                                <td><a href="<?php echo $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_sumprice'] ?></a></td>
                                 <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail')?>"><i class="glyphicon glyphicon-print"></i></a></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail')?>"><i class="glyphicon glyphicon-print"></i></a></td>
-                            </tr>
-
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
