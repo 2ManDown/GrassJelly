@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/chosen/chosen.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/spinner/jquery.bootstrap-touchspin.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!-- Card CSS -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
@@ -92,10 +93,10 @@
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-t-xs">
-                          <strong class="font-bold text-lt"><?php //echo $user_profile['user_name'] ?></strong>
+                          <strong class="font-bold text-lt">PANUWAT</strong>
                           <b class="caret"></b>
                         </span>
-                        <span class="text-muted text-xs block"><?php// echo $user_profile['user_status'] ?></span>
+                        <span class="text-muted text-xs block">ADMIN</span>
                       </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
