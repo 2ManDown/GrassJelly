@@ -185,7 +185,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="<?php echo site_url('product/product_sellreport') ?>" class="auto">
+                      <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
                         <i class="i i-dot"></i>
 
                         <span>รายงานการส่งออกสินค้า</span>

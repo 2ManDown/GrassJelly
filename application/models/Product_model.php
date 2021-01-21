@@ -38,6 +38,16 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_exportreport(){
+        /* INNER JOIN */
+        $this->db->select('pd.product_code,pd.product_name,ex.*');
+        $this->db->from('gj_product as pd');
+        $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     /* 
   public function product_select($product_code){
      
@@ -49,19 +59,21 @@ class Product_model extends CI_Model
     public function product_productbalance()
     {
 
-        /* INNER JOIN */
-     /*    $this->db->select('pd.product_code,pd.product_name,im.*');
-        $this->db->from('gj_product as pd');
-        $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
-
+        /* LEFT JOIN */
+        $this->db->select('*');
+        $this->db->from('gj_manufac as mf');
+        $this->db->join('gj_product as pd', 'pd.product_code = mf.product_code','left');
+        $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code','left');
+        $this->db->join('gj_productbalance as pb', 'pb.productbalance_id = mf.manufac_id','left');
+        
         $query = $this->db->get();
-        $query->result_array();
+        /* $query->result_array();
         foreach($query as $a){
             print_r($a);
             echo '<pre>';
         }
-        exit();
-        return $query->result_array(); */
+        exit(); */
+        return $query->result_array();
     }
 
     public function product_manufacdetail()
