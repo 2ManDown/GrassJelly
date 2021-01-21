@@ -59,8 +59,8 @@
             <span class="thumb-sm avatar pull-left">
               <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
             </span>
-            <?php foreach ($user_profile as $user_profile) { ?>
-              <?php echo $user_profile['user_name'] ?> <b class="caret"></b>
+            <?php //foreach ($user_profile as $user_profile) { ?>
+              <?php //echo $user_profile['user_name'] ?> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <li>
@@ -92,10 +92,10 @@
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-t-xs">
-                          <strong class="font-bold text-lt"><?php echo $user_profile['user_name'] ?></strong>
+                          <strong class="font-bold text-lt"><?php //echo $user_profile['user_name'] ?></strong>
                           <b class="caret"></b>
                         </span>
-                        <span class="text-muted text-xs block"><?php echo $user_profile['user_status'] ?></span>
+                        <span class="text-muted text-xs block"><?php// echo $user_profile['user_status'] ?></span>
                       </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -110,7 +110,7 @@
                     </ul>
                   </div>
                 </div>
-              <?php } ?>
+              <?php //} ?>
 
               <!-- nav -->
               <nav class="nav-primary hidden-xs">
@@ -178,7 +178,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="<?php echo site_url('product/product_reportim') ?>" class="auto">
+                      <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
                         <i class="i i-dot"></i>
 
                         <span>รายงานการนำเข้าสินค้า</span>

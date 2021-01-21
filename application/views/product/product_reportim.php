@@ -32,56 +32,38 @@
                     </div>
                 </div>
 
+
+
                 <div class="table-responsive" style="margin-bottom: 0px;">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
                                 <th>เลขคำสั่งนำเข้า</th>
-                                <th>ลอตสินค้าที่นำเข้า</th>
-                                <th>จำนวนที่นำเข้า</th>
-                                <th>ราคานำเข้ารวม</th>
+                                <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
+                                <th>วันที่นำเข้า</th>
+                                <th>จำนวนที่นำเข้า</th>
+                                <th>ราคาต่อหน่วย</th>
+                                <th>ราคานำเข้ารวม</th>
                             </tr>
                         </div>
                         <tbody>
+                        <?php foreach($product_importreport as $product_importreport){ ?>
                             <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
+                                <td><?php echo $product_importreport['importproduct_id'] ?></td>
+                                <td><?php echo $product_importreport['product_code'] ?></td>
+                                <td><?php echo $product_importreport['product_name'] ?></td>
+                                <td><?php echo $product_importreport['importproduct_imdate'] ?></td>
+                                <td><?php echo $product_importreport['importproduct_amount'] ?></td>
+                                <td><?php echo $product_importreport['importproduct_price'] ?></td>
+                                <td><?php echo $product_importreport['importproduct_sumprice'] ?></td>
+                               
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
+                
                 <footer class="panel-footer">
                     <div class="row">
                         <div class="col-sm-7 text-right text-center-xs">

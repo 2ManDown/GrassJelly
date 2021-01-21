@@ -19,7 +19,26 @@ class Product_model extends CI_Model
         $query = $this->db->get_where('gj_product', $fetch);
         return $query->result_array();
     }
-/* 
+
+    public function product_importreport()
+    {
+
+        /* INNER JOIN */
+        $this->db->select('pd.product_code,pd.product_name,im.*');
+        $this->db->from('gj_product as pd');
+        $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
+
+        $query = $this->db->get();
+        $query->result_array();
+        /* foreach($query as $a){
+            print_r($a);
+            echo '<pre>';
+        }
+        exit(); */
+        return $query->result_array();
+    }
+
+    /* 
   public function product_select($product_code){
      
       $fetch = array('product_code' => $product_code);
@@ -30,25 +49,31 @@ class Product_model extends CI_Model
     public function product_productbalance()
     {
 
-       /*  $this->db->select('*');
-        $this->db->from('gj_manufac');
-        $this->db->join('gj_product', 'product_code = balanceid');
-        $query = $this->db->get(); */
-        
-        
-        $query = $this->db->get('gj_productbalance');
-        return $query->result_array();
+        /* INNER JOIN */
+     /*    $this->db->select('pd.product_code,pd.product_name,im.*');
+        $this->db->from('gj_product as pd');
+        $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
+
+        $query = $this->db->get();
+        $query->result_array();
+        foreach($query as $a){
+            print_r($a);
+            echo '<pre>';
+        }
+        exit();
+        return $query->result_array(); */
     }
 
-    public function product_manufacdetail(){
-       /*  $fetch = array('product_code' => $product_code);
+    public function product_manufacdetail()
+    {
+        /*  $fetch = array('product_code' => $product_code);
         $query = $this->db->get_where('gj_product', $fetch);
         return $query->result_array(); */
     }
 
     public function product_productbalanceselect($product_id)
     {
-        $query = $this->db->getwhere('gj_productbalance',array('id'=>$product_id));
+        $query = $this->db->getwhere('gj_productbalance', array('id' => $product_id));
         return $query->result_array();
     }
 
@@ -70,17 +95,18 @@ class Product_model extends CI_Model
         $this->db->insert('gj_product', $input);
     }
 
-    public function product_update_db(){
+    public function product_update_db()
+    {
         $input = array(
-			'product_code' => $this->input->post('product_code'),
-			'product_name' => $this->input->post('product_name'),
-			'product_detail' => $this->input->post('product_detail'),
-			'product_volume' => $this->input->post('product_volume'),
-			'product_price' => $this->input->post('product_price'),
-			'product_unit' => $this->input->post('product_unit'),
-			'product_img' => $this->input->post('product_img'),
+            'product_code' => $this->input->post('product_code'),
+            'product_name' => $this->input->post('product_name'),
+            'product_detail' => $this->input->post('product_detail'),
+            'product_volume' => $this->input->post('product_volume'),
+            'product_price' => $this->input->post('product_price'),
+            'product_unit' => $this->input->post('product_unit'),
+            'product_img' => $this->input->post('product_img'),
         );
-        
+
         $this->db->where('product_code', $input['product_code']);
         $this->db->update('gj_product', $input);
     }
@@ -91,5 +117,4 @@ class Product_model extends CI_Model
         $this->db->where('product_code', $product_code);
         $this->db->delete('gj_product');
     }
-
 }

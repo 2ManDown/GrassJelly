@@ -81,15 +81,20 @@ class Product extends CI_Controller
 		$this->load->view('theme', $data);
 	}
 
-	public function product_reportim()
+	public function product_importreport()
 	{
+		$data['product_importreport'] = $this->Product_model->product_importreport();
+
 		$data['page'] = "product/product_reportim";
 		$this->load->view('theme', $data);
+
+		/* $this->Product_model->product_importreport(); */
+
 	}
 
 	public function product_import()
 	{
-		$data['product_list'] = $this->Product_model->product_list();
+		$data['product_import'] = $this->Product_model->product_import();
 
 		$data['page'] = "product/product_import";
 		$this->load->view('theme', $data);
