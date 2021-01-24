@@ -16,6 +16,19 @@ class Product_model extends CI_Model
     
     }
 
+    public function product_selldetail($sell_id){
+
+        $fetch = array('exportproduct_id' => $sell_id);
+
+        /* $this->db->get_where('pd.product_code,pd.product_name,ex.*', $fetch);
+        $this->db->from('gj_product as pd');
+        $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
+ */
+        
+        $query = $this->db->get_where('gj_exportproduct', $fetch);
+    
+        return $query->result_array();
+    }
     
     public function product_detail($product_code)
     {
@@ -71,12 +84,6 @@ class Product_model extends CI_Model
         $this->db->join('gj_productbalance as pb', 'pb.productbalance_id = mf.manufac_id','left');
         
         $query = $this->db->get();
-        /* $query->result_array();
-        foreach($query as $a){
-            print_r($a);
-            echo '<pre>';
-        }
-        exit(); */
         return $query->result_array();
     }
 
