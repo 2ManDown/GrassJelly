@@ -12,8 +12,8 @@ class User extends CI_Controller
     public function user_profile()
     {
         /* get ข้อมูลจาก table */
-        $data['user_profile'] = $this->User_model->user_list();
-
+        /* $data['user_profile'] = $this->User_model->user_list();
+ */
         $data['page'] = "user/user_profile";
         $this->load->view('theme', $data);
     }

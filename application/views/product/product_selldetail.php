@@ -4,7 +4,7 @@
             <section class="vbox">
                 <section class="scrollable padder">
 
-
+<?php foreach ($selldetail as $selldetail){ ?>
 
                     <section class="panel panel-default">
                         <header class="panel-heading font-bold" style="font-size:  18px;">
@@ -12,24 +12,24 @@
                         </header>
                         <div class="panel-body">
                             <header class="panel-heading font-bold" style="font-size:  18px;">
-                                เลขที่: SL1122
+                                เลขที่: <?php echo $selldetail['exportproduct_code'] ?>
                             </header>
 
                             <form class="form-horizontal" method="get">
                                 <div class="form-group" style="margin-top: 20px;">
                                     <label class="col-sm-2 control-label">ชื่อร้านค้า</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control rounded" placeholder="ร้านที่ 1" readonly>
+                                        <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php echo $selldetail['exportproduct_reciever']?>" readonly>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label" for="input-id-1">วันที่ขาย</label>
                                         <div class="col-sm-3">
-                                            <input type="number" class="form-control" id="input-id-1" placeholder="12/01/2564" readonly>
+                                            <input type="text" class="form-control rounded" id="input-id-1" value="<?php echo $selldetail['exportproduct_exdate']?>" readonly>
                                         </div>
                                     </div>
                                 </div>
-
+                                
 
                                 <div class="table-responsive" style="margin-bottom: 0px;">
                                     <table class="table table-striped b-t b-light table-bordered" cellspacing="0" cellpadding="0">
@@ -45,12 +45,12 @@
                                         </div>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>12/01/2564</td>
-                                                <td>เฉาก๊วย</td>
-                                                <td><input type="text" class="form-control rounded" value="500"></td>
-                                                <td><input type="text" class="form-control rounded" value="1"></td>
-                                                <td style="text-align: center; color: #11B9E9; font-weight: bold;">500.00</td>
+                                                <td><?php echo $selldetail['exportproduct_id'] ?></td>
+                                                <td><?php echo $selldetail['exportproduct_exdate'] ?></td>
+                                                <td>เฉาก๊วย !Selec on JOIN </td>
+                                                <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_price'] ?>"></td>
+                                                <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_amount'] ?>"></td>
+                                                <td style="text-align: center; color: #11B9E9; font-weight: bold;"><?php echo $selldetail['exportproduct_sumprice'] ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -58,9 +58,9 @@
                                 <footer class="panel-footer">
                                     <div class="row">
                                         <div class="col-md-12 text-right text-center-xs">
-                                            <h3>ภาษี: <?php echo '10'; ?></h3>
+                                            <h3>ภาษี: <?php echo $selldetail['exportproduct_vat']; ?></h3>
                                             <div class="line line-dashed b-b line-lg pull-in"></div>
-                                            <h3>ยอดรวม: <?php echo '510'; ?></h3>
+                                            <h3>ยอดรวม: <?php echo $sumprice = $selldetail['exportproduct_sumprice'] + $selldetail['exportproduct_vat'];?></h3>
                                         </div>
                                     </div>
                                 </footer>
@@ -77,6 +77,8 @@
 
                         </div>
                     </section>
+
+                    <?php } ?>
                 </section>
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>

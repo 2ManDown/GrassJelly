@@ -77,8 +77,10 @@ class Product extends CI_Controller
 		$this->load->view('theme', $data);
 	}
 
-	public function product_selldetail()
+	public function product_selldetail($sell_id)
 	{
+		$data['selldetail'] = $this->Product_model->product_selldetail($sell_id);
+
 		$data['page'] = "product/product_selldetail";
 		$this->load->view('theme', $data);
 	}
