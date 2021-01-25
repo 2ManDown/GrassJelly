@@ -50,8 +50,11 @@
                                                 <td><?php echo $selldetail['product_name'] ?></td>
                                                 <td><input type="text" class="form-control rounded" name="sellprice" value="<?php echo $selldetail['exportproduct_price'] ?>"></td>
                                                 <td><input type="text" class="form-control rounded" name="sellamount" value="<?php echo $selldetail['exportproduct_amount'] ?>"></td>
+
                                                 <?php $sumprice = $selldetail['exportproduct_price'] * $selldetail['exportproduct_amount'] ?>
+
                                                 <td style="text-align: center; color: #11B9E9; font-weight: bold;"><input type="hidden" name="sellsumprice" value="<?php echo $sumprice ?>"><?php echo $sumprice ?></td>
+                                          
                                             </tr>
                                         </tbody>
                                     </table>
@@ -59,12 +62,22 @@
                                 <footer class="panel-footer">
                                     <div class="row">
                                         <div class="col-md-12 text-right text-center-xs">
-                                        
-                                        <h3>ภาษี:</h3><input type="text" value="<?php echo $vat =  $selldetail['exportproduct_price'] * 7/100; ?>">
-                                        
-                                            
+
+                                            <div class="form-group ">
+                                                <label class="col-sm-9 control-label">ภาษี : </label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" name="sellvat" style="color: #11B9E9; font-weight: bold;" class="form-control rounded text-right" value="<?php echo $vat =  $sumprice * 7 / 100; ?>" readonly>
+                                                </div>
+                                            </div>
+
                                             <div class="line line-dashed b-b line-lg pull-in"></div>
-                                            <h3>ยอดรวม: <?php echo $sumprice = $selldetail['exportproduct_sumprice'] + $selldetail['exportproduct_vat']; ?></h3>
+                                            <div class="form-group ">
+                                                <label class="col-sm-9 control-label">ยอดรวม : </label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" name="sellincludevat" class="form-control rounded text-right" value="<?php echo $sum =  $selldetail['exportproduct_sumprice'] + $vat ?>" readonly>
+                                                </div>
+                                            </div>
+ 
                                         </div>
                                     </div>
                                 </footer>

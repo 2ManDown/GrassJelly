@@ -138,8 +138,15 @@ class Product_model extends CI_Model
             'exportproduct_id' => $this->input->post('sellid'),
             'exportproduct_price' => $this->input->post('sellprice'),
             'exportproduct_amount' => $this->input->post('sellamount'),
-            'exportproduct_sumprice' => $this->input->post('sellsumprice')
+            'exportproduct_sumprice' => $this->input->post('sellsumprice'),
+            'exportproduct_vat' => $this->input->post('sellvat'),
+            'exportproduct_includevat' => $this->input->post('sellincludevat')
+            
         );
+
+      /*   print_r($input);
+        echo '<pre>';
+        exit(); */
         
         $this->db->where('exportproduct_id',$input['exportproduct_id']);
         $this->db->update('gj_exportproduct',$input);
