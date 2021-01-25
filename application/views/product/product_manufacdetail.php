@@ -1,7 +1,7 @@
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
-
+<?php //foreach(){ ?>
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     ข้อมูลการผลิตสินค้า
@@ -105,7 +105,7 @@
                     </form>
                 </div>
             </section>
-
+<?php// } ?>
         </section>
 
     </section>
