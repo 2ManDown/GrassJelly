@@ -59,7 +59,7 @@
                                     <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_amount'] ?></a></td>
                                     <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_price'] ?></a></td>
                                     <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_sumprice'] ?></a></td>
-                                    <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail') ?>"><i class="glyphicon glyphicon-print"></i></a></td>
+                                    <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail/'). $product_export['exportproduct_id'] ?>"><i class="glyphicon glyphicon-print"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

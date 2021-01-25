@@ -11,20 +11,20 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_import(){
-
-    
+    public function product_import()
+    {
     }
 
-    public function product_selldetail($sell_id){
+    public function product_selldetail($sell_id)
+    {
 
         /* INNER JOIN AND SELECT */
         $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex 
         WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
 
-        return $query->result_array(); 
+        return $query->result_array();
     }
-    
+
     public function product_detail($product_code)
     {
         /* Get Data from Primary Key */
@@ -50,7 +50,8 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_exportreport(){
+    public function product_exportreport()
+    {
         /* INNER JOIN */
         $this->db->select('pd.product_code,pd.product_name,ex.*');
         $this->db->from('gj_product as pd');
@@ -74,10 +75,10 @@ class Product_model extends CI_Model
         /* LEFT JOIN */
         $this->db->select('*');
         $this->db->from('gj_manufac as mf');
-        $this->db->join('gj_product as pd', 'pd.product_code = mf.product_code','left');
-        $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code','left');
-        $this->db->join('gj_productbalance as pb', 'pb.productbalance_id = mf.manufac_id','left');
-        
+        $this->db->join('gj_product as pd', 'pd.product_code = mf.product_code', 'left');
+        $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
+        $this->db->join('gj_productbalance as pb', 'pb.productbalance_id = mf.manufac_id', 'left');
+
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -113,6 +114,9 @@ class Product_model extends CI_Model
         $this->db->insert('gj_product', $input);
     }
 
+
+
+    /* UPDATE */
     public function product_update_db()
     {
         $input = array(
@@ -128,6 +132,30 @@ class Product_model extends CI_Model
         $this->db->where('product_code', $input['product_code']);
         $this->db->update('gj_product', $input);
     }
+    public function product_sell_update()
+    {
+        $input = array(
+            'exportproduct_id' => $this->input->post('sellid'),
+            'exportproduct_price' => $this->input->post('sellprice'),
+            'exportproduct_amount' => $this->input->post('sellamount'),
+            'exportproduct_sumprice' => $this->input->post('sellsumprice'),
+            'exportproduct_vat' => $this->input->post('sellvat'),
+            'exportproduct_includevat' => $this->input->post('sellincludevat')
+            
+        );
+
+      /*   print_r($input);
+        echo '<pre>';
+        exit(); */
+        
+        $this->db->where('exportproduct_id',$input['exportproduct_id']);
+        $this->db->update('gj_exportproduct',$input);
+        
+    }
+
+
+
+
 
     /* DELETE */
     public function product_delete($product_code)

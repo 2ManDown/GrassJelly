@@ -127,6 +127,10 @@ class Product extends CI_Controller
 		$this->Product_model->product_update_db();
 		redirect('product/product_list');
 	}
+	public function product_sell_update(){
+		$this->Product_model->product_sell_update();
+		redirect('product/product_exportreport');
+	}
 
 	/* DELETE */
 	public function product_delete($product_code)

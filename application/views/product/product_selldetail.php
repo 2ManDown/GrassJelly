@@ -4,32 +4,32 @@
             <section class="vbox">
                 <section class="scrollable padder">
 
-<?php foreach ($selldetail as $selldetail){ ?>
+                    <?php foreach ($selldetail as $selldetail) { ?>
 
-                    <section class="panel panel-default">
-                        <header class="panel-heading font-bold" style="font-size:  18px;">
-                            ช้อมูลการขาย / ส่งออกสินค้า
-                        </header>
-                        <div class="panel-body">
+                        <section class="panel panel-default">
                             <header class="panel-heading font-bold" style="font-size:  18px;">
-                                เลขที่: <?php echo $selldetail['exportproduct_code'] ?>
+                                ช้อมูลการขาย / ส่งออกสินค้า
                             </header>
-
-                            <form class="form-horizontal" method="get">
+                            <div class="panel-body">
+                                <header class="panel-heading font-bold" style="font-size:  18px;">
+                                    เลขที่: <?php echo $selldetail['exportproduct_code'] ?>
+                                </header>
+                                <?php echo form_open('product/product_sell_update', 'class="form-horizontal"') ?>
+                                <!-- <form class="form-horizontal" method="get"> -->
                                 <div class="form-group" style="margin-top: 20px;">
                                     <label class="col-sm-2 control-label">ชื่อร้านค้า</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php echo $selldetail['exportproduct_reciever']?>" readonly>
+                                        <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php echo $selldetail['exportproduct_reciever'] ?>" readonly>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-sm-1 control-label" for="input-id-1">วันที่ขาย</label>
                                         <div class="col-sm-3">
-                                            <input type="text" class="form-control rounded" id="input-id-1" value="<?php echo $selldetail['exportproduct_exdate']?>" readonly>
+                                            <input type="text" class="form-control rounded" id="input-id-1" value="<?php echo $selldetail['exportproduct_exdate'] ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="table-responsive" style="margin-bottom: 0px;">
                                     <table class="table table-striped b-t b-light table-bordered" cellspacing="0" cellpadding="0">
@@ -45,12 +45,16 @@
                                         </div>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $selldetail['exportproduct_id'] ?></td>
+                                                <td><input type="hidden" name="sellid" value="<?php echo $selldetail['exportproduct_id'] ?>"><?php echo $selldetail['exportproduct_id'] ?></td>
                                                 <td><?php echo $selldetail['exportproduct_exdate'] ?></td>
                                                 <td><?php echo $selldetail['product_name'] ?></td>
-                                                <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_price'] ?>"></td>
-                                                <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_amount'] ?>"></td>
-                                                <td style="text-align: center; color: #11B9E9; font-weight: bold;"><?php echo $selldetail['exportproduct_sumprice'] ?></td>
+                                                <td><input type="text" class="form-control rounded" name="sellprice" value="<?php echo $selldetail['exportproduct_price'] ?>"></td>
+                                                <td><input type="text" class="form-control rounded" name="sellamount" value="<?php echo $selldetail['exportproduct_amount'] ?>"></td>
+
+                                                <?php $sumprice = $selldetail['exportproduct_price'] * $selldetail['exportproduct_amount'] ?>
+
+                                                <td style="text-align: center; color: #11B9E9; font-weight: bold;"><input type="hidden" name="sellsumprice" value="<?php echo $sumprice ?>"><?php echo $sumprice ?></td>
+                                          
                                             </tr>
                                         </tbody>
                                     </table>
@@ -58,25 +62,39 @@
                                 <footer class="panel-footer">
                                     <div class="row">
                                         <div class="col-md-12 text-right text-center-xs">
-                                            <h3>ภาษี: <?php echo $selldetail['exportproduct_vat']; ?></h3>
+
+                                            <div class="form-group ">
+                                                <label class="col-sm-9 control-label">ภาษี : </label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" name="sellvat" style="color: #11B9E9; font-weight: bold;" class="form-control rounded text-right" value="<?php echo $vat =  $sumprice * 7 / 100; ?>" readonly>
+                                                </div>
+                                            </div>
+
                                             <div class="line line-dashed b-b line-lg pull-in"></div>
-                                            <h3>ยอดรวม: <?php echo $sumprice = $selldetail['exportproduct_sumprice'] + $selldetail['exportproduct_vat'];?></h3>
+                                            <div class="form-group ">
+                                                <label class="col-sm-9 control-label">ยอดรวม : </label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" name="sellincludevat" style="color: Red; font-weight: bold;"
+                                                     class="form-control rounded text-right" value="<?php echo $sum =  $selldetail['exportproduct_sumprice'] + $vat?>" readonly>
+                                                </div>
+                                            </div>
+ 
                                         </div>
                                     </div>
                                 </footer>
                                 <div class="col-sm-12">
-                                <div class="col-sm-11"></div>
-                                <button type="submit" class="btn btn-primary" style="margin-top: 30px; padding: 8px 30px; ">บันทึก</button>
+                                    <div class="col-sm-11"></div>
+                                    <button type="submit" class="btn btn-primary" style="margin-top: 30px; padding: 8px 30px; ">บันทึก</button>
                                 </div>
                                 <!-- <div class="form-group" >
                                     <div class="col-sm-3 col-sm-offset-10" style="margin-top: 30px;">
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div> -->
-                            </form>
+                                <!-- </form> -->
 
-                        </div>
-                    </section>
+                            </div>
+                        </section>
 
                     <?php } ?>
                 </section>
