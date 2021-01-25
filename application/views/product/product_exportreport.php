@@ -7,7 +7,7 @@
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('product/product_exportbill')?>" class="btn btn-s-lg btn-success btn-rounded">ส่งออกสินค้า</a>
+                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="btn btn-s-lg btn-success btn-rounded">ส่งออกสินค้า</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -47,17 +47,20 @@
                             </tr>
                         </div>
                         <tbody>
-                        <?php foreach($product_export as $product_export){ ?>
-                            <tr>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_id'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['product_code'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['product_name'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_exdate'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_amount'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_price'] ?></a></td>
-                                <td><a href="<?php echo site_url('product/product_selldetail/').$product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_sumprice'] ?></a></td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail')?>"><i class="glyphicon glyphicon-print"></i></a></td>
-                            </tr>
+                            <?php foreach ($product_export as $product_export) { ?>
+                                <tr>
+                                    <?php $sell_id = $product_export['exportproduct_id'];
+                                    $sell_code = $product_export['product_code'];
+                                    ?>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $sell_id ?>"><?php echo $product_export['exportproduct_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_code'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_name'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_exdate'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_amount'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_price'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_sumprice'] ?></a></td>
+                                    <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail') ?>"><i class="glyphicon glyphicon-print"></i></a></td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>

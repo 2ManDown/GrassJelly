@@ -47,7 +47,7 @@
                                             <tr>
                                                 <td><?php echo $selldetail['exportproduct_id'] ?></td>
                                                 <td><?php echo $selldetail['exportproduct_exdate'] ?></td>
-                                                <td>เฉาก๊วย !Selec on JOIN </td>
+                                                <td><?php echo $selldetail['product_name'] ?></td>
                                                 <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_price'] ?>"></td>
                                                 <td><input type="text" class="form-control rounded" value="<?php echo $selldetail['exportproduct_amount'] ?>"></td>
                                                 <td style="text-align: center; color: #11B9E9; font-weight: bold;"><?php echo $selldetail['exportproduct_sumprice'] ?></td>

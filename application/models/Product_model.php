@@ -18,16 +18,11 @@ class Product_model extends CI_Model
 
     public function product_selldetail($sell_id){
 
-        $fetch = array('exportproduct_id' => $sell_id);
+        /* INNER JOIN AND SELECT */
+        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex 
+        WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
 
-        /* $this->db->get_where('pd.product_code,pd.product_name,ex.*', $fetch);
-        $this->db->from('gj_product as pd');
-        $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
- */
-        
-        $query = $this->db->get_where('gj_exportproduct', $fetch);
-    
-        return $query->result_array();
+        return $query->result_array(); 
     }
     
     public function product_detail($product_code)
