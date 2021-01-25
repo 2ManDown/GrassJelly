@@ -74,7 +74,8 @@
                                             <div class="form-group ">
                                                 <label class="col-sm-9 control-label">ยอดรวม : </label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="sellincludevat" class="form-control rounded text-right" value="<?php echo $sum =  $selldetail['exportproduct_sumprice'] + $vat ?>" readonly>
+                                                    <input type="text" name="sellincludevat" style="color: Red; font-weight: bold;"
+                                                     class="form-control rounded text-right" value="<?php echo $sum =  $selldetail['exportproduct_sumprice'] + $vat?>" readonly>
                                                 </div>
                                             </div>
  
