@@ -18,6 +18,7 @@ class Product_model extends CI_Model
     public function product_selldetail($sell_id)
     {
 
+
         /* INNER JOIN AND SELECT */
         $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex 
         WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
@@ -25,6 +26,14 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_manufacdetail($id)
+    {
+        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_manufac mf 
+        WHERE mf.product_code = $id) as mf INNER JOIN(SELECT * FROM gj_productbalance pb WHERE pb.product_code = $id)
+        as pb ON(pd.product_code = mf.product_code AND pd.product_code = pb.product_code) ");
+
+        return $query->result_array();
+    }
     public function product_detail($product_code)
     {
         /* Get Data from Primary Key */
@@ -83,13 +92,6 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_manufacdetail()
-    {
-        /*  $fetch = array('product_code' => $product_code);
-        $query = $this->db->get_where('gj_product', $fetch);
-        return $query->result_array(); */
-    }
-
     public function product_productbalanceselect($product_id)
     {
         $query = $this->db->getwhere('gj_productbalance', array('id' => $product_id));
@@ -141,16 +143,15 @@ class Product_model extends CI_Model
             'exportproduct_sumprice' => $this->input->post('sellsumprice'),
             'exportproduct_vat' => $this->input->post('sellvat'),
             'exportproduct_includevat' => $this->input->post('sellincludevat')
-            
+
         );
 
-      /*   print_r($input);
+        /*   print_r($input);
         echo '<pre>';
         exit(); */
-        
-        $this->db->where('exportproduct_id',$input['exportproduct_id']);
-        $this->db->update('gj_exportproduct',$input);
-        
+
+        $this->db->where('exportproduct_id', $input['exportproduct_id']);
+        $this->db->update('gj_exportproduct', $input);
     }
 
 

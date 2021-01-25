@@ -1,7 +1,9 @@
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
-<?php //foreach(){ ?>
+
+<?php foreach($manufac_detail as $manufac_detail){ ?>
+
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     ข้อมูลการผลิตสินค้า
@@ -11,7 +13,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control rounded" readonly>
+                                <input type="text" class="form-control rounded" value="<?php echo $manufac_detail['product_code'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -105,7 +107,7 @@
                     </form>
                 </div>
             </section>
-<?php// } ?>
+<?php } ?>
         </section>
 
     </section>
