@@ -41,7 +41,7 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>จำนวนนำเข้า</label>
-                                        <input type="number" class="form-control" id="immetarial_amount" name="immetarial_amount" value="" placeholder="จำนวนนำเข้า" required >
+                                        <input type="number" class="form-control" id="immetarial_amount" name="immetarial_amount" value="" onchange="plus()" placeholder="จำนวนนำเข้า" required>
                                     </div>
                                 </div>
 
@@ -78,6 +78,24 @@
                 </section>
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+
+
         </section>
     </section>
+
+
 </section>
+
+
+<script>
+    function plus() {
+        let x = document.getElementById("metarial_price").value;
+        console.log(x);
+        let a = document.getElementById("immetarial_amount").value;
+        console.log(a);
+        let b = x * a;
+        console.log(b);
+        let output = document.getElementById("immetarial_sumprice");
+        output.value = b;
+    }
+</script>
