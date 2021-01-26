@@ -44,7 +44,7 @@
                                 <th>ราคาต่อหน่วย</th>
                                 <th>ประเภท</th>
                                 <th>วันหมดอายุ</th>
-                                <th class="text-center">จัดการ</th>
+                                <th width="300" class="text-center">จัดการ</th>
                             </tr>
                         </div>
                         <?php foreach ($metarial_list as $metarial_list) { ?>
@@ -56,7 +56,12 @@
                                     <td><?php echo $metarial_list['metarial_price'] ?></td>
                                     <td><?php echo $metarial_list['metarial_unit'] ?></td>
                                     <td><?php echo $metarial_list['metarial_expdate'] ?></td>
-                                    <td style="text-align: center;"><a href="<?php echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 4px 2px;">เบิกใช้</a></td>
+                                    <td style="text-align: center;">
+                                    <a href="<?php echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 3px 1px;">นำเข้า
+                                    <a href="<?php echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 3px 1px; margin-left: 5px;">เบิกใช้
+                                    
+                                    </a></td>
+                                    
                                 </tr>
                             </tbody>
                         <?php } ?>

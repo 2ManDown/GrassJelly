@@ -53,4 +53,23 @@ class Metarial_model extends CI_Model
     {
         $this->db->insert('gj_reavelmetarial', $input);
     }
+
+    /* START IMPROT METARIAL */
+    public function metarial_importlist($metarial_code)
+    {
+        $query = $this->db->get_where('gj_metarial', array('metarial_code' => $metarial_code));
+        return $query->result_array();
+    }
+
+    public function metarial_import($metarial_code)
+    {
+        $query = $this->db->get_where('gj_metarial', array('metarial_code' => $metarial_code));
+        return $query->result_array();
+    }
+
+    public function metarial_iminsert($input)
+    {
+        $this->db->insert('gj_immetarial', $input);
+    }
+    /* END IMPROT METARIAL */
 }

@@ -7,18 +7,20 @@
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
                             นำเข้าวัตถุดิบ
                         </header>
-                        <form data-validate="parsley" action="#">
-                            <div class="panel-body">
+                        <?php echo form_open('metarial/metarial_iminsert', 'data-validate="parsley" action="#"') ?>
+                        <!-- <form data-validate="parsley" action="#"> -->
+                        <div class="panel-body">
+                            <?php foreach ($metarial_code as $metarial_code) { ?>
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>รหัสวัตถุดิบ</label>
-                                        <input type="text" class="form-control" placeholder="รหัสวัตถุดิบ" required>
+                                        <input type="text" class="form-control" name="metarial_code" value="<?php echo $metarial_code['metarial_code'] ?>" placeholder="รหัสวัตถุดิบ" required readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ปริมาตร</label>
-                                        <input type="text" class="form-control" placeholder="ปริมาตร" required>
+                                        <input type="text" class="form-control" value="<?php echo $metarial_code['metarial_volume'] ?>" placeholder="ปริมาตร" required readonly>
                                     </div>
                                 </div>
 
@@ -27,54 +29,52 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ราคาต่อหน่วย</label>
+
                                         <div class="input-group m-b">
                                             <span class="input-group-addon">BTH</span>
-                                            <input type="number" class="form-control">
+
+                                            <input type="number" class="form-control" id="metarial_price" value="<?php echo $metarial_code['metarial_price'] ?>" readonly>
+
                                             <span class="input-group-addon">.00</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>จำนวนนำเข้า</label>
-                                        <input type="text" class="form-control" placeholder="จำนวนนำเข้า" required>
+                                        <input type="number" class="form-control" id="immetarial_amount" name="immetarial_amount" value="" placeholder="จำนวนนำเข้า" required >
                                     </div>
-
                                 </div>
 
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ราคารวม</label>
-                                        <input type="text" class="form-control" placeholder="ราคารวม" required readonly>
+                                        <input type="text" class="form-control" id="immetarial_sumprice" name="immetarial_sumprice" value="" placeholder="ราคารวม" required readonly>
                                     </div>
 
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>หน่วยนับ</label>
-                                        <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+                                        <input type="text" class="form-control" value="<?php echo $metarial_code['metarial_unit'] ?>" placeholder="หน่วยนับ" required readonly>
                                     </div>
                                 </div>
-
 
                                 <div class="form-group pull-in clearfix">
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
-                                        <label>วันที่นำเข้า</label>
-                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                        <label>วันที่นำเข้า </label>
+                                        <input class="input-sm input-s datepicker-input form-control" name="immetarial_imdate" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
                                     </div>
-<!--                                     <div class="col-sm-1"></div>
-                                    <div class="col-sm-4">
-                                        <label>วันหมดอายุ</label>
-                                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                    </div> -->
                                 </div>
 
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
                                 </div>
-                            </div>
+                            <?php } ?>
+                        </div>
                     </section>
-                    </form>
+                    <!-- </form> -->
+                    <?php form_close() ?>
                 </section>
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
