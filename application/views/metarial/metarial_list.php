@@ -57,11 +57,11 @@
                                     <td><?php echo $metarial_list['metarial_unit'] ?></td>
                                     <td><?php echo $metarial_list['metarial_expdate'] ?></td>
                                     <td style="text-align: center;">
-                                    <!-- <a href="<?php echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 3px 1px;">นำเข้า -->
+                                    <!-- <a href="<?php //echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 3px 1px;">นำเข้า -->
                                     <a href="<?php echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="นำเข้าวัตถุดิบ" ><i class="glyphicon glyphicon-import"></i></a>
                                     &nbsp;
-                                    <a href="<?php echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-sm btn-icon btn-primary btn-rounded" title="เบิกใช้วัตถุดิบ"><i class="fa fa-share-square-o"></i></a>
-                                    <!-- <a href="<?php echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 3px 1px; margin-left: 5px;">เบิกใช้ -->
+                                    <a href="<?php echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-sm btn-icon btn-primary btn-rounded" title="เบิกใช้วัตถุดิบ"><i class="fa fa-share-square-o"></i></a>
+                                    <!-- <a href="<?php //echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 3px 1px; margin-left: 5px;">เบิกใช้ -->
                                     
                                     </a></td>
                                     

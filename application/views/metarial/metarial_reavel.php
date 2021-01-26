@@ -40,10 +40,18 @@
                                     <div class="form-group pull-in clearfix">
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-4">
+                                            <label>จำนวนคงเหลือ</label>
+                                            <input type="number" class="form-control" id="input-id-1" name="reavelmetarial_amount" placeholder="จำนวนที่เบิก" style="color: red;" readonly>
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-4">
                                             <label>จำนวนที่เบิก</label>
                                             <input type="number" class="form-control" id="input-id-1" name="reavelmetarial_amount" placeholder="จำนวนที่เบิก">
                                         </div>
-                                        <div class="col-sm-1"></div>
+                                    </div>
+
+                                    <div class="form-group pull-in clearfix">
+                                        <div class="col-sm-6"></div>
                                         <div class="col-sm-4">
                                             <label>วันที่เบิก</label>
                                             <input class="input-sm input-s datepicker-input form-control" id="datetime" name="reavelmetarial_revdate" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
