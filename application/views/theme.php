@@ -240,34 +240,7 @@
 
                   <!-- <div class="line dk hidden-nav-xs"></div> -->
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-
-                      <i class="i i-docs icon">
-                      </i>
-                      <span class="font-bold">นำเข้าวัตถุดิบ</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_insert') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>นำเข้าวัตถุดิบ</span>
-                        </a>
-                      </li>
-                      <!--                       <li>
-                        <a href="<?php echo site_url('metarial/metarial_reavel') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>เบิกใช้วัตถุดิบ</span>
-                        </a>
-                      </li> -->
-                    </ul>
-                  </li>
+                  
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
