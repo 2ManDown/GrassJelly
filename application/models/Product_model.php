@@ -28,9 +28,16 @@ class Product_model extends CI_Model
 
     public function product_manufacdetail($id)
     {
-        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_manufac mf 
-        WHERE mf.product_code = $id) as mf INNER JOIN(SELECT * FROM gj_productbalance pb WHERE pb.product_code = $id)
-        as pb ON(pd.product_code = mf.product_code AND pd.product_code = pb.product_code) ");
+
+        echo $id;
+        $query = $this->db->query("SELECT * FROM gj_product pd 
+        INNER JOIN(SELECT * FROM gj_productbalance pb 
+        WHERE pb.productbalance_id = $id) as pb ON (pd.product_code = pb.product_code)
+
+        LEFT JOIN(SELECT * FROM gj_manufac mf
+        WHERE mf.manufac_id = $id) as mf ON (pb.manufac_id = mf.manufac_id)
+
+        ");
 
         return $query->result_array();
     }

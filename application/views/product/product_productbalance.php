@@ -51,13 +51,13 @@
                             <?php foreach ($product_productbalance as $product_productbalance) { ?>
                             
                                 <tr>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['manufac_id'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['product_code'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['product_name'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['manufac_producedate'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['manufac_produce'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['manufac_price'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['product_code'] ?>"><?php echo $product_productbalance['productbalance_balance'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_id'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['product_code'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['product_name'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_producedate'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_produce'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_price'] ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_manufacdetail/').$product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['productbalance_balance'] ?></a></td>
 
                                 </tr>
                             <?php } ?>

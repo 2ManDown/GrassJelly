@@ -18,44 +18,37 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ลอตสินค้า</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
                             <label class="col-sm-3 control-label">ชื่อสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['product_name'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ปริมาตร</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['product_volume'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">วันที่ผลิต</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" placeholder="วันที่ผลิต" readonly>
+                                <input type="text" class="form-control" placeholder="วันที่ผลิต" value="<?php echo $manufac_detail['manufac_producedate'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">วันหมดอายุ</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" placeholder="วันหมดอายุ" readonly>
+                                <input type="text" class="form-control" placeholder="วันหมดอายุ" value="<?php echo $manufac_detail['manufac_expdate'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">ราคาสินค้า</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['product_price'] ?>" readonly>
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -63,17 +56,16 @@
                             <label class="col-sm-3 control-label">รายละเอียดสินค้าโดยย่อ</label>
                             <div class="col-sm-7">
                                 <!-- <input type="text" class="form-control"> -->
-                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"></textarea>
+                                <textarea class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;" readonly><?php echo $manufac_detail['product_detail'] ?></textarea>
                             </div>
                         </div>
+
+
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">หน่วยนับ</label>
                             <div class="col-sm-7">
-                                <select name="account" class="form-control m-b">
-                                    <option value="ถุง">ถุง</option>
-                                    <option value="ขวด">ขวด</option>
-                                </select>
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['product_unit']?>" readonly>
                             </div>
                         </div>
 
@@ -81,7 +73,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">จำนวนที่ผลิต</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" readonly>
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['manufac_produce'] ?>" readonly>
                             </div>
                         </div>
 
@@ -89,16 +81,14 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">จำนวนคงเหลือ</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" readonly>
+                                <input type="text" class="form-control" value="<?php echo $manufac_detail['productbalance_balance'] ?>" readonly>
                             </div>
                         </div>
 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <div class="col-sm-7 col-sm-offset-4" style="align-items: center;">
-                                <button type="submit" class="btn btn-primary">แก้ไขข้อมูลสินค้า</button>
-                                &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default" onclick="goBack()">Cancel</button>
+                            <div class="col-sm-7 col-sm-offset-5" style="align-items: center;">
+                                <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
                                 
