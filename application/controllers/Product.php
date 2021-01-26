@@ -71,8 +71,14 @@ class Product extends CI_Controller
 		$this->load->view('theme', $data);
 	}
 
-	public function product_manufacdetail()
+	public function product_manufacdetail($id)
 	{
+		$data['manufac_detail'] = $this->Product_model->product_manufacdetail($id);
+
+		print_r($data);
+		echo '<pre>';
+		exit();
+
 		$data['page'] = "product/product_manufacdetail";
 		$this->load->view('theme', $data);
 	}
