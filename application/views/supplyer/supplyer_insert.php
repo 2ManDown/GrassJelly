@@ -54,7 +54,7 @@
 
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
-                        <div class="col-sm-8 col-sm-offset-5" style="margin-top: 10px;">
+                        <div id="btn" > <!-- class="col-sm-8 col-sm-offset-5" style="margin-top: 10px;" -->
                             <button type="submit" class="btn btn-primary">เพิ่มข้อมูลร้านค้า</button>
                             &nbsp; &nbsp;
                             <button type="submit" class="btn btn-default" onclick="goBack()">ยกเลิก</button>

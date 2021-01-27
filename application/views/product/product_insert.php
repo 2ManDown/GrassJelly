@@ -65,11 +65,11 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <div class="col-sm-5 col-sm-offset-4">
+                            <div id="btn"> <!-- class="col-sm-5 col-sm-offset-4"  -->
                                 <button type="submit" class="btn btn-primary" style="padding: 5px 25px;">บันทึก</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-success" style="padding: 5px 20px;">ดูตัวอย่าง</button>
-                                &nbsp; &nbsp;
+                               <!--  <button type="submit" class="btn btn-success" style="padding: 5px 20px;">ดูตัวอย่าง</button>
+                                &nbsp; &nbsp; -->
                                 <button type="submit" class="btn btn-default" onclick="goBack()" style="padding: 5px 23px;">ยกเลิก</button>
                             </div>
                         </div>

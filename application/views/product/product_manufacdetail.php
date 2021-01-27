@@ -87,7 +87,7 @@
 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <div class="col-sm-7 col-sm-offset-5" style="align-items: center;">
+                            <div id="btn"> <!-- class="col-sm-7 col-sm-offset-5" -->
                                 <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
                                 &nbsp; &nbsp;
                                 <button type="submit" class="btn btn-danger">ลบข้อมูลสินค้า!</button>
