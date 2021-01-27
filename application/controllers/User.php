@@ -5,6 +5,8 @@ class User extends CI_Controller
 {
     public function user_login()
     {
+        /* echo 'User'; 
+        exit(); */
         $data['page'] = "user/user_login";
         $this->load->view('theme', $data);
     }

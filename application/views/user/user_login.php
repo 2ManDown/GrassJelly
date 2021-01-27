@@ -9,7 +9,7 @@
     
 <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
     <div class="container aside-xl">
-        <a class="navbar-brand block" href="index.html">Scale</a>
+        <a class="navbar-brand block" href="">Grass Jelly</a>
         <section class="m-b-lg">
             <header class="wrapper text-center">
                 <strong>Sign in to get in touch</strong>
@@ -23,8 +23,8 @@
                         <input type="password" placeholder="Password" class="form-control no-border">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
-                <div class="text-center m-t m-b"><a href="#"><small>Forgot password?</small></a></div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">เข้าสู่ระบบ</button>
+                <div class="text-center m-t m-b"><a href="#"><small>ลืมรหัสผ่าน?</small></a></div>
                 <div class="line line-dashed"></div>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a href="#" class="btn btn-lg btn-default btn-block">Create an account</a>
