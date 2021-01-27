@@ -75,7 +75,7 @@
                     </div>
 
                 </section>
-                <?php// } ?>
+            
         </section>
 
     </section>
@@ -88,8 +88,6 @@
 <section id="content" class="col-md-5">
     <section class="vbox">
         <section class="scrollable padder">
-            <?php //foreach ($product_list as $product_list) { 
-            ?>
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     ตัวอย่างข้อมูลสินค้า
