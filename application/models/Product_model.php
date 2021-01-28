@@ -99,11 +99,11 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_productbalanceselect($product_id)
+    /* public function product_productbalanceselect($product_id)
     {
         $query = $this->db->getwhere('gj_productbalance', array('id' => $product_id));
         return $query->result_array();
-    }
+    } */
 
     public function product_manufacinsert()
     {

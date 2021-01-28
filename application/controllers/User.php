@@ -5,11 +5,24 @@ class User extends CI_Controller
 {
     public function user_login()
     {
-        /* echo 'User'; 
-        exit(); */
         $data['page'] = "user/user_login";
         $this->load->view('theme', $data);
     }
+
+    public function user_auth()
+    {
+        $data['auth'] = $this->User_model->user_auth();
+
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+        exit();
+        
+    }
+
+
+
+
     /* get data มาโชว์ */
     public function user_profile()
     {
