@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Password Again:</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" name="user_passagain" value="<?php echo $user_profile['user_passagain'] ?>" placeholder="Password Again" required>
+                                <input type="password" class="form-control" name="user_passagain" value="<?php echo $user_profile['user_password'] ?>" placeholder="Password Again" required>
                             </div>
                         </div>
 
