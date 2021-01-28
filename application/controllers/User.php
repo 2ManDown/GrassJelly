@@ -13,21 +13,36 @@ class User extends CI_Controller
     {
         $data['auth'] = $this->User_model->user_auth();
 
-        /* echo '<pre>';
-        print_r($check);
-        echo '</pre>';
-        exit(); */
-
-        if ($data) {
-            redirect('admin');
-        } else {
-            echo 'USER';
+        foreach ($data['auth'] as $value) {
+            /* echo '<pre>';
+            print_r($value);
             echo '<pre>';
-            print_r($data);
-            echo '</pre>';
-            exit();
-            //redirect('user');
+            exit(); */
+            $userdata = array(
+                'id' => $value['user_id'],
+                'username' => $value['user_username'],
+                'password' => $value['user_password'],
+                'name' => $value['user_name'],
+                'email' => $value['user_email'],
+                'tel' => $value['user_tel'],
+                'status' => $value['user_status'],
+
+            );
+            $this->session->set_userdata($userdata);
+
+            if ($value['user_status'] == 'ADMIN') {
+                redirect('admin');
+            } else if ($value['user_status'] == 'FACTORY') {
+                redirect('admin');
+            } else if ($value['user_status'] == 'SUPPLYER') {
+            } else {
+                echo 'Incorrect';
+                exit();
+            }
         }
+
+
+
         /* $data['page'] = "index";
         $this->load->view('theme', $data); */
     }
