@@ -70,7 +70,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+              <a href="<?php echo site_url('user/user_login') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
             </li>
           </ul>
         </li>
@@ -106,7 +106,7 @@
                       </li>
                       <li class="divider"></li>
                       <li>
-                        <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+                      <a href="<?php echo site_url('user/user_login') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
                       </li>
                     </ul>
                   </div>
