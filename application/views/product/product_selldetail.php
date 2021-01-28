@@ -23,11 +23,9 @@
                                         <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php echo $selldetail['exportproduct_reciever'] ?>" readonly>
                                     </div>
 
-                                    <div id="namesup" class="form-group">
-                                        <label  class="col-sm-1 control-label" for="input-id-1">วันที่ขาย</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" class="form-control rounded" id="input-id-1" value="<?php echo $selldetail['exportproduct_exdate'] ?>" readonly>
-                                        </div>
+                                    <label class="col-sm-1 control-label">วันที่ขาย</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control rounded" placeholder="วันที่ขาย" value="<?php echo $selldetail['exportproduct_exdate'] ?>" readonly>
                                     </div>
                                 </div>
 
@@ -85,7 +83,7 @@
                                 </footer>
                                 <div class="col-sm-12">
                                     <div class="col-sm-11"></div>
-                                    <button type="button" class="btn btn-primary" id="print" style="margin-top: 30px; padding: 8px 30px; " onclick="window.print()">บันทึก</button>
+                                    <button type="button" class="btn btn-primary" id="print" style="margin-top: 30px; padding: 8px 30px; " onclick="window.print()">พิมพ์</button>
                                 </div>
                                 <!-- <div class="form-group" >
                                     <div class="col-sm-3 col-sm-offset-10" style="margin-top: 30px;">
