@@ -4,11 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class User_model extends CI_Model
 
 {
-    /* public function user_list()
+    public function user_list()
     {
         $query = $this->db->get('gj_user');
         return $query->result_array();
-    } */
+    }
 
     public function user_update_db()
     {
