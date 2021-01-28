@@ -13,11 +13,23 @@ class User extends CI_Controller
     {
         $data['auth'] = $this->User_model->user_auth();
 
-        echo '<pre>';
-        print_r($data);
+        /* echo '<pre>';
+        print_r($check);
         echo '</pre>';
-        exit();
-        
+        exit(); */
+
+        if ($data) {
+            redirect('admin');
+        } else {
+            echo 'USER';
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
+            exit();
+            //redirect('user');
+        }
+        /* $data['page'] = "index";
+        $this->load->view('theme', $data); */
     }
 
 
