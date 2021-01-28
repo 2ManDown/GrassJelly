@@ -14,13 +14,13 @@
             <header class="wrapper text-center">
                 <strong>Sign in to get in touch</strong>
             </header>
-            <form action="index.html">
+            <?php echo form_open('user/user_auth') ?>
                 <div class="list-group">
                     <div class="list-group-item">
-                        <input type="email" placeholder="Email" class="form-control no-border">
+                        <input type="text" placeholder="Username Or Email" name="user_username" class="form-control no-border">
                     </div>
                     <div class="list-group-item">
-                        <input type="password" placeholder="Password" class="form-control no-border">
+                        <input type="password" placeholder="Password" name="user_password"  class="form-control no-border">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">เข้าสู่ระบบ</button>
@@ -28,7 +28,7 @@
                 <div class="line line-dashed"></div>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a href="#" class="btn btn-lg btn-default btn-block">Create an account</a>
-            </form>
+            <?php form_close()?>
         </section>
     </div>
 </section>

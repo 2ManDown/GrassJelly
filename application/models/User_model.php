@@ -10,6 +10,23 @@ class User_model extends CI_Model
         return $query->result_array();
     }
 
+    /* AUTHEN */
+    public function user_auth()
+    {
+        $data = array(
+            'user_username' => $this->input->post('user_username'),
+            'user_password' => $this->input->post('user_password'),
+        );
+        $password = md5($data['user_password']);
+        $this->db->select('*');
+        $this->db->from('gj_user');
+        $this->db->where('user_username', $data['user_username']);
+        $this->db->where('user_password', $password);
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function user_update_db()
     {
         $data = array(
@@ -19,11 +36,9 @@ class User_model extends CI_Model
             'user_passagain' => $this->input->post('user_passagain'),
             'user_email' => $this->input->post('user_email'),
             'user_tel' => $this->input->post('user_tel'),
-            
-        );
-        $this->db->where('user_id',$data['user_id']);
-        $this->db->update('gj_user',$data);
-        
-    }
 
+        );
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->update('gj_user', $data);
+    }
 }
