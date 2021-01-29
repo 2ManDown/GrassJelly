@@ -41,7 +41,7 @@
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-4">
                                             <label>จำนวนคงเหลือ</label>
-                                            <input type="number" class="form-control" id="input-id-1" name="reavelmetarial_amount" placeholder="จำนวนที่เบิก" style="color: red;" readonly>
+                                            <input type="number" class="form-control" id="input-id-1" name="reavelmetarial_amount" placeholder="จำนวนคงเหลือ" style="color: red;" readonly>
                                         </div>
                                         <div class="col-sm-1"></div>
                                         <div class="col-sm-4">
