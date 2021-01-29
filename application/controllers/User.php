@@ -30,11 +30,11 @@ class User extends CI_Controller
             );
             $this->session->set_userdata($userdata);
 
-            if ($value['user_status'] == 'ADMIN') {
+            if ($value['user_status'] == 'admin') {
                 redirect('admin');
-            } else if ($value['user_status'] == 'FACTORY') {
+            } else if ($value['user_status'] == 'factory') {
                 redirect('factory');
-            } else if ($value['user_status'] == 'SUPPLYER') {
+            } else if ($value['user_status'] == 'supplyer') {
                 redirect('supplyer');
             } else {
                 echo 'Incorrect';

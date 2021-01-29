@@ -29,7 +29,18 @@
 </head>
 
 <?php $userdata = $this->session->userdata('status');
-$userdata ? $userdata : redirect('') ; ?>
+/*$userdata ? $userdata : redirect('')  ;*/
+
+if ($userdata == 'admin') {
+} else if ($userdata == 'factory') {
+  redirect('factory');
+} else if ($userdata == 'supplyer') {
+  redirect('supplyer');
+} else {
+  redirect('');
+}
+
+?>
 
 <body class="">
   <section class="vbox">
