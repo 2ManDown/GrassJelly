@@ -177,21 +177,7 @@
 
                           <span>รายการสินค้าคงคลัง</span>
                         </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการนำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการส่งออกสินค้า</span>
-                        </a>
-                      </li>
+                        </li>
                       <li>
                         <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
                           <i class="i i-dot"></i>
@@ -199,6 +185,15 @@
                           <span>เพิ่มข้อมูลการผลิตสินค้า</span>
                         </a>
                       </li>
+                      </li>
+                      
+                      <li>
+                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายงานการส่งออกสินค้า</span>
+                        </a>
+                      
 
                     </ul>
                   </li>
@@ -252,15 +247,10 @@
 
                       <i class="fa fa-plane">
                       </i>
-                      <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
+                      <span class="font-bold">การส่งออกสินค้า</span>
                     </a>
                     <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('product/product_import') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>นำเข้าสินค้า</span>
-                        </a>
-                      </li>
+                      
                       <li>
                         <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
                           <i class="i i-dot"></i>
@@ -343,7 +333,7 @@
                     </ul>
                   </li>
 
-                  <div class="line dk hidden-nav-xs"></div>
+                  <!-- <div class="line dk hidden-nav-xs"></div>
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Employee</div>
                   <li>
                     <a href="#" class="auto">
@@ -357,7 +347,7 @@
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('employee/employee_info') ?>" class="auto">
+                        <a href="<?php// echo site_url('employee/employee_info') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ข้อมูลพนักงาน</span>
                         </a>
@@ -365,7 +355,7 @@
                     </ul>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="auto">
+                        <a href="<?php //echo site_url('employee/employee_addinfo') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>เพิ่มข้อมูลพนักงาน</span>
                         </a>
@@ -373,7 +363,7 @@
                     </ul>
                   </li>
 
-
+ -->
                   <div class="line dk hidden-nav-xs"></div>
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Setting</div>
                   <li>
