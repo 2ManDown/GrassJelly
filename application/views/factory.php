@@ -29,7 +29,18 @@
 </head>
 
 <?php $userdata = $this->session->userdata('status');
-$userdata ? $userdata : redirect('') ; ?>
+//$userdata ? $userdata : redirect('') ; 
+
+
+if ($userdata == 'admin') {
+  redirect('admin');
+} else if ($userdata == 'factory') {
+  
+} else if ($userdata == 'supplyer') {
+  redirect('supplyer');
+} else {
+  redirect('');
+} ?>
 
 <body class="">
   <section class="vbox">
@@ -73,7 +84,7 @@ $userdata ? $userdata : redirect('') ; ?>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="<?php echo site_url('user/user_logout') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
+              <a href="<?php echo site_url('user/user_logout') ?>">Logout</a> <!-- data-toggle="ajaxModal" -->
             </li>
           </ul>
         </li>
@@ -109,7 +120,7 @@ $userdata ? $userdata : redirect('') ; ?>
                       </li>
                       <li class="divider"></li>
                       <li>
-                      <a href="<?php echo site_url('user/user_logout') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
+                        <a href="<?php echo site_url('user/user_logout') ?>">Logout</a> <!-- data-toggle="ajaxModal" -->
                       </li>
                     </ul>
                   </div>
@@ -179,7 +190,7 @@ $userdata ? $userdata : redirect('') ; ?>
 
                           <span>รายการสินค้าคงคลัง</span>
                         </a>
-                        </li>
+                      </li>
                       <li>
                         <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
                           <i class="i i-dot"></i>
@@ -187,15 +198,15 @@ $userdata ? $userdata : redirect('') ; ?>
                           <span>เพิ่มข้อมูลการผลิตสินค้า</span>
                         </a>
                       </li>
-                      </li>
-                      
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
+                  </li>
 
-                          <span>รายงานการส่งออกสินค้า</span>
-                        </a>
-                      
+                  <li>
+                    <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
+                      <i class="i i-dot"></i>
+
+                      <span>รายงานการส่งออกสินค้า</span>
+                    </a>
+
 
                     </ul>
                   </li>
@@ -239,7 +250,7 @@ $userdata ? $userdata : redirect('') ; ?>
 
                   <!-- <div class="line dk hidden-nav-xs"></div> -->
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
-                  
+
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
@@ -252,7 +263,7 @@ $userdata ? $userdata : redirect('') ; ?>
                       <span class="font-bold">การส่งออกสินค้า</span>
                     </a>
                     <ul class="nav dk">
-                      
+
                       <li>
                         <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
                           <i class="i i-dot"></i>
@@ -357,7 +368,8 @@ $userdata ? $userdata : redirect('') ; ?>
                     </ul>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php //echo site_url('employee/employee_addinfo') ?>" class="auto">
+                        <a href="<?php //echo site_url('employee/employee_addinfo') 
+                                  ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>เพิ่มข้อมูลพนักงาน</span>
                         </a>
@@ -398,7 +410,7 @@ $userdata ? $userdata : redirect('') ; ?>
           </section>
         </aside>
         <!-- /.aside -->
-        <?php $this->load->view($page)?>
+        <?php $this->load->view($page) ?>
       </section>
     </section>
   </section>
