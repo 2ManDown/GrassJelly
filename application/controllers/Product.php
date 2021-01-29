@@ -10,14 +10,15 @@ class Product extends CI_Controller
 		$data['product_list'] = $this->Product_model->product_list();
 
 		$data['page'] = "product/product_list";
-		$this->test($data);
+		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
 
 	public function product_insert()
 	{
 		$data['page'] = "product/product_insert";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_productbalance()
@@ -25,7 +26,8 @@ class Product extends CI_Controller
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
 
 		$data['page'] = "product/product_productbalance";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 
@@ -34,13 +36,15 @@ class Product extends CI_Controller
 		$data['product_export'] = $this->Product_model->product_exportreport();
 
 		$data['page'] = "product/product_exportreport";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_exp()
 	{
 		$data['page'] = "product/product_exp";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_detail($product_code)
@@ -48,7 +52,8 @@ class Product extends CI_Controller
 		$data['product_list'] = $this->Product_model->product_detail($product_code);
 
 		$data['page'] = "product/product_detail";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 /* 	public function product_select($product_code)
@@ -62,7 +67,8 @@ class Product extends CI_Controller
 	public function product_exportbill()
 	{
 		$data['page'] = "product/product_exportbill";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_manufacinsert()
@@ -70,7 +76,8 @@ class Product extends CI_Controller
 		$data['product_list'] = $this->Product_model->product_list();
 
 		$data['page'] = "product/product_manufacinsert";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_manufacdetail($id)
@@ -83,7 +90,8 @@ class Product extends CI_Controller
 		exit(); */
 
 		$data['page'] = "product/product_manufacdetail";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_selldetail($sell_id)
@@ -91,7 +99,8 @@ class Product extends CI_Controller
 		$data['selldetail'] = $this->Product_model->product_selldetail($sell_id);
 
 		$data['page'] = "product/product_selldetail";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_importreport()
@@ -99,9 +108,8 @@ class Product extends CI_Controller
 		$data['product_importreport'] = $this->Product_model->product_importreport();
 
 		$data['page'] = "product/product_reportim";
-		$this->load->view('theme', $data);
-
-		/* $this->Product_model->product_importreport(); */
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 
 	}
 
@@ -110,7 +118,8 @@ class Product extends CI_Controller
 		$data['product_import'] = $this->Product_model->product_import();
 
 		$data['page'] = "product/product_import";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 
@@ -149,8 +158,15 @@ class Product extends CI_Controller
 	}
 
 
-	public function test($data){
-		
-		
+	public function checksession($data){
+		if($this->session->userdata('status') == 'ADMIN'){
+			
+			$this->load->view('theme', $data);
+		}else if($this->session->userdata('status') == 'FACTORY'){
+			
+			$this->load->view('factory', $data);
+		}else{
+			$this->load->view('supplyer', $data);
+		}
 	}
 }
