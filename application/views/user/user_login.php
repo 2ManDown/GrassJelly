@@ -62,6 +62,14 @@
                 <?php form_close() ?>
             </section>
         </div>
+
+        <footer id="footer">
+    <div class="text-center padder">
+      <p>
+        <small>ISAN STUDIO<br>&copy; 2021</small>
+      </p>
+    </div>
+  </footer>
     </section>
 
 
