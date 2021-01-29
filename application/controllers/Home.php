@@ -14,10 +14,10 @@ class Home extends CI_Controller {
 	}
 	public function factory(){
 	 	$data['page'] = "index";
-		$this->load->view('theme',$data); 
+		$this->load->view('factory',$data); 
 	}
 	public function supplyer(){
 	 	$data['page'] = "index";
-		$this->load->view('theme',$data); 
+		$this->load->view('supplyer',$data); 
 	}
 }
