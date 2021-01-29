@@ -5,11 +5,13 @@ class Product extends CI_Controller
 {
 	public function product_list()
 	{
+		
 		//get ข้อมูลจาก table
 		$data['product_list'] = $this->Product_model->product_list();
 
 		$data['page'] = "product/product_list";
-		$this->load->view('theme', $data);
+		$this->test($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function product_insert()
@@ -144,5 +146,11 @@ class Product extends CI_Controller
 	{
 		$this->Product_model->product_delete($product_code);
 		redirect('product/product_list');
+	}
+
+
+	public function test($data){
+		
+		
 	}
 }
