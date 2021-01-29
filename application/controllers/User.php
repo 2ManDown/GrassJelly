@@ -35,6 +35,7 @@ class User extends CI_Controller
             } else if ($value['user_status'] == 'FACTORY') {
                 redirect('factory');
             } else if ($value['user_status'] == 'SUPPLYER') {
+                redirect('supplyer');
             } else {
                 echo 'Incorrect';
                 exit();

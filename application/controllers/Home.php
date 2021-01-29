@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('user/user_login');
 	}
-	public function dashboard(){
+	public function admin(){
 	 	$data['page'] = "index";
 		$this->load->view('theme',$data); 
 	}
