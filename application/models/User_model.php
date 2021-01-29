@@ -17,6 +17,7 @@ class User_model extends CI_Model
             'user_username' => $this->input->post('user_username'),
             'user_password' => $this->input->post('user_password'),
         );
+
         $password = md5($data['user_password']);
         $this->db->select('*');
         $this->db->from('gj_user');
@@ -24,7 +25,14 @@ class User_model extends CI_Model
         $this->db->where('user_password', $password);
 
         $query = $this->db->get();
-        return $query->result_array();
+        if($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+        else{
+            echo 'Incorrect';
+            exit();
+        }
+        
     }
 
     public function user_update_db()
@@ -33,12 +41,16 @@ class User_model extends CI_Model
             'user_id' => $this->input->post('user_id'),
             'user_name' => $this->input->post('user_name'),
             'user_password' => $this->input->post('user_password'),
-            'user_passagain' => $this->input->post('user_passagain'),
             'user_email' => $this->input->post('user_email'),
             'user_tel' => $this->input->post('user_tel'),
 
         );
+        /* echo '<pre>';
+        print_r($data);
+        echo '<pre>';
+        exit(); */
         $this->db->where('user_id', $data['user_id']);
         $this->db->update('gj_user', $data);
+        
     }
 }

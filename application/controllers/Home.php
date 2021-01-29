@@ -6,9 +6,10 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		/* $data['user_profile'] = $this->User_model->user_list(); */
-		
-		$data['page'] = "index";
-		$this->load->view('theme',$data);
+		$this->load->view('user/user_login');
+	}
+	public function dashboard(){
+	 	$data['page'] = "index";
+		$this->load->view('theme',$data); 
 	}
 }

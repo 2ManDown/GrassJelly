@@ -62,7 +62,7 @@
             <span class="thumb-sm avatar pull-left">
               <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
             </span>
-            PANUWAT<b class="caret"></b>
+            <?php echo $this->session->userdata("name") ?><b class="caret"></b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <li>
@@ -94,10 +94,10 @@
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-t-xs">
-                          <strong class="font-bold text-lt">PANUWAT</strong>
+                          <strong class="font-bold text-lt"><?php echo $this->session->userdata("name") ?></strong>
                           <b class="caret"></b>
                         </span>
-                        <span class="text-muted text-xs block">ADMIN</span>
+                        <span class="text-muted text-xs block"><?php echo $this->session->userdata("status") ?></span>
                       </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -118,7 +118,7 @@
                   <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
                   <ul class="nav nav-main" data-ride="collapse">
                     <li class="active">
-                      <a href="<?php echo site_url('') ?>" class="auto">
+                      <a href="<?php echo site_url('home/dashboard') ?>" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">Overview</span>
@@ -406,7 +406,7 @@
           </section>
         </aside>
         <!-- /.aside -->
-        <?php $this->load->view($page) ?>
+        <?php $this->load->view($page)?>
       </section>
     </section>
   </section>
