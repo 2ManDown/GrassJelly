@@ -28,6 +28,8 @@
   <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 </head>
 
+<?php $userdata = $this->session->userdata('status');
+$userdata ? $userdata : redirect('') ; ?>
 
 <body class="">
   <section class="vbox">
@@ -71,7 +73,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="<?php echo site_url('user/user_login') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
+              <a href="<?php echo site_url('user/user_logout') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
             </li>
           </ul>
         </li>
@@ -107,7 +109,7 @@
                       </li>
                       <li class="divider"></li>
                       <li>
-                      <a href="<?php echo site_url('user/user_login') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
+                      <a href="<?php echo site_url('user/user_logout') ?>" >Logout</a> <!-- data-toggle="ajaxModal" -->
                       </li>
                     </ul>
                   </div>

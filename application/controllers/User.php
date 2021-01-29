@@ -41,14 +41,14 @@ class User extends CI_Controller
                 exit();
             }
         }
-
-
-
-        /* $data['page'] = "index";
-        $this->load->view('theme', $data); */
     }
 
-
+    public function user_logout()
+    {
+        $userdata = array('id','name','username','password','tel','email','status');
+        $this->session->unset_userdata($userdata);
+        redirect('');
+    }
 
 
     /* get data มาโชว์ */
@@ -58,7 +58,8 @@ class User extends CI_Controller
         $data['user_profile'] = $this->User_model->user_list();
 
         $data['page'] = "user/user_profile";
-        $this->load->view('theme', $data);
+        $this->checksession($data);
+        // $this->load->view('theme', $data);
     }
 
     /* UPDATE */
@@ -66,5 +67,19 @@ class User extends CI_Controller
     {
         $this->User_model->user_update_db();
         redirect('user/user_profile');
+    }
+
+
+    public function checksession($data)
+    {
+        if ($this->session->userdata('status') == 'ADMIN') {
+
+            $this->load->view('theme', $data);
+        } else if ($this->session->userdata('status') == 'FACTORY') {
+
+            $this->load->view('factory', $data);
+        } else {
+            $this->load->view('supplyer', $data);
+        }
     }
 }

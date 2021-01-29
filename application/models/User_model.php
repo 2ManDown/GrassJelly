@@ -15,6 +15,7 @@ class User_model extends CI_Model
     {
         $data = array(
             'user_username' => $this->input->post('user_username'),
+            'user_email' => $this->input->post('user_email'),
             'user_password' => $this->input->post('user_password'),
         );
 
@@ -22,6 +23,7 @@ class User_model extends CI_Model
         $this->db->select('*');
         $this->db->from('gj_user');
         $this->db->where('user_username', $data['user_username']);
+        /* ->or_where('user_email', $data['user_email']); */
         $this->db->where('user_password', $password);
 
         $query = $this->db->get();
