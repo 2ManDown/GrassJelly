@@ -71,6 +71,12 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
+	public function product_select($id){
+		$data['select'] = $this->Product_model->product_select($id);
+
+		$this->checksession($data);
+	}
+
 	public function product_manufacinsert()
 	{
 		$data['product_list'] = $this->Product_model->product_list();

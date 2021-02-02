@@ -49,6 +49,13 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_select($id){
+        /* Get Data from Primary Key */
+        $fetch = array('product_code' => $id);
+        $query = $this->db->get_where('gj_product', $fetch);
+        return $query->result_array();
+    }
+
     public function product_importreport()
     {
         /* INNER JOIN */
@@ -99,11 +106,7 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    /* public function product_productbalanceselect($product_id)
-    {
-        $query = $this->db->getwhere('gj_productbalance', array('id' => $product_id));
-        return $query->result_array();
-    } */
+    
 
     public function product_manufacinsert()
     {
