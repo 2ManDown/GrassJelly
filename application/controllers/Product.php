@@ -159,10 +159,10 @@ class Product extends CI_Controller
 
 
 	public function checksession($data){
-		if($this->session->userdata('status') == 'ADMIN'){
+		if($this->session->userdata('status') == 'admin'){
 			
 			$this->load->view('theme', $data);
-		}else if($this->session->userdata('status') == 'FACTORY'){
+		}else if($this->session->userdata('status') == 'factory'){
 			
 			$this->load->view('factory', $data);
 		}else{
