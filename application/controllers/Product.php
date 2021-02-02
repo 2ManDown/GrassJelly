@@ -40,6 +40,15 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
+	public function product_manufacreport()
+	{
+		$data['product_manufac'] = $this->Product_model->product_manufacreport();
+
+		$data['page'] = "product/product_manufacreport";
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
+	}
+
 	public function product_exp()
 	{
 		$data['page'] = "product/product_exp";

@@ -206,7 +206,7 @@ if ($userdata == 'admin') {
                         </a>
                       </li>
                       <li>
-                        <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_manufacreport') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>รายงานการผลิตสินค้า</span>
