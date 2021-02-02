@@ -42,12 +42,12 @@
                 <?php echo form_open('user/user_auth') ?>
                 <div class="list-group">
                     <div class="list-group-item">
-                        <input type="text" placeholder="Username Or Email" name="user_username" class="form-control no-border">
+                        <input type="text" placeholder="Username or Email" name="user_username" class="form-control no-border" required>
                         <!-- <span class="text-danger"><?php //echo form_error('user_username') 
                                                         ?></span> -->
                     </div>
                     <div class="list-group-item">
-                        <input type="password" placeholder="Password" name="user_password" class="form-control no-border">
+                        <input type="password" placeholder="Password" name="user_password" class="form-control no-border" required>
                         <!-- <span class="text-danger"><?php //echo form_error('user_password') 
                                                         ?></span> -->
                     </div>
