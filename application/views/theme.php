@@ -49,7 +49,7 @@ if ($userdata == 'admin') {
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="fa fa-bars"></i>
         </a>
-        <a href="<?php echo site_url('') ?>" class="navbar-brand">
+        <a href="" class="navbar-brand">
           <img src="<?php echo base_url() ?>asset/images/logo.png" class="m-r-sm" alt="scale">
           <span class="hidden-nav-xs">Grass Jelly</span>
         </a>
@@ -131,7 +131,7 @@ if ($userdata == 'admin') {
                   <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
                   <ul class="nav nav-main" data-ride="collapse">
                     <li class="active">
-                      <a href="<?php echo site_url('') ?>" class="auto">
+                      <a href="<?php echo site_url('index') ?>" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">Overview</span>

@@ -8,7 +8,8 @@ class Supplyer extends CI_Controller
         $data['supplyer_list'] = $this->Supplyer_model->supplyer_list();
 
         $data['page'] = "supplyer/supplyer_list";
-        $this->load->view('theme', $data);
+        //$this->load->view('theme', $data);
+        $this->checksession($data);
     }
 
     public function supplyer_detail($supplyer_code)
@@ -16,13 +17,15 @@ class Supplyer extends CI_Controller
         $data['supplyer_list'] = $this->Supplyer_model->supplyer_detail($supplyer_code);
 
         $data['page'] = "supplyer/supplyer_detail";
-        $this->load->view('theme', $data);
+        //$this->load->view('theme', $data);
+        $this->checksession($data);
     }
 
     public function supplyer_insert()
     {
         $data['page'] = "supplyer/supplyer_insert";
-        $this->load->view('theme', $data);
+        //$this->load->view('theme', $data);
+        $this->checksession($data);
     }
 
 
@@ -54,4 +57,16 @@ class Supplyer extends CI_Controller
         $this->Supplyer_model->supplyer_delete($supplyer_code);
         redirect('supplyer/supplyer_list');
     }
+
+    public function checksession($data){
+		if($this->session->userdata('status') == 'admin'){
+			
+			$this->load->view('theme', $data);
+		}else if($this->session->userdata('status') == 'factory'){
+			
+			$this->load->view('factory', $data);
+		}else{
+			$this->load->view('supplyer', $data);
+		}
+	}
 }

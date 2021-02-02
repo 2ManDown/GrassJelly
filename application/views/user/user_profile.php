@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Password:</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" name="user_password" value="<?php echo $this->session->userdata("password")  ?>" placeholder="Password" required>
+                                <input type="password" class="form-control" name="user_password" value="<?php //echo $this->session->userdata("password")  ?>" placeholder="Password" required>
                             </div>
 
                             <label class="col-sm-1 control-label" for="input-id-1">เบอร์โทรศัพท์:</label>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">Password Again:</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" name="user_passagain" value="<?php echo $this->session->userdata("password")  ?>" placeholder="Password Again" required>
+                                <input type="password" class="form-control" name="user_passagain" value="<?php //echo $this->session->userdata("password")  ?>" placeholder="Password Again" required>
                             </div>
                         </div>
 

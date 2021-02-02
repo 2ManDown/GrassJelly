@@ -11,12 +11,14 @@ class Metarial extends CI_Controller
 		$data['metarial_code'] = $this->Metarial_model->metarial_importlist($metarial_code);
 
 		$data['page'] = "metarial/metarial_insert";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 	public function metarial_addinfo()
 	{
 		$data['page'] = "metarial/metarial_addinfo";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_reavel($metarial_code)
@@ -24,7 +26,8 @@ class Metarial extends CI_Controller
 		$data['metarial_code'] = $this->Metarial_model->metarial_reavellist($metarial_code);
 
 		$data['page'] = "metarial/metarial_reavel";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_reavlist()
@@ -33,7 +36,8 @@ class Metarial extends CI_Controller
 		$data['metarial_reavlist'] = $this->Metarial_model->metarial_reavlist();
 
 		$data['page'] = "metarial/metarial_reavlist";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_importlist()
@@ -41,13 +45,15 @@ class Metarial extends CI_Controller
 		$data['metarial_im'] = $this->Metarial_model->metarial_im();
 
 		$data['page'] = "metarial/metarial_importlist";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_exp()
 	{
 		$data['page'] = "metarial/metarial_exp";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_insert_db()
@@ -70,7 +76,8 @@ class Metarial extends CI_Controller
 		$data['metarial_list'] = $this->Metarial_model->metarial_list();
 
 		$data['page'] = "metarial/metarial_list";
-		$this->load->view('theme', $data);
+		//$this->load->view('theme', $data);
+		$this->checksession($data);
 	}
 
 	public function metarial_reavinsert()
@@ -98,5 +105,17 @@ class Metarial extends CI_Controller
 		);
 		$this->Metarial_model->metarial_iminsert($input);
 		redirect('metarial/metarial_importlist');
+	}
+
+	public function checksession($data){
+		if($this->session->userdata('status') == 'admin'){
+			
+			$this->load->view('theme', $data);
+		}else if($this->session->userdata('status') == 'factory'){
+			
+			$this->load->view('factory', $data);
+		}else{
+			$this->load->view('supplyer', $data);
+		}
 	}
 }

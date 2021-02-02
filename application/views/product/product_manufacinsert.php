@@ -10,44 +10,51 @@
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
                             เพิ่มข้อมูลการผลิตสินค้า
                         </header>
-                        <?php echo form_open('product/product_insert_manufac', 'data-validate="parsley"') ?>
+                        <?php echo form_open('product/product_insert_manufac', 'data-validate="parsley"', 'id="form"') ?>
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
+                                <!--  <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ลอตการผลิตสินค้า</label>
                                     <input type="text" class="form-control" id="input-id-1" name="manufac_id" required placeholder="ป้อนลอตผลิคสินค้า">
 
+                                </div> -->
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>สินค้าที่ผลิต</label>
+                                    <select name="" id="product" class="form-control m-b ">
+                                        <option value="" disabled selected>กรุณาเลือกสินค้าที่ผลิต</option>
+                                        <?php foreach ($product_list as $product_list) { ?>
+                                            <option value="<?php $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'] ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
+
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ประเภทบรรจุภัณฑ์</label>
-                                    <input type="text" class="form-control" id="input-id-1" readonly>
+                                    <input type="text" class="form-control" id="input-id-1" value="<?php //$product_list['product_unit'] ?>" readonly>
 
                                 </div>
                             </div>
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>สินค้าที่ผลิต</label>
-                                    <select name="account" class="form-control m-b ">
-                                    <option value="" disabled selected>กรุณาเลือกสินค้าที่ผลิต</option>
-                                        <?php foreach ($product_list as $product_list) { ?>
-                                            <option><?php echo $product_list['product_code'], ' - ', $product_list['product_name']?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
                                     <label>จำนวนที่ผลิต</label>
                                     <input type="email" class="form-control" placeholder="จำนวนผลิต" required>
+                                </div>
+
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>วันที่ผลิต</label>
+                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
                                 </div>
                             </div>
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ชื่อสินค้าที่ผลิต</label>
-                                    <input type="text" class="form-control" id="input-id-1" readonly>
+                                    <input type="text" class="form-control" id="input-id-1" value="<?php //$product_list['product_name'] ?>" readonly>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
@@ -60,12 +67,8 @@
                                 </div>
                             </div>
                             <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>วันที่ผลิต</label>
-                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="29-12-2020" data-date-format="dd-mm-yyyy">
-                                </div>
-                                <div class="col-sm-1"></div>
+                                
+                                <div class="col-sm-6"></div>
                                 <div class="col-sm-4">
                                     <label>ราคารวม</label>
                                     <input type="number" class="form-control" id="input-id-1" readonly>
@@ -76,6 +79,7 @@
                             </div>
                         </div>
                     </section>
+
                     <?php echo form_close() ?>
 
                 </section>
@@ -84,3 +88,12 @@
         <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
     </section>
 </section>
+
+<script>
+    $(document).ready(function() {
+        $("SELECT").click(function() {
+            console.log('CLICK!');
+            //$("#form").load("product/product_select./".document.getElementById("product").value);
+        });
+    });
+</script>

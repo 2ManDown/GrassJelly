@@ -19,7 +19,7 @@ class User_model extends CI_Model
             'user_password' => $this->input->post('user_password'),
         );
 
-        $password = $data['user_password'];
+        $password = md5($data['user_password']);
         $this->db->select('*');
         $this->db->from('gj_user');
         $this->db->where('user_username', $data['user_username']);
@@ -31,6 +31,7 @@ class User_model extends CI_Model
             return $query->result_array();
         }
         else{
+            exit();
             echo 'Incorrect';
             exit();
         }
