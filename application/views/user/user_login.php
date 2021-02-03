@@ -39,22 +39,26 @@
                 <header class="wrapper text-center">
                     <strong>กรุณาเข้าสู่ระบบ</strong>
                 </header>
-                <?php echo form_open('user/user_auth') ?>
+                <?php echo form_open('user/user_auth', 'method="post"', 'action="<?php //echo base_url(); ?>User/user_auth"') ?>
+                <!-- < method="post" action="<?php //echo base_url(); ?>User/login_validation" > -->
                 <div class="list-group">
                     <div class="list-group-item">
-                        <input type="text" placeholder="Username Or Email" name="user_username" class="form-control no-border">
+                        <input type="text" placeholder="Username or Email" name="user_username" class="form-control no-border" required>
                         <!-- <span class="text-danger"><?php //echo form_error('user_username') 
                                                         ?></span> -->
                     </div>
                     <div class="list-group-item">
-                        <input type="password" placeholder="Password" name="user_password" class="form-control no-border">
+                        <input type="password" placeholder="Password" name="user_password" class="form-control no-border" required>
                         <!-- <span class="text-danger"><?php //echo form_error('user_password') 
                                                         ?></span> -->
                     </div>
+                    <small class="text-danger"><?php echo $this->session->flashdata("error");?></small>
                 </div>
-                <?php //echo $this->session->flashdata("error"); 
-                ?>
-                <button type="submit" class="btn btn-lg btn-info btn-block">เข้าสู่ระบบ</button>
+                
+                <button type="submit" name="insert" value="Login" class="btn btn-lg btn-info btn-block">เข้าสู่ระบบ</button>
+
+                
+
                 <div class="text-center m-t m-b"><a href="#"><small>ลืมรหัสผ่าน?</small></a></div>
                 <div class="line line-dashed"></div>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>

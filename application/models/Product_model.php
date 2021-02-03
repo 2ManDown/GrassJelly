@@ -114,6 +114,19 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_manufacreport(){
+        
+        /* INNER JOIN */
+        $this->db->select('pd.product_code,pd.product_name,mn.*');
+        $this->db->from('gj_product as pd');
+        $this->db->join('gj_manufac as mn', 'pd.product_code = mn.product_code');
+
+        $query = $this->db->get();
+        $query->result_array();
+        
+        return $query->result_array();
+    }
+
 
     /* INSERT */
     public function product_insert_db($input)
