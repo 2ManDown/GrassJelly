@@ -11,14 +11,64 @@ class User extends CI_Controller
 
     public function user_auth()
     {
-        $data['auth'] = $this->User_model->user_auth();
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('user_username', 'Username', 'required');
+        $this->form_validation->set_rules('user_password', 'Password', 'required');
+        if($this->form_validation->run())
+        {
+            $username = $this->input->post('user_username');
+            $password = $this->input->post('user_password');
 
-        foreach ($data['auth'] as $value) {
+            $this->load->model('User_model');
+            if($this->User_model->user_auth($username, $password))
+            {
+                $data['auth'] = $this->User_model->user_auth();
+                foreach ($data['auth'] as $value) {
+                    
+                    $userdata = array(
+                        'id' => $value['user_id'],
+                        'username' => $value['user_username'],
+                        'password' => $value['user_password'],
+                        'name' => $value['user_name'],
+                        'email' => $value['user_email'],
+                        'tel' => $value['user_tel'],
+                        'status' => $value['user_status'],
+        
+                    );
+                    $this->session->set_userdata($userdata);
+        
+                    if ($value['user_status'] == 'admin') {
+                        redirect('admin');
+                    } else if ($value['user_status'] == 'factory') {
+                        redirect('factory');
+                    } else if ($value['user_status'] == 'supplyer') {
+                        redirect('supplyer');
+                    } else {
+                        echo 'Incorrect';
+                        exit();
+                    } 
+                }
+            }
+        
+            else
+            {
+                $this->session->set_flashdata('error','Invalid Username or Password');
+                $this->load->view('user/user_login');
+                //redirect(base_url() . '/user/user_login');
+            }
+        
+        }  
+    }
+    
+
+        //$data['auth'] = $this->User_model->user_auth();
+
+        //foreach ($data['auth'] as $value) {
             /* echo '<pre>';
             print_r($value);
             echo '<pre>';
             exit(); */
-            $userdata = array(
+            /* $userdata = array(
                 'id' => $value['user_id'],
                 'username' => $value['user_username'],
                 'password' => $value['user_password'],
@@ -39,9 +89,10 @@ class User extends CI_Controller
             } else {
                 echo 'Incorrect';
                 exit();
-            }
+            } 
         }
-    }
+    }*/
+    
 
     public function user_logout()
     {
@@ -82,4 +133,7 @@ class User extends CI_Controller
             $this->load->view('supplyer', $data);
         }
     }
+
+    
+    
 }

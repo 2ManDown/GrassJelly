@@ -22,7 +22,7 @@ class User_model extends CI_Model
         $password = md5($data['user_password']);
         $this->db->select('*');
         $this->db->from('gj_user');
-        $this->db->where('user_username', $data['user_username']);
+        $this->db->where('user_username', $data['user_username'] );
         /* ->or_where('user_email', $data['user_email']); */
         $this->db->where('user_password', $password);
 
@@ -31,10 +31,10 @@ class User_model extends CI_Model
             return $query->result_array();
         } else {
 
-            echo '<script language="javascript">';
-            echo 'alert("Username หรือ Password ไม่ถูกต้อง")';
-            echo '</script>';
-            $this->load->view('user/user_login');
+            //echo '<script language="javascript">';
+            //echo 'alert("Username หรือ Password ไม่ถูกต้อง")';
+            //echo '</script>';
+            //$this->load->view('user/user_login');
             return $query->result_array();
 
         }
