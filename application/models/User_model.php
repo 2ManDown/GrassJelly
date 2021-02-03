@@ -31,7 +31,7 @@ class User_model extends CI_Model
             return $query->result_array();
         } else {
 
-             echo '<script language="javascript">';
+            echo '<script language="javascript">';
             echo 'alert("Username หรือ Password ไม่ถูกต้อง")';
             echo '</script>';
             $this->load->view('user/user_login');
