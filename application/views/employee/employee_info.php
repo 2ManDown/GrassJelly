@@ -40,12 +40,12 @@
                                 <tr>
 
                                     <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_id'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_name'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_sex'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_birthdate'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_address'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_tel'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id']  ?>"><?php echo $employee_list['employee_email'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_name'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_sex'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_birthdate'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_address'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_tel'] ?></a></td>
+                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_email'] ?></a></td>
 
                                 </tr>
                             </tbody>
