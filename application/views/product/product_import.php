@@ -59,16 +59,23 @@
                             </div>
 
                             <div class="form-group pull-in clearfix">
-
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่นำเข้า</label>
-                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_imdate" value="29-12-2020" data-date-format="dd-mm-yyyy">
+                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_imdate" value="" data-date-format="yyyy-mm-dd">
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ราคารวม</label>
                                     <input type="text" class="form-control" placeholder="ราคารวม" name="importproduct_sumprice" required readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>วันหมดอายุ</label>
+                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_expdate" value="" data-date-format="yyyy-mm-dd">
                                 </div>
                             </div>
 

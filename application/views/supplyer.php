@@ -185,7 +185,7 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_balancesupplyer') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>รายการสินค้าคงคลัง</span>
