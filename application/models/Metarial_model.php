@@ -72,4 +72,18 @@ class Metarial_model extends CI_Model
         $this->db->insert('gj_immetarial', $input);
     }
     /* END IMPROT METARIAL */
+
+    public function metarial_delete($metarial_manage)
+    {
+        $this->db->where('metarial_code', $metarial_manage);
+        $this->db->delete('gj_metarial');
+    }
+    
+    /* ส่งข้อมูลไปหน้าจัดการ */
+    public function metarial_manage($metarial_manage)
+    {
+        $query = $this->db->get_where('gj_metarial', array('metarial_code' => $metarial_manage));
+        return $query->result_array();
+    }
+
 }

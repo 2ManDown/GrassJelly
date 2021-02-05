@@ -3,11 +3,11 @@
         <section class="scrollable padder">
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายงานการนำเข้าสินค้า
+                    รายงานสินค้าคงคลัง
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('product/product_import')?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าสินค้า</a>
+                        <a href="<?php echo site_url('product/product_import') ?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าสินค้า</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -38,34 +38,38 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>เลขคำสั่งนำเข้า</th>
+                                <th width="20px">#</th>
                                 <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
                                 <th>วันที่นำเข้า</th>
-                                <th>จำนวนที่นำเข้า</th>
                                 <th>วันหมดอายุ</th>
-                                <th>ราคาต่อหน่วย</th>
-                                <th>ราคานำเข้ารวม</th>
+                                <th>จำนวนที่นำเข้า</th>
+                                <th>จำนวนที่ส่งออก</th>
+                                <th>จำนวนคงเหลือ</th>
+                                <th style="text-align: center;">นำเข้า/ส่งออกสินค้า</th>
                             </tr>
                         </div>
                         <tbody>
-                        <?php foreach($product_importreport as $product_importreport){ ?>
-                            <tr>
-                                <td><?php echo $product_importreport['importproduct_id'] ?></td>
-                                <td><?php echo $product_importreport['product_code'] ?></td>
-                                <td><?php echo $product_importreport['product_name'] ?></td>
-                                <td><?php echo $product_importreport['importproduct_imdate'] ?></td>
-                                <td><?php echo $product_importreport['importproduct_amount'] ?></td>
-                                <td><?php echo $product_importreport['importproduct_expdate'] ?></td>
-                                <td><?php echo $product_importreport['importproduct_price'] ?></td>
-                                <td><?php echo $product_importreport['importproduct_sumprice'] ?></td>
-                               
-                            </tr>
+                            <?php foreach ($product_balancesupplyer as $product_balancesupplyer) { ?>
+                                <tr>
+                                    <td><?php echo $product_balancesupplyer['balancesupplyer_id'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['product_code'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['product_name'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['importproduct_imdate'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['importproduct_expdate'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['importproduct_amount'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['exportproduct_amount'] ?></td>
+                                    <td><?php echo $product_balancesupplyer['importproduct_amount'] - $product_balancesupplyer['exportproduct_amount']  ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="<?php echo site_url('product/product_exportbill/') . $product_balancesupplyer['importproduct_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-share-square-o"></i></a>
+                                    </td>
+
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
-                
+
                 <footer class="panel-footer">
                     <div class="row">
                         <div class="col-sm-7 text-right text-center-xs">

@@ -30,6 +30,16 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
+	/* คงคลังของ Supplyer */
+	public function product_balancesupplyer()
+	{
+		$data['product_balancesupplyer'] = $this->Product_model->product_balancesupplyer();
+
+		$data['page'] = "product/product_balancesupplyer";
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
+	}
+	
 
 	public function product_exportreport()
 	{
@@ -184,4 +194,6 @@ class Product extends CI_Controller
 			$this->load->view('supplyer', $data);
 		}
 	}
+
+	
 }

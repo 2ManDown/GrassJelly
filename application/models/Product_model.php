@@ -106,6 +106,20 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    /* สินค้าคงคลัง Supplyer */
+    public function product_balancesupplyer()
+    {
+        
+        /* LEFT JOIN */
+         $this->db->select('*');
+        $this->db->from('gj_importproduct as im');
+        $this->db->join('gj_product as pd', 'pd.product_code = im.product_code', 'left');
+        $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
+        $this->db->join('gj_balancesupplyer as bs', 'bs.balancesupplyer_id = im.importproduct_id', 'left');
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     
 
     public function product_manufacinsert()

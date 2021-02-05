@@ -9,15 +9,16 @@ class Employee extends CI_Controller
 	{
 		$data['employee_list'] = $this->Employee_model->employee_list();
 
-
 		$data['page'] = "employee/employee_info";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function employee_addinfo()
 	{
 		$data['page'] = "employee/employee_addinfo";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function employee_manage($employee_list)
@@ -25,7 +26,8 @@ class Employee extends CI_Controller
 		$data['employee_manage'] = $this->Employee_model->employee_manage($employee_list);
 
 		$data['page'] = "employee/employee_manage";
-		$this->load->view('theme', $data);
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 	public function employee_insert_db()
@@ -55,5 +57,17 @@ class Employee extends CI_Controller
 	{
 		$this->Employee_model->employee_delete($employee_id);
 		redirect('employee/employee_info');
+	}
+	
+	public function checksession($data){
+		if($this->session->userdata('status') == 'admin'){
+			
+			$this->load->view('theme', $data);
+		}else if($this->session->userdata('status') == 'factory'){
+			
+			$this->load->view('factory', $data);
+		}else{
+			$this->load->view('supplyer', $data);
+		}
 	}
 }

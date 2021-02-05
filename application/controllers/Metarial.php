@@ -118,4 +118,18 @@ class Metarial extends CI_Controller
 			$this->load->view('supplyer', $data);
 		}
 	}
+
+	public function metarial_manage($metarial_manage)
+	{
+		$data['metarial_manage'] = $this->Metarial_model->metarial_manage($metarial_manage);
+
+		$data['page'] = "metarial/metarial_manage";
+		$this->checksession($data);
+	}
+
+	public function metarial_delete($metarial_manage)
+	{
+		$this->Metarial_model->metarial_delete($metarial_manage);
+		redirect('metarial/metarial_list');
+	}
 }
