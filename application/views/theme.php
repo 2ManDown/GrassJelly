@@ -25,7 +25,7 @@
   <!-- Card CSS -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
   <link rel="preconnect" href="<?php echo base_url() ?>https://fonts.gstatic.com">
-  <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <!-- <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet"> -->
 </head>
 
 <?php $userdata = $this->session->userdata('status');
@@ -192,6 +192,13 @@ if ($userdata == 'admin') {
                         </a>
                       </li>
                       <li>
+                        <a href="<?php echo site_url('product/product_manufacreport') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายงานการผลิตสินค้า</span>
+                        </a>
+                      </li>
+                      <li>
                         <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
                           <i class="i i-dot"></i>
 
@@ -205,13 +212,7 @@ if ($userdata == 'admin') {
                           <span>รายงานการส่งออกสินค้า</span>
                         </a>
                       </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_manufacreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการผลิตสินค้า</span>
-                        </a>
-                      </li>
+                      
 
                     </ul>
                   </li>
