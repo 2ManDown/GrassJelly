@@ -11,10 +11,6 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_import()
-    {
-    }
-
     public function product_selldetail($sell_id)
     {
 
@@ -28,19 +24,15 @@ class Product_model extends CI_Model
 
     public function product_manufacdetail($id)
     {
-
-        echo $id;
         $query = $this->db->query("SELECT * FROM gj_product pd 
         INNER JOIN(SELECT * FROM gj_productbalance pb 
         WHERE pb.productbalance_id = $id) as pb ON (pd.product_code = pb.product_code)
 
         LEFT JOIN(SELECT * FROM gj_manufac mf
-        WHERE mf.manufac_id = $id) as mf ON (pb.manufac_id = mf.manufac_id)
-
-        ");
-
+        WHERE mf.manufac_id = $id) as mf ON (pb.manufac_id = mf.manufac_id)");
         return $query->result_array();
     }
+
     public function product_detail($product_code)
     {
         /* Get Data from Primary Key */
@@ -152,6 +144,12 @@ class Product_model extends CI_Model
     {
         $this->db->insert('gj_product', $input);
     }
+
+    public function product_exportinsert($input)
+    {
+        $this->db->insert('gj_exportproduct', $input);
+    }
+
 
 
 

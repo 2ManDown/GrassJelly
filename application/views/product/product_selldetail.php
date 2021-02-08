@@ -17,7 +17,7 @@
                                 <?php echo form_open('product/product_sell_update', 'class="form-horizontal"') ?>
                                 <!-- <form class="form-horizontal" method="get"> -->
 
-                                <div id="namesup" class="form-group" >
+                                <div id="namesup" class="form-group" style="margin-top: 15px;">
                                     <label class="col-sm-2 control-label">ชื่อร้านค้า</label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php echo $selldetail['exportproduct_reciever'] ?>" readonly>
@@ -83,7 +83,8 @@
                                 </footer>
                                 <div class="col-sm-12">
                                     <div class="col-sm-11"></div>
-                                    <button type="button" class="btn btn-primary" id="print" style="margin-top: 30px; padding: 8px 30px; " onclick="window.print()">พิมพ์</button>
+                                    
+                                    <button type="button" class="btn btn-primary btn-md" id="print" style="margin-top: 30px;" onclick="window.print()"> <i class="glyphicon glyphicon-print"></i> &nbsp; พิมพ์</button>
                                 </div>
                                 <!-- <div class="form-group" >
                                     <div class="col-sm-3 col-sm-offset-10" style="margin-top: 30px;">
