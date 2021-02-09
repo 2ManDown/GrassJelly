@@ -19,15 +19,14 @@
                                 <div class="col-sm-4">
                                     <label>ลอตการผลิตสินค้า</label>
                                     <input type="text" class="form-control" id="input-id-1" name="manufac_id" required placeholder="ป้อนลอตผลิคสินค้า">
-
                                 </div> -->
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>สินค้าที่ผลิต</label>
-                                    <select name="product" id="product" class="form-control m-b ">
+                                    <select name="product_code" id="product" class="form-control m-b ">
                                         <option value="" disabled selected>กรุณาเลือกสินค้าที่ผลิต</option>
                                         <?php foreach ($product_list as $product_list) { ?>
-                                            <option value="<?php $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit'] ?></option>
+                                            <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' - ', $product_list['product_unit'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -35,7 +34,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>จำนวนที่ผลิต</label>
-                                    <input type="email" class="form-control" placeholder="จำนวนผลิต" id="produceamount" onchange="plus()" required>
+                                    <input type="number" name="manufac_produce" class="form-control" placeholder="จำนวนผลิต" id="produceamount" onchange="plus()" required>
                                 </div>
 
                                 <!-- <div class="col-sm-1"></div>
@@ -56,7 +55,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่ผลิต</label>
-                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
+                                    <input name="manufac_producedate" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
                                 </div>
 
                                 <div class="col-sm-1"></div>
@@ -64,7 +63,7 @@
                                     <label>ราคาต่อหน่วย</label>
                                     <div class="input-group m-b">
                                         <span class="input-group-addon">BTH</span>
-                                        <input type="number" class="form-control" id="produceprice" onchange="plus()">
+                                        <input type="number" name="manufac_price" class="form-control" id="produceprice" onchange="plus()">
                                         <!-- <span class="input-group-addon">.00</span> -->
                                     </div>
                                 </div>
@@ -74,13 +73,13 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่หมดอายุ</label>
-                                    <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
+                                    <input name="manufac_expdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
                                 </div>
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ราคารวม</label>
-                                    <input type="number" class="form-control" id="sumprice" readonly>
+                                    <input name="manufac_sumprice" type="number" class="form-control" id="sumprice" readonly>
                                 </div>
                             </div>
 
