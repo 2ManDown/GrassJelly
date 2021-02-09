@@ -138,7 +138,7 @@ class Product extends CI_Controller
 
 	public function product_import()
 	{
-		/* $data['product_import'] = $this->Product_model->product_import(); */
+		 $data['product_list'] = $this->Product_model->product_list();
 
 		$data['page'] = "product/product_import";
 		$this->checksession($data);
@@ -193,6 +193,20 @@ class Product extends CI_Controller
 		);
 		$this->Product_model->product_insert_manufac($input);
 		redirect('product/product_manufacreport');
+	}
+
+	public function product_insert_import()
+	{
+		$input = array(
+			'product_code' => $this->input->post('product_code'),
+			'importproduct_amount' => $this->input->post('importproduct_amount'),
+			'importproduct_price' => $this->input->post('importproduct_price'),
+			'importproduct_imdate' => $this->input->post('importproduct_imdate'),
+			'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
+			'importproduct_expdate' => $this->input->post('importproduct_expdate'),
+		);
+		$this->Product_model->product_insert_import($input);
+		redirect('product/product_importreport');
 	}
 
 

@@ -55,7 +55,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่ผลิต</label>
-                                    <input name="manufac_producedate" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy">
+                                    <input name="manufac_producedate" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
                                 </div>
 
                                 <div class="col-sm-1"></div>
@@ -85,7 +85,7 @@
 
                             <!-- <div class="form-group pull-in clearfix"> -->
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                                    <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการผลิตนี้')">บันทึก</button>
                                 </div>
                             <!-- </div> -->
 
