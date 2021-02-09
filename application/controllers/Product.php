@@ -135,7 +135,7 @@ class Product extends CI_Controller
 
 	public function product_import()
 	{
-		$data['product_import'] = $this->Product_model->product_import();
+		/* $data['product_import'] = $this->Product_model->product_import(); */
 
 		$data['page'] = "product/product_import";
 		$this->checksession($data);
