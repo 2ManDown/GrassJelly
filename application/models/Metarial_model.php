@@ -29,6 +29,7 @@ class Metarial_model extends CI_Model
         $this->db->select('mt.metarial_code,mt.metarial_name,im.*');
         $this->db->from('gj_metarial as mt');
         $this->db->join('gj_immetarial as im', 'mt.metarial_code = im.metarial_code');
+        $this->db->order_by('im.immetarial_id','desc');
 
         $query = $this->db->get();
         $query->result_array();
@@ -42,6 +43,7 @@ class Metarial_model extends CI_Model
         $this->db->select('mt.metarial_id,mt.metarial_name,rm.*');
         $this->db->from('gj_metarial as mt');
         $this->db->join('gj_reavelmetarial as rm', 'mt.metarial_code = rm.metarial_code');
+        $this->db->order_by('rm.reavelmetarial_id','desc');
 
         $query = $this->db->get();
         $query->result_array();

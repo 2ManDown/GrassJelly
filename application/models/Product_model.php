@@ -13,8 +13,6 @@ class Product_model extends CI_Model
 
     public function product_selldetail($sell_id)
     {
-
-
         /* INNER JOIN AND SELECT */
         $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex 
         WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
@@ -54,6 +52,7 @@ class Product_model extends CI_Model
         $this->db->select('pd.product_code,pd.product_name,im.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
+        $this->db->order_by('im.importproduct_id','desc');
 
         $query = $this->db->get();
         $query->result_array();
@@ -71,6 +70,7 @@ class Product_model extends CI_Model
         $this->db->select('pd.product_code,pd.product_name,ex.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
+        $this->db->order_by('ex.exportproduct_id','desc');
 
         $query = $this->db->get();
         return $query->result_array();
@@ -126,6 +126,7 @@ class Product_model extends CI_Model
         $this->db->select('pd.product_code,pd.product_name,mn.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_manufac as mn', 'pd.product_code = mn.product_code');
+        $this->db->order_by('mn.manufac_id','desc');
 
         $query = $this->db->get();
         $query->result_array();
@@ -143,6 +144,11 @@ class Product_model extends CI_Model
     public function product_insert_manufac($input)
     {
         $this->db->insert('gj_manufac', $input);
+    }
+
+    public function product_insert_import($input)
+    {
+        $this->db->insert('gj_importproduct', $input);
     }
 
     public function product_exportinsert($input)
