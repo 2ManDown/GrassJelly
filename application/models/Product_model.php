@@ -142,7 +142,7 @@ class Product_model extends CI_Model
 
     public function product_insert_manufac($input)
     {
-        $this->db->insert('gj_product', $input);
+        $this->db->insert('gj_manufac', $input);
     }
 
     public function product_exportinsert($input)

@@ -94,7 +94,10 @@ class Product extends CI_Controller
 	public function product_manufacinsert()
 	{
 		$data['product_list'] = $this->Product_model->product_list();
-
+		/* echo '<pre>';
+		print_r ($data);
+		echo '<pre>'; */
+	
 		$data['page'] = "product/product_manufacinsert";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
@@ -175,6 +178,21 @@ class Product extends CI_Controller
 		exit(); */
 		$this->Product_model->product_exportinsert($input);
 		redirect('product/product_exportreport');
+	}
+
+	public function product_insert_manufac()
+	{
+		$input = array(
+			//'manufac_id' => $this->input->post(''),
+			'product_code' => $this->input->post('product_code'),
+			'manufac_produce' => $this->input->post('manufac_produce'),
+			'manufac_producedate' => $this->input->post('manufac_producedate'),
+			'manufac_price' => $this->input->post('manufac_price'),
+			'manufac_expdate' => $this->input->post('manufac_expdate'),
+			'manufac_sumprice' => $this->input->post('manufac_sumprice'),
+		);
+		$this->Product_model->product_insert_manufac($input);
+		redirect('product/product_manufacreport');
 	}
 
 
