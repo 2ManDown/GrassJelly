@@ -27,7 +27,7 @@
                                     <select name="product" id="product" class="form-control m-b ">
                                         <option value="" disabled selected>กรุณาเลือกสินค้าที่ผลิต</option>
                                         <?php foreach ($product_list as $product_list) { ?>
-                                            <option value="<?php $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' - ', $product_list['product_unit'] ?></option>
+                                            <option value="<?php $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

@@ -75,16 +75,11 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
-/* 	public function product_select($product_code)
-	{
-		$data['product_select'] = $this->Product_model->product_detail($product_code);
-
-		$data['page'] = "product/product_import";
-		$this->load->view('theme', $data);
-	} */
 
 	public function product_exportbill()
 	{
+		$data['product_list'] = $this->Product_model->product_list();
+
 		$data['page'] = "product/product_exportbill";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
@@ -161,6 +156,25 @@ class Product extends CI_Controller
 		);
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');
+	}
+	public function product_exportinsert(){
+		$input = array(
+			'product_code' => $this->input->post('product'),
+			'exportproduct_code' => $this->input->post('export_id'),
+			'exportproduct_amount' => $this->input->post('export_amount'),
+			'exportproduct_reciever' => $this->input->post('export_reciever'),
+			'exportproduct_exdate' => $this->input->post('export_date'),
+			'exportproduct_price' => $this->input->post('export_price'),
+			'exportproduct_sumprice' => $this->input->post('export_sumprice'),
+			'exportproduct_vat' => $this->input->post('export_vat'),
+			'exportproduct_includevat' => $this->input->post('export_includevat')
+		);
+/* 		echo '<pre>';
+		print_r($input);
+		echo'<pre>';
+		exit(); */
+		$this->Product_model->product_exportinsert($input);
+		redirect('product/product_exportreport');
 	}
 
 
