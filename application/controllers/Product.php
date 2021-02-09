@@ -163,16 +163,16 @@ class Product extends CI_Controller
 			'exportproduct_code' => $this->input->post('export_id'),
 			'exportproduct_amount' => $this->input->post('export_amount'),
 			'exportproduct_reciever' => $this->input->post('export_reciever'),
-			'exportproduct_price' => $this->input->post('export_price'),
-			'exportproduct_vat' => $this->input->post('export_vat'),
 			'exportproduct_exdate' => $this->input->post('export_date'),
+			'exportproduct_price' => $this->input->post('export_price'),
 			'exportproduct_sumprice' => $this->input->post('export_sumprice'),
+			'exportproduct_vat' => $this->input->post('export_vat'),
 			'exportproduct_includevat' => $this->input->post('export_includevat')
 		);
-		echo '<pre>';
+/* 		echo '<pre>';
 		print_r($input);
 		echo'<pre>';
-		exit();
+		exit(); */
 		$this->Product_model->product_exportinsert($input);
 		redirect('product/product_exportreport');
 	}
