@@ -277,6 +277,12 @@ if ($userdata == 'admin') {
                       <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
                     </a>
                     <ul class="nav dk">
+                    <li>
+                        <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>ผลิตสินค้า</span>
+                        </a>
+                      </li>
                       <li>
                         <a href="<?php echo site_url('product/product_import') ?>" class="auto">
                           <i class="i i-dot"></i>

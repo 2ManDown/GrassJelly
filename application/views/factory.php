@@ -260,10 +260,16 @@ if ($userdata == 'admin') {
 
                       <i class="fa fa-plane">
                       </i>
-                      <span class="font-bold">การส่งออกสินค้า</span>
+                      <span class="font-bold">การผลิตและส่งออกสินค้า</span>
                     </a>
                     <ul class="nav dk">
 
+                      <li>
+                        <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>ผลิตสินค้า</span>
+                        </a>
+                      </li>
                       <li>
                         <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
                           <i class="i i-dot"></i>

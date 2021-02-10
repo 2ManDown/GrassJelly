@@ -1,3 +1,11 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <section id="content" class="col-md-12">
@@ -26,7 +34,7 @@
                                     <select name="product_code" id="product" class="form-control m-b ">
                                         <option value="" disabled selected>กรุณาเลือกสินค้าที่ผลิต</option>
                                         <?php foreach ($product_list as $product_list) { ?>
-                                            <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' - ', $product_list['product_unit'] ?></option>
+                                            <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -61,9 +69,9 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ราคาต่อหน่วย</label>
-                                    <div class="input-group m-b">
-                                        <span class="input-group-addon">BTH</span>
+                                    <div class="input-group m-b">     
                                         <input type="number" name="manufac_price" class="form-control" id="produceprice" onchange="plus()">
+                                        <span class="input-group-addon">BTH</span>
                                         <!-- <span class="input-group-addon">.00</span> -->
                                     </div>
                                 </div>
