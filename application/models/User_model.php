@@ -6,7 +6,15 @@ class User_model extends CI_Model
 {
     public function user_list()
     {
-        $query = $this->db->get('gj_user');
+
+
+        if ($this->session->userdata("status") ==  "admin") {
+            $this->db->select('*');
+            $this->db->from('gj_user');
+            $this->db->where('user_status','factory');
+            $this->db->or_where('user_status','supplyer');
+        }
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -22,7 +30,7 @@ class User_model extends CI_Model
         $password = md5($data['user_password']);
         $this->db->select('*');
         $this->db->from('gj_user');
-        $this->db->where('user_username', $data['user_username'] );
+        $this->db->where('user_username', $data['user_username']);
         /* ->or_where('user_email', $data['user_email']); */
         $this->db->where('user_password', $password);
 
@@ -36,7 +44,6 @@ class User_model extends CI_Model
             //echo '</script>';
             //$this->load->view('user/user_login');
             return $query->result_array();
-
         }
     }
 
