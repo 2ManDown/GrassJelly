@@ -9,6 +9,12 @@ class User extends CI_Controller
         $this->load->view('theme', $data);
     }
 
+    public function user_list(){
+        $data['user_data'] = $this->User_model->user_list();
+
+        $data['page'] = "user/user_list";
+        $this->load->view('theme', $data);
+    }
     public function user_auth()
     {
         $this->load->library('form_validation');
@@ -59,40 +65,6 @@ class User extends CI_Controller
         
         }  
     }
-    
-
-        //$data['auth'] = $this->User_model->user_auth();
-
-        //foreach ($data['auth'] as $value) {
-            /* echo '<pre>';
-            print_r($value);
-            echo '<pre>';
-            exit(); */
-            /* $userdata = array(
-                'id' => $value['user_id'],
-                'username' => $value['user_username'],
-                'password' => $value['user_password'],
-                'name' => $value['user_name'],
-                'email' => $value['user_email'],
-                'tel' => $value['user_tel'],
-                'status' => $value['user_status'],
-
-            );
-            $this->session->set_userdata($userdata);
-
-            if ($value['user_status'] == 'admin') {
-                redirect('admin');
-            } else if ($value['user_status'] == 'factory') {
-                redirect('factory');
-            } else if ($value['user_status'] == 'supplyer') {
-                redirect('supplyer');
-            } else {
-                echo 'Incorrect';
-                exit();
-            } 
-        }
-    }*/
-    
 
     public function user_logout()
     {
