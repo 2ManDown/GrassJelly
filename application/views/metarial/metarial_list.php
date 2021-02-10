@@ -43,9 +43,8 @@
                                 <th>ปริมาตร</th>
                                 <th>ราคาต่อหน่วย</th>
                                 <th>หน่วยนับ</th>
-                                <th>วันหมดอายุ</th>
                                 <th>จำนวนคงเหลือ</th>
-                                <th class="text-center">จัดการ</th>
+                                <!-- <th class="text-center">จัดการ</th> -->
                             </tr>
                         </div>
                         <?php foreach ($metarial_list as $metarial_list) { ?>
@@ -56,17 +55,7 @@
                                     <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_volume'] ?></td>
                                     <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_price'] ?></td>
                                     <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_unit'] ?></td>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_expdate'] ?></td>
                                     <td>จำนวนคงเหลือ</td>
-                                    <td style="text-align: center;">
-                                    <!-- <a href="<?php //echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-success btn-rounded" style="padding: 3px 1px;">นำเข้า -->
-                                    <a href="<?php echo site_url('metarial/metarial_insert/').$metarial_list['metarial_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="นำเข้าวัตถุดิบ" ><i class="glyphicon glyphicon-import"></i></a>
-                                    &nbsp;
-                                    <a href="<?php echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-sm btn-icon btn-primary btn-rounded" title="เบิกใช้วัตถุดิบ"><i class="fa fa-share-square-o"></i></a>
-                                    <!-- <a href="<?php //echo site_url('metarial/metarial_reavel/').$metarial_list['metarial_code'] ?>" class="btn btn-s-xs btn-primary btn-rounded" style="padding: 3px 1px; margin-left: 5px;">เบิกใช้ -->
-                                    
-                                    </a></td>
-                                    
                                 </tr>
                             </tbody>
                         <?php } ?>
