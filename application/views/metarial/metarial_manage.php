@@ -45,18 +45,12 @@
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">วันหมดอายุ</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="metarial_expdate" value="<?php echo $metarial_manage['metarial_expdate'] ?>" readonly>
-                                </div>
-                            </div>
-                            <div class="line line-dashed b-b line-lg pull-in"></div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">จำนวนคงเหลือ</label>
+                            <label class="col-sm-3 control-label">จำนวนคงเหลือ</label>
                                 <div class="col-sm-7">
                                     <input type="text" class="form-control" value="" readonly>
                                 </div>
                             </div>
+                            
                             <div id="btn">
                                 <!-- class="col-sm-7 col-sm-offset-5" -->
                                 <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>

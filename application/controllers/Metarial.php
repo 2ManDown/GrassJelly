@@ -21,14 +21,14 @@ class Metarial extends CI_Controller
 		$this->checksession($data);
 	}
 
-	public function metarial_reavel($metarial_code)
+	public function metarial_reavel()
 	{
-		$data['metarial_code'] = $this->Metarial_model->metarial_reavellist($metarial_code);
+		$data['metarial_list'] = $this->Metarial_model->metarial_list();
 
 		$data['page'] = "metarial/metarial_reavel";
-		//$this->load->view('theme', $data);
 		$this->checksession($data);
-	}
+
+	} 
 
 	public function metarial_reavlist()
 	{
@@ -49,6 +49,15 @@ class Metarial extends CI_Controller
 		$this->checksession($data);
 	}
 
+	public function metarial_import()
+	{
+		$data['metarial_list'] = $this->Metarial_model->metarial_list();
+
+		$data['page'] = "metarial/metarial_import";
+		$this->checksession($data);
+		
+	}
+
 	public function metarial_exp()
 	{
 		$data['page'] = "metarial/metarial_exp";
@@ -64,7 +73,6 @@ class Metarial extends CI_Controller
 			'metarial_volume' => $this->input->post('metarial_volume'),
 			'metarial_price' => $this->input->post('metarial_price'),
 			'metarial_unit' => $this->input->post('metarial_unit'),
-			'metarial_expdate' => $this->input->post('metarial_expdate'),
 		);
 		$this->Metarial_model->metarial_insert_db($input);
 		redirect('metarial/metarial_list');
@@ -83,7 +91,7 @@ class Metarial extends CI_Controller
 	public function metarial_reavinsert()
 	{
 		$input = array(
-			'reavelmetarial_id' => $this->input->post('reavelmetarial_id'),
+			
 			'metarial_code' => $this->input->post('metarial_code'),
 			'reavelmetarial_amount' => $this->input->post('reavelmetarial_amount'),
 			'reavelmetarial_revdate' => $this->input->post('reavelmetarial_revdate'),
@@ -96,14 +104,30 @@ class Metarial extends CI_Controller
 	public function metarial_iminsert()
 	{
 		$input = array(
-			'immetarial_id' => $this->input->post('immetarial_id'),
+			//'immetarial_id' => $this->input->post('immetarial_id'),
 			'metarial_code' => $this->input->post('metarial_code'),
 			'immetarial_amount' => $this->input->post('immetarial_amount'),
+			'immetarial_price' => $this->input->post('immetarial_price'),
 			'immetarial_sumprice' => $this->input->post('immetarial_sumprice'),
 			'immetarial_imdate' => $this->input->post('immetarial_imdate'),
+			'immetarial_expdate' => $this->input->post('immetarial_expdate'),
 			
 		);
 		$this->Metarial_model->metarial_iminsert($input);
+		redirect('metarial/metarial_importlist');
+	}
+
+	public function metarial_insert_import()
+	{
+		$input = array(
+			'metarial_code' => $this->input->post('metarial_code'),
+			'immetarial_amount' => $this->input->post('immetarial_amount'),
+			'immetarial_imdate' => $this->input->post('immetarial_imdate'),
+			'immetarial_sumprice' => $this->input->post('immetarial_sumprice'),
+			'immetarial_expdate' => $this->input->post('immetarial_expdate'),
+			
+		);
+		$this->Metarial_model->metarial_insert_import($input);
 		redirect('metarial/metarial_importlist');
 	}
 
@@ -132,4 +156,5 @@ class Metarial extends CI_Controller
 		$this->Metarial_model->metarial_delete($metarial_manage);
 		redirect('metarial/metarial_list');
 	}
+
 }

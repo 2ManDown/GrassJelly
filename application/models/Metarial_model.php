@@ -16,6 +16,11 @@ class Metarial_model extends CI_Model
         return $query->result_array();
     }
 
+    public function metarial_insert_import($input)
+    {
+        $this->db->insert('gj_immetarial', $input);
+    }
+
     public function metarial_reavellist($metarial_code)
     {
         $query = $this->db->get_where('gj_metarial', array('metarial_code' => $metarial_code));

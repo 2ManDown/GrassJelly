@@ -108,6 +108,7 @@ class Product_model extends CI_Model
         $this->db->join('gj_product as pd', 'pd.product_code = im.product_code', 'left');
         $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
         $this->db->join('gj_balancesupplyer as bs', 'bs.balancesupplyer_id = im.importproduct_id', 'left');
+        $this->db->order_by('bs.balancesupplyer_id', 'desc');
 
         $query = $this->db->get();
         return $query->result_array();

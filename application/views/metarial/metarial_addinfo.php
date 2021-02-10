@@ -44,11 +44,6 @@
                                     <input type="text" name="metarial_volume" class="form-control" placeholder="กรอกปริมาตร" required>
                                 </div>
 
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>วันหมดอายุ</label>
-                                    <input name="metarial_expdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
-                                </div>
                             </div>
 
                             <div class="text-right">
