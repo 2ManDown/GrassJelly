@@ -50,8 +50,8 @@
                                 <div class="col-sm-4">
                                     <label>ราคาต่อหน่วย</label>
                                     <div class="input-group m-b">
-                                        <span class="input-group-addon">BTH</span>
                                         <input type="number" name="importproduct_price" class="form-control" id="produceprice" onchange="plus()">
+                                        <span class="input-group-addon">BTH</span>
                                     </div>
 
                                 </div>
@@ -72,6 +72,7 @@
                             </div>
 
                             <div class="text-right">
+                            <input name="manufac_id" type="hidden" class="form-control" id="manufac_id" value="MN0">
                                 <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการนำเข้านี้')">บันทึก</button>
                             </div>
                         </div>

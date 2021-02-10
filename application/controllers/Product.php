@@ -182,30 +182,22 @@ class Product extends CI_Controller
 
 	public function product_insert_manufac()
 	{
-		$input = array(
-			//'manufac_id' => $this->input->post(''),
-			'product_code' => $this->input->post('product_code'),
-			'manufac_produce' => $this->input->post('manufac_produce'),
-			'manufac_producedate' => $this->input->post('manufac_producedate'),
-			'manufac_price' => $this->input->post('manufac_price'),
-			'manufac_expdate' => $this->input->post('manufac_expdate'),
-			'manufac_sumprice' => $this->input->post('manufac_sumprice'),
-		);
-		$this->Product_model->product_insert_manufac($input);
+		
+		$this->Product_model->product_insert_manufac(/* $input */);
 		redirect('product/product_manufacreport');
 	}
 
 	public function product_insert_import()
 	{
-		$input = array(
+		/* $input = array(
 			'product_code' => $this->input->post('product_code'),
 			'importproduct_amount' => $this->input->post('importproduct_amount'),
 			'importproduct_price' => $this->input->post('importproduct_price'),
 			'importproduct_imdate' => $this->input->post('importproduct_imdate'),
 			'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
 			'importproduct_expdate' => $this->input->post('importproduct_expdate'),
-		);
-		$this->Product_model->product_insert_import($input);
+		); */
+		$this->Product_model->product_insert_import(/* $input */);
 		redirect('product/product_importreport');
 	}
 
