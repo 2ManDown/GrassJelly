@@ -148,16 +148,19 @@ class Product_model extends CI_Model
 			//'manufac_id' => $this->input->post(''),
 			'product_code' => $this->input->post('product_code'),
 			'manufac_produce' => $this->input->post('manufac_produce'),
+			'manufac_codelot' => $this->input->post('manufac_codelot'),
 			'manufac_producedate' => $this->input->post('manufac_producedate'),
 			'manufac_price' => $this->input->post('manufac_price'),
 			'manufac_expdate' => $this->input->post('manufac_expdate'),
 			'manufac_sumprice' => $this->input->post('manufac_sumprice'),
 		);
-        $input = array(
-            'manufac_id' => $this->input->post('manufac_id'),
+        /* $input = array(
+            'manufac_codelot' => $this->input->post('manufac_codelot'),
             'product_code' => $this->input->post('product_code'),
             'productbalance_balance' => $this->input->post('manufac_produce'),
-        );
+        );  */
+            
+            
         /* echo '<pre>';
         print_r($input);
         print_r($manufac);
@@ -165,7 +168,7 @@ class Product_model extends CI_Model
         exit(); */
 
         $this->db->insert('gj_manufac', $manufac);
-        $this->db->insert('gj_productbalance', $input);
+        //$this->db->insert('gj_productbalance', $input);
     }
 
     public function product_insert_import(/* $input */)
