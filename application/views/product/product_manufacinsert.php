@@ -41,8 +41,12 @@
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>จำนวนที่ผลิต</label>
-                                    <input type="number" name="manufac_produce" class="form-control" placeholder="จำนวนผลิต" id="produceamount" onchange="plus()" required>
+                                    <label>เลขลอต</label>
+                                    <div class="input-group m-b">
+                                        <span class="input-group-addon">MN-</span>
+                                        <input type="number" name="" class="form-control" id="codelot" onchange="plusstr()">
+                                    </div>
+
                                 </div>
 
                                 <!-- <div class="col-sm-1"></div>
@@ -52,7 +56,7 @@
                                                                                                     ?>" readonly>
                                 </div> -->
                             </div>
-
+                            
                             <div class="form-group pull-in clearfix">
                                 <!--  <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
@@ -68,12 +72,8 @@
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ราคาต่อหน่วย</label>
-                                    <div class="input-group m-b">     
-                                        <input type="number" name="manufac_price" class="form-control" id="produceprice" onchange="plus()">
-                                        <span class="input-group-addon">BTH</span>
-                                        <!-- <span class="input-group-addon">.00</span> -->
-                                    </div>
+                                    <label>จำนวนที่ผลิต</label>
+                                    <input type="number" name="manufac_produce" class="form-control" placeholder="จำนวนผลิต" id="produceamount" onchange="plus()" required>
                                 </div>
                             </div>
 
@@ -86,19 +86,35 @@
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
+                                    <label>ราคาต่อหน่วย</label>
+                                    <div class="input-group m-b">
+                                        <input type="number" name="manufac_price" class="form-control" id="produceprice" onchange="plus()">
+                                        <span class="input-group-addon">BTH</span>
+                                        <!-- <span class="input-group-addon">.00</span> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group pull-in clearfix">
+                                <div class=" col-sm-1"></div>
+                                <div class=" col-sm-4">
+                                    <input name="manufac_codelot" type="text" class="hidden form-control" id="sumcodelot" readonly>
+                                </div>
+
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
                                     <label>ราคารวม</label>
                                     <input name="manufac_sumprice" type="number" class="form-control" id="sumprice" readonly>
                                 </div>
                             </div>
 
                             <!-- <div class="form-group pull-in clearfix"> -->
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการผลิตนี้')">บันทึก</button>
-                                </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการผลิตนี้')">บันทึก</button>
+                            </div>
                             <!-- </div> -->
 
                         </div>
-
                     </section>
 
                     <?php echo form_close() ?>
@@ -138,6 +154,19 @@
         let b = x * a;
         console.log(b);
         let output = document.getElementById("sumprice");
+        output.value = b;
+    }
+</script>
+
+<script>
+    function plusstr() {
+        let x = "MN-";
+        console.log(x);
+        let a = document.getElementById("codelot").value;
+        console.log(a);
+        let b = x + a;
+        console.log(b);
+        let output = document.getElementById("sumcodelot");
         output.value = b;
     }
 </script>
