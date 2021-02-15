@@ -43,8 +43,9 @@
                                     <td><a href="<?php //echo site_url('') . $user_data[''] ?>"><?php echo $user_data['user_tel'] ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $user_data[''] ?>"><?php echo $user_data['user_status'] ?></a></td>
                                     <td style="text-align: center;">
-                                        <a href="<?php //echo site_url('') . $user_data['productbalance_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="จัดการข้อมูลผู้ใช้"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
-                                        <a href="<?php //echo site_url('') . $user_data['productbalance_id'] ?>" class="btn btn-sm btn-icon btn-danger btn-rounded" title="ลบข้อมูลผู้ใช้"><i class="fa fa-times-circle" style="font-size: 15px;"></i></a>
+                                        <a href="<?php echo site_url('user/user_adminmanage/') . $user_data['user_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="จัดการข้อมูลผู้ใช้"><i class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
+                                        
+                                        <a href="<?php echo site_url('user/user_delete/') . $user_data['user_id']; ?>" class="btn btn-sm btn-icon btn-danger btn-rounded" title="ลบข้อมูลผู้ใช้"><i class="fa fa-times-circle" style="font-size: 15px;" onclick="return('ddddd')"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

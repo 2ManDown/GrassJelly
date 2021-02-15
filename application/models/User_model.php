@@ -64,4 +64,35 @@ class User_model extends CI_Model
         $this->db->where('user_id', $data['user_id']);
         $this->db->update('gj_user', $data);
     }
+
+    public function user_manage($user_list)
+	{
+		$query = $this->db->get_where('gj_user', array('user_id' => $user_list));
+        return $query->result_array();
+	}
+
+    /* DELETE */
+    public function user_delete($user_id)
+    {
+        $this->db->where('user_id', $user_id);
+        $this->db->delete('gj_user');
+    }
+
+    public function user_update_adminmanage()
+    {
+        $data = array(
+            'user_id' => $this->input->post('user_id'),
+            'user_username' => $this->input->post('user_username'),
+            'user_password' => md5($this->input->post('user_password')),
+            'user_name' => $this->input->post('user_name'),
+            'user_email' => $this->input->post('user_email'),
+            'user_tel' => $this->input->post('user_tel'),
+            'user_status' => $this->input->post('user_status'),
+            
+
+        );
+        
+        $this->db->where('user_id', $data['user_id']);
+        $this->db->update('gj_user', $data);
+    }
 }
