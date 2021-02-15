@@ -106,6 +106,27 @@ class User extends CI_Controller
         }
     }
 
+    public function user_adminmanage($user_list)
+	{
+        $data['user_manage'] = $this->User_model->user_manage($user_list);
+
+		$data['page'] = "user/user_adminmanage";
+		$this->checksession($data);
+	}
+
+    /* DELETE */
+	public function user_delete($user_id)
+	{
+		$this->User_model->user_delete($user_id);
+		redirect('user/user_list');
+	}
+
+    public function user_update_adminmanage()
+    {
+        $this->User_model->user_update_adminmanage();
+        redirect('user/user_list');
+    }
+
     
     
 }
