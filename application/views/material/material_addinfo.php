@@ -7,19 +7,19 @@
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
                             เพิ่มข้อมูลวัตถุดิบ
                         </header>
-                        <?php echo form_open('Metarial/metarial_insert_db') ?>
+                        <?php echo form_open('Material/material_insert_db') ?>
                         <!-- <form data-validate="parsley" action="#"> -->
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>รหัสวัตถุดิบ</label>
-                                    <input type="text" name="metarial_code" class="form-control" placeholder="กรอกรหัสวัตถุดิบ" required>
+                                    <input type="text" name="material_code" class="form-control" placeholder="กรอกรหัสวัตถุดิบ" required>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ราคาต่อหน่วย</label>
-                                    <input type="text" name="metarial_price" class="form-control" placeholder="กรอกราคาต่อหน่วย" required>
+                                    <label>ชื่อวัตถุดิบ</label>
+                                    <input type="text" name="material_name" class="form-control" placeholder="กรอกชื่อวัตถุดิบ" required>
                                 </div>
                             </div>
 
@@ -27,23 +27,14 @@
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ชื่อวัตถุดิบ</label>
-                                    <input type="text" name="metarial_name" class="form-control" placeholder="กรอกชื่อวัตถุดิบ" required>
+                                    <label>ปริมาตร</label>
+                                    <input type="text" name="material_volume" class="form-control" placeholder="กรอกปริมาตร" required>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>หน่วยนับ</label>
-                                    <input type="text" name="metarial_unit" class="form-control" placeholder="จำนวนนำเข้า" required>
+                                    <input type="text" name="material_unit" class="form-control" placeholder="จำนวนนำเข้า" required>
                                 </div>
-                            </div>
-
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>ปริมาตร</label>
-                                    <input type="text" name="metarial_volume" class="form-control" placeholder="กรอกปริมาตร" required>
-                                </div>
-
                             </div>
 
                             <div class="text-right">

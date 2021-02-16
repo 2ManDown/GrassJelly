@@ -7,60 +7,56 @@
                     ข้อมูลวัตถุดิบ
                 </header>
                 <div class="panel-body">
-                    <?php foreach ($metarial_manage as $metarial_manage) { ?>
-                        <form class="form-horizontal" method="get">
+                    <?php foreach ($material_manage as $material_manage) { ?>
+                        <?php echo form_open('material/material_update_db', 'class="form-horizontal"') ?>
+                        <!-- <form class="form-horizontal" method="get"> -->
                             <div class="form-group">
+                            <input type="text" class="hidden form-control" name="material_id" value="<?php echo $material_manage['material_id'] ?>" >
                                 <label class="col-sm-3 control-label">รหัสวัตถุดิบ</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="metarial_code" value="<?php echo $metarial_manage['metarial_code'] ?>" readonly>
+                                    <input type="text" class="form-control" name="material_code" value="<?php echo $material_manage['material_code'] ?>" >
                                 </div>
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">ชื่อวัตถุดิบ</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="metarial_name" value="<?php echo $metarial_manage['metarial_name'] ?>" readonly>
+                                    <input type="text" class="form-control" name="material_name" value="<?php echo $material_manage['material_name'] ?>" >
                                 </div>
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">ปริมาตร</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="metarial_volume" value="<?php echo $metarial_manage['metarial_volume'] ?>" readonly>
+                                    <input type="text" class="form-control" name="material_volume" value="<?php echo $material_manage['material_volume'] ?>" >
                                 </div>
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">ราคาต่อหน่วย</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" placeholder="วันที่ผลิต" name="metarial_price" value="<?php echo $metarial_manage['metarial_price'] ?>" readonly>
-                                </div>
+
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">หน่วยนับ</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" placeholder="วันหมดอายุ" name="metarial_unit" value="<?php echo $metarial_manage['metarial_unit'] ?>" readonly>
+                                    <input type="text" class="form-control" placeholder="หน่วยนับ" name="material_unit" value="<?php echo $material_manage['material_unit'] ?>" >
                                 </div>
                             </div>
                             <div class="line line-dashed b-b line-lg pull-in"></div>
                             <div class="form-group">
-                            <label class="col-sm-3 control-label">จำนวนคงเหลือ</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" value="" readonly>
+
+                                <div id="btn">
+                                    <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูลวัตถุดิบ</button>
+                                    &nbsp; &nbsp;
+                                    <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
+                                    &nbsp; &nbsp;
+                                    <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('material/material_delete/') . $material_manage['material_code']; ?>'">ลบข้อมูลวัตถุดิบ!</button>
                                 </div>
                             </div>
-                            
-                            <div id="btn">
-                                <!-- class="col-sm-7 col-sm-offset-5" -->
-                                <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
-                                &nbsp; &nbsp;
-                                <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('metarial/metarial_delete/') . $metarial_manage['metarial_code']; ?>'" >ลบข้อมูลวัตถุดิบ!</button>
-                            </div>
+                        <!-- </form> -->
+                        <?php form_close() ?>
+                    <?php } ?>
                 </div>
-                </form>
-            <?php } ?>
-            </div>
             </section>
 
         </section>

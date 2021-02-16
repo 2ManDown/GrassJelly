@@ -5,13 +5,17 @@
 
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายการสินค้าคงคลัง
+                    ประวัติการนำเข้าและเบิกออก
                 </header>
-                <div class="row wrapper">
-                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 15px; margin-bottom: 20px;">
+                <div class="row wrapper text-right">
+
+                    <div class="col-sm-12 m-b-xs">
+                        <a href="<?php echo site_url('product/product_import') ?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าสินค้า</a>
+                        &nbsp;
+                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="btn btn-s-lg btn-primary btn-rounded">เบิกออกสินค้า</a>
 
                     </div>
-                    <!-- <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
+                   <!--  <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm btn-default active">
                                 <input type="radio" name="options" id="option1"> รายวัน
@@ -23,8 +27,8 @@
                                 <input type="radio" name="options" id="option2"> รายเดือน
                             </label>
                         </div>
-                    </div>
-                    <div class="col-sm-3" style="margin-top: 20px">
+                    </div> -->
+                    <!-- <div class="col-sm-3" style="margin-top: 20px">
                         <div class="input-group">
                             <input type="text" class="input-sm form-control" placeholder="Search">
                             <span class="input-group-btn">
@@ -38,30 +42,30 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
+                                <th>#</th>
                                 <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
-                                <th>รายละเอียดสินค้า</th>
-                                <th>ขนาด</th>
-                                <th style="text-align: center;">จำนวนคงเหลือ</th>
+                                <th>ปริมาตร</th>
+                                <th>ราคา</th>
+                                <th>วันที่</th>
+                                <th>เวลา</th>
+                                <th>จำนวน</th>
+                                <th>สถานะ</th>
                             </tr>
                         </div>
                         <tbody>
-                            <?php foreach ($product_productbalance as $product_productbalance) { ?>
+                            <?php foreach ($product_history as $product_history) { ?>
 
                                 <tr>
-                                    <td><?php echo $product_productbalance['product_code'] ?></td>
-                                    <td><?php echo $product_productbalance['product_name'] ?></td>
-                                    <td><?php echo $product_productbalance['product_detail'] ?></td>
-                                    <td><?php echo $product_productbalance['product_volume']." ".$product_productbalance['product_unit'] ?></td>
-                                    <td style="text-align: center;">
-                                      <?php
-                                        $this->db->where('product_code',$product_productbalance['product_code']);
-                                        $this->db->select_sum('product_stock_amount');
-                                        $query = $this->db->get('gj_product_stock');
-                                        $product_stock = $query->result_array();
-                                        echo number_format($product_stock[0]['product_stock_amount']);
-                                      ?>
-                                    </td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_id'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_code'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_name'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_volume'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_price'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_date'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_time'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_amount'] ?></a></td>
+                                    <td><a href="" style="color: <?php echo $product_history['stock_status_color'] ?>;"><?php echo $product_history['stock_status_value'] ?></a></td>
                                 </tr>
                             <?php } ?>
 

@@ -5,13 +5,25 @@ class Product extends CI_Controller
 {
 	public function product_list()
 	{
-		
+
 		//get ข้อมูลจาก table
 		$data['product_list'] = $this->Product_model->product_list();
+		// echo "<pre>";
+		// print_r($data['product_list']);
+		// exit();
 
 		$data['page'] = "product/product_list";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
+	}
+	public function product_stock_history()
+	{
+		$data['product_history'] = $this->Product_model->product_stock_history();
+		/* echo "<pre>";
+		print_r($data['product_history']);
+		exit(); */
+		$data['page'] = "product/product_stock_history";
+		$this->checksession($data);
 	}
 
 	public function product_insert()
@@ -24,10 +36,10 @@ class Product extends CI_Controller
 	public function product_productbalance()
 	{
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
-/* 		echo '<pre>';
-		print_r ($data);
-		echo '<pre>';
-		exit(); */
+  	// echo '<pre>';
+		// print_r ($data);
+		// echo '<pre>';
+		// exit();
 
 		$data['page'] = "product/product_productbalance";
 		$this->checksession($data);
@@ -43,7 +55,7 @@ class Product extends CI_Controller
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
-	
+
 
 	public function product_exportreport()
 	{
@@ -95,7 +107,7 @@ class Product extends CI_Controller
 		$this->checksession($data);
 	}
 
-	
+
 
 	public function product_manufacdetail($id)
 	{
@@ -176,7 +188,7 @@ class Product extends CI_Controller
 
 	public function product_insert_manufac()
 	{
-		
+
 		$this->Product_model->product_insert_manufac(/* $input */);
 		redirect('product/product_manufacreport');
 	}
@@ -201,7 +213,7 @@ class Product extends CI_Controller
 		/* echo '<pre>';
 		print_r ($data);
 		echo '<pre>'; */
-	
+
 		$data['page'] = "product/product_manufacinsert";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
@@ -229,15 +241,15 @@ class Product extends CI_Controller
 
 	public function checksession($data){
 		if($this->session->userdata('status') == 'admin'){
-			
+
 			$this->load->view('theme', $data);
 		}else if($this->session->userdata('status') == 'factory'){
-			
+
 			$this->load->view('factory', $data);
 		}else{
 			$this->load->view('supplyer', $data);
 		}
 	}
 
-	
+
 }
