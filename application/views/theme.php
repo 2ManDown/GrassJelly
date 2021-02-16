@@ -69,7 +69,7 @@ if ($userdata == 'admin') {
         </div>
       </form>
 
-      
+
 
       <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
       <li class="dropdown">
@@ -178,6 +178,30 @@ if ($userdata == 'admin') {
                   </ul>
                   </li>
 
+                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Materail</div>
+                  <li>
+                    <a href="#" class="auto">
+                      <span class="pull-right text-muted">
+                        <i class="i i-circle-sm-o text"></i>
+                        <i class="i i-circle-sm text-active"></i>
+                      </span>
+                      <!-- <b class="badge bg-danger pull-right">4</b> -->
+                      <i class="i i-stack icon">
+                      </i>
+                      <span class="font-bold">ข้อมูลวัตถุดิบ</span>
+                    </a>
+                    <ul class="nav dk">
+                      <li>
+                        <a href="<?php echo site_url('material/material_listinfo') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายการข้อมูลสินค้า</span>
+                        </a>
+                      </li>
+                  </li>
+                  </ul>
+                  </li>
+
                   <!-- <div class="line dk hidden-nav-xs"></div> -->
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Stock</div>
                   <li>
@@ -196,31 +220,17 @@ if ($userdata == 'admin') {
                         <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
                           <i class="i i-dot"></i>
 
-                          <span>รายการสินค้าคงคลัง</span>
+                          <span>รายการสินค้าคงเหลือ</span>
                         </a>
                       </li>
                       <li>
-                        <a href="<?php echo site_url('product/product_manufacreport') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_stock_history') ?>" class="auto">
                           <i class="i i-dot"></i>
 
-                          <span>รายงานการผลิตสินค้า</span>
+                          <span>ประวัติการนำเข้าและเบิกออก</span>
                         </a>
                       </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
 
-                          <span>รายงานการนำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการส่งออกสินค้า</span>
-                        </a>
-                      </li>
-                      
 
                     </ul>
                   </li>
@@ -237,24 +247,17 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('metarial/metarial_list') ?>" class="auto">
+                        <a href="<?php echo site_url('material/material_list') ?>" class="auto">
                           <i class="i i-dot"></i>
 
-                          <span>รายการคลังวัตถุดิบ</span>
+                          <span>รายการคลังวัตถุดิบคงเหลือ</span>
                         </a>
                       </li>
                       <li>
-                        <a href="<?php echo site_url('metarial/metarial_importlist') ?>" class="auto">
+                        <a href="<?php echo site_url('material/material_stock_history') ?>" class="auto">
                           <i class="i i-dot"></i>
 
-                          <span>รายงานการนำเข้าวัตถุดิบ</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('metarial/metarial_reavlist') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการเบิกใช้วัตถุดิบ</span>
+                          <span>ประวัติการนำเข้าและเบิกออก</span>
                         </a>
                       </li>
 
@@ -274,16 +277,24 @@ if ($userdata == 'admin') {
 
                       <i class="fa fa-plane">
                       </i>
-                      <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
+                      <span class="font-bold">การผลิตสินค้า</span>
                     </a>
                     <ul class="nav dk">
+                    <li>
+                        <a href="<?php echo site_url('product/product_manufacreport') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายงานการผลิตสินค้า</span>
+                        </a>
+                      </li>
+                      <li>
                     <li>
                         <a href="<?php echo site_url('product/product_manufacinsert') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ผลิตสินค้า</span>
                         </a>
                       </li>
-                      <li>
+                      <!-- <li>
                         <a href="<?php echo site_url('product/product_import') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>นำเข้าสินค้า</span>
@@ -294,7 +305,7 @@ if ($userdata == 'admin') {
                           <i class="i i-dot"></i>
                           <span>ส่งออกสินค้า</span>
                         </a>
-                      </li>
+                      </li> -->
                     </ul>
                   </li>
 
@@ -342,7 +353,7 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('metarial/metarial_exp') ?>" class="auto">
+                        <a href="<?php echo site_url('material/material_exp') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>จัดการวัตถุดิบหมดอายุ</span>

@@ -4,7 +4,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Product_model extends CI_Model
 {
 
+    public function product_stock_history()
+    {
+      $this->db->order_by('gj_product_stock.product_stock_date','desc');
+      $this->db->order_by('gj_product_stock.product_stock_time','desc');
+      $this->db->join('gj_product','gj_product.product_code = gj_product_stock.product_code');
+      $this->db->join('gj_stock_status','gj_stock_status.stock_status_id = gj_product_stock.product_stock_status');
+      $this->db->join('gj_product_category','gj_product_category.product_category_id = gj_product_stock.product_stock_category');
 
+      $query = $this->db->get('gj_product_stock');
+      return $query->result_array();
+    }
     public function product_list()
     {
         $query = $this->db->get('gj_product');
@@ -14,7 +24,7 @@ class Product_model extends CI_Model
     public function product_selldetail($sell_id)
     {
         /* INNER JOIN AND SELECT */
-        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex 
+        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex
         WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
 
         return $query->result_array();
@@ -22,8 +32,8 @@ class Product_model extends CI_Model
 
     public function product_manufacdetail($id)
     {
-        $query = $this->db->query("SELECT * FROM gj_product pd 
-        INNER JOIN(SELECT * FROM gj_productbalance pb 
+        $query = $this->db->query("SELECT * FROM gj_product pd
+        INNER JOIN(SELECT * FROM gj_productbalance pb
         WHERE pb.productbalance_id = $id) as pb ON (pd.product_code = pb.product_code)
 
         LEFT JOIN(SELECT * FROM gj_manufac mf
@@ -82,14 +92,8 @@ class Product_model extends CI_Model
     {
 
         /* LEFT JOIN */
-        $this->db->select('*');
-        $this->db->from('gj_manufac as mf');
-        $this->db->join('gj_product as pd', 'pd.product_code = mf.product_code', 'left');
-        //$this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
-        $this->db->join('gj_productbalance as pb', 'pb.product_code = mf.product_code', 'left');
-
-
-        $query = $this->db->get();
+        $this->db->order_by('product_code','DESC');
+        $query = $this->db->get('gj_product');
         return $query->result_array();
     }
 

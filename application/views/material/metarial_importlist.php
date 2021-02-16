@@ -4,11 +4,11 @@
             <section class="panel panel-default">
 
                 <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray">
-                    รายการคลังวัตถุดิบ
+                    รายการการนำเข้าวัตถุดิบ
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('metarial/metarial_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลวัตถุดิบ</a>
+                        <a href="<?php echo site_url('metarial/metarial_import') ?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าวัตถุดิบ</a>
                     </div>
                     <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
@@ -38,27 +38,29 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
+                                <th>#</th>
                                 <th>รหัสวัตถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
-                                <th>ปริมาตร</th>
-                                <th>ราคาต่อหน่วย</th>
-                                <th>หน่วยนับ</th>
-                                <th>จำนวนคงเหลือ</th>
-                                <!-- <th class="text-center">จัดการ</th> -->
+                                <th>จำนวนที่นำเข้า</th>
+                                <th>ราคานำเข้ารวม</th>
+                                <th>วันที่นำเข้า</th>
+                                <th>วันหมดอายุ</th>
+
                             </tr>
                         </div>
-                        <?php foreach ($metarial_list as $metarial_list) { ?>
-                            <tbody>
+                        <tbody>
+                            <?php foreach ($metarial_im as $metarial_im) { ?>
                                 <tr>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_code'] ?></td>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_name'] ?></td>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_volume'] ?></td>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_price'] ?></td>
-                                    <td><a href="<?php echo site_url('metarial/metarial_manage/').$metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_unit'] ?></td>
-                                    <td>จำนวนคงเหลือ</td>
+                                    <td><?php echo $metarial_im['immetarial_id'] ?></td>
+                                    <td><?php echo $metarial_im['metarial_code'] ?></td>
+                                    <td><?php echo $metarial_im['metarial_name'] ?></td>
+                                    <td><?php echo $metarial_im['immetarial_amount'] ?></td>
+                                    <td><?php echo $metarial_im['immetarial_sumprice'] ?></td>
+                                    <td><?php echo $metarial_im['immetarial_imdate'] ?></td>
+                                    <td><?php echo @$metarial_im['immetarial_expdate'] ?></td>
                                 </tr>
-                            </tbody>
-                        <?php } ?>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
 

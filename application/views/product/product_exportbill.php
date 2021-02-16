@@ -19,7 +19,19 @@
                         <!-- <form data-validate="parsley" action="#"> -->
                         <?php echo form_open('product/product_exportinsert', 'data-validate="parsley"') ?>
                         <div class="panel-body">
+<div class="form-group pull-in clearfix">
+                          <div class="col-sm-4">
+                              <label>รหัสใบเบิกของ</label>
+                              <?php
+                                $count_all = $this->db->count_all_results('gj_order');
+                                echo "OD".($count_all+1);
+                              ?>
+                          </div>
+                        </div>
                             <div class="form-group pull-in clearfix">
+
+
+
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>สินค้า</label>
@@ -79,7 +91,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>Vat 7%</label>
-                                    <input type="number" class="form-control" id="export_vat" name="export_vat" 
+                                    <input type="number" class="form-control" id="export_vat" name="export_vat"
                                     style="color: Red; font-weight: bold;" readonly>
                                 </div>
 
