@@ -24,6 +24,10 @@ class Product extends CI_Controller
 	public function product_productbalance()
 	{
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
+/* 		echo '<pre>';
+		print_r ($data);
+		echo '<pre>';
+		exit(); */
 
 		$data['page'] = "product/product_productbalance";
 		$this->checksession($data);
@@ -91,17 +95,7 @@ class Product extends CI_Controller
 		$this->checksession($data);
 	}
 
-	public function product_manufacinsert()
-	{
-		$data['product_list'] = $this->Product_model->product_list();
-		/* echo '<pre>';
-		print_r ($data);
-		echo '<pre>'; */
 	
-		$data['page'] = "product/product_manufacinsert";
-		$this->checksession($data);
-		//$this->load->view('theme', $data);
-	}
 
 	public function product_manufacdetail($id)
 	{
@@ -199,6 +193,18 @@ class Product extends CI_Controller
 		); */
 		$this->Product_model->product_insert_import(/* $input */);
 		redirect('product/product_importreport');
+	}
+
+	public function product_manufacinsert()
+	{
+		$data['product_list'] = $this->Product_model->product_list();
+		/* echo '<pre>';
+		print_r ($data);
+		echo '<pre>'; */
+	
+		$data['page'] = "product/product_manufacinsert";
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
 	}
 
 
