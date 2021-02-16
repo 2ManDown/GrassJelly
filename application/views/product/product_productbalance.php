@@ -44,7 +44,7 @@
                                 <th>วันที่ผลิต</th>
                                 <th>จำนวนที่ผลิต</th>
                                 <th>ราคาสุทธิ</th>
-                                <th>จำนวนคงเหลือ</th>
+                                <th style="text-align: center;">จำนวนคงเหลือ</th>
                                 <th style="text-align: center;">นำเข้า/ส่งออกสินค้า</th>
                             </tr>
                         </div>
@@ -58,7 +58,7 @@
                                     <td><a href="<?php echo site_url('product/product_manufacdetail/') . $product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_producedate'] ?></a></td>
                                     <td><a href="<?php echo site_url('product/product_manufacdetail/') . $product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_produce'] ?></a></td>
                                     <td><a href="<?php echo site_url('product/product_manufacdetail/') . $product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_price'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_manufacdetail/') . $product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['productbalance_balance'] ?></a></td>
+                                    <td style="text-align: center;"><a href="<?php echo site_url('product/product_manufacdetail/') . $product_productbalance['productbalance_id'] ?>"><?php echo $product_productbalance['manufac_produce'] ?></a></td>
                                     <td style="text-align: center;">
                                         <a href="<?php echo site_url('product/product_exportbill/') . $product_productbalance['productbalance_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-share-square-o"></i></a>
                                     </td>
