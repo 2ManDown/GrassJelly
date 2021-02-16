@@ -94,7 +94,7 @@ class Product extends CI_Controller
 
 	public function product_exportbill()
 	{
-		$data['product_list'] = $this->Product_model->product_list();
+		$data['employee'] = $this->Employee_model->employee_list();
 
 		$data['page'] = "product/product_exportbill";
 		$this->checksession($data);
