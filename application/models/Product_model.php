@@ -39,7 +39,8 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_select($id){
+    public function product_select($id)
+    {
         /* Get Data from Primary Key */
         $fetch = array('product_code' => $id);
         $query = $this->db->get_where('gj_product', $fetch);
@@ -52,7 +53,7 @@ class Product_model extends CI_Model
         $this->db->select('pd.product_code,pd.product_name,im.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
-        $this->db->order_by('im.importproduct_id','desc');
+        $this->db->order_by('im.importproduct_id', 'desc');
 
         $query = $this->db->get();
         $query->result_array();
@@ -70,19 +71,12 @@ class Product_model extends CI_Model
         $this->db->select('pd.product_code,pd.product_name,ex.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
-        $this->db->order_by('ex.exportproduct_id','desc');
+        $this->db->order_by('ex.exportproduct_id', 'desc');
 
         $query = $this->db->get();
         return $query->result_array();
     }
 
-    /* 
-  public function product_select($product_code){
-     
-      $fetch = array('product_code' => $product_code);
-      $query = $this->db->get_where('gj_product', $fetch);
-      return $query->result_array();
-  } */
 
     public function product_productbalance()
     {
@@ -91,8 +85,9 @@ class Product_model extends CI_Model
         $this->db->select('*');
         $this->db->from('gj_manufac as mf');
         $this->db->join('gj_product as pd', 'pd.product_code = mf.product_code', 'left');
-        $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
-        $this->db->join('gj_productbalance as pb', 'pb.productbalance_id = mf.manufac_id', 'left');
+        //$this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
+        $this->db->join('gj_productbalance as pb', 'pb.product_code = mf.product_code', 'left');
+
 
         $query = $this->db->get();
         return $query->result_array();
@@ -101,9 +96,9 @@ class Product_model extends CI_Model
     /* สินค้าคงคลัง Supplyer */
     public function product_balancesupplyer()
     {
-        
+
         /* LEFT JOIN */
-         $this->db->select('*');
+        $this->db->select('*');
         $this->db->from('gj_importproduct as im');
         $this->db->join('gj_product as pd', 'pd.product_code = im.product_code', 'left');
         $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
@@ -113,7 +108,7 @@ class Product_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-    
+
 
     public function product_manufacinsert()
     {
@@ -121,17 +116,18 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_manufacreport(){
-        
+    public function product_manufacreport()
+    {
+
         /* INNER JOIN */
         $this->db->select('pd.product_code,pd.product_name,mn.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_manufac as mn', 'pd.product_code = mn.product_code');
-        $this->db->order_by('mn.manufac_id','desc');
+        $this->db->order_by('mn.manufac_id', 'desc');
 
         $query = $this->db->get();
         $query->result_array();
-        
+
         return $query->result_array();
     }
 
@@ -145,22 +141,22 @@ class Product_model extends CI_Model
     public function product_insert_manufac()
     {
         $manufac = array(
-			//'manufac_id' => $this->input->post(''),
-			'product_code' => $this->input->post('product_code'),
-			'manufac_produce' => $this->input->post('manufac_produce'),
-			'manufac_codelot' => $this->input->post('manufac_codelot'),
-			'manufac_producedate' => $this->input->post('manufac_producedate'),
-			'manufac_price' => $this->input->post('manufac_price'),
-			'manufac_expdate' => $this->input->post('manufac_expdate'),
-			'manufac_sumprice' => $this->input->post('manufac_sumprice'),
-		);
-        /* $input = array(
+            //'manufac_id' => $this->input->post(''),
+            'product_code' => $this->input->post('product_code'),
+            'manufac_produce' => $this->input->post('manufac_produce'),
+            'manufac_codelot' => $this->input->post('manufac_codelot'),
+            'manufac_producedate' => $this->input->post('manufac_producedate'),
+            'manufac_price' => $this->input->post('manufac_price'),
+            'manufac_expdate' => $this->input->post('manufac_expdate'),
+            'manufac_sumprice' => $this->input->post('manufac_sumprice'),
+        );
+        $input = array(
             'manufac_codelot' => $this->input->post('manufac_codelot'),
             'product_code' => $this->input->post('product_code'),
             'productbalance_balance' => $this->input->post('manufac_produce'),
-        );  */
-            
-            
+        );
+
+
         /* echo '<pre>';
         print_r($input);
         print_r($manufac);
@@ -168,20 +164,20 @@ class Product_model extends CI_Model
         exit(); */
 
         $this->db->insert('gj_manufac', $manufac);
-        //$this->db->insert('gj_productbalance', $input);
+        $this->db->insert('gj_productbalance', $input);
     }
 
     public function product_insert_import(/* $input */)
     {
-        $import= array(
-			'product_code' => $this->input->post('product_code'),
-			'importproduct_amount' => $this->input->post('importproduct_amount'),
-			'importproduct_price' => $this->input->post('importproduct_price'),
-			'importproduct_imdate' => $this->input->post('importproduct_imdate'),
-			'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
-			'importproduct_expdate' => $this->input->post('importproduct_expdate'),
-            
-		);
+        $import = array(
+            'product_code' => $this->input->post('product_code'),
+            'importproduct_amount' => $this->input->post('importproduct_amount'),
+            'importproduct_price' => $this->input->post('importproduct_price'),
+            'importproduct_imdate' => $this->input->post('importproduct_imdate'),
+            'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
+            'importproduct_expdate' => $this->input->post('importproduct_expdate'),
+
+        );
 
 
         echo '<pre>';
