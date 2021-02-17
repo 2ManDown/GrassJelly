@@ -3,10 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Hub extends CI_Controller{
     public function hub_list(){
-        $data['hub_list'] = $this->Hubb_model->hub_list();
-
+        $data['hub_list'] = $this->Hub_model->hub_list();
+        $data['product_list'] = $this->Product_model->product_list();
         $data['page'] = "product/product_exportbill";
-		$this->checksession($data);
+		    $this->checksession($data);
     }
 
 
