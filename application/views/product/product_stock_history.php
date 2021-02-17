@@ -12,7 +12,7 @@
                     <div class="col-sm-12 m-b-xs">
                         <a href="<?php echo site_url('product/product_import') ?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าสินค้า</a>
                         &nbsp;
-                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="btn btn-s-lg btn-primary btn-rounded">เบิกออกสินค้า</a>
+                        <a href="<?php echo site_url('hub/hub_list') ?>" class="btn btn-s-lg btn-primary btn-rounded">เบิกออกสินค้า</a>
 
                     </div>
                    <!--  <div class="col-sm-4 m-b-xs" style="margin-top: 20px">

@@ -48,7 +48,7 @@
                                     <td><?php echo $material_list['material_unit'] ?></td>
                                     <td style="text-align: center;">
                                         <?php
-                                        $this->db->where('metarial_code', $material_list['material_code']);
+                                        $this->db->where('material_code', $material_list['material_code']);
                                         $this->db->select_sum('material_stock_amount');
                                         $query = $this->db->get('gj_material_stock');
                                         $material_stock = $query->result_array();
