@@ -11,20 +11,24 @@
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>รหัสบัตรประชานชน</label>
-                            <input type="text" name="employee_id" class="form-control " placeholder="กรอกรหัสบัตรประชาชน" required>
+                            <label>ชื่อ - สกุล</label>
+                            <input type="text" name="employee_name" class="form-control" id="input-id-1" placeholder="กรอกชื่อ - สกุล" required>
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>เบอร์โทรศัพท์</label>
-                            <input type="text" data-type="phone" name="employee_tel" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" required>
+                            <input type="text" data-type="phone" name="employee_tel" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" required maxlength="10">
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>ชื่อ - สกุล</label>
-                            <input type="text" name="employee_name" class="form-control" id="input-id-1" placeholder="กรอกชื่อ - สกุล" required>
+                            <label>เพศ</label>
+                            <select name="employee_sex" class="form-control m-b" required>
+                                <option disabled selected>กรุณาเลือกเพศ</option>
+                                <option value="1">ชาย</option>
+                                <option value="2">หญิง</option>
+                            </select>
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
@@ -35,12 +39,9 @@
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>เพศ</label>
-                            <select name="employee_sex" class="form-control m-b">
-                                <option disabled selected>กรุณาเลือกเพศ</option>
-                                <option value="ชาย">ชาย</option>
-                                <option value="หญิง">หญิง</option>
-                            </select>
+
+                            <label>ที่อยู่</label>
+                            <textarea name="employee_address" class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;" required></textarea>
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
@@ -48,21 +49,10 @@
                             <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
                         </div>
                     </div>
-                    <div class="form-group pull-in clearfix">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-4">
-                            <label>ที่อยู่</label>
-                            <textarea name="employee_address" class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;" required></textarea>
-                        </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-4">
 
-
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                    </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                </div>
                 </div>
 
                 <?php echo form_close() ?>

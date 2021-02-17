@@ -40,15 +40,15 @@
                             </tr> -->
                         </div>
                         <tbody>
-                            <?php foreach ($material_list as $material_list) { ?>
+                            <?php foreach ($material_materialbalance as $material_materialbalance) { ?>
                                 <tr>
-                                    <td><?php echo $material_list['material_code'] ?></td>
-                                    <td><?php echo $material_list['material_name'] ?></td>
-                                    <td><?php echo $material_list['material_volume'] ?></td>
-                                    <td><?php echo $material_list['material_unit'] ?></td>
+                                    <td><?php echo $material_materialbalance['material_code'] ?></td>
+                                    <td><?php echo $material_materialbalance['material_name'] ?></td>
+                                    <td><?php echo $material_materialbalance['material_volume'] ?></td>
+                                    <td><?php echo $material_materialbalance['material_unit'] ?></td>
                                     <td style="text-align: center;">
                                         <?php
-                                        $this->db->where('material_code', $material_list['material_code']);
+                                        $this->db->where('material_code', $material_materialbalance['material_code']);
                                         $this->db->select_sum('material_stock_amount');
                                         $query = $this->db->get('gj_material_stock');
                                         $material_stock = $query->result_array();

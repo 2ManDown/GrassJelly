@@ -27,8 +27,8 @@
                             <label class="col-sm-3 control-label">เพศ</label>
                             <div class="col-sm-7">
                                 <select class="form-control m-b" name="employee_sex" value="<?php echo $employee_manage['employee_sex'] ?>">
-                                    <option value="ชาย">ชาย</option>
-                                    <option value="หญิง">หญิง</option>
+                                    <option value="1">ชาย</option>
+                                    <option value="2">หญิง</option>
                                 </select>
                             </div>
                         </div>

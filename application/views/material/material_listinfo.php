@@ -6,8 +6,8 @@
                 <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray">
                     รายการข้อมูลวัตถุดิบ
                 </header>
-                <div class="row wrapper">
-                    <div class="col-sm-2 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
+                <div class="row wrapper  text-right" >
+                    <div class="col-sm-12 m-b-xs" >
                         <a href="<?php echo site_url('material/material_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลวัตถุดิบ</a>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                                     <td><?php echo $material_list['material_volume'] ?></td>
                                     <td><?php echo $material_list['material_unit'] ?></td>
                                     <td style="text-align: center;">
-                                        <a href="<?php echo site_url('material/material_manage/').$material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-share-square-o"></i></a>
+                                        <a href="<?php echo site_url('material/material_manage/').$material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
                             </tbody>

@@ -241,13 +241,13 @@ if ($userdata == 'admin') {
                         <i class="i i-circle-sm-o text"></i>
                         <i class="i i-circle-sm text-active"></i>
                       </span>
-                      <i class="i i-lab icon">
+                      <i class=" fa fa-archive">
                       </i>
                       <span class="font-bold">ข้อมูลคลังวัตถุดิบ</span>
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('material/material_list') ?>" class="auto">
+                        <a href="<?php echo site_url('material/material_materialbalance') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>รายการคลังวัตถุดิบคงเหลือ</span>
@@ -377,6 +377,36 @@ if ($userdata == 'admin') {
                         <a href="<?php echo site_url('product/product_exp') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>จัดการสินค้าหมดอายุ</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <div class="line dk hidden-nav-xs"></div>
+                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Hub</div>
+                  <li>
+                    <a href="#" class="auto">
+                      <span class="pull-right text-muted">
+                        <i class="i i-circle-sm-o text"></i>
+                        <i class="i i-circle-sm text-active"></i>
+                      </span>
+
+                      <i class="fa fa-truck"></i>
+                      <span class="font-bold">ศูนย์กระจาย</span>
+                    </a>
+                    <ul class="nav dk">
+                      <li>
+                        <a href="<?php echo site_url('hub/hub_list') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>ข้อมูลศูนย์กระจาย</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="nav dk">
+                      <li>
+                        <a href="<?php echo site_url('hub/hub_addinfo') ?>" class="auto">
+                          <i class="i i-dot"></i>
+                          <span>เพิ่มข้อมูล Hub</span>
                         </a>
                       </li>
                     </ul>

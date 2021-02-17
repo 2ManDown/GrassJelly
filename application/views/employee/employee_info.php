@@ -5,48 +5,51 @@
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
                     ข้อมูลพนักงาน
                 </header>
-                <div class="row wrapper">
-                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
+                <div class="row wrapper text-right">
+                    <div class="col-sm-12 m-b-xs">
                         <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลพนักงาน</a>
                     </div>
-                    <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
-                        
-                    </div>
-                    <div class="col-sm-3" style="margin-top: 20px">
-                        <div class="input-group">
-                            <input type="text" class="input-sm form-control" placeholder="Search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-sm btn-default" type="button">Go!</button>
-                            </span>
-                        </div>
-                    </div>
                 </div>
+
 
                 <div class="table-responsive" style="margin-bottom: 0px;">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>รหัสบัตรประชานชน</th>
+                                <th>#</th>
                                 <th>ชื่อ - สกุล</th>
                                 <th>เพศ</th>
                                 <th>วันเดือนปีเกิด</th>
                                 <th>ที่อยู่</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>อีเมล</th>
+                                <th style="text-align: center;">จัดการ</th>
                             </tr>
                         </div>
                         <?php foreach ($employee_list as $employee_list) { ?>
                             <tbody>
                                 <tr>
 
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_id'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_name'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_sex'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_birthdate'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_address'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_tel'] ?></a></td>
-                                    <td><a href="<?php echo site_url('employee/employee_manage/').$employee_list['employee_id'] ?>"><?php echo $employee_list['employee_email'] ?></a></td>
-
+                                    <td><?php echo $employee_list['employee_id'] ?></td>
+                                    <td><?php echo $employee_list['employee_name'] ?></td>
+                                    <td><?php 
+                                        if($employee_list['employee_sex'] == 1){
+                                            echo "ชาย";
+                                        }
+                                        elseif($employee_list['employee_sex'] == 2){
+                                            echo "หญิง";
+                                        }
+                                        else{
+                                            echo"ไม่มีข้อมูล";
+                                        }
+                                    ?></td>
+                                    <td><?php echo $employee_list['employee_birthdate'] ?></td>
+                                    <td><?php echo $employee_list['employee_address'] ?></td>
+                                    <td><?php echo $employee_list['employee_tel'] ?></td>
+                                    <td><?php echo $employee_list['employee_email'] ?></td>
+                                    <td style="text-align: center;">
+                                        <a href="<?php echo site_url('employee/employee_manage/') . $employee_list['employee_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
+                                    </td>
                                 </tr>
                             </tbody>
                         <?php } ?>
