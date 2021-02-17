@@ -15,6 +15,15 @@ class Product_model extends CI_Model
       $query = $this->db->get('gj_product_stock');
       return $query->result_array();
     }
+    public function product_exportrepot(){
+        $this->db->order_by('gj_order.order_date','desc');
+        $this->db->order_by('gj_order.order_time','desc');
+        $this->db->join('gj_order_detail','gj_order_detail.order_code = gj_order.order_code');
+        $this->db->join('gj_product','gj_product.product_code = gj_order_detail.product_code');
+
+        $query = $this->db->get('gj_order');
+        return $query->result_array();
+    }
     public function product_list()
     {
         $query = $this->db->get('gj_product');
@@ -75,9 +84,9 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    public function product_exportreport()
+    /* public function product_exportreport()
     {
-        /* INNER JOIN */
+      
         $this->db->select('pd.product_code,pd.product_name,ex.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
@@ -85,7 +94,7 @@ class Product_model extends CI_Model
 
         $query = $this->db->get();
         return $query->result_array();
-    }
+    } */
 
 
     public function product_productbalance()

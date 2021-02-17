@@ -224,6 +224,13 @@ if ($userdata == 'admin') {
                         </a>
                       </li>
                       <li>
+                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายงานการเบิกออกสินค้า</span>
+                        </a>
+                      </li>
+                      <li>
                         <a href="<?php echo site_url('product/product_stock_history') ?>" class="auto">
                           <i class="i i-dot"></i>
 
