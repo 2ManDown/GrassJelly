@@ -20,16 +20,23 @@ class Material_model extends CI_Model
         $this->db->insert('gj_material', $input);
     }
 
-    public function material_list()
+    public function material_materialbalance()
     {
         $this->db->order_by('material_code', 'ASC');
         $query = $this->db->get('gj_material');
         return $query->result_array();
     }
 
-    public function material_insert_import($input)
+    public function material_supplierlist()
     {
-        $this->db->insert('gj_immaterial', $input);
+        $this->db->order_by('supplier_id', 'ASC');
+        $query = $this->db->get('gj_supplier');
+        return $query->result_array();
+    }
+
+    public function material_insert_stock($input)
+    {
+        $this->db->insert('gj_material_stock', $input);
     }
 
     public function material_reavellist($material_code)

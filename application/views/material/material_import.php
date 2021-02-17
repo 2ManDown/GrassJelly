@@ -15,7 +15,7 @@
                         <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
                             นำเข้าวัตถุดิบ
                         </header>
-                        <?php echo form_open('metarial/metarial_insert_import', 'data-validate="parsley"'); ?>
+                        <?php echo form_open('material/material_insert_import', 'data-validate="parsley"'); ?>
 
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
@@ -23,10 +23,10 @@
                                 <div class="col-sm-4">
 
                                     <label>รหัสวัตถุดิบ</label>
-                                    <select name="metarial_code" class="form-control m-b " onclick="">
+                                    <select name="material_code" class="form-control m-b" required>
                                         <option disabled selected>กรุณาเลือกวัตถุดิบ</option>
-                                        <?php foreach ($metarial_list as $metarial_list) { ?>
-                                            <option value="<?php echo $metarial_list['metarial_code'] ?>"><?php echo $metarial_list['metarial_code'], ' - ', $metarial_list['metarial_name'], ' - ', $metarial_list['metarial_unit'] ?></option>
+                                        <?php foreach ($material_list as $material_list) { ?>
+                                            <option value="<?php echo $material_list['material_code'] ?>"><?php echo $material_list['material_code'], ' - ', $material_list['material_name'], ' - ', $material_list['material_unit'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -34,25 +34,30 @@
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>จำนวนนำเข้า</label>
-                                    <input type="number" name="immetarial_amount" class="form-control" placeholder="จำนวนผลิต" id="amount" onchange="plus()" required>
+                                    <label>ร้านค้า</label>
+                                    <select name="supplier_id" class="form-control m-b" required>
+                                        <option disabled selected>กรุณาเลือกร้านค้า</option>
+                                        <?php foreach ($material_suppiler as $material_suppiler) { ?>
+                                            <option value="<?php echo $material_suppiler['supplier_id'] ?>"><?php echo $material_suppiler['supplier_code'], ' - ' , $material_suppiler['supplier_name'] ?></option>
+                                        <?php } ?>
+                                    </select>
+
                                 </div>
                             </div>
 
                             <div class="form-group pull-in clearfix">
 
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>จำนวนนำเข้า</label>
+                                    <input type="number" name="material_stock_amount" class="form-control" placeholder="จำนวนนำเข้า" id="amount" required>
+
+                                </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่นำเข้า</label>
-                                    <input name="immetarial_imdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_imdate" value="" data-date-format="yyyy-mm-dd">
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>ราคาต่อหน่วย</label>
-                                    <div class="input-group m-b">
-                                        <span class="input-group-addon">BTH</span>
-                                        <input type="number" name="immetarial_price" class="form-control" id="price" onchange="plus()">
-                                    </div>
+                                    <input name="material_stock_date" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
+
 
                                 </div>
                             </div>
@@ -60,15 +65,27 @@
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>วันหมดอายุ</label>
-                                    <input name="immetarial_expdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_expdate" value="" data-date-format="yyyy-mm-dd">
+                                    <label>คอมเมนต์</label>
+                                    <textarea class="form-control" name="material_stock_comment" rows="6" data-minwords="6" data-required="true" placeholder="คอมเม้นต์" required style="resize: none;"></textarea>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ราคารวม</label>
-                                    <input name="immetarial_sumprice" type="number" class="form-control" id="sumprice" readonly>
+                                    <label>เวลาที่นำเข้า</label>
+                                    <input name="material_stock_time" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
 
                                 </div>
+                            </div>
+
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label class="hidden">สถานะ</label>
+                                    <input type="number" name="material_stock_status" class="hidden form-control" value="1" readonly>
+
+                                    <label class="hidden">stock_user</label>
+                                    <input name="material_stock_user" type="number" class="hidden form-control" value="<?php echo $this->session->userdata("id")?>" readonly>
+                                </div>
+
                             </div>
 
                             <div class="text-right">
@@ -85,7 +102,7 @@
 </section>
 
 
-<script>
+<!-- <script>
     function plus() {
         let x = document.getElementById("amount").value;
         console.log(x);
@@ -96,4 +113,4 @@
         let output = document.getElementById("sumprice");
         output.value = b;
     }
-</script>
+</script> -->
