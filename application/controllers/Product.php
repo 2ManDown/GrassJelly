@@ -26,7 +26,8 @@ class Product extends CI_Controller
 		$this->checksession($data);
 	}
 
-	public function product_choose_product(){
+	public function product_choose_product()
+	{
 		$data['page'] = "product/product_choose_product";
 		$this->checksession($data);
 	}
@@ -41,7 +42,7 @@ class Product extends CI_Controller
 	public function product_productbalance()
 	{
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
-  	// echo '<pre>';
+		// echo '<pre>';
 		// print_r ($data);
 		// echo '<pre>';
 		// exit();
@@ -103,10 +104,10 @@ class Product extends CI_Controller
 
 		$data['page'] = "product/product_exportbill";
 		$this->checksession($data);
-		//$this->load->view('theme', $data);
 	}
 
-	public function product_select($id){
+	public function product_select($id)
+	{
 		$data['select'] = $this->Product_model->product_select($id);
 
 		$this->checksession($data);
@@ -149,7 +150,7 @@ class Product extends CI_Controller
 
 	public function product_import()
 	{
-		 $data['product_list'] = $this->Product_model->product_list();
+		$data['product_list'] = $this->Product_model->product_list();
 
 		$data['page'] = "product/product_import";
 		$this->checksession($data);
@@ -157,6 +158,11 @@ class Product extends CI_Controller
 	}
 
 
+
+
+
+
+	
 	/* INSERT */
 	public function product_insert_db()
 	{
@@ -171,7 +177,8 @@ class Product extends CI_Controller
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');
 	}
-	public function product_orderinsert(){
+	public function product_orderinsert()
+	{
 		$input = array(
 			/* 'product_code' => $this->input->post('product'),
 			'exportproduct_code' => $this->input->post('export_id'),
@@ -187,14 +194,57 @@ class Product extends CI_Controller
 			'order_date' => $this->input->post('export_date'),
 			'order_time' => $this->input->post('export_time'),
 			'hub_id' => $this->input->post('hubid')
-			
+
 		);
-		/* echo '<pre>';
-		print_r($input);
-		echo'<pre>';
-		exit(); */
+		//Insert OrderBill
 		$this->Product_model->product_orderinsert($input);
-		redirect('product/product_choose_product');
+
+
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$order_detail = array(
+					'order_code' => $this->input->post('countid'),
+					'product_code' => $this->input->post('checkbox')[$i],
+					'order_detail_amount' => $this->input->post('amount')[$i],
+					'order_detail_price' => $this->input->post('price')[$i]
+				);
+				//Insert Order Detail
+				$this->Product_model->product_orderdetail_insert($order_detail);
+				
+			}
+			$i++;
+		}
+
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$product_stock = array(
+					'product_code' => $this->input->post('checkbox')[$i],
+					'product_stock_amount' => -$this->input->post('amount')[$i],
+					'product_stock_date' => $this->input->post('export_date'),
+					'product_stock_time' => $this->input->post('export_time'),
+					'product_stock_status' => 2,
+					'product_stock_category' => 1,
+					'product_stock_user' => $this->session->userdata('id'),
+					'order_code' => $this->input->post('countid'),
+					'hub_id' => $this->input->post('hubid')
+				);
+				/* echo '<pre>';
+				print_r($product_stock); */
+				$this->Product_model->product_stock_insert($product_stock);
+			}
+			$i++;
+		}
+
+
+
+		/* foreach ($this->input->post('amount') as $checkbox) {
+			
+			$i++;
+		} */
+
+		redirect('product/product_stock_history');
 	}
 
 	public function product_insert_manufac()
@@ -232,12 +282,14 @@ class Product extends CI_Controller
 
 
 	/* UPDATE */
-	public function product_update_db(){
+	public function product_update_db()
+	{
 
 		$this->Product_model->product_update_db();
 		redirect('product/product_list');
 	}
-	public function product_sell_update(){
+	public function product_sell_update()
+	{
 		$this->Product_model->product_sell_update();
 		redirect('product/product_exportreport');
 	}
@@ -250,17 +302,16 @@ class Product extends CI_Controller
 	}
 
 
-	public function checksession($data){
-		if($this->session->userdata('status') == 'admin'){
+	public function checksession($data)
+	{
+		if ($this->session->userdata('status') == 'admin') {
 
 			$this->load->view('theme', $data);
-		}else if($this->session->userdata('status') == 'factory'){
+		} else if ($this->session->userdata('status') == 'factory') {
 
 			$this->load->view('factory', $data);
-		}else{
+		} else {
 			$this->load->view('supplyer', $data);
 		}
 	}
-
-
 }

@@ -1,48 +1,48 @@
 <style>
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-      }
-  </style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 
-  <section id="content" class="col-md-12">
-      <section class="hbox stretch">
-          <section>
-              <section class="vbox">
-                  <section class="scrollable padder">
-                      <section class="panel panel-default">
-                          <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
-                              ออกใบส่งออกสินค้า
-                          </header>
-                          <!-- <form data-validate="parsley" action="#"> -->
-                          <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"') ?>
-                          <div class="panel-body">
-                              <div class="form-group pull-in clearfix">
-                                  <div class="col-sm-4">
-                                      <label>รหัสใบเบิกของ</label>
-                                      <?php
-                                        $count_all = $this->db->count_all_results('gj_order');
-                                        $countid =  "OD" . ($count_all + 1);
-                                        echo $countid;
-                                        ?>
-                                        <!-- <input type="hidden" name="countid" value="<?php echo $countid ?>"> -->
-                                  </div>
-                              </div>
-                              <div class="form-group pull-in clearfix">
+<section id="content" class="col-md-12">
+    <section class="hbox stretch">
+        <section>
+            <section class="vbox">
+                <section class="scrollable padder">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray;">
+                            ออกใบส่งออกสินค้า
+                        </header>
+                        <!-- <form data-validate="parsley" action="#"> -->
+                        <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"') ?>
+                        <div class="panel-body">
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>รหัสใบเบิกของ</label>
+                                    <?php
+                                    $count_all = $this->db->count_all_results('gj_order');
+                                    $countid =  "OD" . ($count_all + 1);
+                                    echo $countid;
+                                    ?>
+                                    <!-- <input type="hidden" name="countid" value="<?php echo $countid ?>"> -->
+                                </div>
+                            </div>
+                            <div class="form-group pull-in clearfix">
 
-                                  <div class="col-sm-1"></div>
-                                  <div class="col-sm-4">
-                                      <label>ผู้รับสินค้า</label>
-                                      <select name="hubid" class="form-control m-b " required>
-                                          <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
-                                          <?php foreach ($hub_list as $hub_list) { ?>
-                                              <option value="<?php echo $hub_list['hub_id']?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
-                                          <?php } ?>
-                                      </select>
-                                  </div>
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>ผู้รับสินค้า</label>
+                                    <select name="hubid" class="form-control m-b " required>
+                                        <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
+                                        <?php foreach ($hub_list as $hub_list) { ?>
+                                            <option value="<?php echo $hub_list['hub_id'] ?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
 
-                                  <!-- <div class="col-sm-1"></div>
+                                <!-- <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>สินค้า</label>
                                     <select name="product" class="form-control m-b " required>
@@ -57,37 +57,37 @@
                                     </select>
                                 </div> -->
 
-                                  <div class="col-sm-1"></div>
-                                  <div class="col-sm-4">
-                                      <label>รหัสการส่งออกสินค้า</label>
-                                      <input type="text" name="countid" class="form-control" value="<?php echo $countid ?>" placeholder="รหัสการส่งออกสินค้า" readonly required>
-                                  </div>
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>รหัสการส่งออกสินค้า</label>
+                                    <input type="text" name="countid" class="form-control" value="<?php echo $countid ?>" placeholder="รหัสการส่งออกสินค้า" readonly required>
+                                </div>
 
 
-                              </div>
+                            </div>
 
-                              <div class="form-group pull-in clearfix">
-                              <div class="col-sm-1"></div>
-                                  <div class="col-sm-4">
-                                      <label>วันที่ส่งออก</label>
-                                      <input class="input-sm input-s datepicker-input form-control" name="export_date" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
-                                  </div>
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>วันที่ส่งออก</label>
+                                    <input class="input-sm input-s datepicker-input form-control" name="export_date" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
+                                </div>
 
-                                  <div class="col-sm-1"></div>
-                                  <div class="col-sm-4">
-                                      <label>เวลา</label>
-                                      <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                          <input type="text" class="form-control" value="" name="export_time">
-                                          <span class="input-group-addon">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>เวลา</label>
+                                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                                        <input type="text" class="form-control" value="" name="export_time">
+                                        <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-time"></span>
                                         </span>
-                                      </div>
-                                  </div>
-                              </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                              <!-- class="input-sm input-s timepicker-input form-control" -->
+                            <!-- class="input-sm input-s timepicker-input form-control" -->
 
-                              <!-- <div class="form-group pull-in clearfix">
+                            <!-- <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>ราคาต่อหน่วย</label>
@@ -125,64 +125,85 @@
                                     <input type="text" class="form-control" id="export_sumresult" name="export_includevat" style="color: #00af91; font-weight: bold;" readonly>
                                 </div>
                             </div> -->
+
+                            <div class="form-group pull-in clearfix"></div>
+                            <div class="form-group pull-in clearfix"></div>
+                            <div class="form-group pull-in clearfix"></div>
+
                             <div class="form-group pull-in clearfix">
-                                <div class="col-sm-8">
-                                  <table class="table">
-                                    <thead>
-                                      <th>เลือก</th>
-                                      <th>รายการสินค้า</th>
-                                      <th>ราคา</th>
-                                      <th>จำนวน</th>
-                                    </thead>
-                                    <?php foreach($product_list as $product_list){ ?>
-                                    <tr>
-                                      <td><input type="checkbox" name="" value=""></td>
-                                      <td><?php echo $product_list['product_code']?></td>
-                                      <td><?php echo $product_list['product_price']?></td>
-                                      <td><input type="number" name="" value="0"></td>
-                                    </tr>
-                                  <?php } ?>
-                                  </table>
+                                <div class="table-responsive" style="margin-bottom: 0px;">
+                                    <table class="table table-striped b-t b-light table-bordered">
+                                        <thead>
+                                            <th style="text-align: center;">เลือก</th>
+                                            <th style="text-align: center;">รหัสสินค้า</th>
+                                            <th style="text-align: center;">ชื่อสินค้า</th>
+                                            <th style="text-align: center;">ปริมาตร</th>
+                                            <th style="text-align: center;">บรรจุภัณฑ์</th>
+                                            <th style="text-align: center;">คำอธิบาย</th>
+                                            <th style="text-align: center;">ราคา</th>
+                                            <th style="text-align: center;">จำนวน</th>
+                                        </thead>
+                                        <?php $i = 0;
+                                        foreach ($product_list as $product_list) { ?>
+                                            <tr style="text-align: center;">
+                                                <td><input type="checkbox" name="checkbox[<?php echo $i ?>]" value="<?php echo $product_list['product_code'] ?>"></td>
+                                                
+                                                
+                                                <td><?php echo $product_list['product_code'] ?></td>
+                                                <td><?php echo $product_list['product_name'] ?></td>
+                                                <td><?php echo $product_list['product_volume'] ?></td>
+                                                <td><?php echo $product_list['product_unit'] ?></td>
+                                                <td><?php echo $product_list['product_detail'] ?></td>
+                                                <td><input type="hidden" name="price[<?php echo $i ?>]" value="<?php echo $product_list['product_price'] ?>"><b><?php echo $product_list['product_price'] ?></b></td>
+                                                <td>
+                                                    <div class="">
+                                                        <input style="text-align: center;" class="form-control rounded" type="number" name="amount[<?php echo $i ?>]" value="">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php $i++;
+                                        } ?>
+                                    </table>
                                 </div>
 
                             </div>
 
 
-                              <div class="text-right">
-                                  <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                              </div>
-                          </div>
-                      </section>
-                      <?php form_close() ?>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                            </div>
+                        </div>
+                    </section>
+                    <?php form_close() ?>
 
-                  </section>
-              </section>
-              <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
-          </section>
-      </section>
-  </section>
+                </section>
+            </section>
+            <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+    </section>
+</section>
 
-  <script>
-      function plus() {
-          let price = document.getElementById("export_price").value;
-          console.log(price);
-          let amount = document.getElementById("export_amount").value;
-          console.log(amount);
-          let sumprice = price * amount;
-          console.log(sumprice);
-          let output = document.getElementById("export_sumprice");
-          output.value = sumprice;
+<script>
+    function plus() {
+        let price = document.getElementById("export_price").value;
+        console.log(price);
+        let amount = document.getElementById("export_amount").value;
+        console.log(amount);
+        let sumprice = price * amount;
+        console.log(sumprice);
+        let output = document.getElementById("export_sumprice");
+        output.value = sumprice;
 
-          let vat = sumprice * 7 / 100;
-          console.log('Vat = ' + vat);
+        let vat = sumprice * 7 / 100;
+        console.log('Vat = ' + vat);
 
-          let vatresult = document.getElementById("export_vat");
-          vatresult.value = vat;
+        let vatresult = document.getElementById("export_vat");
+        vatresult.value = vat;
 
-          let result = vat + sumprice;
-          console.log('Result = ' + vat);
+        let result = vat + sumprice;
+        console.log('Result = ' + vat);
 
-          let sumresult = document.getElementById("export_sumresult");
-          sumresult.value = result;
-      }
-  </script>
+        let sumresult = document.getElementById("export_sumresult");
+        sumresult.value = result;
+    }
+</script>

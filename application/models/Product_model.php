@@ -197,6 +197,12 @@ class Product_model extends CI_Model
     {
         $this->db->insert('gj_order', $input);
     }
+    public function product_orderdetail_insert($value){
+        $this->db->insert('gj_order_detail', $value);
+    }
+    public function product_stock_insert($value){
+        $this->db->insert('gj_product_stock', $value);
+    }
 
 
 
