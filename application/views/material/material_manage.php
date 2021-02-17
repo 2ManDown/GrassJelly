@@ -50,7 +50,7 @@
                                     &nbsp; &nbsp;
                                     <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
                                     &nbsp; &nbsp;
-                                    <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('material/material_delete/') . $material_manage['material_code']; ?>'">ลบข้อมูลวัตถุดิบ!</button>
+                                    <!-- <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php //echo site_url('material/material_delete/') . $material_manage['material_code']; ?>'">ลบข้อมูลวัตถุดิบ!</button> -->
                                 </div>
                             </div>
                         <!-- </form> -->

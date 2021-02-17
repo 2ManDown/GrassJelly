@@ -30,44 +30,82 @@ class Material extends CI_Controller
 		$this->checksession($data);
 	}
 
-	public function material_reavel()
-	{
-		$data['material_list'] = $this->Material_model->material_list();
-
-
-		$data['page'] = "material/material_reavel";
-		$this->checksession($data);
-
-	}
-
+	
 	public function material_reavlist()
 	{
 		/* get data form database */
 		$data['material_reavlist'] = $this->Material_model->material_reavlist();
-
+		
 		$data['page'] = "material/material_reavlist";
 		//$this->load->view('theme', $data);
 		$this->checksession($data);
 	}
-
+	
 	public function material_importlist()
 	{
 		$data['material_im'] = $this->Material_model->material_im();
-
+		
 		$data['page'] = "material/material_importlist";
 		//$this->load->view('theme', $data);
 		$this->checksession($data);
 	}
-
+	
 	public function material_import()
 	{
-		$data['material_list'] = $this->Material_model->material_list();
-
+		$data['material_list'] = $this->Material_model->material_materialbalance();
+		$data['material_suppiler'] = $this->Material_model->material_supplierlist();
+		
 		$data['page'] = "material/material_import";
 		$this->checksession($data);
+		
+	}
+	
+	public function material_insert_import()
+	{
+		$input = array(
+			'material_code' => $this->input->post('material_code'),
+			'material_stock_amount' => $this->input->post('material_stock_amount'),
+			'material_stock_date' => $this->input->post('material_stock_date'),
+			'material_stock_time' => $this->input->post('material_stock_time'),
+			'material_stock_status' => $this->input->post('material_stock_status'),
+			'material_stock_comment' => $this->input->post('material_stock_comment'),
+			'material_stock_user' => $this->input->post('material_stock_user'),
+			'supplier_id' => $this->input->post('supplier_id'),
+			
+		);
 
+		$this->Material_model->material_insert_stock($input);
+		redirect('material/material_stock_history');
 	}
 
+	public function material_reavel()
+	{
+		$data['material_list'] = $this->Material_model->material_materialbalance();
+		$data['material_suppiler'] = $this->Material_model->material_supplierlist();
+
+		$data['page'] = "material/material_reavel";
+		$this->checksession($data);
+	}
+
+	public function material_insert_reavel()
+	{
+		$input = array(
+			'material_code' => $this->input->post('material_code'),
+			'material_stock_amount' => -$this->input->post('material_stock_amount'),
+			'material_stock_date' =>  $this->input->post('material_stock_date'),
+			'material_stock_time' => $this->input->post('material_stock_time'),
+			'material_stock_status' => $this->input->post('material_stock_status'),
+			'material_stock_comment' => $this->input->post('material_stock_comment'),
+			'material_stock_user' => $this->input->post('material_stock_user'),
+			//'supplier_id' => $this->input->post('supplier_id'),
+			
+		);
+		/* print_r($input);
+		exit(); */
+		$this->Material_model->material_insert_stock($input);
+		redirect('material/material_stock_history');
+	}
+	
 	public function material_exp()
 	{
 		$data['page'] = "material/material_exp";
@@ -87,12 +125,12 @@ class Material extends CI_Controller
 		redirect('material/material_listinfo');
 	}
 
-	public function material_list()
+	public function material_materialbalance()
 	{
 		//get ข้อมูลจาก table
-		$data['material_list'] = $this->Material_model->material_list();
-
-		$data['page'] = "material/material_list";
+		$data['material_materialbalance'] = $this->Material_model->material_materialbalance();
+		
+		$data['page'] = "material/material_materialbalance";
 		//$this->load->view('theme', $data);
 		$this->checksession($data);
 	}
@@ -100,8 +138,7 @@ class Material extends CI_Controller
 	public function material_listinfo()
 	{
 		//get ข้อมูลจาก table
-		$data['material_list'] = $this->Material_model->material_list();
-
+		$data['material_list'] = $this->Material_model->material_materialbalance();
 
 		$data['page'] = "material/material_listinfo";
 		//$this->load->view('theme', $data);
@@ -121,7 +158,7 @@ class Material extends CI_Controller
 		redirect('material/material_reavlist');
 	}
 
-	public function material_iminsert()
+	/* public function material_iminsert()
 	{
 		$input = array(
 			//'immaterial_id' => $this->input->post('immaterial_id'),
@@ -135,21 +172,8 @@ class Material extends CI_Controller
 		);
 		$this->Material_model->material_iminsert($input);
 		redirect('material/material_importlist');
-	}
+	} */
 
-	public function material_insert_import()
-	{
-		$input = array(
-			'material_code' => $this->input->post('material_code'),
-			'immaterial_amount' => $this->input->post('immaterial_amount'),
-			'immaterial_imdate' => $this->input->post('immaterial_imdate'),
-			'immaterial_sumprice' => $this->input->post('immaterial_sumprice'),
-			'immaterial_expdate' => $this->input->post('immaterial_expdate'),
-
-		);
-		$this->Material_model->material_insert_import($input);
-		redirect('material/material_importlist');
-	}
 
 	public function checksession($data){
 		if($this->session->userdata('status') == 'admin'){
