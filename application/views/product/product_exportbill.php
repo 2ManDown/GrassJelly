@@ -16,15 +16,17 @@
                               ออกใบส่งออกสินค้า
                           </header>
                           <!-- <form data-validate="parsley" action="#"> -->
-                          <?php echo form_open('product/product_exportinsert', 'data-validate="parsley"') ?>
+                          <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"') ?>
                           <div class="panel-body">
                               <div class="form-group pull-in clearfix">
                                   <div class="col-sm-4">
                                       <label>รหัสใบเบิกของ</label>
                                       <?php
                                         $count_all = $this->db->count_all_results('gj_order');
-                                        echo "OD" . ($count_all + 1);
+                                        $countid =  "OD" . ($count_all + 1);
+                                        echo $countid;
                                         ?>
+                                        <!-- <input type="hidden" name="countid" value="<?php echo $countid ?>"> -->
                                   </div>
                               </div>
                               <div class="form-group pull-in clearfix">
@@ -32,10 +34,10 @@
                                   <div class="col-sm-1"></div>
                                   <div class="col-sm-4">
                                       <label>ผู้รับสินค้า</label>
-                                      <select name="product" class="form-control m-b " required>
+                                      <select name="hubid" class="form-control m-b " required>
                                           <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
                                           <?php foreach ($hub_list as $hub_list) { ?>
-                                              <option value="<?php echo $hub_list['hub_id'] ?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
+                                              <option value="<?php echo $hub_list['hub_id']?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
                                           <?php } ?>
                                       </select>
                                   </div>
@@ -45,12 +47,12 @@
                                     <label>สินค้า</label>
                                     <select name="product" class="form-control m-b " required>
                                         <option value="" disabled selected>กรุณาเลือกสินค้าที่ต้องการส่งออก</option>
-                                        <?php //foreach ($product_list as $product_list) { 
+                                        <?php //foreach ($product_list as $product_list) {
                                         ?>
-                                            <option value="<?php //echo $product_list['product_code'] 
-                                                            ?>"><?php //echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit'] 
+                                            <option value="<?php //echo $product_list['product_code']
+                                                            ?>"><?php //echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit']
                                                                 ?></option>
-                                        <?php //} 
+                                        <?php //}
                                         ?>
                                     </select>
                                 </div> -->
@@ -58,14 +60,14 @@
                                   <div class="col-sm-1"></div>
                                   <div class="col-sm-4">
                                       <label>รหัสการส่งออกสินค้า</label>
-                                      <input type="text" name="export_id" class="form-control" id="input-id-1" placeholder="รหัสการส่งออกสินค้า" required>
+                                      <input type="text" name="countid" class="form-control" value="<?php echo $countid ?>" placeholder="รหัสการส่งออกสินค้า" readonly required>
                                   </div>
+
+
                               </div>
 
                               <div class="form-group pull-in clearfix">
-
-
-                                  <div class="col-sm-1"></div>
+                              <div class="col-sm-1"></div>
                                   <div class="col-sm-4">
                                       <label>วันที่ส่งออก</label>
                                       <input class="input-sm input-s datepicker-input form-control" name="export_date" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
@@ -75,7 +77,7 @@
                                   <div class="col-sm-4">
                                       <label>เวลา</label>
                                       <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                          <input type="text" class="form-control" value="">
+                                          <input type="text" class="form-control" value="" name="export_time">
                                           <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-time"></span>
                                         </span>
@@ -92,7 +94,7 @@
                                     <div class="input-group m-b">
                                         <input type="number" class="form-control" name="export_price" id="export_price" onchange="plus()">
                                         <span class="input-group-addon">TH</span>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-sm-1"></div>
@@ -123,6 +125,28 @@
                                     <input type="text" class="form-control" id="export_sumresult" name="export_includevat" style="color: #00af91; font-weight: bold;" readonly>
                                 </div>
                             </div> -->
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-8">
+                                  <table class="table">
+                                    <thead>
+                                      <th>เลือก</th>
+                                      <th>รายการสินค้า</th>
+                                      <th>ราคา</th>
+                                      <th>จำนวน</th>
+                                    </thead>
+                                    <?php foreach($product_list as $product_list){ ?>
+                                    <tr>
+                                      <td><input type="checkbox" name="" value=""></td>
+                                      <td><?php echo $product_list['product_code']?></td>
+                                      <td><?php echo $product_list['product_price']?></td>
+                                      <td><input type="number" name="" value="0"></td>
+                                    </tr>
+                                  <?php } ?>
+                                  </table>
+                                </div>
+
+                            </div>
+
 
                               <div class="text-right">
                                   <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>

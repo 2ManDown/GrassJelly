@@ -193,9 +193,9 @@ class Product_model extends CI_Model
         //$this->db->insert('gj_productbalance', $manufac);
     }
 
-    public function product_exportinsert($input)
+    public function product_orderinsert($input)
     {
-        $this->db->insert('gj_exportproduct', $input);
+        $this->db->insert('gj_order', $input);
     }
 
 

@@ -26,6 +26,11 @@ class Product extends CI_Controller
 		$this->checksession($data);
 	}
 
+	public function product_choose_product(){
+		$data['page'] = "product/product_choose_product";
+		$this->checksession($data);
+	}
+
 	public function product_insert()
 	{
 		$data['page'] = "product/product_insert";
@@ -166,9 +171,9 @@ class Product extends CI_Controller
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');
 	}
-	public function product_exportinsert(){
+	public function product_orderinsert(){
 		$input = array(
-			'product_code' => $this->input->post('product'),
+			/* 'product_code' => $this->input->post('product'),
 			'exportproduct_code' => $this->input->post('export_id'),
 			'exportproduct_amount' => $this->input->post('export_amount'),
 			'exportproduct_reciever' => $this->input->post('export_reciever'),
@@ -176,14 +181,20 @@ class Product extends CI_Controller
 			'exportproduct_price' => $this->input->post('export_price'),
 			'exportproduct_sumprice' => $this->input->post('export_sumprice'),
 			'exportproduct_vat' => $this->input->post('export_vat'),
-			'exportproduct_includevat' => $this->input->post('export_includevat')
+			'exportproduct_includevat' => $this->input->post('export_includevat') */
+
+			'order_code' => $this->input->post('countid'),
+			'order_date' => $this->input->post('export_date'),
+			'order_time' => $this->input->post('export_time'),
+			'hub_id' => $this->input->post('hubid')
+			
 		);
-/* 		echo '<pre>';
+		/* echo '<pre>';
 		print_r($input);
 		echo'<pre>';
 		exit(); */
-		$this->Product_model->product_exportinsert($input);
-		redirect('product/product_exportreport');
+		$this->Product_model->product_orderinsert($input);
+		redirect('product/product_choose_product');
 	}
 
 	public function product_insert_manufac()
