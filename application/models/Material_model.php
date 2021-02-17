@@ -8,7 +8,7 @@ class Material_model extends CI_Model
     {
         $this->db->order_by('gj_material_stock.material_stock_date', 'desc');
         $this->db->order_by('gj_material_stock.material_stock_time', 'desc');
-        $this->db->join('gj_material', 'gj_material.material_code = gj_material_stock.metarial_code');
+        $this->db->join('gj_material', 'gj_material.material_code = gj_material_stock.material_code');
         $this->db->join('gj_stock_status', 'gj_stock_status.stock_status_id = gj_material_stock.material_stock_status');
 
         $query = $this->db->get('gj_material_stock');

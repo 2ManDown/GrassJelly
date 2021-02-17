@@ -34,8 +34,8 @@
                                       <label>ผู้รับสินค้า</label>
                                       <select name="product" class="form-control m-b " required>
                                           <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
-                                          <?php foreach ($employee as $employee) { ?>
-                                              <option value="<?php echo $employee['employee_id'] ?>"><?php echo $employee['employee_id'], '. ', $employee['employee_name'] ?></option>
+                                          <?php foreach ($hub_list as $hub_list) { ?>
+                                              <option value="<?php echo $hub_list['hub_id'] ?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
                                           <?php } ?>
                                       </select>
                                   </div>
