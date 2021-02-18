@@ -29,10 +29,9 @@ class Hub extends CI_Controller{
 	{
 		$input = array(
 			'hub_name' => $this->input->post('hub_name'),
-			
-			/* '_address' => $this->input->post('_address'),
-			'_tel' => $this->input->post('_tel'),
-			'_email' => $this->input->post('_email'), */
+			'hub_address' => $this->input->post('hub_address'),
+			'hub_tel' => $this->input->post('hub_tel'),
+			'hub_email' => $this->input->post('hub_email'),
 		);
 		$this->Hub_model->hub_insert_db($input);
 		redirect('hub/hub_info');
@@ -51,6 +50,12 @@ class Hub extends CI_Controller{
         redirect('hub/hub_info');
 	}
 
+	public function hub_delete($hub_id)
+	{
+		$this->Hub_model->hub_delete($hub_id);
+		redirect('hub/hub_info');
+	}
+
     public function checksession($data){
 		if($this->session->userdata('status') == 'admin'){
 
@@ -61,12 +66,6 @@ class Hub extends CI_Controller{
 		}else{
 			$this->load->view('supplyer', $data);
 		}
-	}
-
-	public function hub_delete($hub_id)
-	{
-		$this->Hub_model->hub_delete($hub_id);
-		redirect('hub/hub_info');
 	}
 
 }
