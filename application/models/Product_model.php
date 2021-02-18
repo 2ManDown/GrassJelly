@@ -26,12 +26,9 @@ class Product_model extends CI_Model
 
     public function product_order_detail($order_code)
     {
-        $this->db->join('gj_product_stock','gj_product_stock.order_code = gj_order_detail.order_code');
-        $query = $this->db->get('gj_order_detail');
-        //$query->result_array();
-       /*  echo '<pre>';
-        print_r($query);
-        exit(); */
+        $fetch = array('order_code' => $order_code);
+        $query = $this->db->get_where('gj_order', $fetch);
+        $query->result_array();
 
         /* INNER JOIN AND SELECT */
         /* $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex

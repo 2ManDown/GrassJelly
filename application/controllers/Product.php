@@ -133,7 +133,7 @@ class Product extends CI_Controller
 	{
 		$data['orderdetail'] = $this->Product_model->product_order_detail($order_code);
 
-		$data['page'] = "product/product_selldetail";
+		$data['page'] = "product/product_orderdetail";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
