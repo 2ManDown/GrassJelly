@@ -50,18 +50,18 @@
                             </tr>
                         </div>
                         <tbody>
-                            <?php foreach ($product_balancesupplyer as $product_balancesupplyer) { ?>
+                            <?php foreach ($product_balancesupplier as $product_balancesupplier) { ?>
                                 <tr>
-                                    <td><?php echo $product_balancesupplyer['balancesupplyer_id'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['product_code'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['product_name'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['importproduct_imdate'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['importproduct_expdate'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['importproduct_amount'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['exportproduct_amount'] ?></td>
-                                    <td><?php echo $product_balancesupplyer['importproduct_amount'] - $product_balancesupplyer['exportproduct_amount']  ?></td>
+                                    <td><?php echo $product_balancesupplier['balancesupplier_id'] ?></td>
+                                    <td><?php echo $product_balancesupplier['product_code'] ?></td>
+                                    <td><?php echo $product_balancesupplier['product_name'] ?></td>
+                                    <td><?php echo $product_balancesupplier['importproduct_imdate'] ?></td>
+                                    <td><?php echo $product_balancesupplier['importproduct_expdate'] ?></td>
+                                    <td><?php echo $product_balancesupplier['importproduct_amount'] ?></td>
+                                    <td><?php echo $product_balancesupplier['exportproduct_amount'] ?></td>
+                                    <td><?php echo $product_balancesupplier['importproduct_amount'] - $product_balancesupplier['exportproduct_amount']  ?></td>
                                     <td style="text-align: center;">
-                                        <a href="<?php echo site_url('product/product_exportbill/') . $product_balancesupplyer['importproduct_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-share-square-o"></i></a>
+                                        <a href="<?php echo site_url('product/product_exportbill/') . $product_balancesupplier['importproduct_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-share-square-o"></i></a>
                                     </td>
 
                                 </tr>

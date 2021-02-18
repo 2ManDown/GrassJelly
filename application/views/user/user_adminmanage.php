@@ -52,7 +52,7 @@
                                 <select class="form-control m-b" name="user_status" value="<?php echo $user_manage['user_status'] ?>" required>
                                     <option value="" disabled selected>กรุณาเลือกสิทธิ์การเข้าใช้งาน</option>
                                     <option value="factory">Factory</option>
-                                    <option value="supplyer">Supplyer</option>
+                                    <option value="supplier">supplier</option>
                                 </select>
                             </div>
                         </div>

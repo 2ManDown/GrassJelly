@@ -112,8 +112,8 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
-    /* สินค้าคงคลัง Supplyer */
-    public function product_balancesupplyer()
+    /* สินค้าคงคลัง supplier */
+    public function product_balancesupplier()
     {
 
         /* LEFT JOIN */
@@ -121,8 +121,8 @@ class Product_model extends CI_Model
         $this->db->from('gj_importproduct as im');
         $this->db->join('gj_product as pd', 'pd.product_code = im.product_code', 'left');
         $this->db->join('gj_exportproduct as ex', 'ex.product_code = pd.product_code', 'left');
-        $this->db->join('gj_balancesupplyer as bs', 'bs.balancesupplyer_id = im.importproduct_id', 'left');
-        $this->db->order_by('bs.balancesupplyer_id', 'desc');
+        $this->db->join('gj_balancesupplier as bs', 'bs.balancesupplier_id = im.importproduct_id', 'left');
+        $this->db->order_by('bs.balancesupplier_id', 'desc');
 
         $query = $this->db->get();
         return $query->result_array();

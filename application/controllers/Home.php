@@ -16,8 +16,8 @@ class Home extends CI_Controller {
 	 	$data['page'] = "index";
 		$this->load->view('factory',$data); 
 	}
-	public function supplyer(){
+	public function supplier(){
 	 	$data['page'] = "index";
-		$this->load->view('supplyer',$data); 
+		$this->load->view('supplier',$data); 
 	}
 }

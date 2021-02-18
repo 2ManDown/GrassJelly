@@ -36,8 +36,8 @@ if ($userdata == 'admin') {
   redirect('admin');
 } else if ($userdata == 'factory') {
   
-} else if ($userdata == 'supplyer') {
-  redirect('supplyer');
+} else if ($userdata == 'supplier') {
+  redirect('supplier');
 } else {
   redirect('');
 } ?>
@@ -280,7 +280,7 @@ if ($userdata == 'admin') {
                   </li>
 
                   <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplyer</div>
+                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">supplier</div>
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
@@ -293,14 +293,14 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('supplyer/supplyer_list') ?>" class="auto">
+                        <a href="<?php echo site_url('supplier/supplier_list') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ข้อมูลร้านค้า</span>
                         </a>
                       </li>
 
                       <li>
-                        <a href="<?php echo site_url('supplyer/supplyer_insert') ?>" class="auto">
+                        <a href="<?php echo site_url('supplier/supplier_insert') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>เพิ่มข้อมูลร้านค้า</span>
                         </a>

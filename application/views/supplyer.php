@@ -35,7 +35,7 @@ if ($userdata == 'admin') {
   redirect('admin');
 } else if ($userdata == 'factory') {
   redirect('factory');
-} else if ($userdata == 'supplyer') {
+} else if ($userdata == 'supplier') {
  
 } else {
   redirect('');
@@ -185,7 +185,7 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('product/product_balancesupplyer') ?>" class="auto">
+                        <a href="<?php echo site_url('product/product_balancesupplier') ?>" class="auto">
                           <i class="i i-dot"></i>
 
                           <span>รายการสินค้าคงคลัง</span>
