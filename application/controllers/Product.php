@@ -132,6 +132,7 @@ class Product extends CI_Controller
 	public function product_order_detail($order_code)
 	{
 		$data['orderdetail'] = $this->Product_model->product_order_detail($order_code);
+		//$data['product_list'] = $this->Product_model->product_list($order_code);
 
 		$data['page'] = "product/product_orderdetail";
 		$this->checksession($data);
