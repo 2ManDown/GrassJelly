@@ -38,12 +38,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>รหัสเบิกออก</th>
-                                <th>รหัสสินค้า</th>
+                                <!-- <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
-                                <th>วันที่ส่งออก</th>
+                                <th>วันที่ส่งออก</th> -->
                                 <th>จำนวนที่ส่งออก</th>
-                                <th>ราคาต่อหน่วย</th>
-                                <th>ราคาเบิกออก</th>
+                                <!-- <th>ราคาต่อหน่วย</th>
+                                <th>ราคาเบิกออก</th> -->
                                 <th style="text-align: center;">ใบส่งออก</th>
                             </tr>
                         </div>
@@ -53,12 +53,12 @@
                                 
                                     <td><a href="<?php ?>"><?php echo $export['order_id'] ?></a></td>
                                     <td><a href="<?php ?>"><?php echo $export['order_code']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['product_code']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['product_name']  ?></a></td>
+                                    <!-- <td><a href="<?php ?>"><?php //echo $export['product_code']  ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['product_name']  ?></a></td> -->
                                     <td><a href="<?php ?>"><?php echo $export['order_date']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['order_detail_amount']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['product_price'] ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['order_detail_price'] ?></a></td>
+                                   <!--  <td><a href="<?php ?>"><?php //echo $export['order_detail_amount']  ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['product_price'] ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['order_detail_price'] ?></a></td> -->
                                     <td style="text-align: center;"><a href="<?php ?>"><i class="glyphicon glyphicon-print"></i></a></td>
                                 </tr>
                             <?php } ?>

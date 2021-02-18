@@ -16,10 +16,10 @@ class Product_model extends CI_Model
       return $query->result_array();
     }
     public function product_exportrepot(){
-        $this->db->order_by('gj_order.order_date','desc');
+        /* $this->db->order_by('gj_order.order_date','desc');
         $this->db->order_by('gj_order.order_time','desc');
         $this->db->join('gj_order_detail','gj_order_detail.order_code = gj_order.order_code');
-        $this->db->join('gj_product','gj_product.product_code = gj_order_detail.product_code');
+        $this->db->join('gj_product','gj_product.product_code = gj_order_detail.product_code'); */
 
         $query = $this->db->get('gj_order');
         return $query->result_array();
