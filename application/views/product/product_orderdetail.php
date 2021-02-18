@@ -20,9 +20,9 @@
                                     
                                         <label class="col-sm-2 control-label">ชื่อร้านค้า</label>
                                         <div class="col-sm-3">
-                                            <!-- <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php //echo $selldetail['exportproduct_reciever'] 
-                                                                                                                                    ?>" readonly> -->
-                                            <p>ชื่อร้านค้า</p>
+                                            <input type="text" class="form-control rounded" placeholder="ชื่อร้านค้า" value="<?php //echo $selldetail['exportproduct_reciever'] 
+                                                                                                                                    ?>" readonly>
+                                            
                                         </div>
                                    
 
