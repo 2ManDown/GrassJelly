@@ -129,9 +129,9 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
-	public function product_selldetail($sell_id)
+	public function product_order_detail($order_code)
 	{
-		$data['selldetail'] = $this->Product_model->product_selldetail($sell_id);
+		$data['orderdetail'] = $this->Product_model->product_order_detail($order_code);
 
 		$data['page'] = "product/product_selldetail";
 		$this->checksession($data);

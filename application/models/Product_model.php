@@ -16,28 +16,30 @@ class Product_model extends CI_Model
       return $query->result_array();
     }
     public function product_exportrepot(){
-        /* $this->db->order_by('gj_order.order_date','desc');
+        $this->db->order_by('gj_order.order_date','desc');
         $this->db->order_by('gj_order.order_time','desc');
-        $this->db->join('gj_order_detail','gj_order_detail.order_code = gj_order.order_code');
-        $this->db->join('gj_product','gj_product.product_code = gj_order_detail.product_code'); */
+
 
         $query = $this->db->get('gj_order');
         return $query->result_array();
     }
+
+    public function product_order_detail($order_code)
+    {
+        /* INNER JOIN AND SELECT */
+        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_order ex
+        WHERE ex.order_code = $order_code) as ex ON (pd.product_code = ex.product_code)");
+
+        return $query->result_array();
+    }
+
     public function product_list()
     {
         $query = $this->db->get('gj_product');
         return $query->result_array();
     }
 
-    public function product_selldetail($sell_id)
-    {
-        /* INNER JOIN AND SELECT */
-        $query = $this->db->query("SELECT * FROM gj_product pd INNER JOIN(SELECT * FROM gj_exportproduct ex
-        WHERE ex.exportproduct_id = $sell_id) as ex ON (pd.product_code = ex.product_code)");
-
-        return $query->result_array();
-    }
+    
 
     public function product_manufacdetail($id)
     {
