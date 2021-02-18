@@ -36,29 +36,67 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>#</th>
-                                <th>รหัสเบิกออก</th>
-                                <!-- <th>รหัสสินค้า</th>
-                                <th>ชื่อสินค้า</th>
-                                <th>วันที่ส่งออก</th> -->
-                                <th>จำนวนที่ส่งออก</th>
-                                <!-- <th>ราคาต่อหน่วย</th>
-                                <th>ราคาเบิกออก</th> -->
+                                <th style="text-align: center;">#</th>
+                                <th style="text-align: center;">รหัสเบิกออก</th>
+                                <th style="text-align: center;">รหัสศูนย์กระจาย</th>
+                                <th style="text-align: center;">วันที่เบิกออก</th>
+                                <th style="text-align: center;">จำนวนสินค้า</th>
+                                <th style="text-align: center;">ราคารวม</th>
+                                <th style="text-align: center;">ผู้เบิกออกสินค้า</th>
                                 <th style="text-align: center;">ใบส่งออก</th>
                             </tr>
                         </div>
                         <tbody>
                             <?php foreach ($export as $export) { ?>
-                                <tr>
-                                
-                                    <td><a href="<?php ?>"><?php echo $export['order_id'] ?></a></td>
+                                <tr style="text-align: center;">
+
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php echo $export['order_id'] ?></a></td>
                                     <td><a href="<?php ?>"><?php echo $export['order_code']  ?></a></td>
-                                    <!-- <td><a href="<?php ?>"><?php //echo $export['product_code']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php //echo $export['product_name']  ?></a></td> -->
+                                    <td><a href="<?php ?>"><?php $export['hub_id'];
+                                                            $this->db->select('hub_name');
+                                                            $this->db->where('hub_id', $export['hub_id']);
+                                                            $query = $this->db->get('gj_hub');
+                                                            $user_hub = $query->result_array();
+                                                            foreach ($user_hub as $hub) {
+                                                                echo $hub['hub_name'];
+                                                            } ?></a></td>
+
                                     <td><a href="<?php ?>"><?php echo $export['order_date']  ?></a></td>
-                                   <!--  <td><a href="<?php ?>"><?php //echo $export['order_detail_amount']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php //echo $export['product_price'] ?></a></td>
-                                    <td><a href="<?php ?>"><?php //echo $export['order_detail_price'] ?></a></td> -->
+                                    <td><a href="<?php ?>"><?php
+                                                            $this->db->select('COUNT(order_detail_amount) as row');
+                                                            $this->db->from('gj_order_detail');
+                                                            $this->db->where('order_code', $export['order_code']);
+                                                            $query = $this->db->get();
+                                                            $row = $query->result_array();
+                                                            echo $row[0]['row'];
+                                                            //echo $sql = $this->db->last_query();
+                                                            ?></a></td>
+
+                                    <td><a href="<?php ?>"><?php
+                                                            $this->db->where('order_code', $export['order_code']);
+                                                            $this->db->select_sum('order_detail_price');
+                                                            $query = $this->db->get('gj_order_detail');
+                                                            $order_price = $query->result_array();
+                                                            echo number_format($order_price[0]['order_detail_price']);
+                                                            ?></a></td>
+
+                                    <td><a href="<?php ?>"><?php
+                                                            $this->db->where('order_code', $export['order_code']);
+                                                            $this->db->select_avg('product_stock_user');
+                                                            $query = $this->db->get('gj_product_stock');
+                                                            $order_user = $query->result_array();
+                                                            $user = number_format($order_user[0]['product_stock_user']);
+
+                                                            $this->db->select('user_name');
+                                                            $this->db->where('user_id', $user);
+                                                            $query = $this->db->get('gj_user');
+                                                            $user_name = $query->result_array();
+                                                            foreach ($user_name as $name) {
+                                                                echo $name['user_name'];
+                                                            }
+
+                                                            ?></a></td>
+
                                     <td style="text-align: center;"><a href="<?php ?>"><i class="glyphicon glyphicon-print"></i></a></td>
                                 </tr>
                             <?php } ?>
