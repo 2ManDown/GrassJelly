@@ -5,9 +5,16 @@ class Hub extends CI_Controller{
 
     public function hub_list(){
         $data['hub_list'] = $this->Hub_model->hub_list();
+		$data['product_list'] = $this->Product_model->product_list();
 
         $data['page'] = "product/product_exportbill";
-		$data['page'] = "hub/hub_list";
+		$this->checksession($data);
+    }
+
+    public function hub_info(){
+        $data['hub_list'] = $this->Hub_model->hub_list();
+
+        $data['page'] = "hub/hub_info";
 		$this->checksession($data);
     }
 

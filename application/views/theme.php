@@ -224,6 +224,13 @@ if ($userdata == 'admin') {
                         </a>
                       </li>
                       <li>
+                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
+                          <i class="i i-dot"></i>
+
+                          <span>รายงานการเบิกออกสินค้า</span>
+                        </a>
+                      </li>
+                      <li>
                         <a href="<?php echo site_url('product/product_stock_history') ?>" class="auto">
                           <i class="i i-dot"></i>
 
@@ -396,7 +403,7 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('hub/hub_list') ?>" class="auto">
+                        <a href="<?php echo site_url('hub/hub_info') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ข้อมูลศูนย์กระจาย</span>
                         </a>

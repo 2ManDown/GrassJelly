@@ -3,13 +3,13 @@
         <section class="scrollable padder">
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายงานการส่งออกสินค้า
+                    รายงานการเบิกออกสินค้า
                 </header>
                 <div class="row wrapper">
-                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 18px; margin-bottom: 40px;">
-                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="btn btn-s-lg btn-success btn-rounded">ส่งออกสินค้า</a>
+                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 15px; margin-bottom: 20px;">
+                        <!-- <a href="<?php echo site_url('product/product_exportbill') ?>" class="btn btn-s-lg btn-success btn-rounded">ส่งออกสินค้า</a> -->
                     </div>
-                    <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
+                    <!-- <div class="col-sm-4 m-b-xs" style="margin-top: 20px">
                         <div class="btn-group" data-toggle="buttons">
                             <label class="btn btn-sm btn-default active">
                                 <input type="radio" name="options" id="option1"> รายวัน
@@ -29,44 +29,44 @@
                                 <button class="btn btn-sm btn-default" type="button">Go!</button>
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="table-responsive" style="margin-bottom: 0px;">
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
-                                <th>เลขคำสั่งส่งออก</th>
-                                <th>รหัสสินค้า</th>
+                                <th>#</th>
+                                <th>รหัสเบิกออก</th>
+                                <!-- <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
-                                <th>วันที่ส่งออก</th>
+                                <th>วันที่ส่งออก</th> -->
                                 <th>จำนวนที่ส่งออก</th>
-                                <th>ราคาต่อหน่วย</th>
-                                <th>ราคาส่งออกรวม</th>
+                                <!-- <th>ราคาต่อหน่วย</th>
+                                <th>ราคาเบิกออก</th> -->
                                 <th style="text-align: center;">ใบส่งออก</th>
                             </tr>
                         </div>
                         <tbody>
-                            <?php foreach ($product_export as $product_export) { ?>
+                            <?php foreach ($export as $export) { ?>
                                 <tr>
-                                    <?php $sell_id = $product_export['exportproduct_id'];
-                                    $sell_code = $product_export['product_code'];
-                                    ?>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $sell_id ?>"><?php echo $product_export['exportproduct_id'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_code'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['product_name'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_exdate'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_amount'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_price'] ?></a></td>
-                                    <td><a href="<?php echo site_url('product/product_selldetail/') . $product_export['exportproduct_id'] ?>"><?php echo $product_export['exportproduct_sumprice'] ?></a></td>
-                                    <td style="text-align: center;"><a href="<?php echo site_url('product/product_selldetail/'). $product_export['exportproduct_id'] ?>"><i class="glyphicon glyphicon-print"></i></a></td>
+                                
+                                    <td><a href="<?php ?>"><?php echo $export['order_id'] ?></a></td>
+                                    <td><a href="<?php ?>"><?php echo $export['order_code']  ?></a></td>
+                                    <!-- <td><a href="<?php ?>"><?php //echo $export['product_code']  ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['product_name']  ?></a></td> -->
+                                    <td><a href="<?php ?>"><?php echo $export['order_date']  ?></a></td>
+                                   <!--  <td><a href="<?php ?>"><?php //echo $export['order_detail_amount']  ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['product_price'] ?></a></td>
+                                    <td><a href="<?php ?>"><?php //echo $export['order_detail_price'] ?></a></td> -->
+                                    <td style="text-align: center;"><a href="<?php ?>"><i class="glyphicon glyphicon-print"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
                 <footer class="panel-footer">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-7 text-right text-center-xs">
                             <ul class="pagination pagination-sm m-t-none m-b-none">
                                 <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
@@ -78,7 +78,7 @@
                                 <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </footer>
             </section>
         </section>
