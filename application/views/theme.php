@@ -403,7 +403,7 @@ if ($userdata == 'admin') {
                     </a>
                     <ul class="nav dk">
                       <li>
-                        <a href="<?php echo site_url('hub/hub_list') ?>" class="auto">
+                        <a href="<?php echo site_url('hub/hub_info') ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ข้อมูลศูนย์กระจาย</span>
                         </a>
