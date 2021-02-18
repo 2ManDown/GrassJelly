@@ -12,7 +12,7 @@ class User_model extends CI_Model
             $this->db->select('*');
             $this->db->from('gj_user');
             $this->db->where('user_status','factory');
-            $this->db->or_where('user_status','supplyer');
+            $this->db->or_where('user_status','supplier');
         }
         $query = $this->db->get();
         return $query->result_array();

@@ -4,6 +4,12 @@
         -webkit-appearance: none;
         margin: 0;
     }
+
+    .timepicker {
+        .form-control {
+            background: #fff;
+        }
+    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -38,7 +44,7 @@
                                     <select name="supplier_id" class="form-control m-b" required>
                                         <option disabled selected>กรุณาเลือกร้านค้า</option>
                                         <?php foreach ($material_suppiler as $material_suppiler) { ?>
-                                            <option value="<?php echo $material_suppiler['supplier_id'] ?>"><?php echo $material_suppiler['supplier_code'], ' - ' , $material_suppiler['supplier_name'] ?></option>
+                                            <option value="<?php echo $material_suppiler['supplier_id'] ?>"><?php echo $material_suppiler['supplier_code'], ' - ', $material_suppiler['supplier_name'] ?></option>
                                         <?php } ?>
                                     </select>
 
@@ -83,10 +89,18 @@
                                     <input type="number" name="material_stock_status" class="hidden form-control" value="1" readonly>
 
                                     <label class="hidden">stock_user</label>
-                                    <input name="material_stock_user" type="number" class="hidden form-control" value="<?php echo $this->session->userdata("id")?>" readonly>
+                                    <input name="material_stock_user" type="number" class="hidden form-control" value="<?php echo $this->session->userdata("id") ?>" readonly>
                                 </div>
 
                             </div>
+
+                            <div>
+                                <b-form-timepicker v-model="value" locale="en"></b-form-timepicker>
+                                <div class="mt-2">Value: '{{ value }}'</div>
+                            </div>
+                            </template>
+
+
 
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการนำเข้านี้')">บันทึก</button>

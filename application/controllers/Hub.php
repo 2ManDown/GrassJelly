@@ -66,7 +66,7 @@ class Hub extends CI_Controller{
 
 			$this->load->view('factory', $data);
 		}else{
-			$this->load->view('supplyer', $data);
+			$this->load->view('supplier', $data);
 		}
 	}
 

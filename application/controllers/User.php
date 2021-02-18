@@ -47,8 +47,8 @@ class User extends CI_Controller
                         redirect('admin');
                     } else if ($value['user_status'] == 'factory') {
                         redirect('factory');
-                    } else if ($value['user_status'] == 'supplyer') {
-                        redirect('supplyer');
+                    } else if ($value['user_status'] == 'supplier') {
+                        redirect('supplier');
                     } else {
                         echo 'Incorrect';
                         exit();
@@ -102,7 +102,7 @@ class User extends CI_Controller
 
             $this->load->view('factory', $data);
         } else {
-            $this->load->view('supplyer', $data);
+            $this->load->view('supplier', $data);
         }
     }
 

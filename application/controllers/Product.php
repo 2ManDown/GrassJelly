@@ -52,12 +52,12 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
-	/* คงคลังของ Supplyer */
-	public function product_balancesupplyer()
+	/* คงคลังของ supplier */
+	public function product_balancesupplier()
 	{
-		$data['product_balancesupplyer'] = $this->Product_model->product_balancesupplyer();
+		$data['product_balancesupplier'] = $this->Product_model->product_balancesupplier();
 
-		$data['page'] = "product/product_balancesupplyer";
+		$data['page'] = "product/product_balancesupplier";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
@@ -311,7 +311,7 @@ class Product extends CI_Controller
 
 			$this->load->view('factory', $data);
 		} else {
-			$this->load->view('supplyer', $data);
+			$this->load->view('supplier', $data);
 		}
 	}
 }
