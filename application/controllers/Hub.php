@@ -32,6 +32,8 @@ class Hub extends CI_Controller{
 			'hub_address' => $this->input->post('hub_address'),
 			'hub_tel' => $this->input->post('hub_tel'),
 			'hub_email' => $this->input->post('hub_email'),
+			'hub_latitude' => $this->input->post('hub_latitude'),
+			'hub_longitude' => $this->input->post('hub_longitude'),
 		);
 		$this->Hub_model->hub_insert_db($input);
 		redirect('hub/hub_info');
