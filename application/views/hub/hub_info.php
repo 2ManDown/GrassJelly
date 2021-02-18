@@ -18,6 +18,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>ชื่อ</th>
+                                <th>ที่อยู่</th>
+                                <th>เบอร์ติดต่อ</th>
+                                <th>อีเมล</th>
                                 <th style="text-align: center;">จัดการ</th>
                             </tr>
                         </div>
@@ -26,6 +29,9 @@
                                 <tr>
                                     <td><?php echo $hub_list['hub_id'] ?></td>
                                     <td><?php echo $hub_list['hub_name'] ?></td>
+                                    <td><?php echo $hub_list['hub_address'] ?></td>
+                                    <td><?php echo $hub_list['hub_tel'] ?></td>
+                                    <td><?php echo $hub_list['hub_email'] ?></td>
                                     <td style="text-align: center;">
                                         <a href="<?php echo site_url('hub/hub_manage/') . $hub_list['hub_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
                                         <a href="<?php echo site_url('hub/hub_delete/') . $hub_list['hub_id'] ?>" class="btn btn-sm btn-icon btn-danger btn-rounded" title="ลบข้อมูล"><i class="fa  fa-trash-o"></i></a>

@@ -11,13 +11,34 @@
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>ชื่อ </label>
-                            <input type="text" name="hub_name" class="form-control" id="input-id-1" placeholder="กรอกชื่อ" required>
+                            <label>ชื่อ</label>
+                            <input type="text" name="hub_name" class="form-control" placeholder="กรุณากรอกชื่อ" required>
+                        </div>
+
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                        <label>เบอร์ติดต่อ</label>
+                            <input type="text" data-type="phone" name="hub_tel" class="form-control" placeholder="กรุณากรอกเบอร์ติดต่อ" maxlength="10" required>
                         </div>
                     </div>
-                <div class="text-right">
-                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
-                </div>
+
+                    <div class="form-group pull-in clearfix">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                        <label>ที่อยู่ </label>
+                            <textarea name="hub_address" class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;" required></textarea>
+                        </div>
+
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>อีเมล</label>
+                            <input type="email" name="hub_email" class="form-control" placeholder="กรุณากรอกอีเมล" required>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('ยืนยันการบันทึกข้อมูล')">บันทึก</button>
+                    </div>
                 </div>
 
                 <?php echo form_close() ?>

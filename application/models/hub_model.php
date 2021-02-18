@@ -24,9 +24,9 @@ class Hub_model extends CI_Model
         $input = array(
             'hub_id' => $this->input->post('hub_id'),
             'hub_name' => $this->input->post('hub_name'),
-            /* 'employee_address' => $this->input->post('employee_address'),
-            'employee_tel' => $this->input->post('employee_tel'),
-            'employee_email' => $this->input->post('employee_email'), */
+			'hub_address' => $this->input->post('hub_address'),
+			'hub_tel' => $this->input->post('hub_tel'),
+			'hub_email' => $this->input->post('hub_email'),
   
         );
         $this->db->where('hub_id', $input['hub_id']);

@@ -51,7 +51,7 @@
                     </div>
 
                 <div class="text-right">
-                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                    <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('ยืนยันการบันทึกข้อมูล')">บันทึก</button>
                 </div>
                 </div>
 
