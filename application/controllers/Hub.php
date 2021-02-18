@@ -35,7 +35,7 @@ class Hub extends CI_Controller{
 			'_email' => $this->input->post('_email'), */
 		);
 		$this->Hub_model->hub_insert_db($input);
-		redirect('hub/hub_list');
+		redirect('hub/hub_info');
 	}
 
 	public function hub_manage($hub_list)
@@ -48,7 +48,7 @@ class Hub extends CI_Controller{
 	public function hub_update_db(){
 		
         $this->Hub_model->hub_update_db();
-        redirect('hub/hub_list');
+        redirect('hub/hub_info');
 	}
 
     public function checksession($data){
@@ -66,7 +66,7 @@ class Hub extends CI_Controller{
 	public function hub_delete($hub_id)
 	{
 		$this->Hub_model->hub_delete($hub_id);
-		redirect('hub/hub_list');
+		redirect('hub/hub_info');
 	}
 
 }
