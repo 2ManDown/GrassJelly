@@ -57,7 +57,7 @@
                         <div id="btn" > <!-- class="col-sm-8 col-sm-offset-5" style="margin-top: 10px;" -->
                             <button type="submit" class="btn btn-primary" onclick="return confirm('ยืนยันการเพิ่มข้อมูล')">เพิ่มข้อมูลร้านค้า</button>
                             &nbsp; &nbsp;
-                            <button type="submit" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
+                            <button type="button" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
                         </div>
                     </div>
 
@@ -69,3 +69,8 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

@@ -48,7 +48,7 @@
                                 <div id="btn">
                                     <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูลวัตถุดิบ</button>
                                     &nbsp; &nbsp;
-                                    <button type="submit" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
+                                    <button type="button" class="btn btn-default" onclick="goBack()">ย้อนกลับ</button>
                                     &nbsp; &nbsp;
                                     <!-- <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php //echo site_url('material/material_delete/') . $material_manage['material_code']; ?>'">ลบข้อมูลวัตถุดิบ!</button> -->
                                 </div>
@@ -64,3 +64,8 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
