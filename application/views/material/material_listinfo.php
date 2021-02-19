@@ -1,10 +1,11 @@
 <style>
-th {
-    text-align: center;
-}
-td {
-    text-align: center;
-}
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
 </style>
 <section id="content" class="col-md-12">
     <section class="vbox">
@@ -14,8 +15,8 @@ td {
                 <header class="panel-heading font-bold" style="font-size: 22px; color:dimgray">
                     รายการข้อมูลวัตถุดิบ
                 </header>
-                <div class="row wrapper  text-right" >
-                    <div class="col-sm-12 m-b-xs" >
+                <div class="row wrapper  text-right">
+                    <div class="col-sm-12 m-b-xs">
                         <a href="<?php echo site_url('material/material_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลวัตถุดิบ</a>
                     </div>
                 </div>
@@ -28,26 +29,25 @@ td {
                                 <th>ชื่อวัตถุดิบ</th>
                                 <th>ปริมาตร</th>
                                 <th>หน่วยนับ</th>
-                                <th >จัดการ</th>
+                                <th>จัดการ</th>
                             </tr>
                         </div>
-                        <?php foreach($material_list as $material_list) { ?>
-                            <tbody>
+                        <tbody>
+                            <?php foreach ($material_list as $material_list) { ?>
                                 <tr>
                                     <td><?php echo $material_list['material_code'] ?></td>
                                     <td><?php echo $material_list['material_name'] ?></td>
                                     <td><?php echo $material_list['material_volume'] ?></td>
                                     <td><?php echo $material_list['material_unit'] ?></td>
                                     <td>
-                                        <a href="<?php echo site_url('material/material_manage/').$material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-pencil"></i></a>
+                                        <a href="<?php echo site_url('material/material_manage/') . $material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
-                            </tbody>
-                        <?php } ?>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
-
-
+                <footer class="panel-footer"></footer>
 
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>

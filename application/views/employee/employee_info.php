@@ -26,11 +26,11 @@
                                 <th style="text-align: center;">จัดการ</th>
                             </tr>
                         </div>
+                        <?php $i = 1 ?>
+                        <tbody>
                         <?php foreach ($employee_list as $employee_list) { ?>
-                            <tbody>
                                 <tr>
-
-                                    <td><?php echo $employee_list['employee_id'] ?></td>
+                                    <td><?php echo $i ?></td>
                                     <td><?php echo $employee_list['employee_name'] ?></td>
                                     <td><?php 
                                         if($employee_list['employee_sex'] == 1){
@@ -51,12 +51,13 @@
                                         <a href="<?php echo site_url('employee/employee_manage/') . $employee_list['employee_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
-                            </tbody>
+                                <?php $i++ ?>
                         <?php } ?>
+                        </tbody>
                     </table>
                 </div>
                 <footer class="panel-footer">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-7 text-right text-center-xs">
                             <ul class="pagination pagination-sm m-t-none m-b-none">
                                 <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
@@ -68,7 +69,7 @@
                                 <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </footer>
             </section>
         </section>

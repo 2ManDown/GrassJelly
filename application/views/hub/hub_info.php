@@ -25,9 +25,10 @@
                             </tr>
                         </div>
                         <tbody>
+                        <?php $i = 1 ?>
                         <?php foreach ($hub_list as $hub_list) { ?>
                                 <tr>
-                                    <td><?php echo $hub_list['hub_id'] ?></td>
+                                    <td><?php echo $i ?></td>
                                     <td><?php echo $hub_list['hub_name'] ?></td>
                                     <td><?php echo $hub_list['hub_address'] ?></td>
                                     <td><?php echo $hub_list['hub_tel'] ?></td>
@@ -38,11 +39,12 @@
                                         
                                     </td>
                                 </tr>
+                                <?php $i++ ?>
                         <?php } ?>
                         </tbody>
                     </table>
                 </div>
-                
+                <footer class="panel-footer"></footer>
             </section>
         </section>
     </section>

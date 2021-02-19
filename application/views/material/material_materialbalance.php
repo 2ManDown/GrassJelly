@@ -64,7 +64,7 @@ td {
                     </table>
                 </div>
 
-
+                <footer class="panel-footer"></footer>
 
             </section>
             <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
