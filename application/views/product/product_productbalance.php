@@ -43,6 +43,7 @@
                                 <th>รายละเอียดสินค้า</th>
                                 <th>ขนาด</th>
                                 <th style="text-align: center;">จำนวนคงเหลือ</th>
+                                <th>หมายเหตุ</th>
                             </tr>
                         </div>
                         <tbody>
@@ -62,6 +63,7 @@
                                         echo number_format($product_stock[0]['product_stock_amount']);
                                         ?>
                                     </td>
+                                    <td></td>
                                 </tr>
                             <?php } ?>
 

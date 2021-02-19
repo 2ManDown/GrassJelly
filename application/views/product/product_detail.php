@@ -44,12 +44,9 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">หน่วยนับ</label>
+                            <label class="col-sm-3 control-label">หน่วยนับ/บรรจุภัณฑ์</label>
                             <div class="col-sm-7">
-                                <select name="product_unit" class="form-control m-b">
-                                    <option value="ถุง">ถุง</option>
-                                    <option value="ขวด">ขวด</option>
-                                </select>
+                                <input type="text" name="product_unit" class="form-control" value="<?php echo $product_list['product_unit'] ?>">
                             </div>
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -61,12 +58,13 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <div id="btn"> <!-- class="col-sm-8 col-sm-offset-3" -->
+                            <div id="btn">
+                                <!-- class="col-sm-8 col-sm-offset-3" -->
                                 <button type="submit" class="btn btn-primary" id="btnitem" name="updatebtn" value="update">แก้ไขข้อมูลสินค้า</button>
                                 &nbsp; &nbsp;
                                 <!-- <button type="submit" class="btn btn-success">ดูตัวอย่าง</button>
                                 &nbsp; &nbsp; -->
-                                <button type="submit" class="btn btn-default" id="btnitem" className="btncancel" onclick="goBack()">Cancel</button>
+                                <button type="button" class="btn btn-default" id="btnitem" className="btncancel" onclick="goBack()">ย้อนกลับ</button>
                                 &nbsp; &nbsp;
                                 <button type="button" class="btn btn-danger" id="btnitem" className="btndelete" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('product/product_delete/') . $product_list['product_code']; ?>'">ลบข้อมูลสินค้า!</button>
                             </div>
@@ -75,7 +73,7 @@
                     </div>
 
                 </section>
-            
+
         </section>
 
     </section>
@@ -131,3 +129,11 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
+
+
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
