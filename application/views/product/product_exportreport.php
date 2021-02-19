@@ -47,12 +47,13 @@
                             </tr>
                         </div>
                         <tbody>
+                        <?php $i=1 ?>
                             <?php foreach ($export as $export) { ?>
                                 <tr style="text-align: center;">
 
-                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php echo $export['order_id'] ?></a></td>
-                                    <td><a href="<?php ?>"><?php echo $export['order_code']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php $export['hub_id'];
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php echo $i ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php echo $export['order_code']  ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php $export['hub_id'];
                                                             $this->db->select('hub_name');
                                                             $this->db->where('hub_id', $export['hub_id']);
                                                             $query = $this->db->get('gj_hub');
@@ -61,8 +62,8 @@
                                                                 echo $hub['hub_name'];
                                                             } ?></a></td>
 
-                                    <td><a href="<?php ?>"><?php echo $export['order_date']  ?></a></td>
-                                    <td><a href="<?php ?>"><?php
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php echo $export['order_date']  ?></a></td>
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php
                                                             $this->db->select('COUNT(order_detail_amount) as row');
                                                             $this->db->from('gj_order_detail');
                                                             $this->db->where('order_code', $export['order_code']);
@@ -72,7 +73,7 @@
                                                             //echo $sql = $this->db->last_query();
                                                             ?></a></td>
 
-                                    <td><a href="<?php ?>"><?php
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php
                                                             $this->db->where('order_code', $export['order_code']);
                                                             $this->db->select_sum('order_detail_price');
                                                             $query = $this->db->get('gj_order_detail');
@@ -80,7 +81,7 @@
                                                             echo number_format($order_price[0]['order_detail_price']);
                                                             ?></a></td>
 
-                                    <td><a href="<?php ?>"><?php
+                                    <td><a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>"><?php
                                                             $this->db->where('order_code', $export['order_code']);
                                                             $this->db->select_avg('product_stock_user');
                                                             $query = $this->db->get('gj_product_stock');
@@ -96,8 +97,9 @@
                                                             }
 
                                                             ?></a></td>
-
+                                    
                                     <td style="text-align: center;"><a href="<?php ?>"><i class="glyphicon glyphicon-print"></i></a></td>
+                                <?php  $i++?>
                                 </tr>
                             <?php } ?>
                         </tbody>
