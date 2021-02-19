@@ -41,10 +41,12 @@ td {
                             </tr>
                         </div>
                         <tbody>
+                        <?php $i = 1 ?>
                             <?php foreach ($material_history as $material_history) { ?>
 
                                 <tr>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_id'] ?></a></td>
+                                    <td><?php echo $i ?></td>
+                                    <!-- <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_id'] ?></a></td> -->
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_code'] ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_name'] ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_volume'] ?></a></td>
@@ -54,12 +56,14 @@ td {
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_amount'] ?></a></td>
                                     <td><a style="color: <?php echo $material_history['stock_status_color'] ?>;"><?php echo $material_history['stock_status_value'] ?></a></td>
                                 </tr>
+                                <?php $i++ ?>
                             <?php } ?>
 
                         </tbody>
                     </table>
                 </div>
 
+                <footer class="panel-footer"></footer>
             </section>
         </section>
     </section>
