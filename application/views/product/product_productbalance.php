@@ -1,8 +1,8 @@
 <style>
-th,
-td {
-    text-align: center;
-}
+    th,
+    td {
+        text-align: center;
+    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -50,12 +50,13 @@ td {
                                 <th>ชื่อสินค้า</th>
                                 <th>รายละเอียดสินค้า</th>
                                 <th>ขนาด</th>
+                                <th>จำนวนสินค้าขั้นต่ำ</th>
                                 <th>จำนวนคงเหลือ</th>
                                 <th>หมายเหตุ</th>
                             </tr>
                         </div>
                         <tbody>
-                            <?php  $i=1?>
+                            <?php $i = 1 ?>
                             <?php foreach ($product_productbalance as $product_productbalance) { ?>
 
                                 <tr>
@@ -64,18 +65,34 @@ td {
                                     <td><?php echo $product_productbalance['product_name'] ?></td>
                                     <td><?php echo $product_productbalance['product_detail'] ?></td>
                                     <td><?php echo $product_productbalance['product_volume'] . " " . $product_productbalance['product_unit'] ?></td>
-                                    <td>
-                                        <?php
-                                        $this->db->where('product_code', $product_productbalance['product_code']);
-                                        $this->db->select_sum('product_stock_amount');
-                                        $query = $this->db->get('gj_product_stock');
-                                        $product_stock = $query->result_array();
-                                        echo number_format($product_stock[0]['product_stock_amount']);
-                                        ?>
-                                    </td>
-                                    <td></td>
+                                    <td><?php echo $product_productbalance['product_min'] ?></td>
+                                    <?php
+                                    $this->db->where('product_code', $product_productbalance['product_code']);
+                                    $this->db->select_sum('product_stock_amount');
+                                    $query = $this->db->get('gj_product_stock');
+                                    $product_stock = $query->result_array();
+                                    $product = number_format($product_stock[0]['product_stock_amount']);
+                                    if ($product <= $product_productbalance['product_min']) { ?>
+                                        <td style="color: red;">
+                                        <?php } else { ?>
+                                        <td style="color: #3BD028;">
+                                        <?php } ?>
+
+                                        <b><?php echo $product ?></b> </td>
+                                    
+                                    <?php 
+                                        if ($product <= $product_productbalance['product_min']) { ?>
+                                        <td style="color: red;"><b>กรุณานำเข้าสินค้า</b> 
+                                        <?php } else { ?>
+                                        <td style="color: #3BD028;"><b>ปกติ</b> 
+                                        <?php } ?>
+
+                                         </td>
+                                        
+                                        
                                 </tr>
-                            <?php $i++; } ?>
+                            <?php $i++;
+                            } ?>
 
                         </tbody>
                     </table>

@@ -37,14 +37,15 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-4">
                                         <label>ผู้รับสินค้า</label>
-                                        <input type="text" name="countid" class="form-control" placeholder="ผู้รับสินค้า" readonly value="<?php
-                                                                                                                                            $this->db->select('hub_name');
-                                                                                                                                            $this->db->where('hub_id', $orderdetail['hub_id']);
-                                                                                                                                            $query = $this->db->get('gj_hub');
-                                                                                                                                            $hub = $query->result_array();
-                                                                                                                                            foreach ($hub as $hub) {
-                                                                                                                                                echo $hub['hub_name'];
-                                                                                                                                            } ?>">
+                                        <input type="text" name="countid" class="form-control" placeholder="ผู้รับสินค้า" readonly 
+                                        value="<?php
+                                                        $this->db->select('hub_name');
+                                                        $this->db->where('hub_id', $orderdetail['hub_id']);
+                                                        $query = $this->db->get('gj_hub');
+                                                        $hub = $query->result_array();
+                                                        foreach ($hub as $hub) {
+                                                        echo $hub['hub_name'];
+                                                        } ?>">
                                     </div>
 
                                     <div class="col-sm-1"></div>
@@ -90,34 +91,32 @@
 
                                             <tr>
                                                 <?php $i = 1; ?>
-                                                <?php   $this->db->select('product_code,order_detail_amount');
-                                                        $this->db->where('order_code',$orderdetail['order_code']);
-                                                        $query = $this->db->get('gj_order_detail');
-                                                        $order_code = $query->result_array();
-                                                        
-                                                        foreach($order_code as $code){
-                                                            $this->db->select('*');
-                                                            $this->db->where('product_code', $code['product_code']);
-                                                            $query = $this->db->get('gj_product');
-                                                            $product = $query->result_array();
-                                                            /* echo '<pre>';
-                                                            print_r($product); */   
+                                                <?php $this->db->select('product_code,order_detail_amount');
+                                                $this->db->where('order_code', $orderdetail['order_code']);
+                                                $query = $this->db->get('gj_order_detail');
+                                                $order_code = $query->result_array();
 
-                                                            foreach($product as $product){?> 
-                                               
-                                                
-                                                    <td><?php echo $i; ?></td>
-                                                    <td><?php echo $product['product_code'] ?></td>
-                                                    <td><?php echo $product['product_name'] ?></td>
-                                                    <td><?php echo $product['product_volume'] ?></td>
-                                                    <td><?php echo $product['product_unit'] ?></td>
-                                                    <td><?php echo $product['product_detail'] ?></td>
-                                                    <td><?php echo $product['product_price'] ?></td>
-                                                    <td><b><?php echo $code['order_detail_amount'] ?></b></td>
-                                                    <?php $i++;   ?>
+                                                foreach ($order_code as $code) {
+                                                    $this->db->select('*');
+                                                    $this->db->where('product_code', $code['product_code']);
+                                                    $query = $this->db->get('gj_product');
+                                                    $product = $query->result_array();
+                                                    /* echo '<pre>';
+                                                            print_r($product); */
 
+                                                    foreach ($product as $product) { ?>
+                                                        <td><?php echo $i; ?></td>
+                                                        <td><?php echo $product['product_code'] ?></td>
+                                                        <td><?php echo $product['product_name'] ?></td>
+                                                        <td><?php echo $product['product_volume'] ?></td>
+                                                        <td><?php echo $product['product_unit'] ?></td>
+                                                        <td><?php echo $product['product_detail'] ?></td>
+                                                        <td><?php echo $product['product_price'] ?></td>
+                                                        <td><b><?php echo $code['order_detail_amount'] ?></b></td>
+                                                        <?php $i++;   ?>
                                             </tr>
-                                        <?php } } ?>
+                                    <?php }
+                                                } ?>
 
                                         </table>
                                     </div>

@@ -232,6 +232,7 @@ class Product_model extends CI_Model
             'product_volume' => $this->input->post('product_volume'),
             'product_price' => $this->input->post('product_price'),
             'product_unit' => $this->input->post('product_unit'),
+            'product_min' => $this->input->post('product_min'),
             'product_img' => $this->input->post('product_img'),
         );
 
