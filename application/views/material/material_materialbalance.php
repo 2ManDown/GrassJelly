@@ -5,7 +5,7 @@
 
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายการสินค้าคงคลัง
+                    รายการวัตถุดิบคงคลัง
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 15px; margin-bottom: 20px;"></div>
