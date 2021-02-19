@@ -25,7 +25,7 @@
                   </div>
                   <div class="col-xs-4">
                     <div class="profile-overview">
-                      <p>หน่วยนับ</p>
+                      <p>บรรจุภัณฑ์</p>
                       <h4><?php echo $product_list['product_unit'] ?> </h4>
                     </div>
                   </div>
