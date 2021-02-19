@@ -90,7 +90,7 @@
 
                                             <tr>
                                                 <?php $i = 1; ?>
-                                                <?php   $this->db->select('product_code');
+                                                <?php   $this->db->select('product_code,order_detail_amount');
                                                         $this->db->where('order_code',$orderdetail['order_code']);
                                                         $query = $this->db->get('gj_order_detail');
                                                         $order_code = $query->result_array();
@@ -101,9 +101,9 @@
                                                             $query = $this->db->get('gj_product');
                                                             $product = $query->result_array();
                                                             /* echo '<pre>';
-                                                            print_r($product);  */  
+                                                            print_r($product); */   
 
-                                                            foreach($product as $product){?>
+                                                            foreach($product as $product){?> 
                                                
                                                 
                                                     <td><?php echo $i; ?></td>
@@ -113,7 +113,7 @@
                                                     <td><?php echo $product['product_unit'] ?></td>
                                                     <td><?php echo $product['product_detail'] ?></td>
                                                     <td><?php echo $product['product_price'] ?></td>
-                                                    <td><b><?php  ?></b></td>
+                                                    <td><b><?php echo $code['order_detail_amount'] ?></b></td>
                                                     <?php $i++;   ?>
 
                                             </tr>

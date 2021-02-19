@@ -159,7 +159,10 @@ class Product extends CI_Controller
 	}
 
 
-
+public function test(){
+	echo 'TEST';
+	exit();
+}
 
 
 
