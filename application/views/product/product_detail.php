@@ -9,29 +9,36 @@
                     <div class="panel-body">
                         <?php echo form_open('Product/product_update_db', 'class="form-horizontal"')  ?>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">รหัสสินค้า</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-2 control-label">รหัสสินค้า</label>
+                            <div class="col-sm-4">
                                 <input type="text" name="product_code" class="form-control rounded" value="<?php echo $product_list['product_code'] ?>">
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ชื่อสินค้า</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-1 control-label">ชื่อ</label>
+                            <div class="col-sm-4">
                                 <input type="text" name="product_name" class="form-control" value="<?php echo $product_list['product_name'] ?>">
                             </div>
                         </div>
+
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ปริมาตร</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-2 control-label">ปริมาตร</label>
+                            <div class="col-sm-4">
                                 <input type="text" name="product_volume" class="form-control" value="<?php echo $product_list['product_volume'] ?>">
                             </div>
+                            <label class="col-sm-1 control-label">บรรจุภัณฑ์</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="product_unit" class="form-control" value="<?php echo $product_list['product_unit'] ?>">
+                            </div>
                         </div>
+
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ราคาสินค้า</label>
-                            <div class="col-sm-7">
+                        <label class="col-sm-2 control-label">ปริมาณขั้นต่ำ</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="product_min" class="form-control" placeholder="กรอกปริมาณสินค้าขั้นต่ำ" value="<?php echo $product_list['product_min'] ?>">
+                            </div>
+                            <label class="col-sm-1 control-label">ราคา</label>
+                            <div class="col-sm-4">
                                 <input type="text" name="product_price" class="form-control" value="<?php echo $product_list['product_price'] ?>">
                             </div>
                         </div>
@@ -42,20 +49,7 @@
                                 <textarea name="product_detail" class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="Type your message" style="resize: none;"><?php echo $product_list['product_detail'] ?></textarea>
                             </div>
                         </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">หน่วยนับ/บรรจุภัณฑ์</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="product_unit" class="form-control" value="<?php echo $product_list['product_unit'] ?>">
-                            </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ปริมาณสินค้าขั้นต่ำ</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="product_min" class="form-control" placeholder="กรอกปริมาณสินค้าขั้นต่ำ" value="<?php echo $product_list['product_min'] ?>">
-                            </div>
-                        </div>
+
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปสินค้า</label>
