@@ -11,6 +11,13 @@ class Hub extends CI_Controller{
 		$this->checksession($data);
     }
 
+	public function hub_stock($hub_id){
+		$data['hub_stock'] = $this->Hub_model->hub_manage($hub_id);
+
+		$data['page'] = "hub/hub_stock";
+		$this->checksession($data);
+	}
+
     public function hub_info(){
         $data['hub_list'] = $this->Hub_model->hub_list();
 
