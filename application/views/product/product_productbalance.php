@@ -1,3 +1,10 @@
+<style>
+th,
+td {
+    text-align: center;
+}
+</style>
+
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
@@ -38,23 +45,26 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
+                                <th>#</th>
                                 <th>รหัสสินค้า</th>
                                 <th>ชื่อสินค้า</th>
                                 <th>รายละเอียดสินค้า</th>
                                 <th>ขนาด</th>
-                                <th style="text-align: center;">จำนวนคงเหลือ</th>
+                                <th>จำนวนคงเหลือ</th>
                                 <th>หมายเหตุ</th>
                             </tr>
                         </div>
                         <tbody>
+                            <?php  $i=1?>
                             <?php foreach ($product_productbalance as $product_productbalance) { ?>
 
                                 <tr>
+                                    <td><?php echo $i ?></td>
                                     <td><?php echo $product_productbalance['product_code'] ?></td>
                                     <td><?php echo $product_productbalance['product_name'] ?></td>
                                     <td><?php echo $product_productbalance['product_detail'] ?></td>
                                     <td><?php echo $product_productbalance['product_volume'] . " " . $product_productbalance['product_unit'] ?></td>
-                                    <td style="text-align: center;">
+                                    <td>
                                         <?php
                                         $this->db->where('product_code', $product_productbalance['product_code']);
                                         $this->db->select_sum('product_stock_amount');
@@ -65,7 +75,7 @@
                                     </td>
                                     <td></td>
                                 </tr>
-                            <?php } ?>
+                            <?php $i++; } ?>
 
                         </tbody>
                     </table>
