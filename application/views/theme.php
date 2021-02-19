@@ -140,7 +140,7 @@ if ($userdata == 'admin') {
                   <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
                   <ul class="nav nav-main" data-ride="collapse">
                     <li class="active">
-                      <a href="<?php echo site_url('index') ?>" class="auto">
+                      <a href="<?php echo site_url('home/admin') ?>" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">Overview</span>
@@ -150,7 +150,7 @@ if ($userdata == 'admin') {
                     <div class="line dk hidden-nav-xs"></div>
                     <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product & Stock</div>
                     <li>
-                      <a href="#" class="auto">
+                    <a href="#" class="auto">
                         <span class="pull-right text-muted">
                           <i class="i i-circle-sm-o text"></i>
                           <i class="i i-circle-sm text-active"></i>
@@ -188,48 +188,48 @@ if ($userdata == 'admin') {
                             <span>ประวัติการนำเข้าและเบิกออก</span>
                           </a>
                         </li>
+                      </ul>
+                    </li>
+
+                    
+
+                    <div class="line dk hidden-nav-xs"></div>
+                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Materail & Stock</div>
+                    <li>
+                      <a href="#" class="auto">
+                        <span class="pull-right text-muted">
+                          <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i>
+                        </span>
+                        <!-- <b class="badge bg-danger pull-right">4</b> -->
+                        <i class="i i-stack icon">
+                        </i>
+                        <span class="font-bold">ข้อมูลวัตถุดิบและคลังวัตถุดิบ</span>
+                      </a>
+
+                      <ul class="nav dk">
+                        <li>
+                          <a href="<?php echo site_url('material/material_listinfo') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการข้อมูลวัตถุดิบ</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="<?php echo site_url('material/material_materialbalance') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการคลังวัตถุดิบคงเหลือ</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="<?php echo site_url('material/material_stock_history') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>ประวัติการนำเข้าและเบิกออก</span>
+                          </a>
+                        </li>
 
                     </li>
-                  </ul>
-                  </li>
-
-                  <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Materail & Stock</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-                      <!-- <b class="badge bg-danger pull-right">4</b> -->
-                      <i class="i i-stack icon">
-                      </i>
-                      <span class="font-bold">ข้อมูลวัตถุดิบและคลังวัตถุดิบ</span>
-                    </a>
-
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('material/material_listinfo') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>รายการข้อมูลวัตถุดิบ</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="<?php echo site_url('material/material_materialbalance') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>รายการคลังวัตถุดิบคงเหลือ</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="<?php echo site_url('material/material_stock_history') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>ประวัติการนำเข้าและเบิกออก</span>
-                        </a>
-                      </li>
-
-                  </li>
                   </ul>
                   </li>
 
@@ -241,8 +241,8 @@ if ($userdata == 'admin') {
                         <i class="i i-circle-sm-o text"></i>
                         <i class="i i-circle-sm text-active"></i>
                       </span> -->
-                      <!--  <b class="badge bg-danger pull-right">4</b> -->
-                      <!-- <i class="i i-stack icon">
+                  <!--  <b class="badge bg-danger pull-right">4</b> -->
+                  <!-- <i class="i i-stack icon">
                       </i>
                       <span class="font-bold">ข้อมูลคลังสินค้า</span>
                     </a>
@@ -293,13 +293,15 @@ if ($userdata == 'admin') {
                         </a>
                       </li> -->
                       <!-- <li>
-                        <a href="<?php //echo site_url('product/product_import') ?>" class="auto">
+                        <a href="<?php //echo site_url('product/product_import') 
+                                  ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>นำเข้าสินค้า</span>
                         </a>
                       </li>
                       <li>
-                        <a href="<?php //echo site_url('product/product_exportbill') ?>" class="auto">
+                        <a href="<?php //echo site_url('product/product_exportbill') 
+                                  ?>" class="auto">
                           <i class="i i-dot"></i>
                           <span>ส่งออกสินค้า</span>
                         </a>
@@ -370,7 +372,7 @@ if ($userdata == 'admin') {
                       </li>
                     </ul>
                   </li>
-                  
+
                   <div class="line dk hidden-nav-xs"></div>
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Hub</div>
                   <li>

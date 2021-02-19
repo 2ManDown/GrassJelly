@@ -131,7 +131,7 @@ if ($userdata == 'admin') {
                   <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
                   <ul class="nav nav-main" data-ride="collapse">
                     <li class="active">
-                      <a href="<?php echo site_url('home/dashboard') ?>" class="auto">
+                      <a href="<?php echo site_url('home/supplier') ?>" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">Overview</span>
