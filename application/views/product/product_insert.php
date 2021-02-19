@@ -54,13 +54,16 @@
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">หน่วยนับ</label>
+                    <label class="col-sm-3 control-label">หน่วยนับ/บรรจุภัณฑ์</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="product_unit" class="form-control">
+                            </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">ปริมาณสินค้าขั้นต่ำ</label>
                         <div class="col-sm-7">
-                            <select name="product_unit" class="form-control m-b" required>
-                                <option value="" disabled selected>กรุณาเลือกหน่วยนับ</option>
-                                <option value="ถุง">ถุง</option>
-                                <option value="ขวด">ขวด</option>
-                            </select>
+                            <input type="text" name="product_min" placeholder="กรอกปริมาณสินค้าขั้นต่ำ" required class="form-control">
                         </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -105,7 +108,7 @@
             </section>
 
             <div class="col-md-12" style="margin-top: 20px;">
-                <a href="<?php echo site_url('product/product_detail') ?>">
+                <a href="#">
                     <div class="profile-card-4 text-center"><img src="https://i.ibb.co/G0mD9sH/3-626x330.jpg" class="img img-responsive">
                         <div class="profile-content">
                             <div class="profile-name" style="font-size: 30px;">ชื่อสินค้า

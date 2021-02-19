@@ -158,14 +158,6 @@ class Product extends CI_Controller
 		//$this->load->view('theme', $data);
 	}
 
-
-public function test(){
-	echo 'TEST';
-	exit();
-}
-
-
-
 	
 	/* INSERT */
 	public function product_insert_db()
@@ -177,6 +169,7 @@ public function test(){
 			'product_volume' => $this->input->post('product_volume'),
 			'product_price' => $this->input->post('product_price'),
 			'product_unit' => $this->input->post('product_unit'),
+			'product_min' => $this->input->post('product_min'),
 		);
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');

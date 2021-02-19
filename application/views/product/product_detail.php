@@ -51,6 +51,13 @@
                         </div>
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">ปริมาณสินค้าขั้นต่ำ</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="product_min" class="form-control" placeholder="กรอกปริมาณสินค้าขั้นต่ำ" value="<?php echo $product_list['product_min'] ?>">
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label">เลือกรูปสินค้า</label>
                             <div class="col-sm-6">
                                 <input type="file" name="product_img" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
