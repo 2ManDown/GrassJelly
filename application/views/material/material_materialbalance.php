@@ -1,3 +1,11 @@
+<style>
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+</style>
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
@@ -31,13 +39,7 @@
                                 <th>หน่วยนับ</th>
                                 <th style="text-align: center;">จำนวนคงเหลือ</th>
                             </tr>
-                            <!-- <tr>
-                                <th>รหัสวัตถุดิบ</th>
-                                <th>ชื่อวัตถุดิบ</th>
-                                <th>ปริมาตร</th>
-                                <th>หน่วยนับ</th>
-                                <th style="text-align: center;">จำนวนคงเหลือ</th>
-                            </tr> -->
+                           
                         </div>
                         <tbody>
                             <?php foreach ($material_materialbalance as $material_materialbalance) { ?>

@@ -56,7 +56,7 @@
                             <div class="col-sm-8 col-sm-offset-4">
                                 <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูลร้านค้า</button>
                                 &nbsp; &nbsp;
-                                <button type="submit" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
+                                <button type="button" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
                                 &nbsp; &nbsp;
                                 <button type="button" class="btn btn-danger" name="deletebtn" value="delete" onclick="location.href='<?php echo site_url('supplier/supplier_delete/').$supplier_list['supplier_code'];?>'" >ลบข้อมูลร้านค้า!</button>
                             </div>
@@ -72,4 +72,9 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 

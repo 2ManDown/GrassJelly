@@ -1,3 +1,11 @@
+<style>
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+</style>
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder" style="margin: 0px; padding: 0px;">
@@ -20,7 +28,7 @@
                                 <th>ชื่อวัตถุดิบ</th>
                                 <th>ปริมาตร</th>
                                 <th>หน่วยนับ</th>
-                                <th style="text-align: center;">จัดการ</th>
+                                <th >จัดการ</th>
                             </tr>
                         </div>
                         <?php foreach($material_list as $material_list) { ?>
@@ -30,7 +38,7 @@
                                     <td><?php echo $material_list['material_name'] ?></td>
                                     <td><?php echo $material_list['material_volume'] ?></td>
                                     <td><?php echo $material_list['material_unit'] ?></td>
-                                    <td style="text-align: center;">
+                                    <td>
                                         <a href="<?php echo site_url('material/material_manage/').$material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
