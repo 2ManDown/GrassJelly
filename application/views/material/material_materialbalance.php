@@ -33,33 +33,55 @@ td {
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
+                                <th>#</th>
                                 <th>รหัสวัตถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
-                                <th>ปริมาตร</th>
-                                <th>หน่วยนับ</th>
-                                <th style="text-align: center;">จำนวนคงเหลือ</th>
+                                <th>ปริมาตร / หน่วย</th>
+                               
+                                <th>จำนวนขั้นต่ำ</th>
+                                <th>จำนวนคงเหลือ</th>
+                                <th>หมายเหตุ</th>
                             </tr>
                            
                         </div>
                         <tbody>
+                        <?php $i = 1 ?>
                             <?php foreach ($material_materialbalance as $material_materialbalance) { ?>
+
                                 <tr>
+                                    <td><?php echo $i ?></td>
                                     <td><?php echo $material_materialbalance['material_code'] ?></td>
                                     <td><?php echo $material_materialbalance['material_name'] ?></td>
-                                    <td><?php echo $material_materialbalance['material_volume'] ?></td>
-                                    <td><?php echo $material_materialbalance['material_unit'] ?></td>
-                                    <td style="text-align: center;">
-                                        <?php
+                                    <td><?php echo $material_materialbalance['material_volume']. " " . $material_materialbalance['material_unit'] ?></td>
+                                    <td><?php echo $material_materialbalance['material_min'] ?></td>
+                                    <?php
                                         $this->db->where('material_code', $material_materialbalance['material_code']);
                                         $this->db->select_sum('material_stock_amount');
                                         $query = $this->db->get('gj_material_stock');
                                         $material_stock = $query->result_array();
-                                        echo number_format($material_stock[0]['material_stock_amount']);
-                                        ?>
-                                    </td>
-                                </tr>
+                                        $material = number_format($material_stock[0]['material_stock_amount']);
 
-                            <?php } ?>
+                                        if ($material <= $material_materialbalance['material_min']) { ?>
+                                            <td style="color: red;">
+                                            <?php } else { ?>
+                                            <td style="color: #3BD028;">
+                                            <?php } ?>
+    
+                                            <b><?php echo $material ?></b> </td>
+                                        
+                                        <?php 
+                                            if ($material <= $material_materialbalance['material_min']) { ?>
+                                            <td style="color: red;"><b>กรุณานำเข้าวัตถุดิบ</b> 
+                                            <?php } else { ?>
+                                            <td style="color: #3BD028;"><b>ปกติ</b> 
+                                            <?php } ?>
+    
+                                             </td>
+                                       
+                                    
+                                </tr>
+                                <?php $i++;
+                             } ?>
                         </tbody>
                     </table>
                 </div>

@@ -223,6 +223,13 @@ if ($userdata == 'admin') {
                         </li>
 
                         <li>
+                          <a href="<?php echo site_url('material/material_revealreport') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการเบิกออกวัตถุดิบ</span>
+                          </a>
+                        </li>
+
+                        <li>
                           <a href="<?php echo site_url('material/material_stock_history') ?>" class="auto">
                             <i class="i i-dot"></i>
                             <span>ประวัติการนำเข้าและเบิกออก</span>
