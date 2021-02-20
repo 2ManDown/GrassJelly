@@ -23,6 +23,7 @@ class Material extends CI_Controller
 		//$this->load->view('theme', $data);
 		$this->checksession($data);
 	}
+
 	public function material_addinfo()
 	{
 		$data['page'] = "material/material_addinfo";
@@ -78,16 +79,16 @@ class Material extends CI_Controller
 		redirect('material/material_stock_history');
 	}
 
-	public function material_reavel()
+	public function material_reveal()
 	{
 		$data['material_list'] = $this->Material_model->material_materialbalance();
 		$data['material_suppiler'] = $this->Material_model->material_supplierlist();
 
-		$data['page'] = "material/material_reavel";
+		$data['page'] = "material/material_reveal";
 		$this->checksession($data);
 	}
 
-	public function material_insert_reavel()
+	/* public function material_insert_reavel()
 	{
 		$input = array(
 			'material_code' => $this->input->post('material_code'),
@@ -102,17 +103,17 @@ class Material extends CI_Controller
 		);
 		/* print_r($input);
 		exit(); */
-		$this->Material_model->material_insert_stock($input);
+		/* $this->Material_model->material_insert_stock($input);
 		redirect('material/material_stock_history');
-	}
+	}  */
 	
-	public function material_exp()
+	/* public function material_exp()
 	{
 		$data['page'] = "material/material_exp";
 		//$this->load->view('theme', $data);
 		$this->checksession($data);
 	}
-
+ */
 	public function material_insert_db()
 	{
 		$input = array(
@@ -145,7 +146,7 @@ class Material extends CI_Controller
 		$this->checksession($data);
 	}
 
-	public function material_reavinsert()
+	/* public function material_reavinsert()
 	{
 		$input = array(
 
@@ -156,7 +157,7 @@ class Material extends CI_Controller
 		);
 		$this->Material_model->material_reavinsert($input);
 		redirect('material/material_reavlist');
-	}
+	} */
 
 	/* public function material_iminsert()
 	{
@@ -207,5 +208,76 @@ class Material extends CI_Controller
         $this->Material_model->material_update_db();
         redirect('material/material_listinfo');
 	}
+
+	public function material_orderinsert()
+	{
+		$input = array(
+			'order_material_code' => $this->input->post('countid'),
+			'order_material_date' => $this->input->post('reveal_date'),
+			'order_material_time' => $this->input->post('reveal_time'),
+		);
+
+		//Insert OrderBill
+		$this->Material_model->material_orderinsert($input);
+
+
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$order_detail = array(
+					'order_material_code' => $this->input->post('countid'),
+					'material_code' => $this->input->post('checkbox')[$i],
+					'order_detailmaterial_amount' => $this->input->post('amount')[$i],
+
+				);
+				//Insert Order Detail
+				$this->Material_model->material_orderdetail_insert($order_detail);
+				
+			}
+			$i++;
+		}
+
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$Material_stock = array(
+					'material_code' => $this->input->post('checkbox')[$i],
+					'material_stock_amount' => -$this->input->post('amount')[$i],
+					'material_stock_date' => $this->input->post('reveal_date'),
+					'material_stock_time' => $this->input->post('reveal_time'),
+					'material_stock_status' => 2,
+					
+					'material_stock_user' => $this->session->userdata('id'),
+					'order_material_code' => $this->input->post('countid'),
+
+				);
+				/* echo '<pre>';
+				print_r($product_stock); */
+				$this->Material_model->material_stock_insert($Material_stock);
+			}
+			$i++;
+		}
+
+		redirect('material/material_stock_history');
+	}
+
+	public function material_revealreport()
+	{
+		$data['reveal'] = $this->Material_model->material_revealreport();
+
+		$data['page'] = "material/material_revealreport";
+		$this->checksession($data);
+		//$this->load->view('theme', $data);
+	}
+
+	public function material_order_detail($order_code)
+	{
+		$data['orderdetail'] = $this->Material_model->material_order_detail($order_code);
+	
+		$data['page'] = "material/material_orderdetail";
+		$this->checksession($data);
+	}
+
+
 
 }

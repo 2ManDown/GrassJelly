@@ -20,7 +20,7 @@ td {
                     <div class="col-sm-12 m-b-xs">
                         <a href="<?php echo site_url('material/material_import') ?>" class="btn btn-s-lg btn-success btn-rounded">นำเข้าวัตถุดิบ</a>
                         &nbsp;
-                        <a href="<?php echo site_url('material/material_reavel') ?>" class="btn btn-s-lg btn-primary btn-rounded">เบิกออกวัตถุดิบ</a>
+                        <a href="<?php echo site_url('material/material_reveal') ?>" class="btn btn-s-lg btn-primary btn-rounded">เบิกออกวัตถุดิบ</a>
 
                     </div>
                 </div>
@@ -46,14 +46,14 @@ td {
 
                                 <tr>
                                     <td><?php echo $i ?></td>
-                                    <!-- <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_id'] ?></a></td> -->
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_code'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_name'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_volume'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_unit'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_date'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_time'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $material_history['material_stock_amount'] ?></a></td>
+
+                                    <td><?php echo $material_history['material_code'] ?></td>
+                                    <td><?php echo $material_history['material_name'] ?></td>
+                                    <td><?php echo $material_history['material_volume'] ?></td>
+                                    <td><?php echo $material_history['material_unit'] ?></td>
+                                    <td><?php echo $material_history['material_stock_date'] ?></td>
+                                    <td><?php echo $material_history['material_stock_time'] ?></td>
+                                    <td><?php echo $material_history['material_stock_amount'] ?></td>
                                     <td><a style="color: <?php echo $material_history['stock_status_color'] ?>;"><?php echo $material_history['stock_status_value'] ?></a></td>
                                 </tr>
                                 <?php $i++ ?>

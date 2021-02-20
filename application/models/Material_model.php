@@ -128,4 +128,37 @@ class Material_model extends CI_Model
         $this->db->where('material_id', $input['material_id']);
         $this->db->update('gj_material', $input);
     }
+
+    public function material_orderinsert($input)
+    {
+        $this->db->insert('gj_order_material', $input);
+    }
+
+    public function material_orderdetail_insert($value){
+        $this->db->insert('gj_order_detailmaterial', $value);
+    }
+
+    public function material_stock_insert($value){
+        $this->db->insert('gj_material_stock', $value);
+    }
+
+    public function material_revealreport(){
+        $this->db->order_by('gj_order_material.order_material_date','desc');
+        $this->db->order_by('gj_order_material.order_material_time','desc');
+
+
+        $query = $this->db->get('gj_order_material');
+        return $query->result_array();
+    }
+
+    public function material_order_detail($order_code)
+    {
+        $fetch = array('order_material_code' => $order_code);
+        $query = $this->db->get_where('gj_order_material', $fetch);
+        $query->result_array();
+        return $query->result_array();
+    }
+
+
+
 }
