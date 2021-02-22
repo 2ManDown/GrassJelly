@@ -14,10 +14,14 @@ class Hub_model extends CI_Model
     {
         $this->db->insert('gj_hub', $input);
     }
-
-    public function hub_manage($hub_id)
+    public function hub_stock($hub_id)
     {
         $query = $this->db->get_where('gj_product', array('hub_id' => $hub_id));
+        return $query->result_array();
+    }
+    public function hub_manage($hub_id)
+    {
+        $query = $this->db->get_where('gj_hub', array('hub_id' => $hub_id));
         return $query->result_array();
     }
 
