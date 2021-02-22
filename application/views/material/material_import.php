@@ -94,14 +94,6 @@
 
                             </div>
 
-                            <div>
-                                <b-form-timepicker v-model="value" locale="en"></b-form-timepicker>
-                                <div class="mt-2">Value: '{{ value }}'</div>
-                            </div>
-                            </template>
-
-
-
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการนำเข้านี้')">บันทึก</button>
                             </div>
