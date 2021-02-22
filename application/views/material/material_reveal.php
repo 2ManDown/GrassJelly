@@ -4,6 +4,11 @@
         -webkit-appearance: none;
         margin: 0;
     }
+
+    th,
+    td {
+        text-align: center;
+    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -66,18 +71,18 @@
                                 <div class="table-responsive" style="margin-bottom: 0px;">
                                     <table class="table table-striped b-t b-light table-bordered">
                                         <thead>
-                                            <th style="text-align: center;">เลือก</th>
-                                            <th style="text-align: center;">รหัสวัตถุดิบ</th>
-                                            <th style="text-align: center;">ชื่อวัตถุดิบ</th>
-                                            <th style="text-align: center;">ปริมาตร</th>
-                                            <th style="text-align: center;">หน่วย</th>
+                                            <th>เลือก</th>
+                                            <th>รหัสวัตถุดิบ</th>
+                                            <th>ชื่อวัตถุดิบ</th>
+                                            <th>ปริมาตร</th>
+                                            <th>หน่วย</th>
+                                            <th>จำนวนคงเหลือ</th>
 
-
-                                            <th style="text-align: center;">จำนวน</th>
+                                            <th>จำนวน</th>
                                         </thead>
                                         <?php $i = 0;
                                         foreach ($material_list as $material_list) { ?>
-                                            <tr style="text-align: center;">
+                                            <tr>
                                                 <td><input type="checkbox" name="checkbox[<?php echo $i ?>]" value="<?php echo $material_list['material_code'] ?>"></td>
 
 
@@ -85,7 +90,20 @@
                                                 <td><?php echo $material_list['material_name'] ?></td>
                                                 <td><?php echo $material_list['material_volume'] ?></td>
                                                 <td><?php echo $material_list['material_unit'] ?></td>
+                                                <?php $this->db->where('material_code', $material_list['material_code']);
+                                                    $this->db->select_sum('material_stock_amount');
+                                                    $query = $this->db->get('gj_material_stock');
+                                                    $material_stock = $query->result_array();
+                                                    $material = number_format($material_stock[0]['material_stock_amount']);
 
+                                                if ($material <= $material_list['material_min']) { ?>
+                                                <td style="color: red;">
+                                                <?php } else { ?>
+                                                    <td style="color: #3BD028;">
+                                                        <?php } ?>
+                                                        <b><?php echo $material ?></b> 
+                                                    </td>    
+                                                </td>
 
                                                 <td>
                                                     <div class="">
