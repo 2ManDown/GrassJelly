@@ -20,62 +20,53 @@
                             <input type="text" class="hidden form-control" name="hub_id" value="<?php echo $hub_manage['hub_id'] ?>">
                         </div>
 
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ชื่อ</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="hub_name" placeholder="กรุณากรอกที่อยู่" required value="<?php echo $hub_manage['hub_name'] ?>">
+                            <label class="col-sm-2 control-label">ชื่อ</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="hub_name" placeholder="กรุณากรอกชื่อ" required value="<?php echo $hub_manage['hub_name'] ?>">
                             </div>
-                        </div>
-
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ที่อยู่</label>
-                            <div class="col-sm-7">
-                                <textarea name="hub_address" class="form-control" rows="6" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;" required><?php echo $hub_manage['hub_address'] ?></textarea>
+                            
+                            <label class="col-sm-2 control-label">อีเมล</label>
+                            <div class="col-sm-3">
+                                <input type="email" class="form-control" name="hub_email"  value="<?php echo $hub_manage['hub_email'] ?>" placeholder="กรุณากรอกอีเมล">
                             </div>
-                        </div>
 
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        </div>
+                        
+                        <br>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">เบอร์ติดต่อ</label>
-                            <div class="col-sm-7">
-                                <input type="text" data-type="phone" name="hub_tel" class="form-control" value="<?php echo $hub_manage['hub_tel'] ?>" placeholder="กรุณากรอกเบอร์ติดต่อ" maxlength="10" required>
+                            <label class="col-sm-2 control-label">ที่อยู่</label>
+                            <div class="col-sm-3">
+                            <textarea name="hub_address" class="form-control" rows="7" data-minwords="6" data-required="true" placeholder="กรุณากรอกที่อยู่" style="resize: none;" required><?php echo $hub_manage['hub_address'] ?></textarea>
                             </div>
-                        </div>
 
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">อีเมล</label>
-                            <div class="col-sm-7">
-                                <input type="email" class="form-control" name="hub_email" value="<?php echo $hub_manage['hub_email'] ?>">
+                            <label class="col-sm-2 control-label">เบอร์ติดต่อ</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="hub_tel" value="<?php echo $hub_manage['hub_tel'] ?>" placeholder="กรุณากรอกเบอร์ติดต่อ" maxlength="10">
                             </div>
-                        </div>
 
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ละติจูด</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="hub_latitude" value="<?php echo $hub_manage['hub_latitude'] ?>">
+                            <br><br><br>
+                            <label class="col-sm-2 control-label">ละติจูด</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="hub_latitude" value="<?php echo $hub_manage['hub_latitude'] ?>" placeholder="กรุณากรอกละติจูด">
                             </div>
-                        </div>
-
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ลองจิจูด</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="hub_longitude" value="<?php echo $hub_manage['hub_longitude'] ?>">
+                            <br><br><br>
+                            <label class="col-sm-2 control-label">ลองจิจูด</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="hub_longitude" value="<?php echo $hub_manage['hub_longitude'] ?>" placeholder="กรุณากรอกลองจิจูด"> 
                             </div>
                         </div>
 
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group ">
+                        
                             <div class="col-sm-12 col-sm-offset-5" style="align-items: center;">
                                 <button type="submit" class="btn btn-primary" name="updatebtn" value="update">แก้ไขข้อมูล</button>
                                 &nbsp; &nbsp;
                                 <button type="button" class="btn btn-default" onclick="goBack()">ยกเลิก</button>
                                 &nbsp; &nbsp;
                             </div>
+                        
                         </div>
                         <?php form_close() ?>
                     <?php } ?>
