@@ -4,12 +4,6 @@
         -webkit-appearance: none;
         margin: 0;
     }
-
-    .timepicker {
-        .form-control {
-            background: #fff;
-        }
-    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -75,9 +69,13 @@
                                     <textarea class="form-control" name="material_stock_comment" rows="6" data-minwords="6" data-required="true" placeholder="คอมเม้นต์" required style="resize: none;"></textarea>
                                 </div>
                                 <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>เวลาที่นำเข้า</label>
-                                    <input name="material_stock_time" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
+                                <div class="col-sm-3">
+                                        <label>เวลาที่นำเข้า</label>
+                                        <div style="display: flex;">
+                                        <input id="timepkr" name="material_stock_time" style="width: 100; float: left;" class="form-control" placeholder="HH:MM" />
+                                        <button type="button" class="btn btn-primary" onclick="showpickers('timepkr','24')" style="width: 40px; float: left;"><i class="fa fa-clock-o"></i></button>
+                                        <div class="timepicker"></div>
+                                        </div>
 
                                 </div>
                             </div>
@@ -93,6 +91,11 @@
                                 </div>
 
                             </div>
+
+
+
+
+
 
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการนำเข้านี้')">บันทึก</button>

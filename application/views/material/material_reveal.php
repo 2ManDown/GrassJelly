@@ -48,13 +48,12 @@
                                 </div>
 
                                 <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>เวลา</label>
-                                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                        <input type="text" class="form-control" value="" name="reveal_time">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </span>
+                                    <div style="display: flex;">
+                                        <input id="timepkr" name="reveal_time" style="width: 100; float: left;" class="form-control" placeholder="HH:MM" />
+                                        <button type="button" class="btn btn-primary" onclick="showpickers('timepkr','24')" style="width: 40px; float: left;"><i class="fa fa-clock-o"></i></button>
+                                        <div class="timepicker"></div>
                                     </div>
                                 </div>
                             </div>
@@ -72,21 +71,21 @@
                                             <th style="text-align: center;">ชื่อวัตถุดิบ</th>
                                             <th style="text-align: center;">ปริมาตร</th>
                                             <th style="text-align: center;">หน่วย</th>
-                                            
-                                            
+
+
                                             <th style="text-align: center;">จำนวน</th>
                                         </thead>
                                         <?php $i = 0;
                                         foreach ($material_list as $material_list) { ?>
                                             <tr style="text-align: center;">
                                                 <td><input type="checkbox" name="checkbox[<?php echo $i ?>]" value="<?php echo $material_list['material_code'] ?>"></td>
-                                                
-                                                
+
+
                                                 <td><?php echo $material_list['material_code'] ?></td>
                                                 <td><?php echo $material_list['material_name'] ?></td>
                                                 <td><?php echo $material_list['material_volume'] ?></td>
                                                 <td><?php echo $material_list['material_unit'] ?></td>
-                                                
+
 
                                                 <td>
                                                     <div class="">
