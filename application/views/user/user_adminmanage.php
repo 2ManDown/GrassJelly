@@ -16,6 +16,7 @@
                                 <input type="text" class="form-control" name="user_username" value="<?php echo $user_manage['user_username'] ?>" placeholder="ชื่อผู้ใช้" required>
                             </div>
                         </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">รหัสผ่าน</label>
                             <div class="col-sm-7">
