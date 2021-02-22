@@ -4,12 +4,6 @@
         -webkit-appearance: none;
         margin: 0;
     }
-    small{
-        visibility: hidden;
-    }
-    .form-control.error input {
-        border-color: red;
-    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -123,7 +117,7 @@
                                                     <td>
                                                         <div>
                                                             <input style="text-align: center;" class="form-control error rounded" type="number" name="amount[<?php echo $i ?>]" id="amount" value="">
-                                                            <small>จำนวนสินค้าไม่เพียงพอ</small>
+                                                            
                                                         </div>
                                                     </td>
                                             </tr>

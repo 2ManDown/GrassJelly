@@ -17,7 +17,7 @@ class Product_model extends CI_Model
     }
     public function product_exportrepot(){
         $this->db->order_by('gj_order.order_date','desc');
-        $this->db->order_by('gj_order.order_time','desc');
+        $this->db->order_by('gj_order.order_code','desc');
 
 
         $query = $this->db->get('gj_order');
