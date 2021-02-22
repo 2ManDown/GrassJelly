@@ -10,47 +10,44 @@
                 <?php foreach ($supplier_list as $supplier_list) {?>
                     <?php echo form_open('supplier/supplier_update_db','class="form-horizontal"') ?>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">รหัสร้านค้า</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-2 control-label">รหัสร้านค้า</label>
+                            <div class="col-sm-3">
                                 <input type="text" name="supplier_code" class="form-control rounded" value="<?php echo $supplier_list['supplier_code'] ?>"> 
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">ชื่อร้านค้า</label>
-                            <div class="col-sm-7">
+
+                            <label class="col-sm-2 control-label">ชื่อร้านค้า</label>
+                            <div class="col-sm-3">
                                 <input type="text" name="supplier_name"  class="form-control" value="<?php echo $supplier_list['supplier_name'] ?>">
                             </div>
                         </div>
+                        
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ที่อยู่</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-2 control-label">ที่อยู่</label>
+                            <div class="col-sm-3">
                                 <input type="text" name="supplier_address"  class="form-control" value="<?php echo $supplier_list['supplier_address'] ?>">
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
-                            <div class="col-sm-7">
+
+                            <label class="col-sm-2 control-label">เบอร์โทรศัพท์</label>
+                            <div class="col-sm-3">
                                 <input type="text" name="supplier_tel"  class="form-control" value="<?php echo $supplier_list['supplier_tel'] ?>">
                             </div>
                         </div>
+                        
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">รายละเอียดร้านค้าค้าโดยย่อ</label>
-                            <div class="col-sm-7">
+                            <label class="col-sm-2 control-label">รายละเอียดร้านค้าค้าโดยย่อ</label>
+                            <div class="col-sm-3">
                                 <!-- <input type="text" class="form-control"> -->
                                 <textarea class="form-control" rows="6" data-minwords="6" data-required="true"  name="supplier_detail" placeholder="Type your message" style="resize: none;"><?php echo $supplier_list['supplier_detail'] ?></textarea>
                             </div>
-                        </div>
-                        <div class="line line-dashed b-b line-lg pull-in"></div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">เลือกรูปร้านค้า</label>
-                            <div class="col-sm-6">
+
+                            <label class="col-sm-2 control-label">เลือกรูปร้านค้า</label>
+                            <div class="col-sm-4">
                                 <input type="file" class="filestyle" name="supplier_img"  data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
                             </div>
                         </div>
+                       
                         <div class="line line-dashed b-b line-lg pull-in"></div>
                         <div class="form-group">
                             <div class="col-sm-8 col-sm-offset-4">

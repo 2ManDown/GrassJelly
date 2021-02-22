@@ -65,13 +65,12 @@
                                 </div>
 
                                 <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>เวลา</label>
-                                    <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                        <input type="text" class="form-control" value="" name="export_time">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </span>
+                                    <div style="display: flex;">
+                                        <input id="timepkr" name="export_time" style="width: 100; float: left;" class="form-control" placeholder="HH:MM" />
+                                        <button type="button" class="btn btn-primary" onclick="showpickers('timepkr','24')" style="width: 40px; float: left;"><i class="fa fa-clock-o"></i></button>
+                                        <div class="timepicker"></div>
                                     </div>
                                 </div>
                             </div>
