@@ -121,6 +121,7 @@ class Material_model extends CI_Model
             'material_name' => $this->input->post('material_name'),
             'material_volume' => $this->input->post('material_volume'),
             'material_unit' => $this->input->post('material_unit'),
+            'material_min' => $this->input->post('material_min'),
 
         );
         /* print_r($input);

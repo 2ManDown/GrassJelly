@@ -121,6 +121,7 @@ class Material extends CI_Controller
 			'material_name' => $this->input->post('material_name'),
 			'material_volume' => $this->input->post('material_volume'),
 			'material_unit' => $this->input->post('material_unit'),
+			'material_min' => $this->input->post('material_min'),
 		);
 		$this->Material_model->material_insert_db($input);
 		redirect('material/material_listinfo');

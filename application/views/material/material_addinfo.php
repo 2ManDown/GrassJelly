@@ -1,3 +1,10 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 <section id="content" class="col-md-12">
     <section class="hbox stretch">
         <section>
@@ -35,6 +42,16 @@
                                     <label>หน่วยนับ</label>
                                     <input type="text" name="material_unit" class="form-control" placeholder="จำนวนนำเข้า" required>
                                 </div>
+                            </div>
+
+                            <div class="form-group pull-in clearfix">
+
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
+                                    <label>ปริมาณขั้นต่ำ</label>
+                                    <input type="number" name="material_min" class="form-control" placeholder="กรอกปริมาณขั้นต่ำ" required>
+                                </div>
+                                
                             </div>
 
                             <div class="text-right">
