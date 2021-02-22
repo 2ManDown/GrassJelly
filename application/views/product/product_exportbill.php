@@ -4,6 +4,12 @@
         -webkit-appearance: none;
         margin: 0;
     }
+    small{
+        visibility: hidden;
+    }
+    .form-control.error input {
+        border-color: red;
+    }
 </style>
 
 <section id="content" class="col-md-12">
@@ -16,7 +22,7 @@
                             ออกใบส่งออกสินค้า
                         </header>
                         <!-- <form data-validate="parsley" action="#"> -->
-                        <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"') ?>
+                        <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"' ,'id="form-valid"') ?>
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-4">
@@ -41,21 +47,6 @@
                                         <?php } ?>
                                     </select>
                                 </div>
-
-                                <!-- <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>สินค้า</label>
-                                    <select name="product" class="form-control m-b " required>
-                                        <option value="" disabled selected>กรุณาเลือกสินค้าที่ต้องการส่งออก</option>
-                                        <?php //foreach ($product_list as $product_list) {
-                                        ?>
-                                            <option value="<?php //echo $product_list['product_code']
-                                                            ?>"><?php //echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit']
-                                                                ?></option>
-                                        <?php //}
-                                        ?>
-                                    </select>
-                                </div> -->
 
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
@@ -84,47 +75,6 @@
                                 </div>
                             </div>
 
-                            <!-- class="input-sm input-s timepicker-input form-control" -->
-
-                            <!-- <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>ราคาต่อหน่วย</label>
-                                    <div class="input-group m-b">
-                                        <input type="number" class="form-control" name="export_price" id="export_price" onchange="plus()">
-                                        <span class="input-group-addon">TH</span>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>จำนวนที่ส่งออก</label>
-                                    <input type="number" class="form-control" onchange="plus()" placeholder="ป้อนจำนวนส่งออก" name="export_amount" id="export_amount" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>ราคารวม</label>
-                                    <input type="number" class="form-control" id="export_sumprice" name="export_sumprice" style="color: #11B9E9; font-weight: bold;" readonly>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-                                    <label>Vat 7%</label>
-                                    <input type="number" class="form-control" id="export_vat" name="export_vat" style="color: Red; font-weight: bold;" readonly>
-                                </div>
-
-                            </div>
-
-                            <div class="form-group pull-in clearfix">
-                                <div class="col-sm-6"></div>
-                                <div class="col-sm-4">
-                                    <label>ราคารวมภาษี</label>
-                                    <input type="text" class="form-control" id="export_sumresult" name="export_includevat" style="color: #00af91; font-weight: bold;" readonly>
-                                </div>
-                            </div> -->
-
                             <div class="form-group pull-in clearfix"></div>
                             <div class="form-group pull-in clearfix"></div>
                             <div class="form-group pull-in clearfix"></div>
@@ -141,24 +91,41 @@
                                             <th style="text-align: center;">คำอธิบาย</th>
                                             <th style="text-align: center;">ราคา</th>
                                             <th style="text-align: center;">จำนวน</th>
+                                            <th style="text-align: center;">คงเหลือ</th>
                                         </thead>
                                         <?php $i = 0;
                                         foreach ($product_list as $product_list) { ?>
                                             <tr style="text-align: center;">
                                                 <td><input type="checkbox" name="checkbox[<?php echo $i ?>]" value="<?php echo $product_list['product_code'] ?>"></td>
-                                                
-                                                
+
+
                                                 <td><?php echo $product_list['product_code'] ?></td>
                                                 <td><?php echo $product_list['product_name'] ?></td>
                                                 <td><?php echo $product_list['product_volume'] ?></td>
                                                 <td><?php echo $product_list['product_unit'] ?></td>
                                                 <td><?php echo $product_list['product_detail'] ?></td>
                                                 <td><input type="hidden" name="price[<?php echo $i ?>]" value="<?php echo $product_list['product_price'] ?>"><b><?php echo $product_list['product_price'] ?></b></td>
-                                                <td>
-                                                    <div class="">
-                                                        <input style="text-align: center;" class="form-control rounded" type="number" name="amount[<?php echo $i ?>]" value="">
-                                                    </div>
-                                                </td>
+                                               
+                                                <?php
+                                                $this->db->where('product_code', $product_list['product_code']);
+                                                $this->db->select_sum('product_stock_amount');
+                                                $query = $this->db->get('gj_product_stock');
+                                                $product_stock = $query->result_array();
+                                                $product = number_format($product_stock[0]['product_stock_amount']);
+                                                if ($product <= $product_list['product_min']) { ?>
+                                                    <td style="color: red;">
+                                                    <?php } else { ?>
+                                                    <td style="color: #3BD028;">
+                                                    <?php } ?>
+
+                                                    <b><?php echo $product ?></b>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <input style="text-align: center;" class="form-control error rounded" type="number" name="amount[<?php echo $i ?>]" id="amount" value="">
+                                                            <small>จำนวนสินค้าไม่เพียงพอ</small>
+                                                        </div>
+                                                    </td>
                                             </tr>
                                         <?php $i++;
                                         } ?>
@@ -204,5 +171,19 @@
 
         let sumresult = document.getElementById("export_sumresult");
         sumresult.value = result;
+    }
+</script>
+
+<script>
+    const form = document.getElementById('form-valid');
+    const amount = document.getElementById('amount');
+
+    form.addEventListener('submit',(e) =>{
+        e.preventDefault();
+
+        alert('Click!');
+    });
+    function checkinputs(){
+        
     }
 </script>
