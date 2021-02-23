@@ -11,8 +11,8 @@ class User_model extends CI_Model
         if ($this->session->userdata("status") ==  "admin") {
             $this->db->select('*');
             $this->db->from('gj_user');
-            $this->db->where('user_status','factory');
-            $this->db->or_where('user_status','supplier');
+            $this->db->where('user_status', 'factory');
+            $this->db->or_where('user_status', 'supplier');
         }
         $query = $this->db->get();
         return $query->result_array();
@@ -66,10 +66,18 @@ class User_model extends CI_Model
     }
 
     public function user_manage($user_list)
-	{
-		$query = $this->db->get_where('gj_user', array('user_id' => $user_list));
+    {
+        $query = $this->db->get_where('gj_user', array('user_id' => $user_list));
         return $query->result_array();
-	}
+    }
+
+
+
+
+    /* INSERT */
+    public function user_insert(){
+        
+    }
 
     /* DELETE */
     public function user_delete($user_id)
@@ -88,10 +96,10 @@ class User_model extends CI_Model
             'user_email' => $this->input->post('user_email'),
             'user_tel' => $this->input->post('user_tel'),
             'user_status' => $this->input->post('user_status'),
-            
+
 
         );
-        
+
         $this->db->where('user_id', $data['user_id']);
         $this->db->update('gj_user', $data);
     }

@@ -85,6 +85,15 @@ class User extends CI_Controller
         // $this->load->view('theme', $data);
     }
 
+
+
+    /* INSERT */
+    public function user_insert(){
+        $data['page'] = "user/user_insert";
+        $this->checksession($data);
+    }
+
+
     /* UPDATE */
     public function user_update_db()
     {
@@ -93,18 +102,6 @@ class User extends CI_Controller
     }
 
 
-    public function checksession($data)
-    {
-        if ($this->session->userdata('status') == 'admin') {
-
-            $this->load->view('theme', $data);
-        } else if ($this->session->userdata('status') == 'factory') {
-
-            $this->load->view('factory', $data);
-        } else {
-            $this->load->view('supplier', $data);
-        }
-    }
 
     public function user_adminmanage($user_list)
 	{
@@ -128,5 +125,17 @@ class User extends CI_Controller
     }
 
     
+    public function checksession($data)
+    {
+        if ($this->session->userdata('status') == 'admin') {
+
+            $this->load->view('theme', $data);
+        } else if ($this->session->userdata('status') == 'factory') {
+
+            $this->load->view('factory', $data);
+        } else {
+            $this->load->view('supplier', $data);
+        }
+    }
     
 }
