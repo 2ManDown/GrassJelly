@@ -17,6 +17,8 @@ class Employee extends CI_Controller
 	public function employee_addinfo()
 	{
 		$data['page'] = "employee/employee_addinfo";
+		$data['employee_hub'] = $this->Employee_model->employee_hub();
+
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
@@ -24,6 +26,7 @@ class Employee extends CI_Controller
 	public function employee_manage($employee_list)
 	{
 		$data['employee_manage'] = $this->Employee_model->employee_manage($employee_list);
+		$data['employee_hub'] = $this->Employee_model->employee_hub();
 
 		$data['page'] = "employee/employee_manage";
 		$this->checksession($data);
@@ -40,6 +43,7 @@ class Employee extends CI_Controller
 			'employee_address' => $this->input->post('employee_address'),
 			'employee_tel' => $this->input->post('employee_tel'),
 			'employee_email' => $this->input->post('employee_email'),
+			'hub_id' => $this->input->post('hub_id'),
 		);
 		$this->Employee_model->employee_insert_db($input);
 		redirect('employee/employee_info');
