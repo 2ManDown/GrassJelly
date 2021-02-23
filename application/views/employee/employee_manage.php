@@ -20,7 +20,7 @@
                             <label class="col-sm-2 control-label">ศูนย์กระจาย</label>
                             <div class="col-sm-3">
                             <select name="hub_id" class="form-control m-b" value="<?php// echo $employee_manage['hud_id'] ?>" required>
-                                <option disabled selected value="">ศูนย์กระจายเดิม: <?php echo $employee_manage['hub_name']?></option>
+                                <option value="<?php echo $employee_manage['hub_id'] ?>"><?php echo $employee_manage['hub_id'], ' - ', $employee_manage['hub_name'] ?></option>
                                 <?php foreach ( $employee_hub as $employee_hub) { ?>
                                 <option value="<?php echo $employee_hub['hub_id']?>"><?php echo $employee_hub['hub_id'], ' - ', $employee_hub['hub_name'] ?></option>
                                 <?php } ?>
@@ -38,7 +38,7 @@
                             <label class="col-sm-2 control-label">เพศ</label>
                             <div class="col-sm-3">
                                 <select class="form-control m-b" name="employee_sex" value="<?php echo $employee_manage['employee_sex']?>" id="sex" required>
-                                <option disabled selected value="">เพศเดิม: <?php if ($employee_manage['employee_sex'] == 1){
+                                <option value="<?php echo $employee_manage['employee_sex']  ?>"><?php if ($employee_manage['employee_sex'] == 1){
                                     echo "ชาย";
                                 }else{
                                     echo "หญิง";
