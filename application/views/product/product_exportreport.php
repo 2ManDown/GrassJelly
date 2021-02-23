@@ -113,7 +113,7 @@
                                         <!-- class="btn btn-sm btn-icon btn-info btn-rounded" -->
                                         <td><a href="<?php echo site_url('product/product_order_detail/') .
                                                             $export['order_code'] ?>"> <i class="glyphicon glyphicon-eye-open"></i> </a></td>
-                                        <td><a href="<?php echo site_url('report/exportbill') ?>"><i class="glyphicon glyphicon-print"></i></td>
+                                        <td><a href="<?php echo site_url('report/exportbill/'). $export['order_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
                                         <?php $i++ ?>
                                     </tr>
                                 </a>
