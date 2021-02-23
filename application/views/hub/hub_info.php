@@ -1,3 +1,11 @@
+<style>
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+</style>
 <section id="content">
     <section class="vbox">
         <section class="scrollable padder">

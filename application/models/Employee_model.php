@@ -13,12 +13,23 @@ class Employee_model extends CI_Model
 
     public function employee_list()
     {
+        $this->db->order_by('gj_employee.employee_name', 'ASC');
+        $this->db->join('gj_hub', 'gj_hub.hub_id = gj_employee.hub_id');
+
         $query = $this->db->get('gj_employee');
+        return $query->result_array();
+    }
+
+    public function employee_hub()
+    {
+        $this->db->order_by('hub_id', 'ASC');
+        $query = $this->db->get('gj_hub');
         return $query->result_array();
     }
 
     public function employee_manage($employee_id)
     {
+        $this->db->join('gj_hub', 'gj_hub.hub_id = gj_employee.hub_id');
         $query = $this->db->get_where('gj_employee', array('employee_id' => $employee_id));
         return $query->result_array();
     }
@@ -33,6 +44,7 @@ class Employee_model extends CI_Model
             'employee_address' => $this->input->post('employee_address'),
             'employee_tel' => $this->input->post('employee_tel'),
             'employee_email' => $this->input->post('employee_email'),
+            'hub_id' => $this->input->post('hub_id'),
   
         );
         $this->db->where('employee_id', $input['employee_id']);

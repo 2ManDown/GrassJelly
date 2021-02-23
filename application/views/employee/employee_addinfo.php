@@ -14,26 +14,36 @@
                             <label>ชื่อ - สกุล</label>
                             <input type="text" name="employee_name" class="form-control" id="input-id-1" placeholder="กรอกชื่อ - สกุล" required>
                         </div>
+
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>เบอร์โทรศัพท์</label>
-                            <input type="text" data-type="phone" name="employee_tel" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" required maxlength="10">
+                        <label>ศูนย์กระจาย</label>
+                            <select name="hub_id" class="form-control m-b" required>
+                                <option disabled selected value="">กรุณาเลือกศูนย์กระจาย</option>
+                                <?php foreach ( $employee_hub as $employee_hub) { ?>
+                                <option value="<?php echo $employee_hub['hub_id']?>"><?php echo $employee_hub['hub_id'], ' - ', $employee_hub['hub_name'] ?></option>
+                                <?php } ?>
+                            </select>
+
+
+                           
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
                             <label>เพศ</label>
-                            <select name="employee_sex" class="form-control m-b" required>
-                                <option disabled selected>กรุณาเลือกเพศ</option>
+                            <select class="form-control m-b" name="employee_sex" required>
+                                <option disabled selected value="">กรุณาเลือกเพศ</option>
                                 <option value="1">ชาย</option>
                                 <option value="2">หญิง</option>
                             </select>
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <label>อีเมล</label>
-                            <input type="email" name="employee_email" class="form-control" data-type="email" data-required="true" placeholder="กรอกอีเมล" required>
+                        <label>เบอร์โทรศัพท์</label>
+                            <input type="text" data-type="phone" name="employee_tel" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" required maxlength="10">
+                           
                         </div>
                     </div>
                     <div class="form-group pull-in clearfix">
@@ -45,6 +55,9 @@
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
+                        <label>อีเมล</label>
+                            <input type="email" name="employee_email" class="form-control" data-type="email" data-required="true" placeholder="กรอกอีเมล" required>
+                            <br><br>
                             <label>วันเดือนปีเกิด</label>
                             <input name="employee_birthdate" id="datetime" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
                         </div>

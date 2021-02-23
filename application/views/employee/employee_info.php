@@ -1,3 +1,11 @@
+<style>
+th {
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+</style>
 <section id="content">
     <section class="vbox">
         <section class="scrollable padder">
@@ -23,6 +31,7 @@
                                 <th>ที่อยู่</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>อีเมล</th>
+                                <th>ศูนย์กระจาย</th>
                                 <th style="text-align: center;">จัดการ</th>
                             </tr>
                         </div>
@@ -47,6 +56,7 @@
                                     <td><?php echo $employee_list['employee_address'] ?></td>
                                     <td><?php echo $employee_list['employee_tel'] ?></td>
                                     <td><?php echo $employee_list['employee_email'] ?></td>
+                                    <td><?php echo $employee_list['hub_name'] ?></td>
                                     <td style="text-align: center;">
                                         <a href="<?php echo site_url('employee/employee_manage/') . $employee_list['employee_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
                                     </td>
