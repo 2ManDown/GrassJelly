@@ -22,7 +22,7 @@
                             <div class="col-sm-4">
                                 <label>ศูนย์กระจาย</label>
                                 <select name="hub_id" class="form-control m-b" value="<?php// echo $employee_manage['hud_id'] ?>" required>
-                                    <option value="<?php echo $employee_manage['hub_id'] ?>"><?php echo $employee_manage['hub_id'], ' - ', $employee_manage['hub_name'] ?></option>
+                                    <option class="hidden" value="<?php echo $employee_manage['hub_id'] ?>"><?php echo $employee_manage['hub_id'], ' - ', $employee_manage['hub_name'] ?></option>
                                     <?php foreach ($employee_hub as $employee_hub) { ?>
                                         <option value="<?php echo $employee_hub['hub_id'] ?>"><?php echo $employee_hub['hub_id'], ' - ', $employee_hub['hub_name'] ?></option>
                                     <?php } ?>
@@ -35,7 +35,7 @@
                             <div class="col-sm-4">
                                 <label>เพศ</label>
                                 <select class="form-control m-b" name="employee_sex" value="<?php echo $employee_manage['employee_sex'] ?>" id="sex" required>
-                                    <option value="<?php echo $employee_manage['employee_sex']  ?>"><?php if ($employee_manage['employee_sex'] == 1) {
+                                    <option class="hidden" value="<?php echo $employee_manage['employee_sex']  ?>"><?php if ($employee_manage['employee_sex'] == 1) {
                                                                                                         echo "ชาย";
                                                                                                     } else {
                                                                                                         echo "หญิง";
