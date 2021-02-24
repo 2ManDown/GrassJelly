@@ -150,11 +150,11 @@
         
         <tr>
             <th colspan="3" class="text-right" style="padding-right:1%;">ภาษีมูลค่าเพิม 7%</th>
-            <th class="text-right" style="padding-right:1%;"><?php echo $vat = $price *7/100 ?></th>
+            <th class="text-right" style="padding-right:1%;"><?php //echo $vat = $price *7/100 ?></th>
         </tr>
         <tr>
             <th colspan="3" class="text-right" style="padding-right:1%;">จำานวนเงินรวมทั้งสิ้น</th>
-            <th class="text-right" style="padding-right:1%;"><?php echo $price + $vat  ?></th>
+            <th class="text-right" style="padding-right:1%;"><?php //echo $price + $vat  ?></th>
         </tr>
         <tr>
             <th colspan="3" class="text-right" style="padding-right:1%;">
