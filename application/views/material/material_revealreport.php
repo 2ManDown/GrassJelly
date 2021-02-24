@@ -33,7 +33,7 @@
 
                                 <th>ผู้เบิกออก</th>
                                 <th>ดูข้อมูลการเบิกออก</th>
-                                <th>ใบส่งออก</th>
+                                <th>ใบเบิกออก</th>
                             </tr>
                         </div>
                         <tbody>
@@ -75,7 +75,7 @@
                                         <!-- class="btn btn-sm btn-icon btn-info btn-rounded" -->
                                         <td><a href="<?php echo site_url('material/material_order_detail/') .
                                                             $reveal['order_material_code'] ?>"> <i class="glyphicon glyphicon-eye-open"></i> </a></td>
-                                        <td><a href="<?php ?>"><i class="glyphicon glyphicon-print"></i></td>
+                                        <td><a href="<?php echo site_url('report/revealbill/'). $reveal['order_material_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
                                         <?php $i++ ?>
                                     </tr>
                                 </a>

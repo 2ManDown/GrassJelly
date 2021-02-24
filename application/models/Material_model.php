@@ -114,7 +114,7 @@ class Material_model extends CI_Model
     /* UPDATE of Model*/
     public function material_update_db()
     {
-
+        
         $input = array(
             'material_id' => $this->input->post('material_id'),
             'material_code' => $this->input->post('material_code'),
@@ -122,14 +122,22 @@ class Material_model extends CI_Model
             'material_volume' => $this->input->post('material_volume'),
             'material_unit' => $this->input->post('material_unit'),
             'material_min' => $this->input->post('material_min'),
-
+            
         );
         /* print_r($input);
         exit(); */
         $this->db->where('material_id', $input['material_id']);
         $this->db->update('gj_material', $input);
     }
-
+    
+    public function material_order_detail($order_code)
+    {
+        $fetch = array('order_material_code' => $order_code);
+        $query = $this->db->get_where('gj_order_material', $fetch);
+        $query->result_array();
+        return $query->result_array();
+    }
+    
     public function material_orderinsert($input)
     {
         $this->db->insert('gj_order_material', $input);
@@ -152,13 +160,6 @@ class Material_model extends CI_Model
         return $query->result_array();
     }
 
-    public function material_order_detail($order_code)
-    {
-        $fetch = array('order_material_code' => $order_code);
-        $query = $this->db->get_where('gj_order_material', $fetch);
-        $query->result_array();
-        return $query->result_array();
-    }
 
 
 

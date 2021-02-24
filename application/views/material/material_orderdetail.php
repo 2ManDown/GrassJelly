@@ -119,7 +119,7 @@
                                 </div>
 
                                 <div class="text-right">
-                                    <button type="button" id="a" class="btn btn-primary btn-s-xs" onclick="print()">พิมพ์</button>
+                                <button type="button" class="btn btn-primary btn-s-xs" onclick="window.location.href='<?php echo site_url('report/revealbill/'). $orderdetail['order_material_code'] ?>'">พิมพ์</button>
                                 </div>
                             </div>
                         <?php } ?>
