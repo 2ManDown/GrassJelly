@@ -125,7 +125,7 @@
 
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary btn-s-xs">บันทึก</button>
+                                    <button type="button" class="btn btn-primary btn-s-xs" onclick="window.location.href='<?php echo site_url('report/exportbill/'). $orderdetail['order_code'] ?>'">พิมพ์</button>
                                 </div>
                             </div>
                         <?php } ?>
