@@ -135,7 +135,7 @@
                 ?>
         
             <th colspan="4" rowspan="5" valign="top" class="text-center" style="padding-left:1%;">จำนวนรวมทั้งหมด</th>
-            <th colspan="1" class="text-center" style="padding-right:1%;" id="result"><?php echo $amount ?></th>
+            <th colspan="1" class="text-center" id="result"><?php echo $amount ?></th>
         
         
         </table>
