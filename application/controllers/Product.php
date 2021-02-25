@@ -254,7 +254,7 @@ class Product extends CI_Controller
 			'importproduct_expdate' => $this->input->post('importproduct_expdate'),
 		); */
 		$this->Product_model->product_insert_import(/* $input */);
-		redirect('product/product_importreport');
+		redirect('product/product_stock_history');
 	}
 
 	public function product_manufacinsert()
