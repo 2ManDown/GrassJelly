@@ -233,14 +233,6 @@ class Product extends CI_Controller
 			}
 			$i++;
 		}
-
-
-
-		/* foreach ($this->input->post('amount') as $checkbox) {
-			
-			$i++;
-		} */
-
 		redirect('product/product_stock_history');
 	}
 

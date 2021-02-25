@@ -37,6 +37,46 @@ class Product_model extends CI_Model
         return $query->result_array();
     }
 
+    public function product_insert_import(/* $input */)
+        {
+            $import_stock = array(
+                'product_code' => $this->input->post('product_code'),
+                'product_stock_amount' => $this->input->post('import_amount'),
+                'product_stock_date' => $this->input->post('import_date'),
+                'product_stock_time' => $this->input->post('import_time'),
+                'product_stock_status' => 1,
+                'product_stock_category' => 1,
+                'product_stock_comment' => $this->input->post('import_comment'),
+                'product_stock_user' => $this->session->userdata('id'),
+                'order_code' => $this->input->post('countid'),
+            );
+
+            $this->db->insert('gj_product_stock', $import_stock);
+
+            $order = array(
+                'order_code' => $this->input->post('countid'),
+                'order_date' => $this->input->post('import_date'),
+                'order_time' => $this->input->post('import_time'),
+                'order_status' => 1,
+            );
+            $this->db->insert('gj_order', $order);
+
+            $order_detail = array(
+                'order_code' => $this->input->post('countid'),
+                'product_code' => $this->input->post('product_code'),
+                'order_detail_price' => $this->input->post('import_price'),
+                'order_detail_amount' => $this->input->post('import_amount'),
+            );
+            $this->db->insert('gj_order_detail', $order_detail);
+
+            /* echo '<pre>';
+            print_r($import_stock);
+            echo '<pre>';
+            print_r($order);
+            echo '<pre>';
+            print_r($order_detail);
+            exit(); */
+        }
     public function product_list()
     {
         $query = $this->db->get('gj_product');
@@ -44,6 +84,8 @@ class Product_model extends CI_Model
     }
 
     
+
+
 
     public function product_manufacdetail($id)
     {
@@ -89,18 +131,6 @@ class Product_model extends CI_Model
         exit(); */
         return $query->result_array();
     }
-
-    /* public function product_exportreport()
-    {
-      
-        $this->db->select('pd.product_code,pd.product_name,ex.*');
-        $this->db->from('gj_product as pd');
-        $this->db->join('gj_exportproduct as ex', 'pd.product_code = ex.product_code');
-        $this->db->order_by('ex.exportproduct_id', 'desc');
-
-        $query = $this->db->get();
-        return $query->result_array();
-    } */
 
 
     public function product_productbalance()
@@ -186,27 +216,7 @@ class Product_model extends CI_Model
         $this->db->insert('gj_productbalance', $input);
     }
 
-    public function product_insert_import(/* $input */)
-    {
-        $import = array(
-            'product_code' => $this->input->post('product_code'),
-            'importproduct_amount' => $this->input->post('importproduct_amount'),
-            'importproduct_price' => $this->input->post('importproduct_price'),
-            'importproduct_imdate' => $this->input->post('importproduct_imdate'),
-            'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
-            'importproduct_expdate' => $this->input->post('importproduct_expdate'),
-
-        );
-
-
-        echo '<pre>';
-        print_r($import);
-        //print_r($manufac);
-        echo '<pre>';
-        exit();
-        $this->db->insert('gj_importproduct', $import);
-        //$this->db->insert('gj_productbalance', $manufac);
-    }
+   
 
     public function product_orderinsert($input)
     {

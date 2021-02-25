@@ -22,8 +22,9 @@
                                 <div class="col-sm-4">
                                     <label>รหัสใบเบิกของ</label>
                                     <?php
+                                    $this->db->where('order_status', 2);
                                     $count_all = $this->db->count_all_results('gj_order');
-                                    $countid =  "OD" . ($count_all + 1);
+                                    $countid =  "ODE" . ($count_all + 1);
                                     echo $countid;
                                     ?>
                                     <!-- <input type="hidden" name="countid" value="<?php echo $countid ?>"> -->
