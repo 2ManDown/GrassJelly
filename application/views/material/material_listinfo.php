@@ -2,10 +2,6 @@
     th {
         text-align: center;
     }
-
-    td {
-        text-align: center;
-    }
 </style>
 <section id="content" class="col-md-12">
     <section class="vbox">
@@ -25,6 +21,7 @@
                     <table class="table table-striped b-t b-light table-bordered">
                         <div>
                             <tr>
+                                <th>#</th>
                                 <th>รหัสวัตถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
                                 <th>ปริมาตร</th>
@@ -33,16 +30,19 @@
                             </tr>
                         </div>
                         <tbody>
+                        <?php $i = 1 ?>
                             <?php foreach ($material_list as $material_list) { ?>
                                 <tr>
+                                    <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $material_list['material_code'] ?></td>
                                     <td><?php echo $material_list['material_name'] ?></td>
-                                    <td><?php echo $material_list['material_volume'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_list['material_volume'] ?></td>
                                     <td><?php echo $material_list['material_unit'] ?></td>
-                                    <td>
+                                    <td style="text-align: center;">
                                         <a href="<?php echo site_url('material/material_manage/') . $material_list['material_code'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="ส่งออกสินค้า"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
+                                <?php $i ++ ?>
                             <?php } ?>
                         </tbody>
                     </table>

@@ -2,9 +2,6 @@
 th {
     text-align: center;
 }
-td {
-    text-align: center;
-}
 </style>
 <section id="content">
     <section class="vbox">
@@ -39,7 +36,7 @@ td {
                         <tbody>
                         <?php foreach ($employee_list as $employee_list) { ?>
                                 <tr>
-                                    <td><?php echo $i ?></td>
+                                    <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $employee_list['employee_name'] ?></td>
                                     <td><?php 
                                         if($employee_list['employee_sex'] == 1){
@@ -52,9 +49,9 @@ td {
                                             echo"ไม่มีข้อมูล";
                                         }
                                     ?></td>
-                                    <td><?php echo $employee_list['employee_birthdate'] ?></td>
+                                    <td style="text-align: center;"><?php echo $employee_list['employee_birthdate'] ?></td>
                                     <td><?php echo $employee_list['employee_address'] ?></td>
-                                    <td><?php echo $employee_list['employee_tel'] ?></td>
+                                    <td style="text-align: center;"><?php echo $employee_list['employee_tel'] ?></td>
                                     <td><?php echo $employee_list['employee_email'] ?></td>
                                     <td><?php echo $employee_list['hub_name'] ?></td>
                                     <td style="text-align: center;">

@@ -1,6 +1,5 @@
 <style>
-    th,
-    td {
+    th {
         text-align: center;
     }
 </style>
@@ -39,7 +38,7 @@
                             <?php foreach ($hub_employee as $hub_employee) { ?>
 
                                 <tr>
-                                <td><?php echo $i ?></td>
+                                <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $hub_employee['employee_name'] ?></td>
                                     <td><?php 
                                         if($hub_employee['employee_sex'] == 1){
@@ -52,9 +51,9 @@
                                             echo"ไม่มีข้อมูล";
                                         }
                                     ?></td>
-                                    <td><?php echo $hub_employee['employee_birthdate'] ?></td>
+                                    <td style="text-align: center;"><?php echo $hub_employee['employee_birthdate'] ?></td>
                                     <td><?php echo $hub_employee['employee_address'] ?></td>
-                                    <td><?php echo $hub_employee['employee_tel'] ?></td>
+                                    <td style="text-align: center;"><?php echo $hub_employee['employee_tel'] ?></td>
                                     <td><?php echo $hub_employee['employee_email'] ?></td>
                                     
                                         

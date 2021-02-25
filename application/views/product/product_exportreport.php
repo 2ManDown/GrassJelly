@@ -1,6 +1,5 @@
 <style>
-    th,
-    td {
+    th{
         text-align: center;
     }
 
@@ -64,7 +63,7 @@
 
                                 <a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>">
                                     <tr>
-                                        <td><?php echo $i ?></td>
+                                        <td style="text-align: center;"><?php echo $i ?></td>
                                         <td><?php echo $export['order_code']  ?></td>
                                         <td><?php $export['hub_id'];
                                             $this->db->select('hub_name');
@@ -75,8 +74,8 @@
                                                 echo $hub['hub_name'];
                                             } ?></td>
 
-                                        <td><?php echo $export['order_date']  ?></td>
-                                        <td><?php
+                                        <td style="text-align: center;"><?php echo $export['order_date']  ?></td>
+                                        <td style="text-align: center;"><?php
                                             $this->db->select('COUNT(order_detail_amount) as row');
                                             $this->db->from('gj_order_detail');
                                             $this->db->where('order_code', $export['order_code']);
@@ -86,7 +85,7 @@
                                             //echo $sql = $this->db->last_query();
                                             ?></td>
 
-                                        <td><?php
+                                        <td style="text-align: center;"><?php
                                             $this->db->where('order_code', $export['order_code']);
                                             $this->db->select_sum('order_detail_price');
                                             $query = $this->db->get('gj_order_detail');
@@ -111,9 +110,9 @@
 
                                             ?></td>
                                         <!-- class="btn btn-sm btn-icon btn-info btn-rounded" -->
-                                        <td><a href="<?php echo site_url('product/product_order_detail/') .
+                                        <td style="text-align: center;"><a href="<?php echo site_url('product/product_order_detail/') .
                                                             $export['order_code'] ?>"> <i class="glyphicon glyphicon-eye-open"></i> </a></td>
-                                        <td><a href="<?php echo site_url('report/exportbill/'). $export['order_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
+                                        <td style="text-align: center;"><a href="<?php echo site_url('report/exportbill/'). $export['order_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
                                         <?php $i++ ?>
                                     </tr>
                                 </a>

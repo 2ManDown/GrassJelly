@@ -2,9 +2,6 @@
 th {
     text-align: center;
 }
-td {
-    text-align: center;
-}
 </style>
 <section id="content" class="col-md-12">
     <section class="vbox">
@@ -37,7 +34,6 @@ td {
                                 <th>รหัสวัตถุดิบ</th>
                                 <th>ชื่อวัตถุดิบ</th>
                                 <th>ปริมาตร / หน่วย</th>
-                               
                                 <th>จำนวนขั้นต่ำ</th>
                                 <th>จำนวนคงเหลือ</th>
                                 <th>หมายเหตุ</th>
@@ -49,11 +45,11 @@ td {
                             <?php foreach ($material_materialbalance as $material_materialbalance) { ?>
 
                                 <tr>
-                                    <td><?php echo $i ?></td>
+                                    <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $material_materialbalance['material_code'] ?></td>
                                     <td><?php echo $material_materialbalance['material_name'] ?></td>
                                     <td><?php echo $material_materialbalance['material_volume']. " " . $material_materialbalance['material_unit'] ?></td>
-                                    <td><?php echo $material_materialbalance['material_min'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_materialbalance['material_min'] ?></td>
                                     <?php
                                         $this->db->where('material_code', $material_materialbalance['material_code']);
                                         $this->db->select_sum('material_stock_amount');
@@ -62,9 +58,9 @@ td {
                                         $material = number_format($material_stock[0]['material_stock_amount']);
 
                                         if ($material <= $material_materialbalance['material_min']) { ?>
-                                            <td style="color: red;">
+                                            <td style="color: red; text-align: center;">
                                             <?php } else { ?>
-                                            <td style="color: #3BD028;">
+                                            <td style="color: #3BD028; text-align: center;">
                                             <?php } ?>
     
                                             <b><?php echo $material ?></b> </td>

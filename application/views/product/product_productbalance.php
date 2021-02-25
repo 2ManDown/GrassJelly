@@ -1,6 +1,5 @@
 <style>
-    th,
-    td {
+    th{
         text-align: center;
     }
 </style>
@@ -60,12 +59,12 @@
                             <?php foreach ($product_productbalance as $product_productbalance) { ?>
 
                                 <tr>
-                                    <td><?php echo $i ?></td>
+                                    <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $product_productbalance['product_code'] ?></td>
                                     <td><?php echo $product_productbalance['product_name'] ?></td>
                                     <td><?php echo $product_productbalance['product_detail'] ?></td>
                                     <td><?php echo $product_productbalance['product_volume'] . " " . $product_productbalance['product_unit'] ?></td>
-                                    <td><?php echo $product_productbalance['product_min'] ?></td>
+                                    <td style="text-align: center;"><?php echo $product_productbalance['product_min'] ?></td>
                                     <?php
                                     $this->db->where('product_code', $product_productbalance['product_code']);
                                     $this->db->select_sum('product_stock_amount');
@@ -73,9 +72,9 @@
                                     $product_stock = $query->result_array();
                                     $product = number_format($product_stock[0]['product_stock_amount']);
                                     if ($product <= $product_productbalance['product_min']) { ?>
-                                        <td style="color: red;">
+                                        <td style="color: red; text-align: center;">
                                         <?php } else { ?>
-                                        <td style="color: #3BD028;">
+                                        <td style="color: #3BD028; text-align: center;">
                                         <?php } ?>
 
                                         <b><?php echo $product ?></b> </td>
