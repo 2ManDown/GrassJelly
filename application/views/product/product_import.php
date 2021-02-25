@@ -19,11 +19,23 @@
 
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>รหัสใบเบิกของ</label>
+                                    <?php
+                                    $this->db->where('order_status', 1);
+                                    $count_all = $this->db->count_all_results('gj_order');
+                                    $countid =  "ODI" . ($count_all + 1);
+                                    echo $countid;
+                                    ?>
+                                    <input type="hidden" name="countid" value="<?php echo $countid ?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-
                                     <label>รหัสสินค้า</label>
-                                    <select name="product_code" class="form-control m-b " onclick="">
+                                    <select name="product_code" class="form-control m-b " required>
                                         <option disabled selected>กรุณาเลือกสินค้า</option>
                                         <?php foreach ($product_list as $product_list) { ?>
                                             <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' - ', $product_list['product_unit'] ?></option>
@@ -31,12 +43,12 @@
                                     </select>
                                 </div>
 
-
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>จำนวนนำเข้า</label>
-                                    <input type="number" name="importproduct_amount" class="form-control" placeholder="จำนวนผลิต" id="produceamount" onchange="plus()" required>
+                                    <label>ราคาต่อหน่วย</label>
+                                    <input type="number" name="import_price" class="form-control" placeholder="กรอกราคาต่อหน่วย" id="produceamount" required>
                                 </div>
+                                
                             </div>
 
                             <div class="form-group pull-in clearfix">
@@ -44,35 +56,39 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>วันที่นำเข้า</label>
-                                    <input name="importproduct_imdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_imdate" value="" data-date-format="yyyy-mm-dd">
+                                    <input name="import_date" class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_imdate" value="" data-date-format="yyyy-mm-dd">
                                 </div>
+
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ราคาต่อหน่วย</label>
-                                    <div class="input-group m-b">
-                                        <input type="number" name="importproduct_price" class="form-control" id="produceprice" onchange="plus()">
-                                        <span class="input-group-addon">BTH</span>
-                                    </div>
-
+                                    <label>จำนวนนำเข้า</label>
+                                    <input type="number" name="import_amount" class="form-control" placeholder="กรอกจำนวนนำเข้า" id="produceamount" required>
                                 </div>
+                                
                             </div>
 
                             <div class="form-group pull-in clearfix">
-                                <div class="col-sm-1"></div>
+                            <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>วันหมดอายุ</label>
-                                    <input name="importproduct_expdate" class="input-sm input-s datepicker-input form-control" size="16" type="text" name="importproduct_expdate" value="" data-date-format="yyyy-mm-dd">
+                                    <label>เวลา</label>
+                                    <div style="display: flex;">
+                                        <input id="timepkr" name="import_time" style="width: 100; float: left;" class="form-control" placeholder="HH:MM" />
+                                        <button type="button" class="btn btn-primary" onclick="showpickers('timepkr','24')" style="width: 40px; float: left;"><i class="fa fa-clock-o"></i></button>
+                                        <div class="timepicker"></div>
+                                    </div>
                                 </div>
+
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>ราคารวม</label>
-                                    <input name="importproduct_sumprice" type="number" class="form-control" id="sumprice" readonly>
-
+                                    <label>หมายเหตุ</label>
+                                    <textarea class="form-control" name="import_comment" rows="6" data-minwords="6" data-required="true" placeholder="หมายเหตุ" required style="resize: none;"></textarea>
                                 </div>
                             </div>
 
+
+
                             <div class="text-right">
-                            <input name="manufac_id" type="hidden" class="form-control" id="manufac_id" value="MN0">
+                                <input name="manufac_id" type="hidden" class="form-control" id="manufac_id" value="MN0">
                                 <button type="submit" class="btn btn-primary btn-s-xs" onclick="return confirm('บันทึกข้อมูลการนำเข้านี้')">บันทึก</button>
                             </div>
                         </div>

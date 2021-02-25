@@ -54,10 +54,11 @@
                             </tr>
                         </div>
                         <tbody>
+                        <?php $i =1 ?>
                             <?php foreach ($product_history as $product_history) { ?>
 
                                 <tr>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_id'] ?></a></td>
+                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $i ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_code'] ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_name'] ?></a></td>
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_volume'] ?></a></td>
@@ -67,6 +68,7 @@
                                     <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_amount'] ?></a></td>
                                     <td><a href="" style="color: <?php echo $product_history['stock_status_color'] ?>;"><?php echo $product_history['stock_status_value'] ?></a></td>
                                 </tr>
+                                <?php $i++ ?>
                             <?php } ?>
 
                         </tbody>
