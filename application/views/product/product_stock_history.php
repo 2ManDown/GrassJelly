@@ -1,3 +1,8 @@
+<style>
+th {
+    text-align: center;
+}
+</style>
 <section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
@@ -58,14 +63,14 @@
                             <?php foreach ($product_history as $product_history) { ?>
 
                                 <tr>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $i ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_code'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_name'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_volume'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_price'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_date'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_time'] ?></a></td>
-                                    <td><a href="<?php //echo site_url('') . $product_history[''] ?>"><?php echo $product_history['product_stock_amount'] ?></a></td>
+                                    <td style="text-align: center;"><?php echo $i ?></a></td>
+                                    <td><?php echo $product_history['product_code'] ?></a></td>
+                                    <td><?php echo $product_history['product_name'] ?></a></td>
+                                    <td><?php echo $product_history['product_volume'] ?></a></td>
+                                    <td style="text-align: center;"><?php echo $product_history['product_price'] ?></a></td>
+                                    <td style="text-align: center;"><?php echo $product_history['product_stock_date'] ?></a></td>
+                                    <td style="text-align: center;"><?php echo $product_history['product_stock_time'] ?></a></td>
+                                    <td style="text-align: center;"><?php echo $product_history['product_stock_amount'] ?></a></td>
                                     <td><a href="" style="color: <?php echo $product_history['stock_status_color'] ?>;"><?php echo $product_history['stock_status_value'] ?></a></td>
                                 </tr>
                                 <?php $i++ ?>

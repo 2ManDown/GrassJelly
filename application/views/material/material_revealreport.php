@@ -1,12 +1,8 @@
 <style>
-    th,
-    td {
+    th {
         text-align: center;
     }
 
-    /* table tr {
-    cursor: pointer; 
-    }*/
 </style>
 
 <section id="content" class="col-md-12">
@@ -42,11 +38,11 @@
 
                                 <a href="<?php echo site_url('material/material_order_detail/') . $reveal['order_material_code'] ?>">
                                     <tr>
-                                        <td><?php echo $i ?></td>
+                                        <td style="text-align: center;"><?php echo $i ?></td>
                                         <td><?php echo $reveal['order_material_code']  ?></td>
                                         
-                                        <td><?php echo $reveal['order_material_date']  ?></td>
-                                        <td><?php
+                                        <td style="text-align: center;"><?php echo $reveal['order_material_date']  ?></td>
+                                        <td style="text-align: center;"><?php
                                             $this->db->select('COUNT(order_detailmaterial_amount) as row');
                                             $this->db->from('gj_order_detailmaterial');
                                             $this->db->where('order_material_code', $reveal['order_material_code']);
@@ -73,9 +69,9 @@
 
                                             ?></td>
                                         <!-- class="btn btn-sm btn-icon btn-info btn-rounded" -->
-                                        <td><a href="<?php echo site_url('material/material_order_detail/') .
+                                        <td style="text-align: center;"><a href="<?php echo site_url('material/material_order_detail/') .
                                                             $reveal['order_material_code'] ?>"> <i class="glyphicon glyphicon-eye-open"></i> </a></td>
-                                        <td><a href="<?php echo site_url('report/revealbill/'). $reveal['order_material_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
+                                        <td style="text-align: center;"><a href="<?php echo site_url('report/revealbill/'). $reveal['order_material_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
                                         <?php $i++ ?>
                                     </tr>
                                 </a>

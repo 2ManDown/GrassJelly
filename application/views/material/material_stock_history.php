@@ -2,9 +2,6 @@
 th {
     text-align: center;
 }
-td {
-    text-align: center;
-}
 </style>
 <section id="content" class="col-md-12">
     <section class="vbox">
@@ -45,15 +42,14 @@ td {
                             <?php foreach ($material_history as $material_history) { ?>
 
                                 <tr>
-                                    <td><?php echo $i ?></td>
-
+                                    <td style="text-align: center;"><?php echo $i ?></td>
                                     <td><?php echo $material_history['material_code'] ?></td>
                                     <td><?php echo $material_history['material_name'] ?></td>
-                                    <td><?php echo $material_history['material_volume'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_history['material_volume'] ?></td>
                                     <td><?php echo $material_history['material_unit'] ?></td>
-                                    <td><?php echo $material_history['material_stock_date'] ?></td>
-                                    <td><?php echo $material_history['material_stock_time'] ?></td>
-                                    <td><?php echo $material_history['material_stock_amount'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_history['material_stock_date'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_history['material_stock_time'] ?></td>
+                                    <td style="text-align: center;"><?php echo $material_history['material_stock_amount'] ?></td>
                                     <td><a style="color: <?php echo $material_history['stock_status_color'] ?>;"><?php echo $material_history['stock_status_value'] ?></a></td>
                                 </tr>
                                 <?php $i++ ?>

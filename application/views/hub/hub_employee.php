@@ -1,21 +1,23 @@
 <style>
-th {
-    text-align: center;
-}
+    th {
+        text-align: center;
+    }
 </style>
-<section id="content">
+
+<section id="content" class="col-md-12">
     <section class="vbox">
         <section class="scrollable padder">
+
+
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    ข้อมูลพนักงาน
+                    รายชื่อพนักงาน
                 </header>
-                <div class="row wrapper text-right">
-                    <div class="col-sm-12 m-b-xs">
-                        <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="btn btn-s-lg btn-success btn-rounded">เพิ่มข้อมูลพนักงาน</a>
+                <div class="row wrapper">
+                    <div class="col-sm-5 m-b-xs" style="position: ralative; top: 15px; margin-bottom: 20px;">
+
                     </div>
                 </div>
-
 
                 <div class="table-responsive" style="margin-bottom: 0px;">
                     <table class="table table-striped b-t b-light table-bordered">
@@ -28,38 +30,37 @@ th {
                                 <th>ที่อยู่</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>อีเมล</th>
-                                <th>ศูนย์กระจาย</th>
-                                <th style="text-align: center;">จัดการ</th>
+                                
                             </tr>
                         </div>
-                        <?php $i = 1 ?>
                         <tbody>
-                        <?php foreach ($employee_list as $employee_list) { ?>
+                            <?php $i = 1 ?>
+                            <?php foreach ($hub_employee as $hub_employee) { ?>
+
                                 <tr>
-                                    <td style="text-align: center;"><?php echo $i ?></td>
-                                    <td><?php echo $employee_list['employee_name'] ?></td>
+                                <td style="text-align: center;"><?php echo $i ?></td>
+                                    <td><?php echo $hub_employee['employee_name'] ?></td>
                                     <td><?php 
-                                        if($employee_list['employee_sex'] == 1){
+                                        if($hub_employee['employee_sex'] == 1){
                                             echo "ชาย";
                                         }
-                                        elseif($employee_list['employee_sex'] == 2){
+                                        elseif($hub_employee['employee_sex'] == 2){
                                             echo "หญิง";
                                         }
                                         else{
                                             echo"ไม่มีข้อมูล";
                                         }
                                     ?></td>
-                                    <td style="text-align: center;"><?php echo $employee_list['employee_birthdate'] ?></td>
-                                    <td><?php echo $employee_list['employee_address'] ?></td>
-                                    <td style="text-align: center;"><?php echo $employee_list['employee_tel'] ?></td>
-                                    <td><?php echo $employee_list['employee_email'] ?></td>
-                                    <td><?php echo $employee_list['hub_name'] ?></td>
-                                    <td style="text-align: center;">
-                                        <a href="<?php echo site_url('employee/employee_manage/') . $employee_list['employee_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
-                                    </td>
+                                    <td style="text-align: center;"><?php echo $hub_employee['employee_birthdate'] ?></td>
+                                    <td><?php echo $hub_employee['employee_address'] ?></td>
+                                    <td style="text-align: center;"><?php echo $hub_employee['employee_tel'] ?></td>
+                                    <td><?php echo $hub_employee['employee_email'] ?></td>
+                                    
+                                        
                                 </tr>
-                                <?php $i++ ?>
-                        <?php } ?>
+                            <?php $i++;
+                            } ?>
+
                         </tbody>
                     </table>
                 </div>
