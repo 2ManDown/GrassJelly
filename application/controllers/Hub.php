@@ -12,6 +12,8 @@ class Hub extends CI_Controller{
     }
 
 	public function hub_stock($hub_id){
+		$data['hub'] = $this->Hub_model->hub_manage($hub_id);
+		$data['product'] = $this->Product_model->product_list();
 		$data['hub_stock'] = $this->Hub_model->hub_stock($hub_id);
 
 		$data['page'] = "hub/hub_stock";
