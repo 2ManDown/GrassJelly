@@ -20,10 +20,9 @@
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-4">
-                                    <label>รหัสใบเบิกของ</label>
+                                    <label>รหัสล็อตนำเข้าสินค้า</label>
                                     <?php
-                                    $this->db->where('order_status', 1);
-                                    $count_all = $this->db->count_all_results('gj_order');
+                                    $count_all = $this->db->count_all_results('gj_order_import');
                                     $countid =  "ODI" . ($count_all + 1);
                                     echo $countid;
                                     ?>
@@ -34,11 +33,11 @@
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
-                                    <label>รหัสสินค้า</label>
+                                    <label>สินค้า</label>
                                     <select name="product_code" class="form-control m-b " required>
                                         <option disabled selected>กรุณาเลือกสินค้า</option>
                                         <?php foreach ($product_list as $product_list) { ?>
-                                            <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' - ', $product_list['product_unit'] ?></option>
+                                            <option value="<?php echo $product_list['product_code'] ?>"><?php echo $product_list['product_code'], ' - ', $product_list['product_name'], ' / ', $product_list['product_unit'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -81,7 +80,7 @@
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
                                     <label>หมายเหตุ</label>
-                                    <textarea class="form-control" name="import_comment" rows="6" data-minwords="6" data-required="true" placeholder="หมายเหตุ" required style="resize: none;"></textarea>
+                                    <textarea class="form-control" name="import_comment" rows="6" data-minwords="6" data-required="true" placeholder="หมายเหตุ" style="resize: none;"></textarea>
                                 </div>
                             </div>
 

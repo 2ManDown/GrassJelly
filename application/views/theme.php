@@ -177,6 +177,12 @@ if ($userdata == 'admin') {
                           </a>
                         </li>
                         <li>
+                          <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการนำเข้าสินค้า</span>
+                          </a>
+                        </li>
+                        <li>
                           <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
                             <i class="i i-dot"></i>
                             <span>รายการเบิกออกสินค้า</span>
@@ -236,10 +242,9 @@ if ($userdata == 'admin') {
                             <span>ประวัติการนำเข้าและเบิกออก</span>
                           </a>
                         </li>
-
                     </li>
                   </ul>
-                  </li>
+                  
 
                   <!-- <div class="line dk hidden-nav-xs"></div> -->
                   <!-- <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Stock</div>

@@ -57,9 +57,8 @@ class Product_model extends CI_Model
                 'order_code' => $this->input->post('countid'),
                 'order_date' => $this->input->post('import_date'),
                 'order_time' => $this->input->post('import_time'),
-                'order_status' => 1,
             );
-            $this->db->insert('gj_order', $order);
+            $this->db->insert('gj_order_import', $order);
 
             $order_detail = array(
                 'order_code' => $this->input->post('countid'),
@@ -67,7 +66,7 @@ class Product_model extends CI_Model
                 'order_detail_price' => $this->input->post('import_price'),
                 'order_detail_amount' => $this->input->post('import_amount'),
             );
-            $this->db->insert('gj_order_detail', $order_detail);
+            $this->db->insert('gj_order_import_detail', $order_detail);
 
             /* echo '<pre>';
             print_r($import_stock);
@@ -117,18 +116,20 @@ class Product_model extends CI_Model
     public function product_importreport()
     {
         /* INNER JOIN */
-        $this->db->select('pd.product_code,pd.product_name,im.*');
+        /* $this->db->select('pd.product_code,pd.product_name,im.*');
         $this->db->from('gj_product as pd');
         $this->db->join('gj_importproduct as im', 'pd.product_code = im.product_code');
         $this->db->order_by('im.importproduct_id', 'desc');
 
         $query = $this->db->get();
         $query->result_array();
-        /* foreach($query as $a){
-            print_r($a);
-            echo '<pre>';
-        }
-        exit(); */
+        return $query->result_array(); */
+
+        $this->db->order_by('gj_order_import.order_date','desc');
+        $this->db->order_by('gj_order_import.order_code','desc');
+
+
+        $query = $this->db->get('gj_order_import');
         return $query->result_array();
     }
 
@@ -137,7 +138,7 @@ class Product_model extends CI_Model
     {
 
         /* LEFT JOIN */
-        $this->db->order_by('product_code','DESC');
+        $this->db->order_by('product_code');
         $query = $this->db->get('gj_product');
         return $query->result_array();
     }
