@@ -1,3 +1,22 @@
+<style>
+  th {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+  .my-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+</style>
+
 <section id="content">
   <section class="hbox stretch">
     <section>
@@ -9,180 +28,61 @@
               <small>Welcome back <i class="fa fa-map-marker fa-lg text-primary"></i> Khon Kaen, Thailand</small>
             </div>
 
-            <!--  -->
-
           </section>
-        
-          <div class="row bg-light dk m-b">
-            <div class="col-md-6 dker">
-              <section>
-                <header class="font-bold padder-v">
-                  <div class="pull-right">
-                    <div class="btn-group">
-                      <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
-                        <span class="dropdown-label">Week</span>
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu dropdown-select">
-                        <li><a href="#"><input type="radio" name="b">Month</a></li>
-                        <li><a href="#"><input type="radio" name="b">Week</a></li>
-                        <li><a href="#"><input type="radio" name="b">Day</a></li>
-                      </ul>
-                    </div>
-                    <a href="#" class="btn btn-default btn-icon btn-rounded btn-sm">Go</a>
-                  </div>
-                  Statistics
-                </header>
-                <div class="panel-body">
-                  <div id="flot-sp1ine" style="height:210px"></div>
-                </div>
-                <div class="row text-center no-gutter">
-                  <div class="col-xs-3">
-                    <span class="h4 font-bold m-t block">5,860</span>
-                    <small class="text-muted m-b block">Orders</small>
-                  </div>
-                  <div class="col-xs-3">
-                    <span class="h4 font-bold m-t block">10,450</span>
-                    <small class="text-muted m-b block">Sellings</small>
-                  </div>
-                  <div class="col-xs-3">
-                    <span class="h4 font-bold m-t block">21,230</span>
-                    <small class="text-muted m-b block">Items</small>
-                  </div>
-                  <div class="col-xs-3">
-                    <span class="h4 font-bold m-t block">7,230</span>
-                    <small class="text-muted m-b block">Customers</small>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            <div class="col-md-6">
-                      <section>
-                        <header class="font-bold padder-v">
-                          <div class="btn-group pull-right">
-                            <button data-toggle="dropdown" class="btn btn-sm btn-rounded btn-default dropdown-toggle">
-                              <span class="dropdown-label">Last 24 Hours</span> 
-                              <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-select">
-                                <li><a href="#"><input type="radio" name="a">Today</a></li>
-                                <li><a href="#"><input type="radio" name="a">Yesterday</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 24 Hours</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 7 Days</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last 30 days</a></li>
-                                <li><a href="#"><input type="radio" name="a">Last Month</a></li>
-                                <li><a href="#"><input type="radio" name="a">All Time</a></li>
-                            </ul>
-                          </div>
-                          Analysis
-                        </header>
-                        <div class="panel-body flot-legend">
-                          <div id="flot-pie-donut"  style="height:240px"></div>
-                        </div>
-                      </section>
-                    </div>
-
-          </div>
 
           <div class="row">
             <div class="col-md-6">
               <section class="panel panel-default">
                 <header class="panel-heading">
-                  การนำเข้า
+                  <h4><b>รายการสินค้าคงเหลือ</b></h4>
                 </header>
 
-                <div class="table-responsive">
+                <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                   <table class="table table-striped b-t b-light">
                     <thead>
                       <tr>
-                        <th class="th-sortable" data-toggle="class">รหัส
-                          <span class="th-sort">
-                            <i class="fa fa-sort-down text"></i>
-                            <i class="fa fa-sort-up text-active"></i>
-                            <i class="fa fa-sort"></i>
-                          </span>
-                        </th>
-                        <th>ชื่อ</th>
-                        <th>วันที่นำเข้า</th>
-                        <th>จำนวนนำเข้า</th>
-                        <th>ราคา/หน่วย</th>
-                        <th>ราคารวม</th>
+
+                        <th>รหัสสินค้า</th>
+                        <th>ชื่อสินค้า</th>
+                        <th>รายละเอียดสินค้า</th>
+                        <th>ขนาด</th>
+                        <th>จำนวนคงเหลือ</th>
 
                       </tr>
                     </thead>
                     </thead>
                     <tbody>
 
-                      <tr>
+                      <?php foreach ($product_productbalance as $product_productbalance) { ?>
 
-                        <td>1</td>
-                        <td>เฉาก๊วย</td>
-                        <td>Jul 25, 2013</td>
-                        <td>500</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
+                        <tr>
+                          <td><?php echo $product_productbalance['product_code'] ?></td>
+                          <td><?php echo $product_productbalance['product_name'] ?></td>
+                          <td><?php echo $product_productbalance['product_detail'] ?></td>
+                          <td><?php echo $product_productbalance['product_volume'] . " " . $product_productbalance['product_unit'] ?></td>
 
-                        <td>2</td>
-                        <td>เฉาก๊วย</td>
-                        <td>Jul 30, 2013</td>
-                        <td>200</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
+                          <?php
+                          $this->db->where('product_code', $product_productbalance['product_code']);
+                          $this->db->select_sum('product_stock_amount');
+                          $query = $this->db->get('gj_product_stock');
+                          $product_stock = $query->result_array();
+                          $product = number_format($product_stock[0]['product_stock_amount']);
+                          if ($product <= $product_productbalance['product_min']) { ?>
+                            <td style="color: red; text-align: center;">
+                            <?php } else { ?>
+                            <td style="color: #3BD028; text-align: center;">
+                            <?php } ?>
+                            <b><?php echo $product ?></b>
+                            </td>
+                        </tr>
+                      <?php } ?>
 
-                        <td>3</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 5, 2013</td>
-                        <td>100</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
                 <footer class="panel-footer">
                   <div class="row">
-                    <div class="col-sm-4.5 text-right text-center-xs">
+                    <!-- <div class="col-sm-12 text-right text-center-xs">
                       <ul class="pagination pagination-sm m-t-none m-b-none">
                         <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
                         <li><a href="#">1</a></li>
@@ -193,108 +93,154 @@
                         <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
+                </footer>
+              </section>
+            </div>
+
+
+
+
+
+            <div class="col-md-6">
+              <section class="panel panel-default">
+                <header class="panel-heading">
+                  <h4><b>รายการวัตถุดิบคงเหลือ</b></h4>
+                </header>
+
+                <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                  <table class="table table-striped b-t b-light">
+                    <thead>
+                      <tr>
+
+                        <th>รหัสวัตถุดิบ</th>
+                        <th>ชื่อวัตถุดิบ</th>
+                        <th>ปริมาตร / หน่วย</th>
+                        <th>จำนวนคงเหลือ</th>
+
+                      </tr>
+                    </thead>
+                    </thead>
+                    <tbody>
+
+                      <?php foreach ($material_materialbalance as $material_materialbalance) { ?>
+
+                        <tr>
+
+                          <td><?php echo $material_materialbalance['material_code'] ?></td>
+                          <td><?php echo $material_materialbalance['material_name'] ?></td>
+                          <td><?php echo $material_materialbalance['material_volume'] . " " . $material_materialbalance['material_unit'] ?></td>
+
+                          <?php
+                          $this->db->where('material_code', $material_materialbalance['material_code']);
+                          $this->db->select_sum('material_stock_amount');
+                          $query = $this->db->get('gj_material_stock');
+                          $material_stock = $query->result_array();
+                          $material = number_format($material_stock[0]['material_stock_amount']);
+
+                          if ($material <= $material_materialbalance['material_min']) { ?>
+                            <td style="color: red; text-align: center;">
+                            <?php } else { ?>
+                            <td style="color: #3BD028; text-align: center;">
+                            <?php } ?>
+
+                            <b><?php echo $material ?></b>
+                            </td>
+
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+                <footer class="panel-footer">
+                  
+                </footer>
+              </section>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-6">
+
+              <section class="panel panel-default">
+                <header class="panel-heading">
+                  <h4><b>รายการข้อมูลคู่ค้า</b></h4>
+                </header>
+
+                <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                  <table class="table table-striped b-t b-light">
+                    <thead>
+                      <tr>
+
+                        <th>รหัสร้านค้า</th>
+                        <th>ชื่อโรงงาน</th>
+                        <th>ที่อยู่</th>
+                        <th>เบอร์ติดต่อ</th>
+
+                      </tr>
+                    </thead>
+                    </thead>
+                    <tbody>
+                      <?php foreach ($supplier_list as $supplier_list) { ?>
+
+                        <tr>
+                          <td><?php echo $supplier_list['supplier_code']?></td>
+                          <td><?php echo $supplier_list['supplier_name']?></td>
+                          <td><?php echo $supplier_list['supplier_address']?></td>
+                          <td><?php echo $supplier_list['supplier_tel']?></td>
+                      </tr>
+
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+
+                <footer class="panel-footer">
+                  
                 </footer>
               </section>
             </div>
 
             <div class="col-md-6">
 
-              <section class="panel panel-default">
+            <section class="panel panel-default">
                 <header class="panel-heading">
-                  การส่งออก
+                  <h4><b>รายการข้อมูลศูนย์กระจาย</b></h4>
                 </header>
 
-                <div class="table-responsive">
+                <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                   <table class="table table-striped b-t b-light">
                     <thead>
                       <tr>
-                        <th class="th-sortable" data-toggle="class">รหัส
-                          <span class="th-sort">
-                            <i class="fa fa-sort-down text"></i>
-                            <i class="fa fa-sort-up text-active"></i>
-                            <i class="fa fa-sort"></i>
-                          </span>
-                        </th>
-                        <th>ชื่อ</th>
-                        <th>วันที่ส่งออก</th>
-                        <th>จำนวนส่งออก</th>
-                        <th>ราคา/หน่วย</th>
-                        <th>ราคารวม</th>
+
+                        <th>ชื่อศูนย์กระจาย</th>
+                        <th>ที่อยู่</th>
+                        <th>เบอร์ติดต่อ</th>
+                        <th>อีเมล</th>
 
                       </tr>
                     </thead>
                     </thead>
                     <tbody>
+                      
+                      <?php foreach ($hub_list as $hub_list) { ?>
 
-                      <tr>
+                        <tr>
+                          <td><?php echo $hub_list['hub_name']?></td>
+                          <td><?php echo $hub_list['hub_address']?></td>
+                          <td><?php echo $hub_list['hub_tel']?></td>
+                          <td><?php echo $hub_list['hub_email']?></td>
+                      </tr>
 
-                        <td>1</td>
-                        <td>เฉาก๊วย</td>
-                        <td>Jul 25, 2013</td>
-                        <td>500</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-
-                        <td>2</td>
-                        <td>เฉาก๊วย</td>
-                        <td>Jul 30, 2013</td>
-                        <td>200</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-
-                        <td>3</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 5, 2013</td>
-                        <td>100</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>เฉาก๊วย</td>
-                        <td>April 15, 2013</td>
-                        <td>300</td>
-                        <td>
-                          20
-                        </td>
-                        <td>5000</td>
-                      </tr>
+                      <?php } ?>
                     </tbody>
                   </table>
                 </div>
+  
+
                 <footer class="panel-footer">
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-sm-4.5 text-right text-center-xs">
                       <ul class="pagination pagination-sm m-t-none m-b-none">
                         <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
@@ -306,17 +252,17 @@
                         <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                 </footer>
               </section>
             </div>
-
           </div>
 
 
-          
-            
-          
+
+
+
+
 
           </div>
         </section>
