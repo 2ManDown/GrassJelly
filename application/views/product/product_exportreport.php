@@ -140,13 +140,3 @@
     </section>
     <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
 </section>
-
-
-<script>
-    $(document).ready(function() {
-        $('*[href]').click(function() {
-            window.location = $(this).data('href');
-            return false;
-        });
-    });
-</script>

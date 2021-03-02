@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/chosen/chosen.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/spinner/jquery.bootstrap-touchspin.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/typehead/typehead.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo base_url() ?>maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <!--  <link rel="stylesheet" href="<?php echo base_url() ?>maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/responsive.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/print.css" media="print">
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/timepicker.css">
@@ -107,7 +107,7 @@ if ($userdata == 'admin') {
         <aside class="bg-black aside-md hidden-print hidden-xs" id="nav">
           <section class="vbox">
             <section class="w-f scrollable">
-              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+              <div data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
                 <div class="clearfix wrapper dk nav-user hidden-xs">
                   <div class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -151,7 +151,7 @@ if ($userdata == 'admin') {
                     <div class="line dk hidden-nav-xs"></div>
                     <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product & Stock</div>
                     <li>
-                    <a href="#" class="auto">
+                      <a href="#" class="auto">
                         <span class="pull-right text-muted">
                           <i class="i i-circle-sm-o text"></i>
                           <i class="i i-circle-sm text-active"></i>
@@ -192,10 +192,10 @@ if ($userdata == 'admin') {
                       </ul>
                     </li>
 
-                    
+
 
                     <div class="line dk hidden-nav-xs"></div>
-                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Materail & Stock</div>
+                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Material & Stock</div>
                     <li>
                       <a href="#" class="auto">
                         <span class="pull-right text-muted">
@@ -318,7 +318,7 @@ if ($userdata == 'admin') {
                   </li>
 
                   <div class="line dk hidden-nav-xs"></div>
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">supplier</div>
+                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Supplier</div>
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
