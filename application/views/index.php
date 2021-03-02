@@ -2,19 +2,23 @@
   th {
     text-align: center;
     font-size: 12px;
+    position: sticky; 
+    top: -1px;
   }
 
   td {
     font-size: 12px;
   }
+
   .my-custom-scrollbar {
-position: relative;
-height: 200px;
-overflow: auto;
-}
-.table-wrapper-scroll-y {
-display: block;
-}
+    position: relative;
+    height: 200px;
+    overflow: auto;
+  }
+
+  .table-wrapper-scroll-y {
+    display: block;
+  }
 </style>
 
 <section id="content">
@@ -110,17 +114,17 @@ display: block;
 
                 <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                   <table class="table table-striped b-t b-light">
-                    <thead>
-                      <tr>
+                      <thead>
+                        <tr>
 
-                        <th>รหัสวัตถุดิบ</th>
-                        <th>ชื่อวัตถุดิบ</th>
-                        <th>ปริมาตร / หน่วย</th>
-                        <th>จำนวนคงเหลือ</th>
+                          <th>รหัสวัตถุดิบ</th>
+                          <th>ชื่อวัตถุดิบ</th>
+                          <th>ปริมาตร / หน่วย</th>
+                          <th>จำนวนคงเหลือ</th>
 
-                      </tr>
-                    </thead>
-                    </thead>
+                        </tr>
+                      </thead>
+                      </thead>
                     <tbody>
 
                       <?php foreach ($material_materialbalance as $material_materialbalance) { ?>
@@ -153,7 +157,7 @@ display: block;
                   </table>
                 </div>
                 <footer class="panel-footer">
-                  
+
                 </footer>
               </section>
             </div>
@@ -185,11 +189,11 @@ display: block;
                       <?php foreach ($supplier_list as $supplier_list) { ?>
 
                         <tr>
-                          <td><?php echo $supplier_list['supplier_code']?></td>
-                          <td><?php echo $supplier_list['supplier_name']?></td>
-                          <td><?php echo $supplier_list['supplier_address']?></td>
-                          <td><?php echo $supplier_list['supplier_tel']?></td>
-                      </tr>
+                          <td><?php echo $supplier_list['supplier_code'] ?></td>
+                          <td><?php echo $supplier_list['supplier_name'] ?></td>
+                          <td><?php echo $supplier_list['supplier_address'] ?></td>
+                          <td><?php echo $supplier_list['supplier_tel'] ?></td>
+                        </tr>
 
                       <?php } ?>
                     </tbody>
@@ -197,14 +201,14 @@ display: block;
                 </div>
 
                 <footer class="panel-footer">
-                  
+
                 </footer>
               </section>
             </div>
 
             <div class="col-md-6">
 
-            <section class="panel panel-default">
+              <section class="panel panel-default">
                 <header class="panel-heading">
                   <h4><b>รายการข้อมูลศูนย์กระจาย</b></h4>
                 </header>
@@ -223,21 +227,21 @@ display: block;
                     </thead>
                     </thead>
                     <tbody>
-                      
+
                       <?php foreach ($hub_list as $hub_list) { ?>
 
                         <tr>
-                          <td><?php echo $hub_list['hub_name']?></td>
-                          <td><?php echo $hub_list['hub_address']?></td>
-                          <td><?php echo $hub_list['hub_tel']?></td>
-                          <td><?php echo $hub_list['hub_email']?></td>
-                      </tr>
+                          <td><?php echo $hub_list['hub_name'] ?></td>
+                          <td><?php echo $hub_list['hub_address'] ?></td>
+                          <td><?php echo $hub_list['hub_tel'] ?></td>
+                          <td><?php echo $hub_list['hub_email'] ?></td>
+                        </tr>
 
                       <?php } ?>
                     </tbody>
                   </table>
                 </div>
-  
+
 
                 <footer class="panel-footer">
                   <!-- <div class="row">
