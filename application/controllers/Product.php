@@ -48,6 +48,7 @@ class Product extends CI_Controller
 		// exit();
 
 		$data['page'] = "product/product_productbalance";
+		
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
