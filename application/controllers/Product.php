@@ -141,12 +141,10 @@ class Product extends CI_Controller
 
 	public function product_importreport()
 	{
-		$data['product_importreport'] = $this->Product_model->product_importreport();
+		$data['product_import'] = $this->Product_model->product_importreport();
 
-		$data['page'] = "product/product_reportim";
+		$data['page'] = "product/product_importreport";
 		$this->checksession($data);
-		//$this->load->view('theme', $data);
-
 	}
 
 	public function product_import()

@@ -16,13 +16,12 @@
                             ออกใบส่งออกสินค้า
                         </header>
                         <!-- <form data-validate="parsley" action="#"> -->
-                        <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"' ,'id="form-valid"') ?>
+                        <?php echo form_open('product/product_orderinsert', 'data-validate="parsley"', 'id="form-valid"') ?>
                         <div class="panel-body">
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-4">
                                     <label>รหัสใบเบิกของ</label>
                                     <?php
-                                    $this->db->where('order_status', 2);
                                     $count_all = $this->db->count_all_results('gj_order');
                                     $countid =  "ODE" . ($count_all + 1);
                                     echo $countid;
@@ -100,7 +99,7 @@
                                                 <td><?php echo $product_list['product_unit'] ?></td>
                                                 <td><?php echo $product_list['product_detail'] ?></td>
                                                 <td><input type="hidden" name="price[<?php echo $i ?>]" value="<?php echo $product_list['product_price'] ?>"><b><?php echo $product_list['product_price'] ?></b></td>
-                                               
+
                                                 <?php
                                                 $this->db->where('product_code', $product_list['product_code']);
                                                 $this->db->select_sum('product_stock_amount');
@@ -118,7 +117,7 @@
                                                     <td>
                                                         <div>
                                                             <input style="text-align: center;" class="form-control error rounded" type="number" name="amount[<?php echo $i ?>]" id="amount" value="">
-                                                            
+
                                                         </div>
                                                     </td>
                                             </tr>

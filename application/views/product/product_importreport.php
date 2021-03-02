@@ -1,5 +1,6 @@
 <style>
-    th{
+    th,
+    td {
         text-align: center;
     }
 
@@ -13,7 +14,7 @@
         <section class="scrollable padder">
             <section class="panel panel-default">
                 <header class="panel-heading font-bold" style="font-size: 23px; color:dimgray;">
-                    รายการเบิกออกสินค้า
+                    รายการนำเข้าสินค้า
                 </header>
                 <div class="row wrapper">
                     <div class="col-sm-5 m-b-xs" style="position: ralative; top: 15px; margin-bottom: 20px;">
@@ -47,53 +48,40 @@
                         <div>
                             <tr>
                                 <th>#</th>
-                                <th>รหัสเบิกออก</th>
-                                <th>ศูนย์กระจาย</th>
-                                <th>วันที่เบิกออก</th>
-                                <th>จำนวนสินค้า</th>
+                                <th>รหัสล็อตสินค้า</th>
+                                <th>วันที่นำเข้า</th>
+                                <th>เวลานำเข้า</th>
+                                <th>จำนวนนำเข้า</th>
+                                <th>ราคาต่อหน่วย</th>
                                 <th>ราคารวม</th>
-                                <th>ผู้เบิกออกสินค้า</th>
-                                <th>ดูข้อมูลการเบิกออก</th>
-                                <th>ใบส่งออก</th>
+                                <th>ผู้นำเข้าสินค้า</th>
                             </tr>
                         </div>
                         <tbody>
                             <?php $i = 1 ?>
-                            <?php foreach ($export as $export) { ?>
+                            <?php foreach ($product_import as $export) { ?>
 
                                 <a href="<?php echo site_url('product/product_order_detail/') . $export['order_code'] ?>">
                                     <tr>
-                                        <td style="text-align: center;"><?php echo $i ?></td>
+                                        <td><?php echo $i ?></td>
                                         <td><?php echo $export['order_code']  ?></td>
-                                        <td><?php $export['hub_id'];
-                                            $this->db->select('hub_name');
-                                            $this->db->where('hub_id', $export['hub_id']);
-                                            $query = $this->db->get('gj_hub');
-                                            $user_hub = $query->result_array();
-                                            foreach ($user_hub as $hub) {
-                                                echo $hub['hub_name'];
-                                            } ?></td>
+                                        <td><?php echo $export['order_date']  ?></td>
+                                        <td><?php echo $export['order_time']  ?></td>
 
-                                        <td style="text-align: center;"><?php echo $export['order_date']  ?></td>
-                                        <td style="text-align: center;"><?php
-                                            $this->db->select('COUNT(order_detail_amount) as row');
-                                            $this->db->from('gj_order_detail');
+                                        <?php 
+                                            $this->db->select('order_detail_amount,order_detail_price');
                                             $this->db->where('order_code', $export['order_code']);
-                                            $query = $this->db->get();
-                                            $row = $query->result_array();
-                                            echo $row[0]['row'];
-                                            //echo $sql = $this->db->last_query();
-                                            ?></td>
+                                            $query = $this->db->get('gj_order_import_detail');
+                                            $amount_price = $query->result_array();
+                                            foreach($amount_price as $amount_price){
+                                        ?>
 
-                                        <td style="text-align: center;"><?php
-                                            $this->db->where('order_code', $export['order_code']);
-                                            $this->db->select('order_detail_price,order_detail_amount');
-                                            $query = $this->db->get('gj_order_detail');
-                                            $order_price = $query->result_array();
-                                            //echo number_format($order_price[0]['order_detail_price']);
+                                        <td><?php echo $amount_price['order_detail_amount'] ?></td>
+                                        <td><?php echo $amount_price['order_detail_price'] ?></td>
+                                        <td><?php echo $amount_price['order_detail_price'] * $amount_price['order_detail_amount'] ?></td>
+                                        <?php } ?> 
 
-                                            ?></td>
-
+                                        
                                         <td><?php
                                             $this->db->where('order_code', $export['order_code']);
                                             $this->db->select_avg('product_stock_user');
@@ -110,10 +98,7 @@
                                             }
 
                                             ?></td>
-                                        <!-- class="btn btn-sm btn-icon btn-info btn-rounded" -->
-                                        <td style="text-align: center;"><a href="<?php echo site_url('product/product_order_detail/') .
-                                                            $export['order_code'] ?>"> <i class="glyphicon glyphicon-eye-open"></i> </a></td>
-                                        <td style="text-align: center;"><a href="<?php echo site_url('report/exportbill/'). $export['order_code'] ?>"><i class="glyphicon glyphicon-print"></i></td>
+
                                         <?php $i++ ?>
                                     </tr>
                                 </a>
@@ -122,19 +107,6 @@
                     </table>
                 </div>
                 <footer class="panel-footer">
-                    <!-- <div class="row">
-                        <div class="col-sm-7 text-right text-center-xs">
-                            <ul class="pagination pagination-sm m-t-none m-b-none">
-                                <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-                            </ul>
-                        </div>
-                    </div> -->
                 </footer>
             </section>
         </section>
