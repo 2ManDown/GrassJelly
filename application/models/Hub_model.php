@@ -17,7 +17,7 @@ class Hub_model extends CI_Model
 
     public function hub_stock($hub_id)
     {
-        $query = $this->db->get_where('gj_product', array('hub_id' => $hub_id));
+        $query = $this->db->get_where('gj_product_stock', array('hub_id' => $hub_id));
         return $query->result_array();
     }
 
