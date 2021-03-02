@@ -168,17 +168,3 @@
         sumresult.value = result;
     }
 </script>
-
-<script>
-    const form = document.getElementById('form-valid');
-    const amount = document.getElementById('amount');
-
-    form.addEventListener('submit',(e) =>{
-        e.preventDefault();
-
-        alert('Click!');
-    });
-    function checkinputs(){
-        
-    }
-</script>
