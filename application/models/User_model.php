@@ -7,13 +7,13 @@ class User_model extends CI_Model
     public function user_list()
     {
 
-
-        if ($this->session->userdata("status") ==  "admin") {
+        if ($this->session->userdata("status") ==  "admin" || $this->session->userdata("status") ==  "supplier" || $this->session->userdata("status") ==  "factory") {
             $this->db->select('*');
             $this->db->from('gj_user');
             $this->db->where('user_status', 'factory');
             $this->db->or_where('user_status', 'supplier');
         }
+
         $query = $this->db->get();
         return $query->result_array();
     }

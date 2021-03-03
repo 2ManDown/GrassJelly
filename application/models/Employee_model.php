@@ -13,10 +13,17 @@ class Employee_model extends CI_Model
 
     public function employee_list()
     {
-        $this->db->order_by('gj_employee.employee_name', 'ASC');
-        $this->db->join('gj_hub', 'gj_hub.hub_id = gj_employee.hub_id');
-
-        $query = $this->db->get('gj_employee');
+        if($this->session->userdata('status') == 'admin') {
+            $this->db->order_by('gj_employee.employee_name', 'ASC');
+            $this->db->join('gj_hub', 'gj_hub.hub_id = gj_employee.hub_id');
+        }
+        else if ($this->session->userdata('status') == 'supplier') {
+            
+            $this->db->where('hub_id', $this->session->userdata('hub'));
+        }
+        $this->db->select('*');
+        $this->db->from('gj_employee');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -35,7 +42,8 @@ class Employee_model extends CI_Model
     }
 
     /* UPDATE */
-    public function employee_update_db(){
+    public function employee_update_db()
+    {
         $input = array(
             'employee_id' => $this->input->post('employee_id'),
             'employee_name' => $this->input->post('employee_name'),
@@ -45,7 +53,7 @@ class Employee_model extends CI_Model
             'employee_tel' => $this->input->post('employee_tel'),
             'employee_email' => $this->input->post('employee_email'),
             'hub_id' => $this->input->post('hub_id'),
-  
+
         );
         $this->db->where('employee_id', $input['employee_id']);
         $this->db->update('gj_employee', $input);
