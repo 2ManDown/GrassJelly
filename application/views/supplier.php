@@ -49,7 +49,7 @@ if ($userdata == 'admin') {
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="fa fa-bars"></i>
         </a>
-        <a href="<?php echo site_url('') ?>" class="navbar-brand">
+        <a href="" class="navbar-brand">
           <img src="<?php echo base_url() ?>asset/images/logo.png" class="m-r-sm" alt="scale">
           <span class="hidden-nav-xs">Grass Jelly</span>
         </a>
@@ -69,7 +69,16 @@ if ($userdata == 'admin') {
         </div>
       </form>
 
+
+
       <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="dropdown">
+          <a href="<?php echo site_url('user/user_list') ?>">
+            <!-- class="dropdown-toggle" data-toggle="dropdown" -->
+            <b>จัดการสิทธิ์ข้อมูลผู้ใช้งานระบบ</b>
+          </a>
+        </li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="thumb-sm avatar pull-left">
@@ -97,7 +106,7 @@ if ($userdata == 'admin') {
         <aside class="bg-black aside-md hidden-print hidden-xs" id="nav">
           <section class="vbox">
             <section class="w-f scrollable">
-              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+              <div data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
                 <div class="clearfix wrapper dk nav-user hidden-xs">
                   <div class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -120,7 +129,7 @@ if ($userdata == 'admin') {
                       </li>
                       <li class="divider"></li>
                       <li>
-                        <a href="<?php echo site_url('user/user_logout') ?>">Logout</a> <!-- data-toggle="ajaxModal" -->
+                        <a href="<?php echo site_url('user/user_login') ?>">Logout</a> <!-- data-toggle="ajaxModal" -->
                       </li>
                     </ul>
                   </div>
@@ -131,15 +140,15 @@ if ($userdata == 'admin') {
                   <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Overview</div>
                   <ul class="nav nav-main" data-ride="collapse">
                     <li class="active">
-                      <a href="<?php echo site_url('home/supplier') ?>" class="auto">
+                      <a href="<?php echo site_url('home/admin') ?>" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">Overview</span>
                       </a>
                     </li>
 
-                    <!-- <div class="line dk hidden-nav-xs"></div> -->
-                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product</div>
+                    <div class="line dk hidden-nav-xs"></div>
+                    <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Product & Stock</div>
                     <li>
                       <a href="#" class="auto">
                         <span class="pull-right text-muted">
@@ -149,100 +158,47 @@ if ($userdata == 'admin') {
                         <!-- <b class="badge bg-danger pull-right">4</b> -->
                         <i class="i i-stack icon">
                         </i>
-                        <span class="font-bold">ข้อมูลสินค้า</span>
+                        <span class="font-bold">สินค้าและคลังสินค้า</span>
                       </a>
+
                       <ul class="nav dk">
                         <li>
                           <a href="<?php echo site_url('product/product_list') ?>" class="auto">
                             <i class="i i-dot"></i>
-
                             <span>รายการข้อมูลสินค้า</span>
                           </a>
                         </li>
+
+                        <li>
+                          <a href="<?php echo site_url('product/product_productbalance') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการสินค้าคงเหลือ</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการนำเข้าสินค้า</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>รายการเบิกออกสินค้า</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="<?php echo site_url('product/product_stock_history') ?>" class="auto">
+                            <i class="i i-dot"></i>
+                            <span>ประวัติการนำเข้าและเบิกออก</span>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
-                    <li>
-                      <a href="<?php echo site_url('product/product_insert') ?>" class="auto">
-                        <i class="i i-dot"></i>
-
-                        <span>เพิ่มข้อมูลสินค้า</span>
-                      </a>
-                    </li>
-                  </ul>
-                  </li>
-
-                  <!-- <div class="line dk hidden-nav-xs"></div> -->
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Stock</div>
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-                      <!--  <b class="badge bg-danger pull-right">4</b> -->
-                      <i class="i i-stack icon">
-                      </i>
-                      <span class="font-bold">ข้อมูลคลังสินค้า</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('product/product_balancesupplier') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายการสินค้าคงคลัง</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_importreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการนำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportreport') ?>" class="auto">
-                          <i class="i i-dot"></i>
-
-                          <span>รายงานการส่งออกสินค้า</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <!-- <div class="line dk hidden-nav-xs"></div> -->
-                  <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Account</div>
-
-                  <li>
-                    <a href="#" class="auto">
-                      <span class="pull-right text-muted">
-                        <i class="i i-circle-sm-o text"></i>
-                        <i class="i i-circle-sm text-active"></i>
-                      </span>
-
-                      <i class="fa fa-plane">
-                      </i>
-                      <span class="font-bold">การนำเข้าและส่งออกสินค้า</span>
-                    </a>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('product/product_import') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>นำเข้าสินค้า</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="<?php echo site_url('product/product_exportbill') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>ส่งออกสินค้า</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-
 
                   <div class="line dk hidden-nav-xs"></div>
                   <div class="text-muted text-xs hidden-nav-xs padder m-t-sm m-b-sm">Expired</div>
-
                   <li>
                     <a href="#" class="auto">
                       <span class="pull-right text-muted">
@@ -279,19 +235,13 @@ if ($userdata == 'admin') {
                       <li>
                         <a href="<?php echo site_url('employee/employee_info') ?>" class="auto">
                           <i class="i i-dot"></i>
-                          <span>ข้อมูลพนักงาน</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <ul class="nav dk">
-                      <li>
-                        <a href="<?php echo site_url('employee/employee_addinfo') ?>" class="auto">
-                          <i class="i i-dot"></i>
-                          <span>เพิ่มข้อมูลพนักงาน</span>
+                          <span>รายการข้อมูลพนักงาน</span>
                         </a>
                       </li>
                     </ul>
                   </li>
+
+                  
 
                 </nav>
                 <!-- / nav -->
@@ -299,7 +249,6 @@ if ($userdata == 'admin') {
             </section>
 
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
-
               <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
                 <i class="i i-circleleft text"></i>
                 <i class="i i-circleright text-active"></i>
