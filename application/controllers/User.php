@@ -39,7 +39,7 @@ class User extends CI_Controller
                         'email' => $value['user_email'],
                         'tel' => $value['user_tel'],
                         'status' => $value['user_status'],
-        
+                        'hub' => $value['hub_id']
                     );
                     $this->session->set_userdata($userdata);
         

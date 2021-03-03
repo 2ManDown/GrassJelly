@@ -16,7 +16,11 @@ class Employee_model extends CI_Model
         $this->db->order_by('gj_employee.employee_name', 'ASC');
         $this->db->join('gj_hub', 'gj_hub.hub_id = gj_employee.hub_id');
 
-        $query = $this->db->get('gj_employee');
+
+        $this->db->select('*');
+        $this->db->from('gj_employee');
+        //$this->db->where('hub_id',$this->session->userdata('hub'));
+        $query = $this->db->get();
         return $query->result_array();
     }
 
