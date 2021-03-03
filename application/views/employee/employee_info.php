@@ -28,7 +28,7 @@ th {
                                 <th>ที่อยู่</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>อีเมล</th>
-                                <th>ศูนย์กระจาย</th>
+                                <?php if($this->session->userdata('status') == 'admin'){?> <th>ศูนย์กระจาย</th> <?php } ?>
                                 <th style="text-align: center;">จัดการ</th>
                             </tr>
                         </div>
@@ -53,7 +53,7 @@ th {
                                     <td><?php echo $employee_list['employee_address'] ?></td>
                                     <td style="text-align: center;"><?php echo $employee_list['employee_tel'] ?></td>
                                     <td><?php echo $employee_list['employee_email'] ?></td>
-                                    <td><?php echo $employee_list['hub_name'] ?></td>
+                                    <?php if($this->session->userdata('status') == 'admin'){?><td><?php echo $employee_list['hub_name'] ?></td> <?php } ?>
                                     <td style="text-align: center;">
                                         <a href="<?php echo site_url('employee/employee_manage/') . $employee_list['employee_id'] ?>" class="btn btn-sm btn-icon btn-info btn-rounded" title="แก้ไขข้อมูล"><i class="fa fa-pencil"></i></a>
                                     </td>
