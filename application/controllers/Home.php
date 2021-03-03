@@ -11,7 +11,6 @@ class Home extends CI_Controller {
 	public function admin(){
 
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
-		$data['export'] = $this->Product_model->product_exportrepot();
 		$data['material_materialbalance'] = $this->Material_model->material_materialbalance();
 		$data['supplier_list'] = $this->Supplier_model->supplier_list();
 		$data['hub_list'] = $this->Hub_model->hub_list();
@@ -21,12 +20,24 @@ class Home extends CI_Controller {
 	}
 
 	public function factory(){
-	 	$data['page'] = "index";
+		$data['fac_info'] = $this->Fac_model->fac_list();
+		$data['product_productbalance'] = $this->Product_model->product_productbalance();
+		$data['material_materialbalance'] = $this->Material_model->material_materialbalance();
+		$data['supplier_list'] = $this->Supplier_model->supplier_list();
+		$data['hub_list'] = $this->Hub_model->hub_list();
+
+	 	$data['page'] = "overview/overview_factory";
 		$this->load->view('factory',$data); 
 	}
 
 	public function supplier(){
-	 	$data['page'] = "index";
+		
+		$data['product_history'] = $this->Product_model->product_stock_history();
+		$data['product_productbalance'] = $this->Product_model->product_productbalance();
+		
+		$data['hub_list'] = $this->Hub_model->hub_list();
+
+	 	$data['page'] = "overview/overview_supplier";
 		$this->load->view('supplier',$data); 
 	}
 }
