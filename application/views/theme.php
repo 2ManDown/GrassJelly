@@ -159,7 +159,7 @@ if ($userdata == 'admin') {
                         <!-- <b class="badge bg-danger pull-right">4</b> -->
                         <i class="i i-stack icon">
                         </i>
-                        <span class="font-bold">ข้อมูลสินค้าและคลังสินค้า</span>
+                        <span class="font-bold">สินค้าและคลังสินค้า</span>
                       </a>
 
                       <ul class="nav dk">
@@ -211,7 +211,7 @@ if ($userdata == 'admin') {
                         <!-- <b class="badge bg-danger pull-right">4</b> -->
                         <i class="i i-stack icon">
                         </i>
-                        <span class="font-bold">ข้อมูลวัตถุดิบและคลังวัตถุดิบ</span>
+                        <span class="font-bold">วัตถุดิบและคลังวัตถุดิบ</span>
                       </a>
 
                       <ul class="nav dk">
