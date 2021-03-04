@@ -49,6 +49,7 @@ class Product_model extends CI_Model
                 'product_stock_comment' => $this->input->post('import_comment'),
                 'product_stock_user' => $this->session->userdata('id'),
                 'order_code' => $this->input->post('countid'),
+                'hub_id' => $this->session->userdata('hub'),
             );
 
             $this->db->insert('gj_product_stock', $import_stock);
@@ -57,6 +58,7 @@ class Product_model extends CI_Model
                 'order_code' => $this->input->post('countid'),
                 'order_date' => $this->input->post('import_date'),
                 'order_time' => $this->input->post('import_time'),
+                'hub_id' => $this->session->userdata('hub'),
             );
             $this->db->insert('gj_order_import', $order);
 

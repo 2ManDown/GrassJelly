@@ -35,7 +35,7 @@
                         </div>
                         <label class="col-sm-1 control-label">บรรจุภัณฑ์</label>
                         <div class="col-sm-4">
-                            <input type="text" name="product_unit" placeholder="กรอกข้อมูลบรรจุภัณฑ์" class="form-control">
+                            <input type="text" name="product_unit" placeholder="กรอกข้อมูลบรรจุภัณฑ์" class="form-control" maxlength="7">
                         </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
