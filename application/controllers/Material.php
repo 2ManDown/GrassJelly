@@ -177,22 +177,11 @@ class Material extends CI_Controller
 	} */
 
 
-	public function checksession($data){
-		if($this->session->userdata('status') == 'admin'){
-
-			$this->load->view('theme', $data);
-		}else if($this->session->userdata('status') == 'factory'){
-
-			$this->load->view('factory', $data);
-		}else{
-			$this->load->view('supplier', $data);
-		}
-	}
-
+	
 	public function material_manage($material_manage)
 	{
 		$data['material_manage'] = $this->Material_model->material_manage($material_manage);
-
+		
 		$data['page'] = "material/material_manage";
 		$this->checksession($data);
 	}
@@ -202,11 +191,11 @@ class Material extends CI_Controller
 		$this->Material_model->material_delete($material_manage);
 		redirect('material/material_listinfo');
 	}
-
+	
 	/* UPDATE of Controller */
 	public function material_update_db(){
 		
-        $this->Material_model->material_update_db();
+		$this->Material_model->material_update_db();
         redirect('material/material_listinfo');
 	}
 
@@ -217,11 +206,11 @@ class Material extends CI_Controller
 			'order_material_date' => $this->input->post('reveal_date'),
 			'order_material_time' => $this->input->post('reveal_time'),
 		);
-
+		
 		//Insert OrderBill
 		$this->Material_model->material_orderinsert($input);
-
-
+		
+		
 		$i = 0;
 		foreach ($this->input->post('amount') as $checkbox) {
 			if (@$this->input->post('checkbox')[$i] != "") {
@@ -229,7 +218,7 @@ class Material extends CI_Controller
 					'order_material_code' => $this->input->post('countid'),
 					'material_code' => $this->input->post('checkbox')[$i],
 					'order_detailmaterial_amount' => $this->input->post('amount')[$i],
-
+					
 				);
 				//Insert Order Detail
 				$this->Material_model->material_orderdetail_insert($order_detail);
@@ -250,7 +239,7 @@ class Material extends CI_Controller
 					
 					'material_stock_user' => $this->session->userdata('id'),
 					'order_material_code' => $this->input->post('countid'),
-
+					
 				);
 				/* echo '<pre>';
 				print_r($product_stock); */
@@ -258,27 +247,41 @@ class Material extends CI_Controller
 			}
 			$i++;
 		}
-
+		
 		redirect('material/material_stock_history');
 	}
-
+	
 	public function material_revealreport()
 	{
 		$data['reveal'] = $this->Material_model->material_revealreport();
-
+		
 		$data['page'] = "material/material_revealreport";
 		$this->checksession($data);
 		//$this->load->view('theme', $data);
 	}
-
+	
 	public function material_order_detail($order_code)
 	{
 		$data['orderdetail'] = $this->Material_model->material_order_detail($order_code);
-	
+		
 		$data['page'] = "material/material_orderdetail";
 		$this->checksession($data);
 	}
-
-
-
+	
+	public function checksession($data){
+		if ($this->session->userdata('status') == 'admin') {
+			$this->load->view('theme', $data);
+		}
+		else if ($this->session->userdata('status') == 'factory') {
+			$this->load->view('factory', $data);
+		} 
+		else if ($this->session->userdata('status') == 'supplier') {
+			$this->load->view('supplier', $data);
+		}
+		else {
+			$this->load->view('mobile_page', $data);
+		}
+	}
+	
+	
 }

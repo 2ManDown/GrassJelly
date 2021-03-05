@@ -64,14 +64,17 @@ class Employee extends CI_Controller
 	}
 	
 	public function checksession($data){
-		if($this->session->userdata('status') == 'admin'){
-			
+		if ($this->session->userdata('status') == 'admin') {
 			$this->load->view('theme', $data);
-		}else if($this->session->userdata('status') == 'factory'){
-			
+		}
+		else if ($this->session->userdata('status') == 'factory') {
 			$this->load->view('factory', $data);
-		}else{
+		} 
+		else if ($this->session->userdata('status') == 'supplier') {
 			$this->load->view('supplier', $data);
+		}
+		else {
+			$this->load->view('mobile_page', $data);
 		}
 	}
 }

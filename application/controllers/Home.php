@@ -34,10 +34,16 @@ class Home extends CI_Controller {
 		
 		$data['product_history'] = $this->Product_model->product_stock_history();
 		$data['product_productbalance'] = $this->Product_model->product_productbalance();
-		
 		$data['hub_list'] = $this->Hub_model->hub_list();
 
 	 	$data['page'] = "overview/overview_supplier";
 		$this->load->view('supplier',$data); 
+	}
+
+	public function mobile_page(){
+		
+		/* echo "fffff"; exit(); */
+	 	$data['page'] = "mobile/mobile_index";
+		$this->load->view('mobile_page',$data ); 
 	}
 }

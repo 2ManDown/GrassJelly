@@ -1,0 +1,70 @@
+
+.fa-arrow-left{
+    color: #333;
+    ;
+}
+
+.fa-arrow-left:hover{
+    color: #1aae88;
+}
+
+.hname{
+    color: #1aae88;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    
+}
+
+h3{
+    padding: 0px 0px 0px 15px;
+    color: #1aae88;
+}
+
+.button-group{
+    display: flex;
+    text-align: center;
+    /* background-color: red; */
+}
+.btn-a{
+    
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    height: 100%; 
+    font-size: 24px; 
+    padding: 20px 16px; 
+    border-radius: 8px;
+    background-color: #fff;
+    
+    
+}
+
+.btn-a:hover{
+    background-color: #1aae88;  
+    color: #ffff;
+}
+
+/* .btn-immobile{
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    font-size: 18px; 
+    padding: 10px 8px;
+    background-color: #1aae88;
+    border-radius: 8px;
+    color: #fff;
+}
+.btn-immobile:hover{
+    background-color: #147960;
+    color: #fff;
+} */
+
+.input-m{
+    border-radius: 5px;
+}
+.input-m:focus{
+    outline: none;
+    border: 1.5px solid #1aae88; 
+}
+
