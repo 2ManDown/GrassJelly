@@ -53,5 +53,6 @@ $route['default_controller'] = 'Home';
 $route['admin'] = 'Home/admin';
 $route['factory'] = 'Home/factory';
 $route['supplier'] = 'Home/supplier';
+$route['employee'] = 'Home/mobile_page';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

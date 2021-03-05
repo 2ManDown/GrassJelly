@@ -7,11 +7,12 @@ class User_model extends CI_Model
     public function user_list()
     {
 
-        if ($this->session->userdata("status") ==  "admin" || $this->session->userdata("status") ==  "supplier" || $this->session->userdata("status") ==  "factory") {
+        if ($this->session->userdata("status") ==  "admin" || $this->session->userdata("status") ==  "supplier" || $this->session->userdata("status") ==  "factory" || $this->session->userdata("status") ==  "employee" )  {
             $this->db->select('*');
             $this->db->from('gj_user');
             $this->db->where('user_status', 'factory');
             $this->db->or_where('user_status', 'supplier');
+            $this->db->or_where('user_status', 'employee');
         }
 
         $query = $this->db->get();
@@ -52,7 +53,7 @@ class User_model extends CI_Model
         $data = array(
             'user_id' => $this->input->post('user_id'),
             'user_name' => $this->input->post('user_name'),
-            'user_password' => $this->input->post('user_password'),
+            'user_password' => md5($this->input->post('user_password')),
             'user_email' => $this->input->post('user_email'),
             'user_tel' => $this->input->post('user_tel'),
 

@@ -49,6 +49,8 @@ class User extends CI_Controller
                         redirect('factory');
                     } else if ($value['user_status'] == 'supplier') {
                         redirect('supplier');
+                    } else if ($value['user_status'] == 'employee') {
+                        redirect('employee');
                     } else {
                         echo 'Incorrect';
                         exit();
@@ -128,14 +130,17 @@ class User extends CI_Controller
     public function checksession($data)
     {
         if ($this->session->userdata('status') == 'admin') {
-
-            $this->load->view('theme', $data);
-        } else if ($this->session->userdata('status') == 'factory') {
-
-            $this->load->view('factory', $data);
-        } else {
-            $this->load->view('supplier', $data);
-        }
+			$this->load->view('theme', $data);
+		}
+		else if ($this->session->userdata('status') == 'factory') {
+			$this->load->view('factory', $data);
+		} 
+		else if ($this->session->userdata('status') == 'supplier') {
+			$this->load->view('supplier', $data);
+		}
+		else {
+			$this->load->view('mobile_page', $data);
+		}
     }
     
 }
