@@ -21,7 +21,7 @@
                             <div class="form-group pull-in clearfix">
                                 <div class="col-sm-4">
                                     <label>รหัสใบเบิกของ</label>
-                                    <?php
+                                    <?php if($this->session->userdata('status') != 'admin'){$this->db->where('hub_id',$this->session->userdata('hub'));}
                                     $count_all = $this->db->count_all_results('gj_order');
                                     $countid =  "ODE" . ($count_all + 1);
                                     echo $countid;
@@ -36,9 +36,22 @@
                                     <label>ผู้รับสินค้า</label>
                                     <select name="hubid" class="form-control m-b " required>
                                         <option value="" disabled selected>กรุณาเลือกผู้รับสินค้า</option>
-                                        <?php foreach ($hub_list as $hub_list) { ?>
-                                            <option value="<?php echo $hub_list['hub_id'] ?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
-                                        <?php } ?>
+                                        <?php if($this->session->userdata('status') == 'admin' || $this->session->userdata('status') == 'factory'){
+                                            foreach ($hub_list as $hub_list) { ?>
+                                                <option value="<?php echo $hub_list['hub_id'] ?>"><?php echo $hub_list['hub_id'], '. ', $hub_list['hub_name'] ?></option>
+                                            <?php } 
+                                        }else{
+                                            $this->db->select('employee_name,employee_id');
+                                            $this->db->where('hub_id', $this->session->userdata('hub'));
+                                            $query = $this->db->get('gj_employee');
+                                            $employee = $query->result_array();
+                                            $i = 1;
+                                            foreach($employee as $employee){?>
+                                                <option value="<?php echo $employee['employee_id'] ?>"><?php echo $i, '. ', $employee['employee_name'] ?></option>
+                                                
+                                           <?php $i++; }
+                                        } ?>
+                                        
                                     </select>
                                 </div>
 
@@ -102,6 +115,9 @@
 
                                                 <?php
                                                 $this->db->where('product_code', $product_list['product_code']);
+                                                if($this->session->userdata('status') != 'factory'){
+                                                    $this->db->where('hub_id', $this->session->userdata('hub'));
+                                                }
                                                 $this->db->select_sum('product_stock_amount');
                                                 $query = $this->db->get('gj_product_stock');
                                                 $product_stock = $query->result_array();
