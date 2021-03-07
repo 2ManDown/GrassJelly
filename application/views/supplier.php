@@ -73,13 +73,6 @@ if ($userdata == 'admin') {
 
       <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
         <li class="dropdown">
-          <a href="<?php echo site_url('user/user_list') ?>">
-            <!-- class="dropdown-toggle" data-toggle="dropdown" -->
-            <b>จัดการสิทธิ์ข้อมูลผู้ใช้งานระบบ</b>
-          </a>
-        </li>
-
-        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="thumb-sm avatar pull-left">
               <img src="<?php echo base_url() ?>asset/images/a0.png" alt="...">
