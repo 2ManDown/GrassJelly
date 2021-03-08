@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/responsive.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/print.css" media="print">
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/timepicker.css">
 
   <!-- Card CSS -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/card.css" type="text/css" />
@@ -463,6 +464,8 @@ if ($userdata == 'admin') {
 
   <!-- Date Picker -->
   <script src="<?php echo base_url() ?>asset/js/datepicker/bootstrap-datepicker.js"></script>
+
+  <script src="<?php echo base_url() ?>asset/js/timepicker.js"></script>
 
 </body>
 
