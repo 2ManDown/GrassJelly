@@ -23,7 +23,7 @@
                                     <label>รหัสล็อตนำเข้าสินค้า</label>
                                     <?php if($this->session->userdata('status') != 'admin'){$this->db->where('hub_id',$this->session->userdata('hub'));}
                                     $count_all = $this->db->count_all_results('gj_order_import');
-                                    $countid =  "ODI" . ($count_all + 1);
+                                    $countid =  "OD-IM" . ($count_all + 1);
                                     echo $countid;
                                     ?>
                                     <input type="hidden" name="countid" value="<?php echo $countid ?>">
