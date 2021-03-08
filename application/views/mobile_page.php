@@ -51,8 +51,7 @@ if ($userdata == 'admin') {
     <?php $this->load->view($page) ?>
     
   </section>
-  </section>
-  </section>
+
 
 
   <script src="<?php echo base_url() ?>asset/js/jquery.min.js"></script>
