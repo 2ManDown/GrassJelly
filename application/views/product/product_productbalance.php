@@ -1,5 +1,5 @@
 <style>
-    th{
+    th {
         text-align: center;
     }
 </style>
@@ -67,6 +67,7 @@
                                     <td style="text-align: center;"><?php echo $product_productbalance['product_min'] ?></td>
                                     <?php
                                     $this->db->where('product_code', $product_productbalance['product_code']);
+                                    $this->db->where('hub_id', $this->session->userdata('hub'));
                                     $this->db->select_sum('product_stock_amount');
                                     $query = $this->db->get('gj_product_stock');
                                     $product_stock = $query->result_array();
@@ -77,18 +78,19 @@
                                         <td style="color: #3BD028; text-align: center;">
                                         <?php } ?>
 
-                                        <b><?php echo $product ?></b> </td>
-                                    
-                                    <?php 
-                                        if ($product <= $product_productbalance['product_min']) { ?>
-                                        <td style="color: red;"><b>กรุณานำเข้าสินค้า</b> 
-                                        <?php } else { ?>
-                                        <td style="color: #3BD028;"><b>ปกติ</b> 
-                                        <?php } ?>
+                                        <b><?php echo $product ?></b>
+                                        </td>
 
-                                         </td>
-                                        
-                                        
+                                        <?php
+                                        if ($product <= $product_productbalance['product_min']) { ?>
+                                            <td style="color: red;"><b>กรุณานำเข้าสินค้า</b>
+                                            <?php } else { ?>
+                                            <td style="color: #3BD028;"><b>ปกติ</b>
+                                            <?php } ?>
+
+                                            </td>
+
+
                                 </tr>
                             <?php $i++;
                             } ?>

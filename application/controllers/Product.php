@@ -144,6 +144,11 @@ class Product extends CI_Controller
 	{
 		$data['product_import'] = $this->Product_model->product_importreport();
 
+		/* echo '<pre>';
+		print_r($data);
+		echo '</pre>';
+		exit(); */
+
 		$data['page'] = "product/product_importreport";
 		$this->checksession($data);
 	}
@@ -176,26 +181,18 @@ class Product extends CI_Controller
 	public function product_orderinsert()
 	{
 		$input = array(
-			/* 'product_code' => $this->input->post('product'),
-			'exportproduct_code' => $this->input->post('export_id'),
-			'exportproduct_amount' => $this->input->post('export_amount'),
-			'exportproduct_reciever' => $this->input->post('export_reciever'),
-			'exportproduct_exdate' => $this->input->post('export_date'),
-			'exportproduct_price' => $this->input->post('export_price'),
-			'exportproduct_sumprice' => $this->input->post('export_sumprice'),
-			'exportproduct_vat' => $this->input->post('export_vat'),
-			'exportproduct_includevat' => $this->input->post('export_includevat') */
-
 			'order_code' => $this->input->post('countid'),
 			'order_date' => $this->input->post('export_date'),
 			'order_time' => $this->input->post('export_time'),
-			'hub_id' => $this->input->post('hubid')
-
+			'hub_id' => $this->input->post('hubid'),
+			'owner' => $this->session->userdata('hub')
 		);
 		//Insert OrderBill
 		$this->Product_model->product_orderinsert($input);
 
-
+/* 		echo '<pre>';
+print_r($input);
+exit(); */
 		$i = 0;
 		foreach ($this->input->post('amount') as $checkbox) {
 			if (@$this->input->post('checkbox')[$i] != "") {
@@ -203,7 +200,7 @@ class Product extends CI_Controller
 					'order_code' => $this->input->post('countid'),
 					'product_code' => $this->input->post('checkbox')[$i],
 					'order_detail_amount' => $this->input->post('amount')[$i],
-					'order_detail_price' => $this->input->post('price')[$i]
+					'order_detail_price' => $this->input->post('price')[$i],
 				);
 				//Insert Order Detail
 				$this->Product_model->product_orderdetail_insert($order_detail);
@@ -224,11 +221,23 @@ class Product extends CI_Controller
 					'product_stock_category' => 1,
 					'product_stock_user' => $this->session->userdata('id'),
 					'order_code' => $this->input->post('countid'),
+					'hub_id' => $this->session->userdata('hub')
+					
+				);
+				$this->Product_model->product_stock_insert($product_stock);
+				
+				$balance = array(
+					'product_code' => $this->input->post('checkbox')[$i],
+					'product_stock_amount' => $this->input->post('amount')[$i],
+					'product_stock_date' => $this->input->post('export_date'),
+					'product_stock_time' => $this->input->post('export_time'),
+					'product_stock_status' => 2,
+					'product_stock_category' => 1,
+					'product_stock_user' => $this->session->userdata('id'),
+					'order_code' => $this->input->post('countid'),
 					'hub_id' => $this->input->post('hubid')
 				);
-				/* echo '<pre>';
-				print_r($product_stock); */
-				$this->Product_model->product_stock_insert($product_stock);
+				$this->Product_model->product_stock_insert($balance);
 			}
 			$i++;
 		}
@@ -244,14 +253,6 @@ class Product extends CI_Controller
 
 	public function product_insert_import()
 	{
-		/* $input = array(
-			'product_code' => $this->input->post('product_code'),
-			'importproduct_amount' => $this->input->post('importproduct_amount'),
-			'importproduct_price' => $this->input->post('importproduct_price'),
-			'importproduct_imdate' => $this->input->post('importproduct_imdate'),
-			'importproduct_sumprice' => $this->input->post('importproduct_sumprice'),
-			'importproduct_expdate' => $this->input->post('importproduct_expdate'),
-		); */
 		$this->Product_model->product_insert_import(/* $input */);
 		redirect('product/product_stock_history');
 	}

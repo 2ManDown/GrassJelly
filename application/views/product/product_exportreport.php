@@ -51,7 +51,7 @@
                                 <th>ศูนย์กระจาย</th>
                                 <th>วันที่เบิกออก</th>
                                 <th>จำนวนสินค้า</th>
-                                <th>ราคารวม</th>
+                                <!-- <th>ราคารวม</th> -->
                                 <th>ผู้เบิกออกสินค้า</th>
                                 <th>ดูข้อมูลการเบิกออก</th>
                                 <th>ใบส่งออก</th>
@@ -79,20 +79,13 @@
                                             $this->db->select('COUNT(order_detail_amount) as row');
                                             $this->db->from('gj_order_detail');
                                             $this->db->where('order_code', $export['order_code']);
+                                            //$this->db->where('hub_id',$this->session->userdata('hub'));
                                             $query = $this->db->get();
                                             $row = $query->result_array();
                                             echo $row[0]['row'];
                                             //echo $sql = $this->db->last_query();
                                             ?></td>
 
-                                        <td style="text-align: center;"><?php
-                                            $this->db->where('order_code', $export['order_code']);
-                                            $this->db->select('order_detail_price,order_detail_amount');
-                                            $query = $this->db->get('gj_order_detail');
-                                            $order_price = $query->result_array();
-                                            //echo number_format($order_price[0]['order_detail_price']);
-
-                                            ?></td>
 
                                         <td><?php
                                             $this->db->where('order_code', $export['order_code']);

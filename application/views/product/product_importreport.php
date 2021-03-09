@@ -68,9 +68,10 @@
                                         <td><?php echo $export['order_date']  ?></td>
                                         <td><?php echo $export['order_time']  ?></td>
 
-                                        <?php 
+                                         <?php 
                                             $this->db->select('order_detail_amount,order_detail_price');
                                             $this->db->where('order_code', $export['order_code']);
+                                            $this->db->where('hub_id',$this->session->userdata('hub'));
                                             $query = $this->db->get('gj_order_import_detail');
                                             $amount_price = $query->result_array();
                                             foreach($amount_price as $amount_price){
@@ -78,11 +79,11 @@
 
                                         <td><?php echo $amount_price['order_detail_amount'] ?></td>
                                         <td><?php echo $amount_price['order_detail_price'] ?></td>
-                                        <td><?php echo $amount_price['order_detail_price'] * $amount_price['order_detail_amount'] ?></td>
+                                         <td><?php echo $amount_price['order_detail_price'] * $amount_price['order_detail_amount'] ?></td>
                                         <?php } ?> 
 
                                         
-                                        <td><?php
+                                       <td><?php
                                             $this->db->where('order_code', $export['order_code']);
                                             $this->db->select_avg('product_stock_user');
                                             $query = $this->db->get('gj_product_stock');
