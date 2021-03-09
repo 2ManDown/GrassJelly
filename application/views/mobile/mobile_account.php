@@ -1,9 +1,9 @@
 <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
     <div class="navbar-header aside-md dk">
-        <a class="btn btn-link visible-xs"  >
-          <i class="fa fa-arrow-left" onclick="goBack();"></i>
+        <a class="btn btn-link visible-xs" href="<?php echo site_url('employee') ?>">
+          <i class="fa fa-arrow-left"></i>
         </a>
-        <a href="" class="navbar-brand">
+        <a href="<?php echo site_url('employee') ?>" class="navbar-brand">
             <!-- <img src="<?php //echo base_url() ?>asset/images/logo.png" class="m-r-sm" alt="scale" > -->
             <span class="hidden-nav-xs hname">บัญชี</span>
         </a>
