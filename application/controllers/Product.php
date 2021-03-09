@@ -184,13 +184,15 @@ class Product extends CI_Controller
 			'order_code' => $this->input->post('countid'),
 			'order_date' => $this->input->post('export_date'),
 			'order_time' => $this->input->post('export_time'),
-			'hub_id' => $this->input->post('hubid')
-
+			'hub_id' => $this->input->post('hubid'),
+			'owner' => $this->session->userdata('hub')
 		);
 		//Insert OrderBill
 		$this->Product_model->product_orderinsert($input);
 
-
+/* 		echo '<pre>';
+print_r($input);
+exit(); */
 		$i = 0;
 		foreach ($this->input->post('amount') as $checkbox) {
 			if (@$this->input->post('checkbox')[$i] != "") {
@@ -199,7 +201,6 @@ class Product extends CI_Controller
 					'product_code' => $this->input->post('checkbox')[$i],
 					'order_detail_amount' => $this->input->post('amount')[$i],
 					'order_detail_price' => $this->input->post('price')[$i],
-					'hub_id' => $this->session->userdata('hub'),
 				);
 				//Insert Order Detail
 				$this->Product_model->product_orderdetail_insert($order_detail);

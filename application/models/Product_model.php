@@ -6,21 +6,22 @@ class Product_model extends CI_Model
 
     public function product_stock_history()
     {
-      $this->db->order_by('gj_product_stock.product_stock_date','desc');
-      $this->db->order_by('gj_product_stock.product_stock_id','desc');
-      $this->db->join('gj_product','gj_product.product_code = gj_product_stock.product_code');
-      $this->db->join('gj_stock_status','gj_stock_status.stock_status_id = gj_product_stock.product_stock_status');
-      $this->db->join('gj_product_category','gj_product_category.product_category_id = gj_product_stock.product_stock_category');
+        $this->db->order_by('gj_product_stock.product_stock_date', 'desc');
+        $this->db->order_by('gj_product_stock.product_stock_id', 'desc');
+        $this->db->join('gj_product', 'gj_product.product_code = gj_product_stock.product_code');
+        $this->db->join('gj_stock_status', 'gj_stock_status.stock_status_id = gj_product_stock.product_stock_status');
+        $this->db->join('gj_product_category', 'gj_product_category.product_category_id = gj_product_stock.product_stock_category');
 
-      $this->db->where('hub_id',$this->session->userdata('hub'));
-      $query = $this->db->get('gj_product_stock');
-      return $query->result_array();
+        $this->db->where('hub_id', $this->session->userdata('hub'));
+        $query = $this->db->get('gj_product_stock');
+        return $query->result_array();
     }
-    public function product_exportrepot(){
-        $this->db->order_by('gj_order.order_date','desc');
-        $this->db->order_by('gj_order.order_code','desc');
+    public function product_exportrepot()
+    {
+        $this->db->order_by('gj_order.order_date', 'desc');
+        $this->db->order_by('gj_order.order_code', 'desc');
 
-       
+        $this->db->where('owner', $this->session->userdata('hub'));
         $query = $this->db->get('gj_order');
         return $query->result_array();
     }
@@ -39,48 +40,47 @@ class Product_model extends CI_Model
     }
 
     public function product_insert_import(/* $input */)
-        {
-                $import_stock = array(
-                    'product_code' => $this->input->post('product_code'),
-                    'product_stock_amount' => $this->input->post('import_amount'),
-                    'product_stock_date' => $this->input->post('import_date'),
-                    'product_stock_time' => $this->input->post('import_time'),
-                    'product_stock_status' => 1,
-                    'product_stock_category' => 1,
-                    'product_stock_comment' => $this->input->post('import_comment'),
-                    'product_stock_user' => $this->session->userdata('id'),
-                    'order_code' => $this->input->post('countid'),
-                    'hub_id' => $this->session->userdata('hub'),
-                );
-    
-                $this->db->insert('gj_product_stock', $import_stock);
-    
-                $order = array(
-                    'order_code' => $this->input->post('countid'),
-                    'order_date' => $this->input->post('import_date'),
-                    'order_time' => $this->input->post('import_time'),
-                    'hub_id' => $this->session->userdata('hub'),
-                );
-                $this->db->insert('gj_order_import', $order);
-            
+    {
+        $import_stock = array(
+            'product_code' => $this->input->post('product_code'),
+            'product_stock_amount' => $this->input->post('import_amount'),
+            'product_stock_date' => $this->input->post('import_date'),
+            'product_stock_time' => $this->input->post('import_time'),
+            'product_stock_status' => 1,
+            'product_stock_category' => 1,
+            'product_stock_comment' => $this->input->post('import_comment'),
+            'product_stock_user' => $this->session->userdata('id'),
+            'order_code' => $this->input->post('countid'),
+            'hub_id' => $this->session->userdata('hub'),
+        );
 
-            $order_detail = array(
-                'order_code' => $this->input->post('countid'),
-                'product_code' => $this->input->post('product_code'),
-                'order_detail_price' => $this->input->post('import_price'),
-                'order_detail_amount' => $this->input->post('import_amount'),
-                'hub_id' => $this->session->userdata('hub'),
-            );
-            $this->db->insert('gj_order_import_detail', $order_detail);
+        $this->db->insert('gj_product_stock', $import_stock);
 
-        }
+        $order = array(
+            'order_code' => $this->input->post('countid'),
+            'order_date' => $this->input->post('import_date'),
+            'order_time' => $this->input->post('import_time'),
+            'hub_id' => $this->session->userdata('hub'),
+        );
+        $this->db->insert('gj_order_import', $order);
+
+
+        $order_detail = array(
+            'order_code' => $this->input->post('countid'),
+            'product_code' => $this->input->post('product_code'),
+            'order_detail_price' => $this->input->post('import_price'),
+            'order_detail_amount' => $this->input->post('import_amount'),
+            'hub_id' => $this->session->userdata('hub'),
+        );
+        $this->db->insert('gj_order_import_detail', $order_detail);
+    }
     public function product_list()
     {
         $query = $this->db->get('gj_product');
         return $query->result_array();
     }
 
-    
+
 
 
 
@@ -114,11 +114,11 @@ class Product_model extends CI_Model
     public function product_importreport()
     {
 
-        $this->db->order_by('gj_order_import.order_date','desc');
-        $this->db->order_by('gj_order_import.order_code','desc');
+        $this->db->order_by('gj_order_import.order_date', 'desc');
+        $this->db->order_by('gj_order_import.order_code', 'desc');
 
-        $this->db->where('hub_id',$this->session->userdata('hub'));
-        
+        $this->db->where('hub_id', $this->session->userdata('hub'));
+
         $query = $this->db->get('gj_order_import');
         return $query->result_array();
     }
@@ -207,16 +207,18 @@ class Product_model extends CI_Model
         $this->db->insert('gj_productbalance', $input);
     }
 
-   
+
 
     public function product_orderinsert($input)
     {
         $this->db->insert('gj_order', $input);
     }
-    public function product_orderdetail_insert($value){
+    public function product_orderdetail_insert($value)
+    {
         $this->db->insert('gj_order_detail', $value);
     }
-    public function product_stock_insert($value){
+    public function product_stock_insert($value)
+    {
         $this->db->insert('gj_product_stock', $value);
     }
 
