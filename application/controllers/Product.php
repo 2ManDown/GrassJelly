@@ -178,21 +178,19 @@ class Product extends CI_Controller
 		$this->Product_model->product_insert_db($input);
 		redirect('product/product_list');
 	}
+
 	public function product_orderinsert()
 	{
-		$input = array(
-			'order_code' => $this->input->post('countid'),
-			'order_date' => $this->input->post('export_date'),
-			'order_time' => $this->input->post('export_time'),
-			'hub_id' => $this->input->post('hubid'),
-			'owner' => $this->session->userdata('hub')
-		);
-		//Insert OrderBill
-		$this->Product_model->product_orderinsert($input);
-
-/* 		echo '<pre>';
-print_r($input);
-exit(); */
+			$input = array(
+				'order_code' => $this->input->post('countid'),
+				'order_date' => $this->input->post('export_date'),
+				'order_time' => $this->input->post('export_time'),
+				'hub_id' => $this->input->post('hubid'),
+				'owner' => $this->session->userdata('hub')
+			);
+			//Insert OrderBill
+			$this->Product_model->product_orderinsert($input);
+		
 		$i = 0;
 		foreach ($this->input->post('amount') as $checkbox) {
 			if (@$this->input->post('checkbox')[$i] != "") {
@@ -238,6 +236,24 @@ exit(); */
 					'hub_id' => $this->input->post('hubid')
 				);
 				$this->Product_model->product_stock_insert($balance);
+
+
+
+				if($this->session->userdata('status') == 'supplier'){
+					$input = array(
+						'product_code' => $this->input->post('checkbox')[$i],
+						'sale_stock_amount' => $this->input->post('amount')[$i],
+						'sale_stock_date' => $this->input->post('export_date'),
+						'sale_stock_time' => $this->input->post('export_time'),
+						'sale_stock_status' => 1,
+						'sale_stock_category' => 1,
+						'sale_stock_user' => $this->session->userdata('id'),
+						'employee_id' => $this->input->post('hubid')
+					);
+					//Insert OrderBill
+					$this->Mobile_model->mobile_stock_insert($input);
+				}
+
 			}
 			$i++;
 		}
