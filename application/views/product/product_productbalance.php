@@ -77,7 +77,6 @@
                                         <?php } else { ?>
                                         <td style="color: #3BD028; text-align: center;">
                                         <?php } ?>
-
                                         <b><?php echo $product ?></b>
                                         </td>
 

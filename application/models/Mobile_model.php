@@ -22,9 +22,6 @@ class Mobile_model extends CI_Model
     }
 
     public function mobile_stock_insert($value){
-        /* echo '<pre>';
-        print_r($value);
-        exit(); */
         $this->db->insert('gj_sale_stock', $value);
     }
 
