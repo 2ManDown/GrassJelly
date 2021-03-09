@@ -42,17 +42,15 @@
 <!-- content -->
 <section>
 
-    <?php// echo form_open('product/product_orderinsert', 'data-validate="parsley"', 'id="form-valid"') ?>
+    <?php echo form_open('mobile/mobile_orderinsert', 'data-validate="parsley"', 'id="form-valid"') ?>
     <div class="panel-body">
         <div class="form-group pull-in clearfix">
             <div class="col-sm-4">
                 <label>รหัสขายสินค้า</label>
-                <?php //if ($this->session->userdata('status') != 'admin') {
-                    //$this->db->where('hub_id', $this->session->userdata('hub'));
-                //}
-                //$count_all = $this->db->count_all_results('gj_order');
-                //$countid =  "ODE" . ($count_all + 1);
-                //echo $countid;
+                <?php if ($this->session->userdata('status') != 'admin') {$this->db->where('employee_id', $this->session->userdata('employee'));}
+                $count_all = $this->db->count_all_results('gj_order_sale');
+                $countid =  "OD-SL" . ($count_all + 1);
+                echo $countid;
                 ?>
                 <!-- <input type="hidden" name="countid" value="<?php echo $countid ?>"> -->
             </div>
@@ -63,7 +61,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
                 <label>รหัสการขายสินค้า</label>
-                <input type="text" name="countid" class="form-control  input-m" value="<?php //echo $countid 
+                <input type="text" name="countid" class="form-control  input-m" value="<?php echo $countid 
                                                                                         ?>" placeholder="รหัสการส่งออกสินค้า" readonly required>
             </div>
 
@@ -74,14 +72,14 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
                 <label>วันที่ขาย</label>
-                <input class="input-sm input-s datepicker-input form-control input-m" name="export_date" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
+                <input class="input-sm input-s datepicker-input form-control input-m" name="sale_date" size="16" type="text" value="" data-date-format="yyyy-mm-dd">
             </div>
 <br>
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
                 <label>เวลา</label>
                 <div style="display: flex;">
-                    <input id="timepkr" name="export_time" style="width: 100; float: left;" class="form-control input-m" placeholder="HH:MM" />
+                    <input id="timepkr" name="sale_time" style="width: 100; float: left;" class="form-control input-m" placeholder="HH:MM" />
                     <button type="button" class="btn btn-primary" onclick="showpickers('timepkr','24')" style="width: 40px; float: left;"><i class="fa fa-clock-o"></i></button>
                     <div class="timepicker"></div>
                 </div>
@@ -97,7 +95,6 @@
                         <th style="text-align: center;">เลือก</th>
                         <th style="text-align: center;">รหัส</th>
                         <th style="text-align: center;">ชื่อ</th>
-
                         <th style="text-align: center;">ราคา</th>
                         <th style="text-align: center; width: 70px;">จำนวน</th>
                     </thead>
@@ -108,10 +105,10 @@
                         <td><input type="checkbox" name="checkbox[<?php echo $i ?>]" value="<?php echo $product_list['product_code'] ?>"></td>
 
 
-                        <td><?php echo $product_list['product_code'] ?>P213</td>
-                        <td><?php echo $product_list['product_name'] ?>dasdasd</td>
+                        <td><?php echo $product_list['product_code'] ?></td>
+                        <td><?php echo $product_list['product_name'] ?></td>
 
-                        <td><input type="hidden" name="price[<?php echo $i ?>]" value="<?php echo $product_list['product_price'] ?>"><b><?php echo $product_list['product_price'] ?></b></td>
+                        <td style="text-align: right;"><input type="hidden" name="price[<?php echo $i ?>]" value="<?php echo $product_list['product_price'] ?>"><b><?php echo $product_list['product_price'] ?></b></td>
 
                         <td>
                             <div>
@@ -133,7 +130,7 @@
         </div>
     </div>
 </section>
-<?php //form_close() 
+<?php form_close() 
 ?>
 
 </section>
