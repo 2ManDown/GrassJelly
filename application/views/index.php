@@ -67,6 +67,8 @@
 
                           <?php
                           $this->db->where('product_code', $product_productbalance['product_code']);
+                          $this->db->where('hub_id', $this->session->userdata('hub'));
+                          
                           $this->db->select_sum('product_stock_amount');
                           $query = $this->db->get('gj_product_stock');
                           $product_stock = $query->result_array();
