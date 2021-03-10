@@ -28,6 +28,7 @@ h3{
     text-align: center;
     /* background-color: red; */
 }
+
 .btn-a{
     
     margin: 10px 10px 10px 10px;
@@ -46,25 +47,20 @@ h3{
     color: #ffff;
 }
 
-/* .btn-immobile{
-    margin: 10px 10px 10px 10px;
-    width: 100%;
-    font-size: 18px; 
-    padding: 10px 8px;
-    background-color: #1aae88;
-    border-radius: 8px;
-    color: #fff;
-}
-.btn-immobile:hover{
-    background-color: #147960;
-    color: #fff;
-} */
 
 .input-m{
     border-radius: 5px;
 }
+
 .input-m:focus{
     outline: none;
     border: 1.5px solid #1aae88; 
 }
+
+.stock-group-btn{
+    display: flex;
+    flex-direction: column;
+}
+
+
 

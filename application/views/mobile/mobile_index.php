@@ -40,13 +40,16 @@
 <!-- content -->
 <section>
     <h3><i class="fa  fa-bars"></i> เมนูการจัดการ</h3>
+
     <div class="button-group">
         
                 <a type="button" class="btn-a btn-stock" href="<?php echo site_url('mobile/mobile_stock')?>"><i class="fa  fa-archive"></i><br>สต็อก</a>
                 <a type="button" class="btn-a btn-sale" href="<?php echo site_url('mobile/mobile_sale')?>"><i class="fa  fa-tag"></i><br>ขาย</a>
                 <a type="button" class="btn-a btn-account" href="<?php echo site_url('mobile/mobile_account')?>"><i class="fa  fa-book"></i><br>บัญชี</a>
-
+                
     </div>
+
+    
 
 </section>
 <!-- end content -->

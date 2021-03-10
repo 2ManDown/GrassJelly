@@ -29,10 +29,19 @@ class Mobile extends CI_Controller{
 
 	}
 
-    public function mobile_import()
+    public function mobile_stock_history()
 	{
+		$data['sale_history'] = $this->Mobile_model->mobile_stock_history();
+		$data['page'] = "mobile/mobile_stock_history";
+		$this->checksession($data);
 
-		$data['page'] = "mobile/mobile_import";
+	}
+
+    public function mobile_return_product()
+	{
+		$data['product_list'] = $this->Product_model->product_list();
+
+		$data['page'] = "mobile/mobile_return_product";
 		$this->checksession($data);
 
 	}
@@ -92,6 +101,54 @@ class Mobile extends CI_Controller{
 		redirect('mobile/mobile_stock');
 	}
 	
+	public function mobile_return_insert()
+	{
+		
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$product_stock = array(
+					'product_code' => $this->input->post('checkbox')[$i],
+					'product_stock_amount' => $this->input->post('amount')[$i],
+					'product_stock_date' => $this->input->post('sale_date'),
+					'product_stock_time' => $this->input->post('sale_time'),
+					'product_stock_status' => 1,
+					'product_stock_category' => 2,
+					'product_stock_user' => $this->session->userdata('id'),
+					/* 'order_sale_code' => $this->input->post('countid'), */
+					'hub_id' => $this->session->userdata('hub'),
+				);
+				/* echo '<pre>';
+				print_r($product_stock);
+				exit(); */
+				$this->Mobile_model->mobile_return_insert($product_stock);
+			}
+			$i++;
+		}
+
+		$i = 0;
+		foreach ($this->input->post('amount') as $checkbox) {
+			if (@$this->input->post('checkbox')[$i] != "") {
+				$product_stock = array(
+					'product_code' => $this->input->post('checkbox')[$i],
+					'sale_stock_amount' => -$this->input->post('amount')[$i],
+					'sale_stock_date' => $this->input->post('sale_date'),
+					'sale_stock_time' => $this->input->post('sale_time'),
+					'sale_stock_status' => 2,
+					'sale_stock_category' => 1,
+					'sale_stock_user' => $this->session->userdata('id'),
+					
+					'employee_id' => $this->session->userdata('employee'),
+				);
+				//echo '<pre>';
+				//print_r($product_stock);
+				$this->Mobile_model->mobile_stock_insert($product_stock);
+			}
+			$i++;
+		}
+
+		redirect('mobile/mobile_stock');
+	}
 
     public function checksession($data)
 	{

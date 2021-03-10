@@ -1,3 +1,21 @@
+<style>
+    .button-group-b{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-b {
+    margin: 10px 10px 5px 10px;
+    height: 50%;
+    font-size: 20px; 
+    border-radius: 8px;
+    padding: 5px 0px; 
+    background-color: #1aae88;
+    color: #fff;
+    text-align: center;
+     
+}
+</style>
+
 <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
     <div class="navbar-header aside-md dk">
         <a class="btn btn-link visible-xs">
@@ -41,7 +59,11 @@
 
 <!-- content -->
 <section>
-   
+
+    <div class="button-group-b">
+        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_return_product') ?>"><i class="fa  fa-archive"></i>  คืนสินค้า</a>
+        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_stock_history') ?>"><i class="fa  fa-archive"></i>  ประวัติ</a>
+    </div>
 
     <div class="table-mobile" style="margin: 25px 10px 10px 10px;">
         <table class="table table-striped b-t b-light table-bordered">
@@ -56,30 +78,32 @@
                 </tr>
             </div>
             <tbody>
-            <?php $i = 1 ?>
-            <?php foreach ($sale_stockbalance as $sale_stockbalance) { ?>
+                <?php $i = 1 ?>
+                <?php foreach ($sale_stockbalance as $sale_stockbalance) { ?>
 
-                <tr>
-                    <td style="text-align: center;"><?php echo $i ?></td>
-                    <td ><?php echo $sale_stockbalance['product_code'] ?></td>
-                    <td><?php echo $sale_stockbalance['product_name'] ?></td>
-                    <td style="text-align: right;"><?php echo $sale_stockbalance['product_price'] ?></td>
-                    <?php
-                    $this->db->where('product_code', $sale_stockbalance['product_code']);
-                    $this->db->where('employee_id', $this->session->userdata('employee'));
-                                    $this->db->select_sum('sale_stock_amount');
-                                    $query = $this->db->get('gj_sale_stock');
-                                    $product_stock = $query->result_array();
-                                    $product = number_format($product_stock[0]['sale_stock_amount']);
-                                    if ($product <= $sale_stockbalance['product_min']) { ?>
-                                        <td style="color: red; text-align: center; width: 20px;">
-                                        <?php } else { ?>
-                                        <td style="color: #3BD028; text-align: center; width: 20px;">
-                                        <?php } ?>
-                                        <b><?php echo $product ?></b> </td>
-                </tr>
-                
-                <?php $i++; } ?>
+                    <tr>
+                        <td style="text-align: center;"><?php echo $i ?></td>
+                        <td><?php echo $sale_stockbalance['product_code'] ?></td>
+                        <td><?php echo $sale_stockbalance['product_name'] ?></td>
+                        <td style="text-align: right;"><?php echo $sale_stockbalance['product_price'] ?></td>
+                        <?php
+                        $this->db->where('product_code', $sale_stockbalance['product_code']);
+                        $this->db->where('employee_id', $this->session->userdata('employee'));
+                        $this->db->select_sum('sale_stock_amount');
+                        $query = $this->db->get('gj_sale_stock');
+                        $product_stock = $query->result_array();
+                        $product = number_format($product_stock[0]['sale_stock_amount']);
+                        if ($product <= $sale_stockbalance['product_min']) { ?>
+                            <td style="color: red; text-align: center; width: 20px;">
+                            <?php } else { ?>
+                            <td style="color: #3BD028; text-align: center; width: 20px;">
+                            <?php } ?>
+                            <b><?php echo $product ?></b>
+                            </td>
+                    </tr>
+
+                <?php $i++;
+                } ?>
 
             </tbody>
         </table>
