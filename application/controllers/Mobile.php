@@ -112,7 +112,7 @@ class Mobile extends CI_Controller{
 					'product_stock_amount' => $this->input->post('amount')[$i],
 					'product_stock_date' => $this->input->post('sale_date'),
 					'product_stock_time' => $this->input->post('sale_time'),
-					'product_stock_status' => 1,
+					'product_stock_status' => 3,
 					'product_stock_category' => 2,
 					'product_stock_user' => $this->session->userdata('id'),
 					/* 'order_sale_code' => $this->input->post('countid'), */
@@ -134,7 +134,7 @@ class Mobile extends CI_Controller{
 					'sale_stock_amount' => -$this->input->post('amount')[$i],
 					'sale_stock_date' => $this->input->post('sale_date'),
 					'sale_stock_time' => $this->input->post('sale_time'),
-					'sale_stock_status' => 2,
+					'sale_stock_status' => 3,
 					'sale_stock_category' => 1,
 					'sale_stock_user' => $this->session->userdata('id'),
 					

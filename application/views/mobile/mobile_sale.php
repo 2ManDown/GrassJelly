@@ -7,8 +7,8 @@
 </style>
 <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
     <div class="navbar-header aside-md dk">
-        <a class="btn btn-link visible-xs">
-            <i class="fa fa-arrow-left" onclick="goBack();"></i>
+        <a href="<?php echo site_url('employee') ?>" class="btn btn-link visible-xs">
+            <i class="fa fa-arrow-left" ></i>
         </a>
         <a href="<?php echo site_url('employee') ?>" class="navbar-brand">
             <!-- <img src="<?php //echo base_url() 
@@ -159,9 +159,3 @@
 
 </section>
 <!-- end content -->
-
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
