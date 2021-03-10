@@ -71,13 +71,13 @@
                                     $this->db->select_sum('product_stock_amount');
                                     $query = $this->db->get('gj_product_stock');
                                     $product_stock = $query->result_array();
-                                    $product = number_format($product_stock[0]['product_stock_amount']);
+                                    $product = $product_stock[0]['product_stock_amount'];
                                     if ($product <= $product_productbalance['product_min']) { ?>
                                         <td style="color: red; text-align: center;">
                                         <?php } else { ?>
                                         <td style="color: #3BD028; text-align: center;">
                                         <?php } ?>
-                                        <b><?php echo $product ?></b>
+                                        <b><?php echo number_format($product) ?></b>
                                         </td>
 
                                         <?php
