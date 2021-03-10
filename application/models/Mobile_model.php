@@ -13,7 +13,7 @@ class Mobile_model extends CI_Model
 
     public function mobile_stock_history()
     {
-        $this->db->order_by('gj_sale_stock.sale_stock_date', 'desc');
+        /* $this->db->order_by('gj_sale_stock.sale_stock_date', 'desc'); */
         $this->db->order_by('gj_sale_stock.sale_stock_id', 'desc');
         $this->db->join('gj_product', 'gj_product.product_code = gj_sale_stock.product_code');
         $this->db->join('gj_stock_status', 'gj_stock_status.stock_status_id = gj_sale_stock.sale_stock_status');
