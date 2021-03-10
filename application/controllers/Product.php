@@ -229,7 +229,7 @@ class Product extends CI_Controller
 					'product_stock_amount' => $this->input->post('amount')[$i],
 					'product_stock_date' => $this->input->post('export_date'),
 					'product_stock_time' => $this->input->post('export_time'),
-					'product_stock_status' => 2,
+					'product_stock_status' => 1,
 					'product_stock_category' => 1,
 					'product_stock_user' => $this->session->userdata('id'),
 					'order_code' => $this->input->post('countid'),
@@ -250,7 +250,7 @@ class Product extends CI_Controller
 						'sale_stock_user' => $this->session->userdata('id'),
 						'employee_id' => $this->input->post('hubid')
 					);
-					//Insert OrderBill
+					//Insert import sale
 					$this->Mobile_model->mobile_stock_insert($input);
 				}
 
