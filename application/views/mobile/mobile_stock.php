@@ -6,7 +6,7 @@
     .btn-b {
     margin: 10px 10px 5px 10px;
     height: 50%;
-    font-size: 20px; 
+    font-size: 18px; 
     border-radius: 8px;
     padding: 5px 0px; 
     background-color: #1aae88;
@@ -61,8 +61,8 @@
 <section>
 
     <div class="button-group-b">
-        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_return_product') ?>"><i class="fa  fa-archive"></i>  คืนสินค้า</a>
-        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_stock_history') ?>"><i class="fa  fa-archive"></i>  ประวัติ</a>
+        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_return_product') ?>"><i class="fa  fa-refresh"></i>  คืนสินค้า</a>
+        <a type="button" class="btn-b" href="<?php echo site_url('mobile/mobile_stock_history') ?>"><i class="fa  fa-history"></i>  ประวัติ</a>
     </div>
 
     <div class="table-mobile" style="margin: 25px 10px 10px 10px;">
